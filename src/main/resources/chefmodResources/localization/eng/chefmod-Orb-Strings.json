@@ -1,0 +1,522 @@
+{
+  "chefmod:REAGENT": {
+    "NAME": "REAGENT",
+    "DESCRIPTION": [
+      " NL #yPotion: Distill to brew: ",
+      " NL #yCard #yEffect: "
+    ]
+  },
+  "chefmod:Barb": {
+    "NAME": "Barb",
+    "DESCRIPTION": [
+      "Metallic barb harvested from a Spiker.",
+      "Gain 5 Block. Deal 5 Damage.",
+      "Gain 5 Block. Deal 5 Damage.",
+      "Gain BB Block. Deal DD Damage."
+    ]
+  },
+  "chefmod:Beak": {
+    "NAME": "Beak",
+    "DESCRIPTION": [
+      "Beaked Mask taken from a cultist.",
+      "Gain 1 Strength.",
+      "Gain 1 Strength.",
+      "Gain 1 Strength."
+    ]
+  },
+  "chefmod:Bile": {
+    "NAME": "Bile",
+    "DESCRIPTION": [
+      "Bile harvested from Gremlin Nob.",
+      "Gain 3 Temporary Strength whenever you play a Skill this turn.",
+      "Gain 3 Temporary Strength whenever you play a Skill this turn.",
+      "Gain 3 Temporary Strength whenever you play a Skill this turn."
+    ]
+  },
+  "chefmod:Bludgeon": {
+    "NAME": "Bludgeon",
+    "DESCRIPTION": [
+      "Vintage weapon taken from a Knight.",
+      "Deal 8 Damage.",
+      "Deal 8 Damage.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:Bone": {
+    "NAME": "Bone",
+    "DESCRIPTION": [
+      "Bone harvested from a slaver.",
+      "Apply 1 Weak.",
+      "Apply 1 Weak.",
+      "Apply 1 Weak."
+    ]
+  },
+  "chefmod:Bug": {
+    "NAME": "Bug",
+    "DESCRIPTION": [
+      "The carapace of a strange insect.",
+      "Reduce the target's Strength by 3 this turn.",
+      "Reduce the target's Strength by 3 this turn.",
+      "Reduce the target's Strength by 3 this turn."
+    ]
+  },
+  "chefmod:Chest": {
+    "NAME": "Chest",
+    "DESCRIPTION": [
+      "Treasure chest filled with gold.",
+      "Deal 1 Damage for every 10 gold.",
+      "Deal 1 Damage for every 10 gold.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:CityCrest": {
+    "NAME": "City Crest",
+    "DESCRIPTION": [
+      "Ancient seal to a forgotten city.",
+      "Deal 1 Damage for every HP you are missing.",
+      "Deal 1 Damage for every HP you are missing.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:Clay": {
+    "NAME": "Clay",
+    "DESCRIPTION": [
+      "Clay harvested from a Giant Head.",
+      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
+      "Turns 1-4: 3 Damage, Turn 5+: 25 Damage.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:Crown": {
+    "NAME": "Crown",
+    "DESCRIPTION": [
+      "The crown of a Champion.",
+      "Block 6 Damage each turn.",
+      "Block 6 Damage each turn.",
+      "Block 6 Damage each turn."
+    ]
+  },
+  "chefmod:Ether": {
+    "NAME": "Ether",
+    "DESCRIPTION": [
+      "Magical vapor harvested from a Mystic.",
+      "Gain 1 #yEnergy.",
+      "Gain 1 [E].",
+      "Gain 1 [E]."
+    ]
+  },
+  "chefmod:Eye": {
+    "NAME": "Eye",
+    "DESCRIPTION": [
+      "Eye harvested from a monster.",
+      "Play a copy of a random card from your deck.",
+      "Play a copy of a random card from your deck.",
+      "Play a copy of a random card from your deck."
+    ]
+  },
+  "chefmod:Feather": {
+    "NAME": "Feather",
+    "DESCRIPTION": [
+      "Feather harvested from a cultist.",
+      "Apply 1 Weak and Vulnerable.",
+      "Apply 1 Weak and Vulnerable.",
+      "Apply 1 Weak and Vulnerable."
+    ]
+  },
+  "chefmod:FeyFire": {
+    "NAME": "Fey Fire",
+    "DESCRIPTION": [
+      "Otherworldly flame taken from the Collector.",
+      "Apply 3 Weak and Vulnerable.",
+      "Apply 3 Weak and Vulnerable.",
+      "Apply 3 Weak and Vulnerable."
+    ]
+  },
+  "chefmod:Fireflies": {
+    "NAME": "Fireflies",
+    "DESCRIPTION": [
+      "Luminous insects that glow with crimson fire.",
+      "Catalyze: Gain 2 Dexterity.",
+      "chefmod:Catalyze: Gain 2 Dexterity.",
+      "chefmod:Catalyze: Gain 2 Dexterity."
+    ]
+  },
+  "chefmod:Flame": {
+    "NAME": "Flame",
+    "DESCRIPTION": [
+      "Flaming core of an odd machine.",
+      "Deals 3xTurn Number Damage.",
+      "Deals 3xTurn Number Damage.",
+      "Deals DD Damage."
+    ]
+  },
+  "chefmod:Gold": {
+    "NAME": "Gold",
+    "DESCRIPTION": [
+      "Gold harvested from a bandit.",
+      "Steal 10 Gold.",
+      "Steal 10 Gold.",
+      "Steal 10 Gold."
+    ]
+  },
+  "chefmod:Grimace": {
+    "NAME": "Grimace",
+    "DESCRIPTION": [
+      "Grimace harvested from a gremlin.",
+      "Gain 3 Temporary Strength.",
+      "Gain 3 Temporary Strength.",
+      "Gain 3 Temporary Strength."
+    ]
+  },
+  "chefmod:GuardianScales": {
+    "NAME": "Guardian Scales",
+    "DESCRIPTION": [
+      "The sharp scales of a guardian mechanism.",
+      "#yCatalyze: Gain 3 Thorns.",
+      "chefmod:Catalyze: Gain 3 Thorns.",
+      "chefmod:Catalyze: Gain 3 Thorns."
+    ]
+  },
+  "chefmod:Hand": {
+    "NAME": "Hand",
+    "DESCRIPTION": [
+      "Dessicated hand harvested from a sneak-thief.",
+      "Damaging effects happen 2 times.",
+      "Damaging effects happen 2 times.",
+      "Damaging effects happen 2 times."
+    ]
+  },
+  "chefmod:Horn": {
+    "NAME": "Horn",
+    "DESCRIPTION": [
+      "Crooked horn harvested from a Gremlin Leader.",
+      "#yCatalyze: Gain 3 Strength.",
+      "chefmod:Catalyze: Gain 3 Strength.",
+      "chefmod:Catalyze: Gain 3 Strength."
+    ]
+  },
+  "chefmod:Ichor": {
+    "NAME": "Ichor",
+    "DESCRIPTION": [
+      "Ichor harvested from a Darkling.",
+      "Gain 8 Temporary HP.",
+      "Gain 8 Temporary HP.",
+      "Gain 8 Temporary HP."
+    ]
+  },
+  "chefmod:Ink": {
+    "NAME": "Ink",
+    "DESCRIPTION": [
+      "Ink harvested from a Lagavulin.",
+      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
+      "Turns 1-3: 1 Damage. Turns 4+: 12 Damage.",
+      "Turn !chefmod:TURN_NUMBER! : Deal DD Damage."
+    ]
+  },
+  "chefmod:Iodine": {
+    "NAME": "Iodine",
+    "DESCRIPTION": [
+      "Noxious fluid found in any potion lab.",
+      "Draw 1 card.",
+      "Draw 1 card.",
+      "Draw 1 card."
+    ]
+  },
+  "chefmod:Jaw": {
+    "NAME": "Jaw",
+    "DESCRIPTION": [
+      "The jawbone of a giant monster.",
+      "Odd Turns: 5 block, Even Turns: 8 Damage.",
+      "Odd Turn: Gain BB Block.",
+      "Even Turn: Deal DD Damage."
+    ]
+  },
+  "chefmod:LaserCore": {
+    "NAME": "Laser Core",
+    "DESCRIPTION": [
+      "Damaged core of a Sentry.",
+      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
+      "Odd turns: Deal 12 Damage, Even turns: Deal 0 Damage.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:Lightning": {
+    "NAME": "Lightning",
+    "DESCRIPTION": [
+      "Electric charge from a repulsor's power core.",
+      "Targets all enemies.",
+      "Targets all enemies.",
+      "Targets all enemies."
+    ]
+  },
+  "chefmod:Mechanism": {
+    "NAME": "Mechanism",
+    "DESCRIPTION": [
+      "The mechanical core of an Automaton.",
+      "Deal 20 Damage. Place a Void on top of your draw pile.",
+      "Deal 20 Damage. Place a Void on top of your draw pile.",
+      "Deal DD Damage. Place a Void on top of your draw pile."
+    ]
+  },
+  "chefmod:Meteorite": {
+    "NAME": "Meteorite",
+    "DESCRIPTION": [
+      "Piece of strange metal from another world.",
+      "#yCatalyze: Deal 25 Damage.",
+      "chefmod:Catalyze: Deal 25 Damage.",
+      "chefmod:Catalyze: Deal DD Damage."
+    ]
+  },
+  "chefmod:Needle": {
+    "NAME": "Needle",
+    "DESCRIPTION": [
+      "Sharp splinter of metal from a ghostly knife.",
+      "Damaging effects trigger Turn Number times.",
+      "Damaging effects trigger Turn Number times.",
+      "Damaging effects trigger !chefmod:TURN_NUMBER! times."
+    ]
+  },
+  "chefmod:Nethershroud": {
+    "NAME": "Nethershroud",
+    "DESCRIPTION": [
+      "The ghostly shroud of the Nemesis.",
+      "Become Intangible.",
+      "Become Intangible.",
+      "Become Intangible."
+    ]
+  },
+  "chefmod:Pebble": {
+    "NAME": "Pebble",
+    "DESCRIPTION": [
+      "Pebble found clutched in a Byrd's claw.",
+      "Gain 4 Block and apply 1 Weak.",
+      "Gain 4 Block and apply 1 Weak.",
+      "Gain BB Block and apply 1 Weak."
+    ]
+  },
+  "chefmod:PhilosopherShard": {
+    "NAME": "Philosopher's Shard",
+    "DESCRIPTION": [
+      "Shard of the legendary Philosopher's Stone.",
+      "Target all enemies 3 times.",
+      "Target all enemies 3 times.",
+      "Target all enemies 3 times."
+    ]
+  },
+  "chefmod:Pocketwatch": {
+    "NAME": "Pocketwatch",
+    "DESCRIPTION": [
+      "Timekeeping device taken from an Eldrich Horror.",
+      "Draw 3 cards.",
+      "Draw 3 cards.",
+      "Draw 3 cards."
+    ]
+  },
+  "chefmod:PureWater": {
+    "NAME": "Pure Water",
+    "DESCRIPTION": [
+      "Purified water found in any potion lab.",
+      "Gain 3 Block when you play an attack this turn.",
+      "Gain 3 Block when you play an attack this turn.",
+      "Gain 3 Block when you play an attack this turn."
+    ]
+  },
+  "chefmod:Pyramid": {
+    "NAME": "Pyramid",
+    "DESCRIPTION": [
+      "Bizarre object harvested from an anthropomorphic shape.",
+      "Damages and Blocks 2 times.",
+      "Damages and Blocks 2 times.",
+      "Damages and Blocks 2 times."
+    ]
+  },
+  "chefmod:Radiance": {
+    "NAME": "Radiance",
+    "DESCRIPTION": [
+      "The shining heart of an ascendant moth.",
+      "Your next attack deals 12 more Damage.",
+      "Your next attack deals 12 more Damage.",
+      "Your next attack deals 12 more Damage."
+    ]
+  },
+  "chefmod:RitualJar": {
+    "NAME": "Ritual Jar",
+    "DESCRIPTION": [
+      "Odd relic found near an Awakened Beast.",
+      "Gain 3 Strength.",
+      "Gain 3 Strength.",
+      "Gain 3 Strength."
+    ]
+  },
+  "chefmod:Root": {
+    "NAME": "Root",
+    "DESCRIPTION": [
+      "Root harvested from a carnivorous plant.",
+      "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
+      "Gain 3 Temporary Dexterity whenever you play an Attack this turn.",
+      "Gain 3 Temporary Dexterity whenever you play an Attack this turn."
+    ]
+  },
+  "chefmod:RunicShape": {
+    "NAME": "Runic Shape",
+    "DESCRIPTION": [
+      "Twisted shape with runic writing.",
+      "Block effects happen 2 times.",
+      "Block effects happen 2 times.",
+      "Block effects happen 2 times."
+    ]
+  },
+  "chefmod:Saltpeter": {
+    "NAME": "Saltpeter",
+    "DESCRIPTION": [
+      "A staple ingredient in any potion lab.",
+      "Gain 3 Temporary Dexterity.",
+      "Gain 3 Temporary Dexterity.",
+      "Gain 3 Temporary Dexterity."
+    ]
+  },
+  "chefmod:SerpentSkull": {
+    "NAME": "Serpent Skull",
+    "DESCRIPTION": [
+      "The skull of a giant serpent.",
+      "Deal 15 Damage.",
+      "Deal 15 Damage.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:Silk": {
+    "NAME": "Silk",
+    "DESCRIPTION": [
+      "Silk harvested from a louse.",
+      "Gain 6 Block.",
+      "Gain 6 Block.",
+      "Gain BB Block."
+    ]
+  },
+  "chefmod:Skull": {
+    "NAME": "Skull",
+    "DESCRIPTION": [
+      "Stained skull taken from a slaver.",
+      "Shuffle a #yReaction into your draw pile.",
+      "Shuffle a *Reaction into your draw pile.",
+      "Shuffle a *Reaction into your draw pile."
+    ]
+  },
+  "chefmod:Slime": {
+    "NAME": "Slime",
+    "DESCRIPTION": [
+      "Slime harvested from one of the Spire's pests.",
+      "Apply 2 #ySlimed. Your attacks against #ySlimed targets deal 1 more damage for each stack of #ySlimed.",
+      "Apply 2 chefmod:Slimed",
+      "Apply 2 chefmod:Slimed"
+    ]
+  },
+  "chefmod:Spore": {
+    "NAME": "Spore",
+    "DESCRIPTION": [
+      "A Spore harvested from a parasitic fungus.",
+      "Apply 1 Vulnerable.",
+      "Apply 1 Vulnerable.",
+      "Apply 1 Vulnerable."
+    ]
+  },
+  "chefmod:Storybook": {
+    "NAME": "Storybook",
+    "DESCRIPTION": [
+      "An enchanted storybook taken from an old crone.",
+      "Stun the target.",
+      "Stun the target.",
+      "Stun the target."
+    ]
+  },
+  "chefmod:SuperSpore": {
+    "NAME": "Super Spore",
+    "DESCRIPTION": [
+      "An unusually aggressive Spore harvested from a giant fungus.",
+      "Remove 5 HP for each debuff on the target.",
+      "Remove 5 HP for each debuff on the target.",
+      "Remove 5 HP for each debuff on the target."
+    ]
+  },
+  "chefmod:Steel": {
+    "NAME": "Steel",
+    "DESCRIPTION": [
+      "Steel harvested from a machine.",
+      "Catalyze: Gain 10 Block.",
+      "Catalyze: Gain 10 Block.",
+      "Catalyze: Gain BB Block."
+    ]
+  },
+  "chefmod:Sulphur": {
+    "NAME": "Sulphur",
+    "DESCRIPTION": [
+      "Sulphur harvested from a strong man.",
+      "Gain 8 Block. Deal 8 Damage.",
+      "Gain 8 Block. Deal 8 Damage.",
+      "Gain BB Block. Deal DD Damage."
+    ]
+  },
+  "chefmod:Tentacle": {
+    "NAME": "Tentacle",
+    "DESCRIPTION": [
+      "Severed tentacle of one of the Spire's horrors.",
+      "Deal 5 Damage every turn.",
+      "Deal 5 Damage every turn.",
+      "Deal 5 Damage every turn."
+    ]
+  },
+  "chefmod:TinyHat": {
+    "NAME": "Tiny Hat",
+    "DESCRIPTION": [
+      "A stylish hat, taken from a giant slime.",
+      "#yCatalyze: Deal 24 Damage.",
+      "chefmod:Catalyze: Deal 24 Damage.",
+      "chefmod:Catalyze: Deal DD Damage."
+    ]
+  },
+  "chefmod:Tooth": {
+    "NAME": "Tooth",
+    "DESCRIPTION": [
+      "Tooth harvested from a Jaw worm.",
+      "Deal 6 Damage.",
+      "Deal 6 Damage.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:TrainTicket": {
+    "NAME": "Train Ticket",
+    "DESCRIPTION": [
+      "Ticket for passage on an hellish train.",
+      "Deal Damage equal to the floor number.",
+      "Deal Damage equal to the floor number.",
+      "Deal DD Damage."
+    ]
+  },
+  "chefmod:TwistedRelic": {
+    "NAME": "Twisted Relic",
+    "DESCRIPTION": [
+      "An otherworldly object.",
+      "Gain 13 Thorns.",
+      "Gain 13 Thorns.",
+      "Gain 13 Thorns."
+    ]
+  },
+  "chefmod:Wax": {
+    "NAME": "Wax",
+    "DESCRIPTION": [
+      "Sealing wax taken from a bandit leader.",
+      "Deal 5 Damage. Apply 1 Weak.",
+      "Deal 5 Damage. Apply 1 Weak.",
+      "Deal DD Damage. Apply 1 Weak."
+    ]
+  },
+  "chefmod:DummyTonicReagent": {
+    "NAME": "Dummy",
+    "DESCRIPTION": [
+      "Dummy",
+      "Dummy",
+      "Dummy",
+      "Dummy"
+    ]
+  }
+}

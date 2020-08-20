@@ -1,0 +1,372 @@
+{
+  "chefmod:Accelerant": {
+    "NAME": "Accelerant",
+    "DESCRIPTION": "Draw cards until your hand is full. Any cards remaining in your hand at the end of turn are Exhausted. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Draw cards until your hand is full. Half the cards remaining in your hand at the end of turn are Exhausted. NL Exhaust"
+  },
+  "chefmod:AcidCloud": {
+    "NAME": "Acid Cloud",
+    "DESCRIPTION": "Gain !B! Block. If the last card played cost 0, Apply !M! Vulnerable to all enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Acid Fog"
+    ]
+  },
+  "chefmod:AlchemistForm": {
+    "NAME": "Alchemist Form",
+    "DESCRIPTION": "Each turn, convert !M! gold into a random potion if you have an empty potion slot. NL Non-minion enemies give 15 gold when defeated."
+  },
+  "chefmod:AnotherRound": {
+    "NAME": "Another Round",
+    "DESCRIPTION": "Each turn, return 1 card that costs 0 to your hand from your discard pile.",
+    "UPGRADE_DESCRIPTION": "Innate NL Each turn, return 1 card that costs 0 to your hand from your discard pile."
+  },
+  "chefmod:Backhand": {
+    "NAME": "Backhand",
+    "DESCRIPTION": "Deal !D! Damage. Draw !M! cards."
+  },
+  "chefmod:BalancedFormula": {
+    "NAME": "Balanced Formula",
+    "DESCRIPTION": "Deal !D! Damage. Move a 0 cost card from your draw pile and from your discard pile to your hand."
+  },
+  "chefmod:BeatDown": {
+    "NAME": "Beat Down",
+    "DESCRIPTION": "Deal !D! Damage. Place this card on top of your draw pile if your hand is not empty."
+  },
+  "chefmod:Biohazard": {
+    "NAME": "Bio-Hazard",
+    "DESCRIPTION": "Apply !M! chefmod:Infection to an enemy."
+  },
+  "chefmod:BlindingMist": {
+    "NAME": "Blinding Mist",
+    "DESCRIPTION": "Gain !B! Block for each enemy in combat."
+  },
+  "chefmod:BlindingSpray": {
+    "NAME": "Blinding Spray",
+    "DESCRIPTION": "Deal !D! Damage. Apply !M! Weak."
+  },
+  "chefmod:BottomlessFlask": {
+    "NAME": "Bottomless Flask",
+    "DESCRIPTION": "Choose !M! of 10 potion cards. Replace this card permanently with your choice."
+  },
+  "chefmod:Brandish": {
+    "NAME": "Brandish",
+    "DESCRIPTION": "Draw !M! cards. Discard all Skills drawn this way."
+  },
+  "chefmod:Bribery": {
+    "NAME": "Bribery",
+    "DESCRIPTION": "Whenever you would lose HP, pay 1 gold to lose !M! less."
+  },
+  "chefmod:BrokenBeakers": {
+    "NAME": "Broken Beakers",
+    "DESCRIPTION": "Deal !D! Damage to all Enemies. Reduce this card's damage by !M! this combat."
+  },
+  "chefmod:Catalyze": {
+    "NAME": "Catalyze",
+    "DESCRIPTION": "Use an Energy Tonic and a Swift Tonic. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Use an Energy Potion and a Swift Tonic. NL Exhaust"
+  },
+  "chefmod:CausticBarrier": {
+    "NAME": "Caustic Barrier",
+    "DESCRIPTION": "Gain !B! Block. Add a *Distill to your hand."
+  },
+  "chefmod:ChainReaction": {
+    "NAME": "Chain Reaction",
+    "DESCRIPTION": "Each turn, shuffle a *Reaction into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Each turn, shuffle a *Reaction into your draw pile."
+  },
+  "chefmod:ChemicalRage": {
+    "NAME": "Chemical Rage",
+    "DESCRIPTION": "Each time you use a Potion, deal !M! Damage to all enemies."
+  },
+  "chefmod:ChemicalShroud": {
+    "NAME": "Chemical Shroud",
+    "DESCRIPTION": "Gain !B! Block. This costs 1 less for each potion used this combat."
+  },
+  "chefmod:ChemicalSpill": {
+    "NAME": "Chemical Spill",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Catalyze: Gain !B! block."
+  },
+  "chefmod:ChemicalWeapons": {
+    "NAME": "Chemical Weapons",
+    "DESCRIPTION": "Deal !D! Damage. Add a random *Tonic card to your hand."
+  },
+  "chefmod:ChokingPowder": {
+    "NAME": "Choking Powder",
+    "DESCRIPTION": "The target takes !M! damage each time you play a card this turn."
+  },
+  "chefmod:Collect": {
+    "NAME": "Collect",
+    "DESCRIPTION": "Collect a chefmod:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate. NL Collect a chefmod:Reagent from an enemy. Add a *Distill to your hand. NL Exhaust",
+    "EXTENDED_DESCRIPTION": [
+      "Collect: "
+    ]
+  },
+  "chefmod:Contingency": {
+    "NAME": "Contingency",
+    "DESCRIPTION": "Deal !D! Damage. Choose a card from your draw pile and move it to the top of your draw pile."
+  },
+  "chefmod:CrossReference": {
+    "NAME": "Cross-Reference",
+    "DESCRIPTION": "Move X skills from your draw pile to your hand. They cost 0 this turn.",
+    "UPGRADE_DESCRIPTION": "Move X + 1 skills from your draw pile to your hand. They cost 0 this turn."
+  },
+  "chefmod:DigDeep": {
+    "NAME": "Dig Deep",
+    "DESCRIPTION": "Draw !M! cards. If the last card played cost 0, gain [E]",
+    "EXTENDED_DESCRIPTION": [
+      "Dig Deeper"
+    ]
+  },
+  "chefmod:Discombobulate": {
+    "NAME": "Discombobulate",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Catalyze: Exhaust this card and remove !M! Strength from the target."
+  },
+  "chefmod:EmptyBottle": {
+    "NAME": "Empty Bottle",
+    "DESCRIPTION": "Deal !D! Damage. When you use a potion, move this from the discard pile to your hand."
+  },
+  "chefmod:EquivalentExchange": {
+    "NAME": "Equivalent Exchange",
+    "DESCRIPTION": "The first !M! cards played each turn are Exhausted and replaced with a random card."
+  },
+  "chefmod:ExothermicReaction": {
+    "NAME": "Exothermic Reaction",
+    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, another card costs 0 this turn."
+  },
+  "chefmod:Experimentation": {
+    "NAME": "Experimentation",
+    "DESCRIPTION": "Ethereal NL Rotate your rightmost chefmod:Reagent to the far left. If you have collected 3 *reagents, shuffle a *Prototype into your draw pile."
+  },
+  "chefmod:ExplosiveReaction": {
+    "NAME": "Explosive Reaction",
+    "DESCRIPTION": "Deal !D! Damage. Sacrifice your rightmost chefmod:Reagent to do double damage."
+  },
+  "chefmod:FlareUp": {
+    "NAME": "Flare Up",
+    "DESCRIPTION": "Deal !D! Damage. Deal !M! more Damage for each potion played this combat."
+  },
+  "chefmod:FlashPowder": {
+    "NAME": "Flash Powder",
+    "DESCRIPTION": "Deal !D! Damage to all enemies. NL chefmod:Catalyze: Draw !M! card.",
+    "EXTENDED_DESCRIPTION": [
+      "Flash-Bang Powder"
+    ]
+  },
+  "chefmod:FortifiedSerum": {
+    "NAME": "Fortified Serum",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "chefmod:Fuel": {
+    "NAME": "Fuel",
+    "DESCRIPTION": "Shuffle a *Reaction into your draw pile. NL Gain !B! Block."
+  },
+  "chefmod:FuelCell": {
+    "NAME": "Fuel Cell",
+    "DESCRIPTION": "Gain !B! Block. NL Gain [E] [E] NL Reduce energy gained from this card by 1 this combat."
+  },
+  "chefmod:HazardousMaterials": {
+    "NAME": "Hazardous Materials",
+    "DESCRIPTION": "Apply X chefmod:Toxic. NL chefmod:Catalyze: And X chefmod:Infection. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate. NL Apply X chefmod:Toxic. NL chefmod:Catalyze: And X chefmod:Infection. NL Exhaust"
+  },
+  "chefmod:HazardousWaste": {
+    "NAME": "Hazardous Waste",
+    "DESCRIPTION": "Apply !M! chefmod:Slimed. NL chefmod:Catalyze: Exhaust this card and permanently increase chefmod:Slimed by 1.",
+    "UPGRADE_DESCRIPTION": "Innate NL Apply !M! chefmod:Slimed. NL chefmod:Catalyze: Exhaust this card and permanently increase chefmod:Slimed by 1.",
+    "EXTENDED_DESCRIPTION": [
+      "Hazardous Sludge"
+    ]
+  },
+  "chefmod:Hoarder": {
+    "NAME": "Hoarder",
+    "DESCRIPTION": "Gain !M! additional chefmod:Reagent slot. Each turn, collect a random *Reagent.",
+    "UPGRADE_DESCRIPTION": "Gain !M! additional chefmod:Reagent slots. Each turn, collect a random *Reagent."
+  },
+  "chefmod:IronFist": {
+    "NAME": "Iron Fist",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Catalyze: Strength affects this !M! times.",
+    "EXTENDED_DESCRIPTION": [
+      "Steel Fist"
+    ]
+  },
+  "chefmod:IronFlesh": {
+    "NAME": "Iron Flesh",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !B! Block next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Steel Flesh"
+    ]
+  },
+  "chefmod:IronHeart": {
+    "NAME": "Iron Heart",
+    "DESCRIPTION": "When you play a card that costs 0, gain !M! Temporary Dexterity.",
+    "EXTENDED_DESCRIPTION": [
+      "Steel Heart"
+    ]
+  },
+  "chefmod:LabAccident": {
+    "NAME": "Lab Accident",
+    "DESCRIPTION": "chefmod:Catalyze: Deal !D! Damage."
+  },
+  "chefmod:LabJournal": {
+    "NAME": "Lab Journal",
+    "DESCRIPTION": "Ethereal NL Your *Prototype cards cost 0 this combat. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Your *Prototype cards cost 0 this combat. NL Exhaust"
+  },
+  "chefmod:LeftoverSpecimen": {
+    "NAME": "Leftover Specimen",
+    "DESCRIPTION": "Gain !B! Block. NL Choose 1 of 3 random chefmod:Reagents to collect. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block. NL Choose 1 of 3 random chefmod:Reagents to collect."
+  },
+  "chefmod:MicrobeSpray": {
+    "NAME": "Microbe Spray",
+    "DESCRIPTION": "Apply !M! Weak and !M! chefmod:Infection to all enemies. NL Exhaust"
+  },
+  "chefmod:OneTwoPunch": {
+    "NAME": "One-Two Punch",
+    "DESCRIPTION": "Deal !D! Damage. If the last card played cost 0, play this twice."
+  },
+  "chefmod:PortableLab": {
+    "NAME": "Portable Lab",
+    "DESCRIPTION": "Consume any leftover energy after each turn. When !M! energy is consumed, add a *Potion *Card to your hand."
+  },
+  "chefmod:PotentialEnergy": {
+    "NAME": "Potential Energy",
+    "DESCRIPTION": "Ethereal NL Whenever you gain Strength or Dexterity, gain !M! more.",
+    "UPGRADE_DESCRIPTION": "Whenever you gain Strength or Dexterity, gain !M! more."
+  },
+  "chefmod:PotionbrewerDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "chefmod:PotionbrewerStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! Damage."
+  },
+  "chefmod:PrivateReserves": {
+    "NAME": "Private Reserves",
+    "DESCRIPTION": "Each time you use a Potion, gain !M! block."
+  },
+  "chefmod:QuickStep": {
+    "NAME": "Quick Step",
+    "DESCRIPTION": "Gain !B! Block. If you've played less than !M! cards this turn, draw a card."
+  },
+  "chefmod:Refill": {
+    "NAME": "Refill",
+    "DESCRIPTION": "Gain !B! Block. Next turn, gain [E]."
+  },
+  "chefmod:RefinedProcess": {
+    "NAME": "Refined Process",
+    "DESCRIPTION": "Deal !D! Damage !M! times. NL chefmod:Catalyze: Permanently increase this card's damage by 1 and exhaust it."
+  },
+  "chefmod:ResearchResults": {
+    "NAME": "Research Results",
+    "DESCRIPTION": "For X turns, add a *Random *Potion card to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "For X turns, add a *Random *Potion card to your hand."
+  },
+  "chefmod:Shovel": {
+    "NAME": "Shovel",
+    "DESCRIPTION": "Deal !D! Damage. Shuffle a *Reagent card into your draw pile."
+  },
+  "chefmod:Smack": {
+    "NAME": "Smack",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Catalyze: Gain !M! [E]."
+  },
+  "chefmod:Smokescreen": {
+    "NAME": "Smokescreen",
+    "DESCRIPTION": "Gain !B! Block. NL chefmod:Catalyze: Draw a card."
+  },
+  "chefmod:Spark": {
+    "NAME": "Spark",
+    "DESCRIPTION": "Deal !D! Damage. Draw a *Reaction."
+  },
+  "chefmod:SpecialFormula": {
+    "NAME": "Special Formula",
+    "DESCRIPTION": "Choose 1 of !M! random potions to use. NL Exhaust"
+  },
+  "chefmod:TestFormula": {
+    "NAME": "Test Formula",
+    "DESCRIPTION": "Choose 1 of !M! random chefmod:Tonics to use immediately."
+  },
+  "chefmod:TestSubject": {
+    "NAME": "Test Subject",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Catalyze: Apply !M! chefmod:Infection. "
+  },
+  "chefmod:TheFinalStraw": {
+    "NAME": "The Final Straw",
+    "DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this turn.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to a random enemy for every 0-cost card used this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Damages !M! times)"
+    ]
+  },
+  "chefmod:TimeBomb": {
+    "NAME": "Time Bomb",
+    "DESCRIPTION": "Deal !D! Damage next turn."
+  },
+  "chefmod:Toxicity": {
+    "NAME": "Toxicity",
+    "DESCRIPTION": "Apply !M! chefmod:Toxic to an enemy."
+  },
+  "chefmod:Transmute": {
+    "NAME": "Transmute",
+    "DESCRIPTION": "Deal !D! Damage. NL Fatal: Choose 1 of 3 random potions to obtain. NL Exhaust"
+  },
+  "chefmod:TwoForOne": {
+    "NAME": "Two For One",
+    "DESCRIPTION": "Obtain another copy of the next Potion you use. NL Exhaust"
+  },
+  "chefmod:UnstableFormula": {
+    "NAME": "Unstable Formula",
+    "DESCRIPTION": "Deal !D! Damage. NL Next turn, deal !D! Damage."
+  },
+  "chefmod:VolatileSolution": {
+    "NAME": "Volatile Solution",
+    "DESCRIPTION": "Deal !D! Damage. No cards will trigger their chefmod:Catalyze effects this turn."
+  },
+  "chefmod:WizBang": {
+    "NAME": "Wiz Bang",
+    "DESCRIPTION": "Deal !D! Damage 2 times. NL chefmod:Catalyze: 3 times.",
+    "EXTENDED_DESCRIPTION": [
+      "Wiz Bang Boom"
+    ]
+  },
+  "chefmod:Prototype": {
+    "NAME": "Prototype Potion",
+    "DESCRIPTION": "Has various effects based on the Reagents collected."
+  },
+  "chefmod:Reaction": {
+    "NAME": "Reaction",
+    "DESCRIPTION": "Unplayable. NL When drawn, gain [E] and draw !M! cards. NL Exhaust"
+  },
+  "chefmod:Distill": {
+    "NAME": "Distill",
+    "DESCRIPTION": "Ethereal. NL Brew your rightmost chefmod:Reagent into a potion over 3 turns. NL Exhaust"
+  },
+  "chefmod:ChoosePotion": {
+    "NAME": "Potion",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Use",
+      "Obtain",
+      " a ",
+      " an ",
+      "Random Potion",
+      "Random Tonic",
+      "Unknown Potion",
+      "I can't use that now."
+    ]
+  },
+  "chefmod:ChooseReagent": {
+    "NAME": "Reagent",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      "Distill: ",
+      " NL Card Effect: "
+    ]
+  },
+  "chefmod:ReagentCard": {
+    "NAME": "Reagent",
+    "DESCRIPTION": "Choose 1 of 3 random chefmod:Reagents to collect. NL Exhaust"
+  }
+}

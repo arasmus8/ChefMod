@@ -1,0 +1,45 @@
+{
+  "chefmod:Lab": {
+    "NAME": "Potion Lab -- Override",
+    "DESCRIPTIONS": [
+      "You find yourself in your old ~Potion~ ~Laboratory.~ NL NL There are a few left over potions lying about, but you wonder if your prized possession is still secure. You check the seal on the door to its hidden compartment and verify that it's still secure."
+    ],
+    "OPTIONS": [
+      "[Open Secret Compartment] Lose all your potions, take your #gprized #gpossession."
+    ]
+  },
+  "chefmod:WomanInBlue": {
+    "NAME": "The Woman In Blue -- Override",
+    "DESCRIPTIONS": [
+      "From the darkness, an arm pulls you into a small shop. As your eyes adjust, you see a pale woman in sharp clothes gesturing towards a wall of potions. NL \"You!\" she exclaims. \"Never mind. Buy a potion. Now!\""
+    ]
+  },
+  "chefmod:JunkPileEvent": {
+    "NAME": "Junk Pile",
+    "DESCRIPTIONS": [
+      "Behind a collapsing tenement in ~The~ ~City,~ you come across an enormous pile of discarded #yjunk. NL NL It looks like garbage has been piled here for many years. You wonder if you could find any useful potion ingredients among the useless junk.",
+      "Digging through the ~Junk,~ you discover a few common ingredients, but you suspect that deeper in you will be able to find something rarer...",
+      "Deeper in the pile, you find some cast-off ~machine~ ~parts~ that could be useful, but you sense some powerful energy even deeper in...",
+      "At last, you find some rare ingredients - An #p~Enchanted~ #p~Book~ that could entrance an enemy, an old #r~Train~ #r~Ticket~ filled with dark energy, a #g~Treasure~ #g~Chest~ that uses gold against your foes, and a #y~Shining~ #y~Moth~ that empowers future attacks.",
+      "You turn around and leave with your find.",
+      "You turn around and leave."
+    ],
+    "OPTIONS": [
+      "[Dig for Reagents]",
+      "[Collect a Feather]",
+      "[Collect Silk]",
+      "[Collect a Tooth]",
+      "[Dig Deeper] #rLose #r",
+      " #rHP.",
+      "[Collect Steel]",
+      "[Collect Barb]",
+      "[Collect Bludgeon]",
+      "[Dig Deeper Still] #rLose #r",
+      "[Collect Storybook] Stuns Enemies.",
+      "[Collect Train Ticket] Damage based on floor number.",
+      "[Collect Treasure Chest] Damage foes based on gold.",
+      "[Collect Radiance] Stack additional damage on your next attack.",
+      "[Leave]"
+    ]
+  }
+}
