@@ -1,0 +1,33 @@
+package chefmod.cards.attacks;
+
+import chefmod.cards.AbstractChefCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import static chefmod.ChefMod.makeID;
+
+public class CayenneCloud extends AbstractChefCard {
+    public static String ID = makeID(CayenneCloud.class.getSimpleName());
+
+    public CayenneCloud() {
+        super(ID,
+                1,
+                CardType.ATTACK,
+                CardRarity.UNCOMMON,
+                CardTarget.ALL_ENEMY
+        );
+        baseDamage = damage = 14;
+        magicNumber = baseMagicNumber = 1;
+        upgradeDamageBy = -8;
+        upgradeMagicNumberBy = 2;
+        damages = true;
+        isMultiDamage = true;
+    }
+    @Override
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        for (int i = 0; i < magicNumber; i++) {
+            dealAoeDamage(AbstractGameAction.AttackEffect.FIRE);
+        }
+    }
+}
