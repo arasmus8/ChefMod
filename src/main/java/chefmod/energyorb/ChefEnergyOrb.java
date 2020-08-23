@@ -1,13 +1,15 @@
 package chefmod.energyorb;
 
 import basemod.abstracts.CustomEnergyOrb;
+import chefmod.ChefMod;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 public class ChefEnergyOrb extends CustomEnergyOrb {
-    private static final float ORB_SCALE = 0.85F;
+    private static final float ORB_SCALE = 0.85F * Settings.scale;
     private final Texture background;
     private static final Color whiteAlpha80 = new Color(1f, 1f, 1f, 0.8f);
 
@@ -40,6 +42,8 @@ public class ChefEnergyOrb extends CustomEnergyOrb {
                 128,
                 false,
                 false);
+
+        ChefMod.renderFrozenPile(sb);
     }
 
     @Override

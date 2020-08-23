@@ -17,10 +17,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import static chefmod.ChefMod.getModID;
-import static chefmod.ChefMod.makeCardPath;
+import static chefmod.ChefMod.*;
 
 public abstract class AbstractChefCard extends CustomCard {
 
@@ -71,6 +69,8 @@ public abstract class AbstractChefCard extends CustomCard {
         EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
         initializeTitle();
         initializeDescription();
+        setCorrectBannerImage();
+        setCorrectFrameImage();
         if (tagsList != null) {
             tags.addAll(tagsList);
         }
@@ -88,6 +88,26 @@ public abstract class AbstractChefCard extends CustomCard {
                     return makeCardPath("Power.png");
             }
         return img;
+    }
+
+    private void setCorrectBannerImage() {
+        if (rarity == CardRarity.RARE) {
+            setBannerTexture(makeImagePath("cardframe/rare_banner_512.png"), makeImagePath("cardframe/rare_banner_1024.png"));
+        } else if (rarity == CardRarity.UNCOMMON) {
+            setBannerTexture(makeImagePath("cardframe/uncommon_banner_512.png"), makeImagePath("cardframe/uncommon_banner_1024.png"));
+        } else {
+            setBannerTexture(makeImagePath("cardframe/common_banner_512.png"), makeImagePath("cardframe/common_banner_1024.png"));
+        }
+    }
+
+    private void setCorrectFrameImage() {
+        if (type == CardType.ATTACK) {
+            setPortraitTextures(makeImagePath("cardframe/attack_frame_512.png"), makeImagePath("cardframe/attack_frame_1024.png"));
+        } else if (type == CardType.POWER) {
+            setPortraitTextures(makeImagePath("cardframe/power_frame_512.png"), makeImagePath("cardframe/power_frame_1024.png"));
+        } else {
+            setPortraitTextures(makeImagePath("cardframe/skill_frame_512.png"), makeImagePath("cardframe/skill_frame_1024.png"));
+        }
     }
 
     @Override

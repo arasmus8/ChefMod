@@ -6,19 +6,24 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.relics.AbstractChefRelic;
+import chefmod.ui.FrozenPileButton;
 import chefmod.util.TextureLoader;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 @SpireInitializer
 public class ChefMod implements
@@ -27,10 +32,16 @@ public class ChefMod implements
         EditKeywordsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber,
-        PostInitializeSubscriber {
+        PostBattleSubscriber,
+        StartGameSubscriber,
+        PostInitializeSubscriber,
+        PostDungeonUpdateSubscriber {
     public static String IMAGE_PATH = "chefmodResources/images";
     private static String modID;
     private static String artifactID;
+
+    public static ArrayList<AbstractCard> frozenPile;
+    private static FrozenPileButton frozenPileButton;
 
     public static Color chefColor = new Color(237, 242, 244, 1); //TODO: Set this to your character's favorite color!
 
@@ -151,6 +162,30 @@ public class ChefMod implements
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
+        }
+    }
+
+    @Override
+    public void receiveStartGame() {
+        frozenPileButton = new FrozenPileButton();
+        frozenPile = new ArrayList<>();
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        frozenPile.clear();
+    }
+
+    public static void renderFrozenPile(SpriteBatch spriteBatch) {
+        if (frozenPileButton != null) {
+            frozenPileButton.render(spriteBatch);
+        }
+    }
+
+    @Override
+    public void receivePostDungeonUpdate() {
+        if (frozenPileButton != null) {
+            frozenPileButton.update();
         }
     }
 }
