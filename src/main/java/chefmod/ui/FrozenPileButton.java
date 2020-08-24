@@ -2,6 +2,7 @@ package chefmod.ui;
 
 import basemod.ClickableUIElement;
 import chefmod.ChefMod;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -46,15 +47,17 @@ public class FrozenPileButton extends ClickableUIElement {
         super.render(sb);
 
         if (ChefMod.frozenPile != null) {
-            String msg = Integer.toString(ChefMod.frozenPile.size());
-            gl.setText(FontHelper.eventBodyText, msg);
-            sb.setColor(Settings.TWO_THIRDS_TRANSPARENT_BLACK_COLOR);
-            sb.draw(ImageMaster.DECK_COUNT_CIRCLE, hitbox.cX - COUNT_CIRCLE_W / 2.0F, hitbox.cY - COUNT_CIRCLE_W / 2.0F, COUNT_CIRCLE_W, COUNT_CIRCLE_W);
-            FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX, hitbox.cY + 2.0F * Settings.scale, Settings.PURPLE_COLOR);
+            if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
+                String msg = Integer.toString(ChefMod.frozenPile.size());
+                gl.setText(FontHelper.eventBodyText, msg);
+                sb.setColor(Color.WHITE);
+                sb.draw(ImageMaster.DECK_COUNT_CIRCLE, hitbox.cX - COUNT_CIRCLE_W / 2.0F, hitbox.cY - COUNT_CIRCLE_W / 2.0F, COUNT_CIRCLE_W, COUNT_CIRCLE_W);
+                FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX, hitbox.cY + 2.0F * Settings.scale);
 
-            hitbox.render(sb);
-            if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
-                TipHelper.renderGenericTip(hitbox.cX, hitbox.cY + 150.0F * Settings.scale, "Frozen Pile", "This is the Frozen Pile");
+                hitbox.render(sb);
+                if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
+                    TipHelper.renderGenericTip(hitbox.cX, hitbox.cY + 150.0F * Settings.scale, "Frozen Pile", "This is the Frozen Pile");
+                }
             }
         }
     }

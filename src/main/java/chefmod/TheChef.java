@@ -3,6 +3,7 @@ package chefmod;
 import basemod.abstracts.CustomPlayer;
 import chefmod.cards.skills.Defend;
 import chefmod.cards.attacks.Strike;
+import chefmod.cards.skills.QuickThaw;
 import chefmod.energyorb.ChefEnergyOrb;
 import chefmod.relics.TrustyPot;
 import com.badlogic.gdx.graphics.Color;
@@ -67,6 +68,7 @@ public class TheChef extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(QuickThaw.ID);
         return retVal;
     }
 

@@ -10,7 +10,11 @@
   },
   "chefmod:Chop": {
     "NAME": "Chop",
-    "DESCRIPTION": "Deal !D! Damage NL If played while *Frozen, deal !D! Damage twice."
+    "DESCRIPTION": "Deal !D! Damage NL If played while chefmod:Frozen, deal !D! Damage twice."
+  },
+  "chefmod:ColdSteel": {
+    "NAME": "Cold Steel",
+    "DESCRIPTION": "Deal !D! Damage NL When chefmod:Frozen, costs 1 less [E] this combat."
   },
   "chefmod:CuttingBoard": {
     "NAME": "Cutting Board",
@@ -28,6 +32,11 @@
   "chefmod:PrepCook": {
     "NAME": "Prep Cook",
     "DESCRIPTION": "Retain !M! card each turn."
+  },
+  "chefmod:QuickThaw": {
+    "NAME": "Quick Thaw",
+    "DESCRIPTION": "chefmod:No-Freeze NL Play the oldest chefmod:Frozen card. chefmod:Freeze 1.",
+    "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Play the !M! oldest chefmod:Frozen cards. chefmod:Freeze !M!."
   },
   "chefmod:RisingDough": {
     "NAME": "Rising Dough",

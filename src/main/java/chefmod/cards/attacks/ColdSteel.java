@@ -7,25 +7,28 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
-public class Chop extends AbstractChefCard {
-    public static String ID = makeID(Chop.class.getSimpleName());
+public class ColdSteel extends AbstractChefCard {
+    public static String ID = makeID(ColdSteel.class.getSimpleName());
 
-    public Chop() {
+    public ColdSteel() {
         super(ID,
-                1,
+                2,
                 CardType.ATTACK,
                 CardRarity.COMMON,
                 CardTarget.ENEMY
         );
-        baseDamage = damage = 8;
+        baseDamage = damage = 17;
         upgradeDamageBy = 3;
         damages = true;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dealDamage(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        if (frozen) {
-            dealDamage(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
-        }
+        dealDamage(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+    }
+
+    @Override
+    public void triggerWhenFrozen() {
+        updateCost(-1);
     }
 }

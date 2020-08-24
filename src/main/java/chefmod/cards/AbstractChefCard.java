@@ -22,6 +22,9 @@ import static chefmod.ChefMod.*;
 
 public abstract class AbstractChefCard extends CustomCard {
 
+    public boolean frozen = false;
+    public boolean nofreeze = false;
+
     protected final CardStrings cardStrings;
     protected final String NAME;
     protected final String DESCRIPTION;
@@ -177,7 +180,7 @@ public abstract class AbstractChefCard extends CustomCard {
         topDeck(c, 1);
     }
 
-    public ArrayList<AbstractMonster> monsterList() {
+    public static ArrayList<AbstractMonster> monsterList() {
         ArrayList<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
         monsters.removeIf(AbstractCreature::isDeadOrEscaped);
         return monsters;
@@ -191,7 +194,10 @@ public abstract class AbstractChefCard extends CustomCard {
         addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
     }
 
+    public void triggerWhenFrozen() {}
+
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    public void triggerWhenDrawn() {
+        frozen = false;
     }
 }

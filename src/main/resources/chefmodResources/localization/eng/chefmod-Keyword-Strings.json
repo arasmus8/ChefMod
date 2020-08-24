@@ -1,56 +1,23 @@
 [
   {
-    "PROPER_NAME": "Catalyze",
+    "PROPER_NAME": "Freeze",
     "NAMES": [
-      "catalyze",
-      "catalyze:"
+      "freeze"
     ],
-    "DESCRIPTION": "An additional effect that is triggered if you've played a potion this turn."
+    "DESCRIPTION": "Move the specified number of cards from your draw pile to the frozen pile."
   },
   {
+    "PROPER_NAME": "Frozen",
     "NAMES": [
-      "disease"
+      "frozen"
     ],
-    "DESCRIPTION": "Reduces Damage dealt by half, and spreads Infection to all enemies."
+    "DESCRIPTION": "Frozen cards are kept in a separate pile, and can only be played or drawn by using cards that specifically interact with #yFrozen cards."
   },
   {
+    "PROPER_NAME": "No-Freeze",
     "NAMES": [
-      "infection"
+      "no-freeze"
     ],
-    "DESCRIPTION": "Doubles each turn. When infection is 10 or higher, the enemy's Damage is reduced by half for a turn."
-  },
-  {
-    "NAMES": [
-      "tonic",
-      "tonics",
-      "tonic:",
-      "tonic."
-    ],
-    "DESCRIPTION": "A smaller version of a regular potion that can't be found in shops or rewards."
-  },
-  {
-    "PROPER_NAME": "Reagent",
-    "NAMES": [
-      "reagent",
-      "reagents",
-      "reagent:",
-      "reagent.",
-      "reagent,"
-    ],
-    "DESCRIPTION": "A potent ingredient collected from one of the Spire's monsters. Can be brewed into a potion, or 3 can be combined into a unique card."
-  },
-  {
-    "PROPER_NAME": "Slimed",
-    "NAMES": [
-      "slimed"
-    ],
-    "DESCRIPTION": "Slimed enemies take 1 additional damage from each attack for each stack of Slimed."
-  },
-  {
-    "PROPER_NAME": "Toxic",
-    "NAMES": [
-      "toxic"
-    ],
-    "DESCRIPTION": "Lose 20% of current HP at the start of turn."
+    "DESCRIPTION": "This card cannot be #yFrozen."
   }
 ]

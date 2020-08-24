@@ -16,6 +16,7 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -40,7 +41,8 @@ public class ChefMod implements
     private static String modID;
     private static String artifactID;
 
-    public static ArrayList<AbstractCard> frozenPile;
+    public static CardGroup frozenPile;
+    public static ArrayList<AbstractCard> cardsToFreeze;
     private static FrozenPileButton frozenPileButton;
 
     public static Color chefColor = new Color(237, 242, 244, 1); //TODO: Set this to your character's favorite color!
@@ -168,12 +170,14 @@ public class ChefMod implements
     @Override
     public void receiveStartGame() {
         frozenPileButton = new FrozenPileButton();
-        frozenPile = new ArrayList<>();
+        frozenPile = new CardGroup(CardGroup.CardGroupType.DRAW_PILE);
+        cardsToFreeze = new ArrayList<>();
     }
 
     @Override
     public void receivePostBattle(AbstractRoom abstractRoom) {
         frozenPile.clear();
+        cardsToFreeze.clear();
     }
 
     public static void renderFrozenPile(SpriteBatch spriteBatch) {
