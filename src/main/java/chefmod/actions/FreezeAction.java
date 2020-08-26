@@ -2,6 +2,7 @@ package chefmod.actions;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractChefCard;
+import chefmod.vfx.FrozenCardVfx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -61,11 +62,12 @@ public class FreezeAction extends AbstractGameAction {
 
             CardGroup drawPile = AbstractDungeon.player.drawPile;
             if (card != null) {
+                AbstractDungeon.effectList.add(new FrozenCardVfx(card));
                 Optional<CardGroup> currentGroup = findCurrentGroup(card);
                 if (currentGroup.isPresent()) {
                     ChefMod.cardsToFreeze.add(card);
                     currentGroup.get().moveToBottomOfDeck(card);
-                    return;
+                    ChefMod.cardsToFreeze.clear();
                 } else {
                     AbstractCard newCard = card.makeSameInstanceOf();
                     if (newCard instanceof AbstractChefCard) {
@@ -82,15 +84,16 @@ public class FreezeAction extends AbstractGameAction {
                 eligibleCards.stream()
                         .limit(amount)
                         .forEachOrdered(ChefMod.cardsToFreeze::add);
+                ChefMod.cardsToFreeze.forEach(c -> {
+                    if (c instanceof AbstractChefCard) {
+                        ((AbstractChefCard) c).frozen = true;
+                        ((AbstractChefCard) c).triggerWhenFrozen();
+                    }
+                    drawPile.moveToBottomOfDeck(c);
+                    AbstractDungeon.effectList.add(new FrozenCardVfx(c));
+                });
+                ChefMod.cardsToFreeze.clear();
             }
-            ChefMod.cardsToFreeze.forEach(c -> {
-                if (c instanceof AbstractChefCard) {
-                    ((AbstractChefCard) c).frozen = true;
-                    ((AbstractChefCard) c).triggerWhenFrozen();
-                }
-                drawPile.moveToBottomOfDeck(c);
-            });
-            ChefMod.cardsToFreeze.clear();
         }
     }
 }
