@@ -2,7 +2,7 @@ package chefmod.relics;
 
 import basemod.helpers.CardModifierManager;
 import chefmod.TheChef;
-import chefmod.cardmods.TrustyPotBlock;
+import chefmod.cardmods.BonusBlockCardmod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import static chefmod.ChefMod.makeID;
@@ -25,7 +25,7 @@ public class TrustyPot extends AbstractChefRelic {
     public void onCardDraw(AbstractCard drawnCard) {
         if (!activated) {
             activated = true;
-            CardModifierManager.addModifier(drawnCard, new TrustyPotBlock(BLOCK_AMOUNT));
+            CardModifierManager.addModifier(drawnCard, new BonusBlockCardmod(BLOCK_AMOUNT));
         }
     }
 }

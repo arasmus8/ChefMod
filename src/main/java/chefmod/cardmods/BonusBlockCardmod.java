@@ -1,7 +1,6 @@
 package chefmod.cardmods;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,13 +12,11 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import javax.xml.soap.Text;
-
 import static chefmod.ChefMod.makeID;
 
-public class TrustyPotBlock extends AbstractChefCardmod {
-    public TrustyPotBlock (int blockAmount) {
-        ID = makeID(TrustyPotBlock.class.getSimpleName());
+public class BonusBlockCardmod extends AbstractChefCardmod {
+    public BonusBlockCardmod(int blockAmount) {
+        ID = makeID(BonusBlockCardmod.class.getSimpleName());
         block = blockAmount;
     }
 
