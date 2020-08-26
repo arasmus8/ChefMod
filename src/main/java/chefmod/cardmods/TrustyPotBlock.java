@@ -1,6 +1,7 @@
 package chefmod.cardmods;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+
+import javax.xml.soap.Text;
 
 import static chefmod.ChefMod.makeID;
 
@@ -32,39 +35,44 @@ public class TrustyPotBlock extends AbstractChefCardmod {
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        Vector2 vec = new Vector2(0, 0);
+        Texture shieldImg = ImageMaster.BLOCK_ICON;
+        float imgW = shieldImg.getWidth();
+        float imgH = shieldImg.getHeight();
+        Vector2 vec = new Vector2(-140, 130);
         vec.scl(card.drawScale * Settings.scale);
         vec.rotate(card.angle);
+
         Color color = Color.WHITE.cpy();
         color.a = card.transparency;
         sb.setColor(color);
-        Texture hpImg = ImageMaster.BLOCK_ICON;
-        sb.draw(hpImg,
-                card.hb.cX + vec.x - hpImg.getWidth() / 2f,
-                card.hb.cY + vec.y - hpImg.getHeight() / 2f,
-                (float) hpImg.getWidth() / 2.0F,
-                (float) hpImg.getHeight() / 2.0F,
-                (float) hpImg.getWidth(),
-                (float) hpImg.getHeight(),
+
+        sb.draw(shieldImg,
+                card.current_x + vec.x - imgW / 2f,
+                card.current_y + vec.y - imgH / 2f,
+                imgW / 2.0F,
+                imgH / 2.0F,
+                imgW,
+                imgH,
                 card.drawScale * 1.25f,
                 card.drawScale * 1.25f,
                 card.angle,
                 0,
                 0,
-                hpImg.getWidth(),
-                hpImg.getHeight(),
+                (int)imgW,
+                (int)imgH,
                 false,
                 false);
         String text = "+" + block;
         FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale * 0.5f);
+
         BitmapFont font = FontHelper.cardEnergyFont_L;
         FontHelper.renderRotatedText(sb,
                 font,
                 text,
-                card.hb.cX,
-                card.hb.cY,
-                vec.x,
-                vec.y,
+                card.current_x + vec.x,
+                card.current_y + vec.y,
+                0,
+                0,
                 card.angle,
                 false,
                 color);
