@@ -9,6 +9,12 @@
       " and #b"
     ]
   },
+  "chefmod:HungerPower": {
+    "NAME": "Hunger",
+    "DESCRIPTIONS": [
+      "This monster deals half damage, and takes half damage from attacks."
+    ]
+  },
   "chefmod:RetainRandomCardPower": {
     "NAME": "Retain random card.",
     "DESCRIPTIONS": [

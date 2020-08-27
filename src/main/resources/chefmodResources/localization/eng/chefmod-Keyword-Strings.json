@@ -4,7 +4,7 @@
     "NAMES": [
       "freeze"
     ],
-    "DESCRIPTION": "Move the specified number of cards from your draw pile to the frozen pile."
+    "DESCRIPTION": "Move the specified number of cards from the top of your draw pile to the frozen pile."
   },
   {
     "PROPER_NAME": "Frozen",
@@ -14,11 +14,25 @@
     "DESCRIPTION": "Frozen cards are kept in a separate pile, and can only be played or drawn by using cards that specifically interact with #yFrozen cards."
   },
   {
+    "PROPER_NAME": "Hunger",
+    "NAMES": [
+      "hunger"
+    ],
+    "DESCRIPTION": "Enemies inflicted with #yHunger deal half damage and take half damage from attacks for 1 turn. If an enemy already has #yHunger, applying it again will deal damage."
+  },
+  {
     "PROPER_NAME": "No-Freeze",
     "NAMES": [
       "no-freeze"
     ],
     "DESCRIPTION": "This card cannot be #yFrozen."
+  },
+  {
+    "PROPER_NAME": "Satiated",
+    "NAMES": [
+      "satiated"
+    ],
+    "DESCRIPTION": "Enemies inflicted with #ySatiated deal double damage and take double damage from attacks for 1 turn. If an enemy already has #ySatiated, applying it again will reduce it's #yStrength."
   },
   {
     "PROPER_NAME": "Prepped",

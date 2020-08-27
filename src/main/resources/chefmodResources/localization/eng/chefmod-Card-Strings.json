@@ -46,7 +46,8 @@
   },
   "chefmod:SearedScallops": {
     "NAME": "Seared Scallops",
-    "DESCRIPTION": "Inflict !M! Weak on ALL enemies."
+    "DESCRIPTION": "Inflict chefmod:Hunger on ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Inflict chefmod:Hunger on ALL enemies. Gain !M! Dexterity this turn."
   },
   "chefmod:SliceAndDice": {
     "NAME": "Slice & Dice",
