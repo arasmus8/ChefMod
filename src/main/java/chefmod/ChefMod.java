@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -152,6 +153,8 @@ public class ChefMod implements
         BaseMod.loadCustomStringsFile(RelicStrings.class, getModID() + "Resources/localization/eng/chefmod-Relic-Strings.json");
 
         BaseMod.loadCustomStringsFile(CharacterStrings.class, getModID() + "Resources/localization/eng/chefmod-Character-Strings.json");
+
+        BaseMod.loadCustomStringsFile(PowerStrings.class, getModID() + "Resources/localization/eng/chefmod-Power-Strings.json");
     }
 
     @Override

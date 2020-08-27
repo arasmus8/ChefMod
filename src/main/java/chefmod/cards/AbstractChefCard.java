@@ -31,8 +31,8 @@ public abstract class AbstractChefCard extends CustomCard {
     protected final String UPGRADE_DESCRIPTION;
     protected final String[] EXTENDED_DESCRIPTION;
 
-    protected boolean damages = false;
-    protected boolean blocks = false;
+    public boolean damages = false;
+    public boolean blocks = false;
     protected Integer upgradeDamageBy;
     protected Integer upgradeBlockBy;
     protected Integer upgradeMagicNumberBy;

@@ -27,11 +27,12 @@
   },
   "chefmod:Mince": {
     "NAME": "Mince",
-    "DESCRIPTION": "Deal !D! Damage to a random enemy !M! times."
+    "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."
   },
   "chefmod:PrepCook": {
     "NAME": "Prep Cook",
-    "DESCRIPTION": "Retain !M! card each turn."
+    "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! the next time you use it.",
+    "UPGRADE_DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! this combat."
   },
   "chefmod:QuickThaw": {
     "NAME": "Quick Thaw",

@@ -17,7 +17,7 @@ public class QuickThaw extends AbstractChefCard {
 
     public QuickThaw() {
         super(ID,
-                1,
+                0,
                 CardType.SKILL,
                 CardRarity.BASIC,
                 CardTarget.SELF,

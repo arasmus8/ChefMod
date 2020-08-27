@@ -1,6 +1,8 @@
 package chefmod.cards.powers;
 
 import chefmod.cards.AbstractChefCard;
+import chefmod.powers.PrepCookPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RetainCardPower;
@@ -12,17 +14,16 @@ public class PrepCook extends AbstractChefCard {
 
     public PrepCook() {
         super(ID,
-                1,
+                3,
                 CardType.POWER,
                 CardRarity.RARE,
                 CardTarget.SELF
         );
-        magicNumber = baseMagicNumber = 1;
-        upgradeCostTo = 0;
+        magicNumber = baseMagicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new RetainCardPower(p, magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new PrepCookPower(p, magicNumber, upgraded), upgraded ? -1 * magicNumber : magicNumber));
     }
 }

@@ -3,6 +3,7 @@ package chefmod.cards.attacks;
 import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
+import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -21,13 +22,19 @@ public class Mince extends AbstractChefCard {
                 CardRarity.RARE,
                 CardTarget.ALL_ENEMY
         );
-        baseDamage = damage = 10;
+        baseDamage = damage = 7;
         magicNumber = baseMagicNumber = 4;
         upgradeMagicNumberBy = 1;
         damages = true;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new SwordBoomerangAction(makeDamageInfo(), magicNumber));
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        addToBot(new DrawPileToHandAction(1, CardType.SKILL));
     }
 }
