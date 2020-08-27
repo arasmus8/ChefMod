@@ -1,4 +1,8 @@
 {
+  "chefmod:AllYouCanEat": {
+    "NAME": "All-you-can-eat",
+    "DESCRIPTION": "Apply chefmod:Satiated for every Attack card in your hand."
+  },
   "chefmod:BeetrootCarpaccio": {
     "NAME": "Beetroot Carpaccio",
     "DESCRIPTION": "Gain !B! Block. Retain !M! card this turn."

@@ -31,5 +31,11 @@
       "At the end of this turn, you may retain up to #b",
       " cards."
     ]
+  },
+  "chefmod:SatiatedPower": {
+    "NAME": "Satiated",
+    "DESCRIPTIONS": [
+      "This monster deals double damage, and takes double damage from attacks."
+    ]
   }
 }

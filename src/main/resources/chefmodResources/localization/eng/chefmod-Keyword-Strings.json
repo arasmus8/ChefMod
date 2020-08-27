@@ -18,7 +18,7 @@
     "NAMES": [
       "hunger"
     ],
-    "DESCRIPTION": "Enemies inflicted with #yHunger deal half damage and take half damage from attacks for 1 turn. If an enemy already has #yHunger, applying it again will deal damage."
+    "DESCRIPTION": "Enemies inflicted with #yHunger deal half damage and take half damage from attacks for 1 turn. If an enemy already has #yHunger, applying it again will deal 10 damage."
   },
   {
     "PROPER_NAME": "No-Freeze",
@@ -32,7 +32,7 @@
     "NAMES": [
       "satiated"
     ],
-    "DESCRIPTION": "Enemies inflicted with #ySatiated deal double damage and take double damage from attacks for 1 turn. If an enemy already has #ySatiated, applying it again will reduce it's #yStrength."
+    "DESCRIPTION": "Enemies inflicted with #ySatiated deal double damage and take double damage from attacks for 1 turn. If an enemy already has #ySatiated, applying it again will reduce its #yStrength by 1."
   },
   {
     "PROPER_NAME": "Prepped",

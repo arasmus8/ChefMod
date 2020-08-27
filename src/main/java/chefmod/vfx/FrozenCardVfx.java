@@ -55,7 +55,7 @@ public class FrozenCardVfx extends AbstractGameEffect {
 
         if (duration < SOUND_AT && !soundPlayed) {
             soundPlayed = true;
-            CardCrawlGame.sound.play("ORB_FROST_CHANNEL", 0.8F);
+            CardCrawlGame.sound.play("ORB_FROST_CHANNEL");
         }
 
         if (duration < ANIM_START_AT && duration > ANIM_START_AT - ANIM_DUR) {
@@ -92,13 +92,14 @@ public class FrozenCardVfx extends AbstractGameEffect {
                     c.angle,
                     0,
                     0,
-                    (int)texW,
-                    (int)texH,
+                    (int) texW,
+                    (int) texH,
                     false,
                     false);
         }
     }
 
     @Override
-    public void dispose() { }
+    public void dispose() {
+    }
 }

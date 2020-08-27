@@ -1,8 +1,8 @@
 package chefmod;
 
 import basemod.abstracts.CustomPlayer;
-import chefmod.cards.skills.Defend;
 import chefmod.cards.attacks.Strike;
+import chefmod.cards.skills.Defend;
 import chefmod.cards.skills.QuickThaw;
 import chefmod.energyorb.ChefEnergyOrb;
 import chefmod.relics.TrustyPot;
@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.relics.PrismaticShard;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
@@ -75,7 +74,6 @@ public class TheChef extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         retVal.add(TrustyPot.ID);
-        retVal.add(PrismaticShard.ID);
         return retVal;
     }
 
@@ -119,8 +117,7 @@ public class TheChef extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return null;
-        //TODO: Change this to your character's special starting card.
+        return new QuickThaw();
     }
 
     @Override
