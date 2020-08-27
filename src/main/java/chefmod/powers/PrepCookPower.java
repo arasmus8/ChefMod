@@ -56,6 +56,7 @@ public class PrepCookPower extends TwoAmountPower {
             desc.append(DESCRIPTIONS[1]);
             desc.append(DESCRIPTIONS[2]);
         }
+        desc.append(".");
         description = desc.toString();
     }
 

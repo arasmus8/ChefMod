@@ -4,9 +4,17 @@
     "DESCRIPTIONS": [
       "Whenever you retain a card, it does #b",
       " more Block and/or Damage",
-      " the next time you use it.",
-      " this combat.",
+      " the next time you use it",
+      " this combat",
       " and #b"
+    ]
+  },
+  "chefmod:RetainThisTurnPower": {
+    "NAME": "Retain cards this turn.",
+    "DESCRIPTIONS": [
+      "At the end of this turn, you may retain #b1 card.",
+      "At the end of this turn, you may retain up to #b",
+      " cards."
     ]
   }
 }

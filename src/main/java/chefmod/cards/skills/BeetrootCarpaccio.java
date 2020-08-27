@@ -1,6 +1,7 @@
 package chefmod.cards.skills;
 
 import chefmod.cards.AbstractChefCard;
+import chefmod.powers.RetainThisTurnPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
@@ -26,6 +27,6 @@ public class BeetrootCarpaccio extends AbstractChefCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         gainBlock();
-        applyToSelf(new EquilibriumPower(p, magicNumber));
+        applyToSelf(new RetainThisTurnPower(p, magicNumber));
     }
 }
