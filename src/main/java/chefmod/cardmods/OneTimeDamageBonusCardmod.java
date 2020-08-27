@@ -1,5 +1,6 @@
 package chefmod.cardmods;
 
+import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -24,6 +25,11 @@ public class OneTimeDamageBonusCardmod extends AbstractChefCardmod {
         } else {
             CardModifierManager.addModifier(card, new OneTimeBlockBonusCardmod(damageAmount));
         }
+    }
+
+    @Override
+    public AbstractCardModifier makeCopy() {
+        return new OneTimeDamageBonusCardmod(damage);
     }
 
     @Override

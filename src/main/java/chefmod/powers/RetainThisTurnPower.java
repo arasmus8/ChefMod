@@ -21,13 +21,14 @@ public class RetainThisTurnPower extends AbstractPower {
 
     public RetainThisTurnPower(AbstractCreature owner, int numCards) {
         name = NAME;
-        ID = "Retain Cards";
+        ID = POWER_ID;
         this.owner = owner;
         amount = numCards;
         priority = 3;
+        isTurnBased = true;
         updateDescription();
         loadRegion("retain");
-    }// 23
+    }
 
     public void updateDescription() {
         if (amount == 1) {
@@ -36,7 +37,7 @@ public class RetainThisTurnPower extends AbstractPower {
             description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
         }
 
-    }// 32
+    }
 
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer &&

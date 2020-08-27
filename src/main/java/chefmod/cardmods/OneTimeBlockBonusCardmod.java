@@ -1,5 +1,6 @@
 package chefmod.cardmods;
 
+import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -32,6 +33,11 @@ public class OneTimeBlockBonusCardmod extends AbstractChefCardmod {
         } else {
             CardModifierManager.addModifier(card, new OneTimeBlockBonusCardmod(blockAmount));
         }
+    }
+
+    @Override
+    public AbstractCardModifier makeCopy() {
+        return new OneTimeBlockBonusCardmod(block);
     }
 
     @Override

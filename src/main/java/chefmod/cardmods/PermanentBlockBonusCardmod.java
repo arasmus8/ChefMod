@@ -1,5 +1,6 @@
 package chefmod.cardmods;
 
+import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -22,6 +23,11 @@ public class PermanentBlockBonusCardmod extends AbstractChefCardmod {
         } else {
             CardModifierManager.addModifier(card, new PermanentBlockBonusCardmod(blockAmount));
         }
+    }
+
+    @Override
+    public AbstractCardModifier makeCopy() {
+        return new PermanentBlockBonusCardmod(block);
     }
 
     @Override

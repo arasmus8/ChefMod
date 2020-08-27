@@ -18,8 +18,8 @@
   },
   "chefmod:CuttingBoard": {
     "NAME": "Cutting Board",
-    "DESCRIPTION": "Whenever you Retain a skill, it blocks for !M! more when used next.",
-    "UPGRADE_DESCRIPTION": "Whenever you Retain a skill, it blocks for !M! more this combat."
+    "DESCRIPTION": "Retain a random card each turn.",
+    "UPGRADE_DESCRIPTION": "Retain a random card each turn, prioritizing cards with chefmod:Prepped effects."
   },
   "chefmod:Defend": {
     "NAME": "Defend",
@@ -47,6 +47,10 @@
   "chefmod:SearedScallops": {
     "NAME": "Seared Scallops",
     "DESCRIPTION": "Inflict !M! Weak on ALL enemies."
+  },
+  "chefmod:SliceAndDice": {
+    "NAME": "Slice & Dice",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Deal !D! Damage twice."
   },
   "chefmod:Strike": {
     "NAME": "Strike",

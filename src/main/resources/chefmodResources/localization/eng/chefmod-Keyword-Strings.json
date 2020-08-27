@@ -19,5 +19,12 @@
       "no-freeze"
     ],
     "DESCRIPTION": "This card cannot be #yFrozen."
+  },
+  {
+    "PROPER_NAME": "Prepped",
+    "NAMES": [
+      "prepped"
+    ],
+    "DESCRIPTION": "Has additional effects if played from the leftmost spot in your hand."
   }
 ]

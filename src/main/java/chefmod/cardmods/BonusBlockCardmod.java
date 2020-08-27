@@ -1,5 +1,6 @@
 package chefmod.cardmods;
 
+import basemod.abstracts.AbstractCardModifier;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -28,6 +29,11 @@ public class BonusBlockCardmod extends AbstractChefCardmod {
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
             gainBlock();
+    }
+
+    @Override
+    public AbstractCardModifier makeCopy() {
+        return new BonusBlockCardmod(block);
     }
 
     @Override

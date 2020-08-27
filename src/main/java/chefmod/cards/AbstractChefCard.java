@@ -6,7 +6,9 @@ import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,6 +34,7 @@ public abstract class AbstractChefCard extends CustomCard {
 
     public boolean damages = false;
     public boolean blocks = false;
+    public boolean hasPreppedActions = false;
     protected Integer upgradeDamageBy;
     protected Integer upgradeBlockBy;
     protected Integer upgradeMagicNumberBy;
@@ -133,6 +136,23 @@ public abstract class AbstractChefCard extends CustomCard {
             }
             initializeDescription();
         }
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (hasPreppedActions) {
+            if (isPrepped()) {
+                glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR;
+            } else {
+                glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
+            }
+        }
+    }
+
+    protected boolean isPrepped() {
+        AbstractPlayer p = AbstractDungeon.player;
+        CardGroup hand = p.hand;
+        return this == hand.getBottomCard();
     }
 
     protected DamageInfo makeDamageInfo() {

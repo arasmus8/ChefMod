@@ -9,6 +9,15 @@
       " and #b"
     ]
   },
+  "chefmod:RetainRandomCardPower": {
+    "NAME": "Retain random card.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, retain #b",
+      " random card",
+      " random cards",
+      ", prioritizing cards with #yPrepped effects."
+    ]
+  },
   "chefmod:RetainThisTurnPower": {
     "NAME": "Retain cards this turn.",
     "DESCRIPTIONS": [

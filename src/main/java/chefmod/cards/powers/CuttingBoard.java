@@ -1,6 +1,7 @@
 package chefmod.cards.powers;
 
 import chefmod.cards.AbstractChefCard;
+import chefmod.powers.RetainRandomCardPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
@@ -21,11 +22,12 @@ public class CuttingBoard extends AbstractChefCard {
                 CardTarget.SELF
         );
         magicNumber = baseMagicNumber = 1;
-        upgradeMagicNumberBy = 1;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToSelf(new DexterityPower(p, magicNumber));
+        if (!RetainRandomCardPower.stackPower(magicNumber, upgraded)) {
+            applyToSelf(new RetainRandomCardPower(p, magicNumber, upgraded));
+        }
     }
 }
