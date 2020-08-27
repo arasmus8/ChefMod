@@ -16,7 +16,7 @@ import static chefmod.ChefMod.makeImagePath;
 
 public class FrozenCardVfx extends AbstractGameEffect {
     private static final float EFFECT_DUR = 1.0F;
-    private static final float ANIM_DUR = 0.5F;
+    private static final float ANIM_DUR = 0.25F;
     private static final float ANIM_START_AT = 0.75F;
     private static final float SOUND_AT = 0.25F;
     private final AbstractCard c;
