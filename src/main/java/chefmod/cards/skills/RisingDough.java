@@ -2,6 +2,7 @@ package chefmod.cards.skills;
 
 import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
@@ -13,18 +14,27 @@ public class RisingDough extends AbstractChefCard {
 
     public RisingDough() {
         super(ID,
-                1,
+                0,
                 CardType.SKILL,
                 CardRarity.RARE,
                 CardTarget.SELF
         );
         magicNumber = baseMagicNumber = 3;
         upgradeMagicNumberBy = 2;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DrawCardAction(p, magicNumber));
-        applyToSelf(new EquilibriumPower(p, 1));
+        addToBot(new PutOnDeckAction(p, p, 1, false));
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            exhaust = false;
+        }
+        super.upgrade();
     }
 }

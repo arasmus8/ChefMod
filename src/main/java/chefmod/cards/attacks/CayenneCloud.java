@@ -17,9 +17,9 @@ public class CayenneCloud extends AbstractChefCard {
                 CardRarity.UNCOMMON,
                 CardTarget.ALL_ENEMY
         );
-        baseDamage = damage = 14;
+        baseDamage = damage = 9;
         magicNumber = baseMagicNumber = 1;
-        upgradeDamageBy = -8;
+        upgradeDamageBy = -5;
         upgradeMagicNumberBy = 2;
         damages = true;
         isMultiDamage = true;

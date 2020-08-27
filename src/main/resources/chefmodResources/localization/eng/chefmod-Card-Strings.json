@@ -41,7 +41,8 @@
   },
   "chefmod:RisingDough": {
     "NAME": "Rising Dough",
-    "DESCRIPTION": "Draw !M! cards. Retain a card this turn."
+    "DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile. NL Exhuast",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile."
   },
   "chefmod:SearedScallops": {
     "NAME": "Seared Scallops",
