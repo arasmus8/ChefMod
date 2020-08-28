@@ -69,7 +69,7 @@ public class FrozenPileButton extends ClickableUIElement {
     public void render(SpriteBatch sb) {
         super.render(sb);
 
-        if (ChefMod.frozenPile != null) {
+        if (ChefMod.frozenPile != null && ChefMod.frozenPile.size() > 0) {
             if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
                 snowParticleManager.render(sb, hitbox.cX, hitbox.cY);
                 sb.setColor(Color.WHITE);

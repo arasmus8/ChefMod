@@ -1,7 +1,7 @@
 {
-  "chefmod:BottomlessFlaskAction": {
+  "chefmod:FrozenPileViewScreen": {
     "TEXT": [
-      "Select a card to add to your deck:"
+      "These are your Frozen cards, shown in order."
     ]
   }
 }
