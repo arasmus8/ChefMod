@@ -69,21 +69,34 @@ public class FrozenPileButton extends ClickableUIElement {
     public void render(SpriteBatch sb) {
         super.render(sb);
 
-        if (ChefMod.frozenPile != null) {
+        if (ChefMod.frozenPile != null && ChefMod.frozenPile.size() > 0) {
             if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
                 snowParticleManager.render(sb, hitbox.cX, hitbox.cY);
                 sb.setColor(Color.WHITE);
+                float w = frozenDeck.getWidth();
+                float h = frozenDeck.getHeight();
                 sb.draw(frozenDeck,
-                        hitbox.cX - frozenDeck.getWidth() / 2.0F,
-                        hitbox.cY - frozenDeck.getHeight() / 2.0F,
-                        frozenDeck.getWidth(),
-                        frozenDeck.getHeight());
+                        hitbox.cX - w / 2.0F,
+                        hitbox.cY - h / 2.0F,
+                        w / 2f,
+                        h / 2f,
+                        w,
+                        h,
+                        Settings.scale,
+                        Settings.scale,
+                        0f,
+                        0,
+                        0,
+                        (int)w,
+                        (int)h,
+                        false,
+                        false);
 
                 String msg = Integer.toString(ChefMod.frozenPile.size());
                 gl.setText(FontHelper.eventBodyText, msg);
                 sb.setColor(Color.WHITE);
                 sb.draw(ImageMaster.DECK_COUNT_CIRCLE,
-                         hitbox.cX + COUNT_OFFSET_X - COUNT_CIRCLE_W / 2.0F,
+                        hitbox.cX + COUNT_OFFSET_X - COUNT_CIRCLE_W / 2.0F,
                         hitbox.cY + COUNT_OFFSET_Y - COUNT_CIRCLE_W / 2.0F,
                         COUNT_CIRCLE_W,
                         COUNT_CIRCLE_W);

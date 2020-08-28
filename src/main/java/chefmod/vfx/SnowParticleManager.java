@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.ParticleEffect;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.core.Settings;
 
 import java.util.ArrayList;
 
@@ -28,6 +29,7 @@ public class SnowParticleManager {
         effect.load(Gdx.files.internal(makeImagePath("snowParticle.p")), Gdx.files.internal(makeImagePath("")));
         effect.setPosition(x, y);
         effect.start();
+        effect.scaleEffect(Settings.scale);
         return effect;
     }
 
