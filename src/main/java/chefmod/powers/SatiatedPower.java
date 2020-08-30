@@ -19,6 +19,8 @@ public class SatiatedPower extends AbstractPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
+    private static final int DAMAGE_REDUCTION = 5;
+
     public SatiatedPower(AbstractCreature owner) {
         name = NAME;
         ID = POWER_ID;
@@ -42,7 +44,7 @@ public class SatiatedPower extends AbstractPower {
 
     @Override
     public void stackPower(int stackAmount) {
-        addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, -1), -1));
+        addToBot(new ApplyPowerAction(owner, owner, new TemporaryStrengthDownPower(owner, DAMAGE_REDUCTION), DAMAGE_REDUCTION));
     }
 
     @Override

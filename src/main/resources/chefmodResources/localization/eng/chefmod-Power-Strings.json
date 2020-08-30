@@ -37,5 +37,12 @@
     "DESCRIPTIONS": [
       "This monster deals double damage, and takes double damage from attacks."
     ]
+  },
+  "chefmod:TemporaryStrengthDownPower": {
+      "NAME": "Damage Reduced",
+      "DESCRIPTIONS": [
+        "Reduces attack damage by #b",
+        " this turn."
+      ]
   }
 }
