@@ -12,8 +12,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class PlayOldestFrozenCardAction extends AbstractGameAction {
     private final boolean exhaustCards;
@@ -27,9 +29,8 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
 
     private AbstractCreature getFrozenTarget(AbstractCard card) {
         if (card.target == AbstractCard.CardTarget.ENEMY) {
-            List<AbstractMonster> monsters = AbstractChefCard.monsterList();
-            Optional<AbstractMonster> supercooled = monsters.stream()
-                    .filter(m -> m.hasPower("SUPERCOOL"))
+            Optional<AbstractMonster> supercooled = AbstractDungeon.getMonsters().monsters.stream()
+                    .filter(m -> m.hasPower("SUPERCOOL") && !m.isDeadOrEscaped())
                     .findFirst();
             return supercooled.orElseGet(AbstractDungeon::getRandomMonster);
         }

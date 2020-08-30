@@ -30,7 +30,7 @@ public class Mince extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SwordBoomerangAction(makeDamageInfo(), magicNumber));
+        addToBot(new SwordBoomerangAction(makeDamageInfo(damageTypeForTurn), magicNumber));
     }
 
     @Override

@@ -3,7 +3,7 @@ package chefmod.ui;
 import basemod.ClickableUIElement;
 import chefmod.ChefMod;
 import chefmod.patches.frozen.ExhaustPileViewScreenPatches;
-import chefmod.util.TextureLoader;
+import chefmod.util.TextureHelper;
 import chefmod.vfx.SnowParticleManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.screens.ExhaustPileViewScreen;
 
 import static chefmod.ChefMod.makeImagePath;
 
@@ -24,15 +23,15 @@ public class FrozenPileButton extends ClickableUIElement {
     private static final float Y_OFF = 228f;
     private static final float HB_WIDTH = 128f;
     private static final float HB_HEIGHT = 128f;
-    private static float COUNT_X = 48.0F * Settings.scale;
-    private static float COUNT_Y = -16.0F * Settings.scale;
+    private static final float COUNT_X = 48.0F * Settings.scale;
+    private static final float COUNT_Y = -16.0F * Settings.scale;
     private static final float COUNT_OFFSET_X = 48.0F * Settings.scale;
     private static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
     private static final float DECK_TIP_X = 0F * Settings.scale;
     private static final float DECK_TIP_Y = 128.0F * Settings.scale;
     private final GlyphLayout gl = new GlyphLayout();
     private static final float COUNT_CIRCLE_W = 128.0F * Settings.scale;
-    private static final Texture frozenDeck = TextureLoader.getTexture(makeImagePath("frozenDeck.png"));
+    private static final Texture frozenDeck = TextureHelper.getTexture(makeImagePath("frozenDeck.png"));
     private static SnowParticleManager snowParticleManager;
 
     public FrozenPileButton() {
@@ -75,31 +74,12 @@ public class FrozenPileButton extends ClickableUIElement {
                 sb.setColor(Color.WHITE);
                 float w = frozenDeck.getWidth();
                 float h = frozenDeck.getHeight();
-                sb.draw(frozenDeck,
-                        hitbox.cX - w / 2.0F,
-                        hitbox.cY - h / 2.0F,
-                        w / 2f,
-                        h / 2f,
-                        w,
-                        h,
-                        Settings.scale,
-                        Settings.scale,
-                        0f,
-                        0,
-                        0,
-                        (int)w,
-                        (int)h,
-                        false,
-                        false);
+                TextureHelper.draw(sb, frozenDeck, hitbox.cX, hitbox.cY);
 
                 String msg = Integer.toString(ChefMod.frozenPile.size());
                 gl.setText(FontHelper.eventBodyText, msg);
                 sb.setColor(Color.WHITE);
-                sb.draw(ImageMaster.DECK_COUNT_CIRCLE,
-                        hitbox.cX + COUNT_OFFSET_X - COUNT_CIRCLE_W / 2.0F,
-                        hitbox.cY + COUNT_OFFSET_Y - COUNT_CIRCLE_W / 2.0F,
-                        COUNT_CIRCLE_W,
-                        COUNT_CIRCLE_W);
+                sb.draw(ImageMaster.DECK_COUNT_CIRCLE, hitbox.cX + COUNT_OFFSET_X - COUNT_CIRCLE_W / 2f, hitbox.cY + COUNT_OFFSET_Y - COUNT_CIRCLE_W / 2f);
                 FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX + COUNT_X, hitbox.cY + COUNT_Y);
 
                 hitbox.render(sb);

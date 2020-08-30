@@ -2,6 +2,7 @@ package chefmod.cards;
 
 import basemod.abstracts.CustomCard;
 import chefmod.TheChef;
+import chefmod.util.ActionUnit;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -21,7 +22,7 @@ import java.util.List;
 
 import static chefmod.ChefMod.*;
 
-public abstract class AbstractChefCard extends CustomCard {
+public abstract class AbstractChefCard extends CustomCard implements ActionUnit {
 
     public boolean frozen = false;
     public boolean nofreeze = false;
@@ -155,62 +156,17 @@ public abstract class AbstractChefCard extends CustomCard {
         return this == hand.getBottomCard();
     }
 
-    protected DamageInfo makeDamageInfo() {
+    public DamageInfo makeDamageInfo(DamageInfo.DamageType type) {
         return makeDamageInfo(damageTypeForTurn);
     }
 
-    private DamageInfo makeDamageInfo(DamageInfo.DamageType type) {
-        return new DamageInfo(AbstractDungeon.player, damage, type);
-    }
-
-    public void dealDamage(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
-        addToBot(new DamageAction(m, makeDamageInfo(), fx));
-    }
-
-    public void dealAoeDamage(AbstractGameAction.AttackEffect fx) {
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
+    @Override
+    public void dealAoeDamage(AbstractGameAction.AttackEffect fx, DamageInfo.DamageType damageType) {
+        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageType, fx));
     }
 
     public void gainBlock() {
         addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, block));
-    }
-
-    public void makeInHand(AbstractCard c, int i) {
-        addToBot(new MakeTempCardInHandAction(c, i));
-    }
-
-    public void makeInHand(AbstractCard c) {
-        makeInHand(c, 1);
-    }
-
-    private void shuffleIn(AbstractCard c, int i) {
-        addToBot(new MakeTempCardInDrawPileAction(c, i, false, true));
-    }
-
-    public void shuffleIn(AbstractCard c) {
-        shuffleIn(c, 1);
-    }
-
-    public void topDeck(AbstractCard c, int i) {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(c, i, false, true));
-    }
-
-    public void topDeck(AbstractCard c) {
-        topDeck(c, 1);
-    }
-
-    public static ArrayList<AbstractMonster> monsterList() {
-        ArrayList<AbstractMonster> monsters = new ArrayList<>(AbstractDungeon.getMonsters().monsters);
-        monsters.removeIf(AbstractCreature::isDeadOrEscaped);
-        return monsters;
-    }
-
-    public void applyToEnemy(AbstractMonster m, AbstractPower po) {
-        addToBot(new ApplyPowerAction(m, AbstractDungeon.player, po, po.amount));
-    }
-
-    public void applyToSelf(AbstractPower po) {
-        addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, po, po.amount));
     }
 
     public void triggerWhenFrozen() {}

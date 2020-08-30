@@ -1,6 +1,6 @@
 package chefmod.vfx;
 
-import chefmod.util.TextureLoader;
+import chefmod.util.TextureHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -22,7 +22,7 @@ public class FrozenCardVfx extends AbstractGameEffect {
     private final AbstractCard c;
     private static final float PADDING = 50.0f * Settings.scale;
     private boolean soundPlayed;
-    private static final Texture texture = TextureLoader.getTexture(makeImagePath("vfx/frozenCardVfx.png"));
+    private static final Texture texture = TextureHelper.getTexture(makeImagePath("vfx/frozenCardVfx.png"));
     private float alpha;
 
     private static int count = 0;

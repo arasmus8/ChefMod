@@ -5,9 +5,10 @@ import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
+import chefmod.recipe.RecipeManager;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
-import chefmod.util.TextureLoader;
+import chefmod.util.TextureHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -32,9 +33,9 @@ public class ChefMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         PostBattleSubscriber,
-        StartGameSubscriber,
+        PostDungeonUpdateSubscriber,
         PostInitializeSubscriber,
-        PostDungeonUpdateSubscriber {
+        StartGameSubscriber {
     public static String IMAGE_PATH = "chefmodResources/images";
     private static String modID;
     private static String artifactID;
@@ -42,6 +43,7 @@ public class ChefMod implements
     public static CardGroup frozenPile;
     public static ArrayList<AbstractCard> cardsToFreeze;
     private static FrozenPileButton frozenPileButton;
+    public static RecipeManager recipeManager;
 
     public static Color chefColor = new Color(237, 242, 244, 1); //TODO: Set this to your character's favorite color!
 
@@ -106,7 +108,7 @@ public class ChefMod implements
 
     @Override
     public void receivePostInitialize() {
-        Texture badgeImage = TextureLoader.getTexture(IMAGE_PATH + "/Badge.png");
+        Texture badgeImage = TextureHelper.getTexture(IMAGE_PATH + "/Badge.png");
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", null);
     }
 
@@ -174,6 +176,7 @@ public class ChefMod implements
         frozenPileButton = new FrozenPileButton();
         frozenPile = new CardGroup(CardGroup.CardGroupType.DRAW_PILE);
         cardsToFreeze = new ArrayList<>();
+        recipeManager = new RecipeManager();
     }
 
     @Override
