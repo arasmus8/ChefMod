@@ -29,6 +29,10 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block"
   },
+  "chefmod:HotSoup": {
+    "NAME": "Hot Soup",
+    "DESCRIPTION": "Deal !D! Damage. At the end of turn, chefmod:Freeze this if it's in your hand."
+  },
   "chefmod:Mince": {
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."

@@ -45,7 +45,7 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
                 return;
             }
 
-            AbstractCard card = ChefMod.frozenPile.getTopCard();
+            AbstractCard card = ChefMod.frozenPile.getBottomCard();
             ChefMod.frozenPile.group.remove(card);
             AbstractDungeon.getCurrRoom().souls.remove(card);
             card.exhaustOnUseOnce = exhaustCards;

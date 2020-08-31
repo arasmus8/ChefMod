@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static chefmod.ChefMod.makeImagePath;
@@ -27,12 +28,13 @@ public class RecipeRenderer extends ClickableUIElement {
     private static final float DECK_TIP_X = 0F * Settings.scale;
     private static final float DECK_TIP_Y = 128.0F * Settings.scale;
     private static final float COUNT_CIRCLE_W = 128.0F * Settings.scale;
+    private static final Random rng = new Random(Settings.seed);
 
     public RecipeRenderer(Vector2 offset) {
         super(recipeCardImage);
         setX(offset.x);
         setY(offset.y);
-        angle = AbstractDungeon.miscRng.random(-0.1f, 0.1f);
+        angle = rng.random(-0.1f, 0.1f);
     }
 
     public void render (SpriteBatch sb, AbstractRecipe recipe) {

@@ -27,7 +27,7 @@ public class CayenneCloud extends AbstractChefCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {
-            dealAoeDamage(AbstractGameAction.AttackEffect.FIRE, damageTypeForTurn);
+            dealAoeDamage(AbstractGameAction.AttackEffect.FIRE);
         }
     }
 }

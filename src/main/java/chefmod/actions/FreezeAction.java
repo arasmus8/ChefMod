@@ -50,7 +50,6 @@ public class FreezeAction extends AbstractGameAction {
         return Arrays.stream(groups).filter(cg -> cg.contains(card)).findFirst();
     }
 
-    // TODO: add VFX to freezing
     @Override
     public void update() {
         if (duration == startDuration) {
@@ -66,14 +65,14 @@ public class FreezeAction extends AbstractGameAction {
                 Optional<CardGroup> currentGroup = findCurrentGroup(card);
                 if (currentGroup.isPresent()) {
                     ChefMod.cardsToFreeze.add(card);
-                    currentGroup.get().moveToBottomOfDeck(card);
+                    currentGroup.get().moveToDeck(card, false);
                     ChefMod.cardsToFreeze.clear();
                 } else {
                     AbstractCard newCard = card.makeSameInstanceOf();
                     if (newCard instanceof AbstractChefCard) {
                         ((AbstractChefCard) newCard).frozen = true;
                     }
-                    ChefMod.frozenPile.addToBottom(newCard);
+                    ChefMod.frozenPile.addToTop(newCard);
                 }
             } else {
                 List<AbstractCard> eligibleCards = drawPile.group.stream()
@@ -89,7 +88,7 @@ public class FreezeAction extends AbstractGameAction {
                         ((AbstractChefCard) c).frozen = true;
                         ((AbstractChefCard) c).triggerWhenFrozen();
                     }
-                    drawPile.moveToBottomOfDeck(c);
+                    drawPile.moveToDeck(c, false);
                     AbstractDungeon.effectList.add(new FrozenCardVfx(c));
                 });
                 ChefMod.cardsToFreeze.clear();

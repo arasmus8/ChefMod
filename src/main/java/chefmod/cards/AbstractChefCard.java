@@ -157,12 +157,20 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
     }
 
     public DamageInfo makeDamageInfo(DamageInfo.DamageType type) {
-        return makeDamageInfo(damageTypeForTurn);
+        return new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
     }
 
     @Override
-    public void dealAoeDamage(AbstractGameAction.AttackEffect fx, DamageInfo.DamageType damageType) {
-        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageType, fx));
+    public void dealDamage(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
+        addToBot(new DamageAction(m, makeDamageInfo(damageTypeForTurn), fx));
+    }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) { }
+
+    @Override
+    public void dealAoeDamage(AbstractGameAction.AttackEffect fx) {
+        addToBot(new DamageAllEnemiesAction(AbstractDungeon.player, multiDamage, damageTypeForTurn, fx));
     }
 
     public void gainBlock() {

@@ -4,6 +4,7 @@ import chefmod.ChefMod;
 import chefmod.util.ActionUnit;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public abstract class AbstractRecipe implements ActionUnit {
     public String TipHeader;
@@ -27,7 +28,10 @@ public abstract class AbstractRecipe implements ActionUnit {
     }
 
     @Override
-    public void dealAoeDamage(AbstractGameAction.AttackEffect fx, DamageInfo.DamageType damageType) { }
+    public void dealDamage(AbstractMonster m, AbstractGameAction.AttackEffect fx) { }
+
+    @Override
+    public void dealAoeDamage(AbstractGameAction.AttackEffect fx) { }
 
     @Override
     public void gainBlock() { }

@@ -18,11 +18,9 @@ public interface ActionUnit {
 
     DamageInfo makeDamageInfo(DamageInfo.DamageType type);
 
-    default void dealDamage(AbstractMonster m, AbstractGameAction.AttackEffect fx, DamageInfo.DamageType damageType) {
-        qAction(new DamageAction(m, makeDamageInfo(damageType), fx));
-    }
+    void dealDamage(AbstractMonster m, AbstractGameAction.AttackEffect fx);
 
-    void dealAoeDamage(AbstractGameAction.AttackEffect fx, DamageInfo.DamageType damageType);
+    void dealAoeDamage(AbstractGameAction.AttackEffect fx);
 
     void gainBlock();
 

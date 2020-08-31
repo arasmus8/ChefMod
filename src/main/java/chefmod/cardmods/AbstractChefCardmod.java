@@ -4,11 +4,13 @@ import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import chefmod.util.ActionUnit;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -52,8 +54,13 @@ public abstract class AbstractChefCardmod extends AbstractCardModifier implement
     }
 
     @Override
-    public void dealAoeDamage(AbstractGameAction.AttackEffect fx, DamageInfo.DamageType damageType) {
-        qAction(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(damage), damageType, fx));
+    public void dealDamage(AbstractMonster m, AbstractGameAction.AttackEffect fx) {
+        qAction(new DamageAction(m, makeDamageInfo(DamageInfo.DamageType.NORMAL), fx));
+    }
+
+    @Override
+    public void dealAoeDamage(AbstractGameAction.AttackEffect fx) {
+        qAction(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(damage), DamageInfo.DamageType.NORMAL, fx));
     }
 
     @Override
