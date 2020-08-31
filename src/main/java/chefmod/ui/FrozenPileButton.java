@@ -72,14 +72,15 @@ public class FrozenPileButton extends ClickableUIElement {
             if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
                 snowParticleManager.render(sb, hitbox.cX, hitbox.cY);
                 sb.setColor(Color.WHITE);
-                float w = frozenDeck.getWidth();
-                float h = frozenDeck.getHeight();
                 TextureHelper.draw(sb, frozenDeck, hitbox.cX, hitbox.cY);
 
                 String msg = Integer.toString(ChefMod.frozenPile.size());
                 gl.setText(FontHelper.eventBodyText, msg);
                 sb.setColor(Color.WHITE);
-                sb.draw(ImageMaster.DECK_COUNT_CIRCLE, hitbox.cX + COUNT_OFFSET_X - COUNT_CIRCLE_W / 2f, hitbox.cY + COUNT_OFFSET_Y - COUNT_CIRCLE_W / 2f);
+                TextureHelper.draw(sb,
+                        ImageMaster.DECK_COUNT_CIRCLE,
+                        hitbox.cX + COUNT_OFFSET_X,
+                        hitbox.cY + COUNT_OFFSET_Y);
                 FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX + COUNT_X, hitbox.cY + COUNT_Y);
 
                 hitbox.render(sb);

@@ -48,7 +48,7 @@ public class TextureHelper {
         float h = texture.getHeight() * Settings.scale;
         float halfW = w / 2f;
         float halfH = h / 2f;
-        sb.draw(ImageMaster.DECK_COUNT_CIRCLE,
+        sb.draw(texture,
                 cX - halfW,
                 cY - halfH,
                 halfW,
@@ -71,7 +71,7 @@ public class TextureHelper {
         float h = texture.getHeight() * Settings.scale;
         float halfW = w / 2f;
         float halfH = h / 2f;
-        sb.draw(ImageMaster.DECK_COUNT_CIRCLE,
+        sb.draw(texture,
                 cX - halfW,
                 cY - halfH,
                 halfW,
