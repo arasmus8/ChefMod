@@ -83,7 +83,8 @@ public class RetainRandomCardPower extends AbstractPower {
                 !p.hasRelic(RunicPyramid.ID) &&
                 !p.hasPower(EquilibriumPower.POWER_ID)) {
             Predicate<AbstractCard> preppedFilter = c -> (c instanceof AbstractChefCard) && ((AbstractChefCard) c).hasPreppedActions;
-            Predicate<AbstractCard> notAlreadyRetained = c -> !c.retain && !c.selfRetain;
+            Predicate<AbstractCard> notAlreadyRetained = c -> !c.retain && !c.selfRetain && !c.isEthereal;
+            Predicate<AbstractCard> notStatusOrCurse = c -> c.type != AbstractCard.CardType.STATUS && c.type != AbstractCard.CardType.CURSE;
             if (hand.group.stream().anyMatch(notAlreadyRetained)) {
                 int cardsToRetain = amount;
                 if (prioritizePrepped) {

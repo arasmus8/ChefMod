@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,29 +43,18 @@ public class TextureHelper {
     }
 
     public static void draw(SpriteBatch sb, Texture texture, float cX, float cY) {
-        float w = texture.getWidth() * Settings.scale;
-        float h = texture.getHeight() * Settings.scale;
-        float halfW = w / 2f;
-        float halfH = h / 2f;
-        sb.draw(texture,
-                cX - halfW,
-                cY - halfH,
-                halfW,
-                halfH,
-                w,
-                h,
-                Settings.scale,
-                Settings.scale,
-                0f,
-                0,
-                0,
-                (int)w,
-                (int)h,
-                false,
-                false);
+        drawScaledAndRotated(sb, texture, cX, cY, 1f, 0f);
     }
 
     public static void drawScaled(SpriteBatch sb, Texture texture, float cX, float cY, float scale) {
+        drawScaledAndRotated(sb, texture, cX, cY, scale, 0f);
+    }
+
+    public static void drawRotated(SpriteBatch sb, Texture texture, float cX, float cY, float rotation) {
+        drawScaledAndRotated(sb, texture, cX, cY, 1f, rotation);
+    }
+
+    public static void drawScaledAndRotated(SpriteBatch sb, Texture texture, float cX, float cY, float scale, float rotation) {
         float w = texture.getWidth() * Settings.scale;
         float h = texture.getHeight() * Settings.scale;
         float halfW = w / 2f;
@@ -80,11 +68,11 @@ public class TextureHelper {
                 h,
                 scale * Settings.scale,
                 scale * Settings.scale,
-                0f,
+                rotation,
                 0,
                 0,
-                (int)w,
-                (int)h,
+                (int) w,
+                (int) h,
                 false,
                 false);
     }

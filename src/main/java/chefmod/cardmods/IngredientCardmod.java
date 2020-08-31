@@ -36,7 +36,7 @@ public class IngredientCardmod extends AbstractChefCardmod {
     public void onRender(AbstractCard card, SpriteBatch sb) {
         float imgW = icon.getWidth();
         float imgH = icon.getHeight();
-        Vector2 vec = new Vector2(140, 130);
+        Vector2 vec = new Vector2(140, 200);
         vec.scl(card.drawScale * Settings.scale);
         vec.rotate(card.angle);
 
@@ -44,21 +44,6 @@ public class IngredientCardmod extends AbstractChefCardmod {
         color.a = card.transparency;
         sb.setColor(color);
 
-        sb.draw(icon,
-                card.current_x + vec.x - imgW / 2f,
-                card.current_y + vec.y - imgH / 2f,
-                imgW / 2.0F,
-                imgH / 2.0F,
-                imgW,
-                imgH,
-                card.drawScale * 1.25f * Settings.scale,
-                card.drawScale * 1.25f * Settings.scale,
-                card.angle,
-                0,
-                0,
-                (int) imgW,
-                (int) imgH,
-                false,
-                false);
+        TextureHelper.drawScaledAndRotated(sb, icon, card.current_x + vec.x, card.current_y + vec.y, 1.25f, card.angle);
     }
 }

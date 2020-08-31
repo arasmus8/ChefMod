@@ -25,6 +25,7 @@ public class QuickThaw extends AbstractChefCard {
         upgradeMagicNumberBy = 1;
         nofreeze = true;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (int i = 0; i < magicNumber; i++) {

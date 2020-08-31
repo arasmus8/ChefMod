@@ -64,5 +64,9 @@
   "chefmod:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage"
+  },
+  "chefmod:TodaysSpecial": {
+    "NAME": "Today's Special",
+    "DESCRIPTION": "Startup: Choose a Recipe to cook. NL Apply chefmod:Hunger"
   }
 }

@@ -44,9 +44,9 @@ public class ChefEnergyOrb extends CustomEnergyOrb {
                 false);
 
         ChefMod.renderFrozenPile(sb);
+        ChefMod.recipeManager.render(sb);
     }
 
     @Override
-    public void updateOrb(int energyCount) {
-    }
+    public void updateOrb(int energyCount) { }
 }

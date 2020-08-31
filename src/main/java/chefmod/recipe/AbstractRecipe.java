@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public abstract class AbstractRecipe implements ActionUnit {
-    public String TipHeader;
-    public String TipBody;
+    public String tipHeader;
+    public String tipBody;
 
     protected int ingredientCount;
 

@@ -23,7 +23,7 @@ public class OneTimeDamageBonusCardmod extends AbstractChefCardmod {
         if (current.isPresent()) {
             current.get().damage += damageAmount;
         } else {
-            CardModifierManager.addModifier(card, new OneTimeBlockBonusCardmod(damageAmount));
+            CardModifierManager.addModifier(card, new OneTimeDamageBonusCardmod(damageAmount));
         }
     }
 

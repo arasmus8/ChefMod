@@ -1,6 +1,7 @@
 package chefmod.cardmods;
 
 import basemod.abstracts.AbstractCardModifier;
+import chefmod.util.TextureHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -49,22 +50,8 @@ public class BonusBlockCardmod extends AbstractChefCardmod {
         color.a = card.transparency;
         sb.setColor(color);
 
-        sb.draw(shieldImg,
-                card.current_x + vec.x - imgW / 2f,
-                card.current_y + vec.y - imgH / 2f,
-                imgW / 2.0F,
-                imgH / 2.0F,
-                imgW,
-                imgH,
-                card.drawScale * 1.25f * Settings.scale,
-                card.drawScale * 1.25f * Settings.scale,
-                card.angle,
-                0,
-                0,
-                (int)imgW,
-                (int)imgH,
-                false,
-                false);
+        TextureHelper.drawScaledAndRotated(sb, ImageMaster.BLOCK_ICON, card.current_x + vec.x, card.current_y + vec.y, 1.25f, card.angle);
+
         String text = "+" + block;
         FontHelper.cardEnergyFont_L.getData().setScale(card.drawScale * 0.5f);
 

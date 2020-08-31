@@ -4,6 +4,7 @@ import basemod.abstracts.CustomPlayer;
 import chefmod.cards.attacks.Strike;
 import chefmod.cards.skills.Defend;
 import chefmod.cards.skills.QuickThaw;
+import chefmod.cards.skills.TodaysSpecial;
 import chefmod.energyorb.ChefEnergyOrb;
 import chefmod.relics.TrustyPot;
 import com.badlogic.gdx.graphics.Color;
@@ -68,6 +69,7 @@ public class TheChef extends CustomPlayer {
             retVal.add(Defend.ID);
         }
         retVal.add(QuickThaw.ID);
+        retVal.add(TodaysSpecial.ID);
         return retVal;
     }
 

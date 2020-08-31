@@ -3,5 +3,11 @@
     "TEXT": [
       "These are your Frozen cards, shown in order."
     ]
+  },
+  "chefmod:NeowNuggets": {
+    "TEXT": [
+      "Neow Nuggets",
+      "Your Strike and Defend cards have double damage or Block and Exhuast"
+    ]
   }
 }

@@ -183,6 +183,7 @@ public class ChefMod implements
     public void receivePostBattle(AbstractRoom abstractRoom) {
         frozenPile.clear();
         cardsToFreeze.clear();
+        recipeManager.clear();
     }
 
     public static void renderFrozenPile(SpriteBatch spriteBatch) {
@@ -195,6 +196,7 @@ public class ChefMod implements
     public void receivePostDungeonUpdate() {
         if (frozenPileButton != null) {
             frozenPileButton.update();
+            recipeManager.update();
         }
     }
 }

@@ -30,6 +30,6 @@ public class NeowNuggetsCardmod extends AbstractChefCardmod {
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + "NL Exhaust";
+        return rawDescription + " NL Exhaust";
     }
 }
