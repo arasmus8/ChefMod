@@ -1,6 +1,7 @@
 package chefmod.cards.attacks;
 
 import chefmod.ChefMod;
+import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -32,5 +33,10 @@ public class HotSoup extends AbstractChefCard {
     public void triggerOnEndOfPlayerTurn() {
         super.triggerOnEndOfPlayerTurn();
         ChefMod.cardsToFreeze.add(this);
+    }
+
+    @Override
+    public void onRetained() {
+        addToBot(new FreezeAction(this));
     }
 }
