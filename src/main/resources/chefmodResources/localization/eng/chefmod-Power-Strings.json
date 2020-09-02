@@ -9,10 +9,22 @@
       " and #b"
     ]
   },
+  "chefmod:FriedLagavulinPower": {
+    "NAME": "Fried Lagavulin",
+    "DESCRIPTIONS": [
+      "You can only play 1 attack each turn. Deal triple Damage."
+    ]
+  },
   "chefmod:HungerPower": {
     "NAME": "Hunger",
     "DESCRIPTIONS": [
-      "This monster deals half damage, and takes half damage from attacks."
+      "This monster deals half Damage, and takes half Damage from attacks."
+    ]
+  },
+  "chefmod:NobStewPower": {
+    "NAME": "Nob Stew",
+    "DESCRIPTIONS": [
+      "When you play a Skill, a random Attack gets +1 Damage."
     ]
   },
   "chefmod:RetainRandomCardPower": {
@@ -35,13 +47,19 @@
   "chefmod:SatiatedPower": {
     "NAME": "Satiated",
     "DESCRIPTIONS": [
-      "This monster deals double damage, and takes double damage from attacks."
+      "This monster deals double Damage, and takes double Damage from attacks."
+    ]
+  },
+  "chefmod:SentryBrittlePower": {
+    "NAME": "Sentry Brittle",
+    "DESCRIPTIONS": [
+      "When you draw a Status, exhaust it and deal 10 Damage to all enemies."
     ]
   },
   "chefmod:TemporaryStrengthDownPower": {
       "NAME": "Damage Reduced",
       "DESCRIPTIONS": [
-        "Reduces attack damage by #b",
+        "Reduces attack Damage by #b",
         " this turn."
       ]
   }

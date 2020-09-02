@@ -45,6 +45,7 @@ public class RetainThisTurnPower extends AbstractPower {
                 !AbstractDungeon.player.hasRelic(RunicPyramid.ID) &&
                 !AbstractDungeon.player.hasPower(EquilibriumPower.POWER_ID)) {
             if (AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
+                // TODO: make custom action that handles already retained cards
                 addToBot(new RetainCardsAction(owner, amount));
             }
         }

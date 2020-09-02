@@ -18,17 +18,23 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
+import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
+import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class RecipeManager {
+    public static final ArrayList<String> unlockedRecipes = new ArrayList<>();
     public ArrayList<AbstractRecipe> recipes;
     private static final ArrayList<RecipeRenderer> renderers = new ArrayList<>();
     private static final long RENDER_COUNT = 5;
     private final Vector2 additionalPos;
+
+    private static final List<String> ACT1_RECIPES = Arrays.asList(NobStew.ID, FriedLagavulin.ID, SentryBrittle.ID);
 
     public RecipeManager() {
         float offsetH = 128f * 1.618f * Settings.scale;
@@ -51,6 +57,7 @@ public class RecipeManager {
     private int addTo(CardGroup group, int count) {
         List<AbstractCard> cards = group.group.stream()
                 .filter(c -> !IngredientCardmod.getForCard(c, IngredientCardmod.CARDMOD_ID).isPresent())
+                .filter(c -> c.cost >= -1)
                 .collect(Collectors.toList());
         Collections.shuffle(cards, AbstractDungeon.cardRandomRng.random);
         cards.stream()
@@ -90,6 +97,48 @@ public class RecipeManager {
 
     public void clear() {
         recipes.clear();
+    }
+
+    public String recipeIdForMonster(AbstractMonster m) {
+        switch (m.id) {
+            case GremlinNob.ID:
+                return NobStew.ID;
+            case Lagavulin.ID:
+                return FriedLagavulin.ID;
+            case Sentry.ID:
+                return SentryBrittle.ID;
+            default:
+                return null;
+        }
+    }
+
+    public void unlock(MonsterGroup eliteMonsters, int actNum) {
+        Optional<String> unlockId = eliteMonsters.monsters.stream()
+                .map(this::recipeIdForMonster)
+                .filter(Objects::nonNull)
+                .findFirst();
+        if (unlockId.isPresent()) {
+            unlockedRecipes.add(unlockId.get());
+        } else {
+            String recipeToAdd = null;
+            switch (actNum) {
+                case 1:
+                    recipeToAdd = ACT1_RECIPES.stream()
+                            .filter(s -> !unlockedRecipes.contains(s))
+                            .findFirst()
+                            .orElse(null);
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
+            if (recipeToAdd != null) {
+                unlockedRecipes.add(recipeToAdd);
+            }
+        }
     }
 
     public void update() {

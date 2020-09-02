@@ -2,9 +2,11 @@ package chefmod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
+import chefmod.recipe.NeowNuggets;
 import chefmod.recipe.RecipeManager;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
@@ -18,6 +20,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -27,6 +30,7 @@ import java.util.ArrayList;
 
 @SpireInitializer
 public class ChefMod implements
+        CustomSavable<ArrayList<String>>,
         EditCardsSubscriber,
         EditCharactersSubscriber,
         EditKeywordsSubscriber,
@@ -110,6 +114,7 @@ public class ChefMod implements
     public void receivePostInitialize() {
         Texture badgeImage = TextureHelper.getTexture(IMAGE_PATH + "/Badge.png");
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", null);
+        BaseMod.addSaveField("chefmod", this);
     }
 
     @Override
@@ -184,6 +189,9 @@ public class ChefMod implements
         frozenPile.clear();
         cardsToFreeze.clear();
         recipeManager.clear();
+        if (!abstractRoom.smoked && abstractRoom.eliteTrigger) {
+            recipeManager.unlock(abstractRoom.monsters, AbstractDungeon.actNum);
+        }
     }
 
     public static void renderFrozenPile(SpriteBatch spriteBatch) {
@@ -197,6 +205,26 @@ public class ChefMod implements
         if (frozenPileButton != null) {
             frozenPileButton.update();
             recipeManager.update();
+        }
+    }
+
+    @Override
+    public ArrayList<String> onSave() {
+        if (RecipeManager.unlockedRecipes.size() == 0) {
+            RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
+        }
+        return RecipeManager.unlockedRecipes;
+    }
+
+    @Override
+    public void onLoad(ArrayList<String> strings) {
+        if (strings != null) {
+            RecipeManager.unlockedRecipes.addAll(strings);
+            if (RecipeManager.unlockedRecipes.size() == 0) {
+                RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
+            }
+        } else {
+            RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
         }
     }
 }

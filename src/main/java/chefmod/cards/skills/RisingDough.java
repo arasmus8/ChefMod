@@ -20,7 +20,6 @@ public class RisingDough extends AbstractChefCard {
                 CardTarget.SELF
         );
         magicNumber = baseMagicNumber = 3;
-        upgradeMagicNumberBy = 2;
         exhaust = true;
     }
 

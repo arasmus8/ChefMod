@@ -14,18 +14,18 @@
     "DESCRIPTION": "Frozen cards are kept in a separate pile, and can only be played or drawn by using cards that specifically interact with #yFrozen cards."
   },
   {
-    "PROPER_NAME": "Hunger",
-    "NAMES": [
-      "hunger"
-    ],
-    "DESCRIPTION": "Enemies inflicted with #yHunger deal half damage and take half damage from attacks for 1 turn. If an enemy already has #yHunger, applying it again will deal 10 damage."
-  },
-  {
     "PROPER_NAME": "No-Freeze",
     "NAMES": [
       "no-freeze"
     ],
     "DESCRIPTION": "This card cannot be #yFrozen."
+  },
+  {
+    "PROPER_NAME": "Hunger",
+    "NAMES": [
+      "hunger"
+    ],
+    "DESCRIPTION": "Enemies inflicted with #yHunger deal half damage and take half damage from attacks for 1 turn. If an enemy already has #yHunger, applying it again will deal 10 damage."
   },
   {
     "PROPER_NAME": "Satiated",
@@ -40,5 +40,20 @@
       "prepped"
     ],
     "DESCRIPTION": "Has additional effects if played from the leftmost spot in your hand."
+  },
+  {
+    "PROPER_NAME": "Recipe",
+    "NAMES": [
+      "recipe"
+    ],
+    "DESCRIPTION": "A special one-time effect that is triggered when you play enough #yIngredients. #yRecipes are activated in order."
+  },
+  {
+    "PROPER_NAME": "Ingredient",
+    "NAMES": [
+      "ingredient",
+      "ingredients"
+    ],
+    "DESCRIPTION": "When you play a #yRecipe, random cards are marked as #yIngredients. Once the required number of #yIngredients are played, the #yRecipe's effect is triggered."
   }
 ]

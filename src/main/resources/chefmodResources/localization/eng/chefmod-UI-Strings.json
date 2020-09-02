@@ -7,7 +7,25 @@
   "chefmod:NeowNuggets": {
     "TEXT": [
       "Neow Nuggets",
-      "Your Strike and Defend cards have double damage or Block and Exhuast"
+      "Your Strike and Defend cards have Double damage or Block and Exhuast"
+    ]
+  },
+  "chefmod:FriedLagavulin": {
+    "TEXT": [
+      "Fried Lagavulin",
+      "You may only play 1 Attack each turn. Deal triple damage."
+    ]
+  },
+  "chefmod:NobStew": {
+    "TEXT": [
+      "Nob Stew",
+      "Every Skill you play gives a random Attack in your hand +1 Damage."
+    ]
+  },
+  "chefmod:SentryBrittle": {
+    "TEXT": [
+      "Sentry Brittle",
+      "When you draw a Status, exhaust it and deal 10 damage to all enemies."
     ]
   }
 }
