@@ -23,8 +23,8 @@ public class RecipeRenderer extends ClickableUIElement {
     private static final float COUNT_Y = -16.0F * Settings.scale;
     private static final float COUNT_OFFSET_X = 48.0F * Settings.scale;
     private static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
-    private static final float DECK_TIP_X = 0F * Settings.scale;
-    private static final float DECK_TIP_Y = 128.0F * Settings.scale;
+    private static final float DECK_TIP_X = -64f * Settings.scale;
+    private static final float DECK_TIP_Y = -96 * Settings.scale;
     private static final Random rng = new Random(Settings.seed);
 
     public RecipeRenderer(Vector2 offset) {
