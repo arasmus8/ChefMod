@@ -47,6 +47,10 @@ public class NeowNuggets extends AbstractRecipe {
                 applyToGroup(cg);
                 cg = ChefMod.frozenPile;
                 applyToGroup(cg);
+                AbstractCard cardInPlay = p.cardInUse;
+                if (cardInPlay.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || cardInPlay.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
+                    CardModifierManager.addModifier(cardInPlay, new NeowNuggetsCardmod());
+                }
             }
         });
     }
