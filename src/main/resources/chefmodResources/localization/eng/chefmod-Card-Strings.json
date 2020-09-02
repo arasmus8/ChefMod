@@ -37,6 +37,11 @@
     "NAME": "Fire Up",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Hunger."
   },
+  "chefmod:FullBurn": {
+    "NAME": "Full Burn",
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] .",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] [E] ."
+  },
   "chefmod:HotSoup": {
     "NAME": "Hot Soup",
     "DESCRIPTION": "Deal !D! Damage. At the end of turn, chefmod:Freeze this if it's in your hand."
