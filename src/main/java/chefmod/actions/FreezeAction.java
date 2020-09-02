@@ -15,26 +15,30 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class FreezeAction extends AbstractGameAction {
-    private Predicate<AbstractCard> filterCriteria;
+    private final Predicate<AbstractCard> filterCriteria;
+    private final AbstractGameAction followUpAction;
+    public static final ArrayList<AbstractCard> frozenCards = new ArrayList<>();
     private final Predicate<AbstractCard> noFreezeFilter = c -> !(c instanceof AbstractChefCard) || !(((AbstractChefCard) c).nofreeze);
     private AbstractCard card;
 
-    public FreezeAction(int amount, Predicate<AbstractCard> filterFn) {
+    public FreezeAction(int amount, Predicate<AbstractCard> filterFn, AbstractGameAction followUpAction) {
         super();
         setValues(AbstractDungeon.player, AbstractDungeon.player, amount);
         startDuration = duration = Settings.ACTION_DUR_FASTER;
         filterCriteria = filterFn;
+        this.followUpAction = followUpAction;
+    }
+
+    public FreezeAction(int amount, Predicate<AbstractCard> filterFn) {
+        this(amount, filterFn, null);
     }
 
     public FreezeAction(int amount) {
-        this(amount, null);
-    }
-
-    public FreezeAction() {
-        this(1, null);
+        this(amount, null, null);
     }
 
     public FreezeAction(AbstractCard specificCard) {
+        this(-1, null, null);
         card = specificCard;
     }
 
@@ -75,6 +79,7 @@ public class FreezeAction extends AbstractGameAction {
                     ChefMod.frozenPile.addToTop(newCard);
                 }
             } else {
+                frozenCards.clear();
                 List<AbstractCard> eligibleCards = drawPile.group.stream()
                         .filter(noFreezeFilter)
                         .filter(filterCriteria != null ? filterCriteria : c -> true)
@@ -82,7 +87,10 @@ public class FreezeAction extends AbstractGameAction {
                 Collections.reverse(eligibleCards);
                 eligibleCards.stream()
                         .limit(amount)
-                        .forEachOrdered(ChefMod.cardsToFreeze::add);
+                        .forEachOrdered(c -> {
+                            ChefMod.cardsToFreeze.add(c);
+                            frozenCards.add(c);
+                        });
                 ChefMod.cardsToFreeze.forEach(c -> {
                     if (c instanceof AbstractChefCard) {
                         ((AbstractChefCard) c).frozen = true;
@@ -92,7 +100,16 @@ public class FreezeAction extends AbstractGameAction {
                     AbstractDungeon.effectList.add(new FrozenCardVfx(c));
                 });
                 ChefMod.cardsToFreeze.clear();
+                endActionWithFollowUp();
             }
         }
     }
+
+    private void endActionWithFollowUp() {
+        isDone = true;
+        if (followUpAction != null) {
+            addToTop(followUpAction);
+        }
+    }
+
 }

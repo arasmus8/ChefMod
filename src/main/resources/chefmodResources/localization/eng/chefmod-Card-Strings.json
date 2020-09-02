@@ -51,6 +51,10 @@
     "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] .",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] [E] ."
   },
+  "chefmod:Gelato": {
+    "NAME": "Gelato",
+    "DESCRIPTION": "chefmod:Freeze !M! Skills. NL Gain Block equal to !B! times their total cost."
+  },
   "chefmod:HotSoup": {
     "NAME": "Hot Soup",
     "DESCRIPTION": "Deal !D! Damage. At the end of turn, chefmod:Freeze this if it's in your hand."
