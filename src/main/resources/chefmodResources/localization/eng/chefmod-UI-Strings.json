@@ -4,6 +4,13 @@
       "These are your Frozen cards, shown in order."
     ]
   },
+  "chefmod:GridSelectAndPerformAction": {
+    "TEXT": [
+      "Choose up to ",
+      "Choose any number of ",
+      " cards"
+    ]
+  },
   "chefmod:NeowNuggets": {
     "TEXT": [
       "Neow Nuggets",

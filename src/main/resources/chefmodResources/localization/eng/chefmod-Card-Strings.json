@@ -29,6 +29,11 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block"
   },
+  "chefmod:Defrost": {
+    "NAME": "Defrost",
+    "DESCRIPTION": "Move !M! chefmod:Frozen card to your hand.",
+    "UPGRADE_DESCRIPTION": "Move !M! chefmod:Frozen cards to your hand."
+  },
   "chefmod:Fillet": {
     "NAME": "Fillet",
     "DESCRIPTION": "Deal !D! Damage. Make a copy of this card and chefmod:Freeze it."
