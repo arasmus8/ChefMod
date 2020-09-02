@@ -25,6 +25,7 @@ public class FullBurn extends AbstractChefCard {
         upgradeMagicNumberBy = 1;
         damages = true;
         isMultiDamage = true;
+        hasPreppedActions = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
