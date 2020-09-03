@@ -95,6 +95,11 @@
     "NAME": "Slice & Dice",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Deal !D! Damage twice."
   },
+  "chefmod:Sorbet": {
+    "NAME": "Sorbet",
+    "DESCRIPTION": "Apply chefmod:Hunger. NL chefmod:Freeze !M! powers.",
+    "UPGRADE_DESCRIPTION": "Apply chefmod:Hunger. NL chefmod:Freeze !M! power."
+  },
   "chefmod:Strike": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage"
