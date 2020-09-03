@@ -87,11 +87,11 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
         if ((!Gdx.files.internal(img).exists()))
             switch (type) {
                 case ATTACK:
-                    return makeCardPath("Attack.png");
+                    return makeImagePath("Attack.png");
                 case SKILL:
-                    return makeCardPath("Skill.png");
+                    return makeImagePath("Skill.png");
                 case POWER:
-                    return makeCardPath("Power.png");
+                    return makeImagePath("Power.png");
             }
         return img;
     }

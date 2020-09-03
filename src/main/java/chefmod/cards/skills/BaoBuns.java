@@ -4,14 +4,13 @@ import chefmod.cards.AbstractChefCard;
 import chefmod.powers.RetainThisTurnPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class BeetrootCarpaccio extends AbstractChefCard {
-    public static String ID = makeID(BeetrootCarpaccio.class.getSimpleName());
+public class BaoBuns extends AbstractChefCard {
+    public static String ID = makeID(BaoBuns.class.getSimpleName());
 
-    public BeetrootCarpaccio() {
+    public BaoBuns() {
         super(ID,
                 1,
                 CardType.SKILL,

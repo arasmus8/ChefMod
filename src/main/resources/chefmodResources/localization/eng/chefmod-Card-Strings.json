@@ -3,8 +3,8 @@
     "NAME": "All-you-can-eat",
     "DESCRIPTION": "Apply chefmod:Satiated for every Attack card in your hand."
   },
-  "chefmod:BeetrootCarpaccio": {
-    "NAME": "Beetroot Carpaccio",
+  "chefmod:BaoBuns": {
+    "NAME": "Bao Buns",
     "DESCRIPTION": "Gain !B! Block. Retain !M! card this turn."
   },
   "chefmod:CayenneCloud": {
@@ -45,6 +45,11 @@
   "chefmod:FireUp": {
     "NAME": "Fire Up",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Hunger."
+  },
+  "chefmod:FrozenTuna": {
+    "NAME": "Frozen Tuna",
+    "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies. NL Increase damage by !M! each turn."
   },
   "chefmod:FullBurn": {
     "NAME": "Full Burn",
