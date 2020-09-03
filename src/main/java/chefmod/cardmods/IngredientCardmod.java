@@ -16,10 +16,9 @@ import static chefmod.ChefMod.makeImagePath;
 
 public class IngredientCardmod extends AbstractChefCardmod {
     private static final Texture icon = TextureHelper.getTexture(makeImagePath("vfx/ingredient_badge.png"));
-    public static final String CARDMOD_ID = makeID(IngredientCardmod.class.getSimpleName());
+    public static final String ID = makeID(IngredientCardmod.class.getSimpleName());
 
     public IngredientCardmod() {
-        ID = CARDMOD_ID;
     }
 
     @Override
@@ -29,13 +28,16 @@ public class IngredientCardmod extends AbstractChefCardmod {
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        ChefMod.recipeManager.useIngredient(card);
+        if (!card.purgeOnUse) {
+            ChefMod.recipeManager.useIngredient(card);
+        }
     }
 
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
-        float imgW = icon.getWidth();
-        float imgH = icon.getHeight();
+        if (card.purgeOnUse) {
+            return;
+        }
         Vector2 vec = new Vector2(140, 200);
         vec.scl(card.drawScale * Settings.scale);
         vec.rotate(card.angle);

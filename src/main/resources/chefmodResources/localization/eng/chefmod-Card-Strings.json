@@ -117,6 +117,11 @@
     "NAME": "Today's Special",
     "DESCRIPTION": "Startup: Choose a Recipe to cook. NL Apply chefmod:Hunger"
   },
+  "chefmod:TwoForOne": {
+    "NAME": "2-For-1 Coupon",
+    "DESCRIPTION": "Your currently chefmod:Frozen cards are played twice. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Your currently chefmod:Frozen cards are played twice this combat. NL Exhaust"
+  },
   "chefmod:ZaruSoba": {
     "NAME": "Zaru Soba",
     "DESCRIPTION": "Draw !M! chefmod:Frozen cards. chefmod:Freeze !M!."

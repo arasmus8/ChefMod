@@ -7,10 +7,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static chefmod.ChefMod.makeID;
 
 public class NeowNuggetsCardmod extends AbstractChefCardmod {
-    public static final String CARDMOD_ID = makeID(NeowNuggetsCardmod.class.getSimpleName());
+    public static final String ID = makeID(NeowNuggetsCardmod.class.getSimpleName());
 
     public NeowNuggetsCardmod() {
-        ID = CARDMOD_ID;
     }
 
     @Override

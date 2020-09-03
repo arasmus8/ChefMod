@@ -9,15 +9,14 @@ import java.util.Optional;
 import static chefmod.ChefMod.makeID;
 
 public class PermanentBlockBonusCardmod extends AbstractChefCardmod {
-    public static final String CARDMOD_ID = makeID(PermanentBlockBonusCardmod.class.getSimpleName());
+    public static final String ID = makeID(PermanentBlockBonusCardmod.class.getSimpleName());
 
     public PermanentBlockBonusCardmod(int blockAmount) {
-        ID = CARDMOD_ID;
         block = blockAmount;
     }
 
     public static void add(AbstractCard card, int blockAmount) {
-        Optional<AbstractChefCardmod> current = getForCard(card, CARDMOD_ID);
+        Optional<AbstractChefCardmod> current = getForCard(card, ID);
         if (current.isPresent()) {
             current.get().block += blockAmount;
         } else {
@@ -28,11 +27,6 @@ public class PermanentBlockBonusCardmod extends AbstractChefCardmod {
     @Override
     public AbstractCardModifier makeCopy() {
         return new PermanentBlockBonusCardmod(block);
-    }
-
-    @Override
-    public String identifier(AbstractCard card) {
-        return ID;
     }
 
     @Override

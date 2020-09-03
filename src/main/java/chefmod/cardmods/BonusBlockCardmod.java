@@ -17,14 +17,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import static chefmod.ChefMod.makeID;
 
 public class BonusBlockCardmod extends AbstractChefCardmod {
+    public static String ID = makeID(BonusBlockCardmod.class.getSimpleName());
     public BonusBlockCardmod(int blockAmount) {
-        ID = makeID(BonusBlockCardmod.class.getSimpleName());
         block = blockAmount;
-    }
-
-    @Override
-    public String identifier(AbstractCard card) {
-        return ID;
     }
 
     @Override
@@ -40,8 +35,6 @@ public class BonusBlockCardmod extends AbstractChefCardmod {
     @Override
     public void onRender(AbstractCard card, SpriteBatch sb) {
         Texture shieldImg = ImageMaster.BLOCK_ICON;
-        float imgW = shieldImg.getWidth();
-        float imgH = shieldImg.getHeight();
         Vector2 vec = new Vector2(-140, 130);
         vec.scl(card.drawScale * Settings.scale);
         vec.rotate(card.angle);

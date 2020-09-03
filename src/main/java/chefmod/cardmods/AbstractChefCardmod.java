@@ -12,11 +12,13 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import static chefmod.ChefMod.makeID;
+
 public abstract class AbstractChefCardmod extends AbstractCardModifier implements ActionUnit {
-    protected String ID;
     protected int damage = 0;
     protected int block = 0;
 
@@ -30,21 +32,24 @@ public abstract class AbstractChefCardmod extends AbstractCardModifier implement
         }
     }
 
+    public static Optional<AbstractChefCardmod> getForCard(AbstractCard card) {
+        return getForCard(card, makeID(MethodHandles.lookup().lookupClass().getSimpleName()));
+    }
+
     @Override
     public String identifier(AbstractCard card) {
-        return ID;
+        return makeID(this.getClass().getSimpleName());
     }
 
     @Override
     public AbstractCardModifier makeCopy() {
         try {
             AbstractChefCardmod copy = this.getClass().newInstance();
-            copy.ID = ID;
             copy.damage = damage;
             copy.block = block;
             return copy;
         } catch (IllegalAccessException | InstantiationException var2) {
-            throw new RuntimeException("Failed to auto-generate makeCopy for card_modifier: " + this.ID);
+            throw new RuntimeException("Failed to auto-generate makeCopy for card_modifier: " + identifier(null));
         }
     }
 

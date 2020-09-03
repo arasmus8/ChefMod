@@ -11,15 +11,14 @@ import java.util.Optional;
 import static chefmod.ChefMod.makeID;
 
 public class OneTimeDamageBonusCardmod extends AbstractChefCardmod {
-    public static final String CARDMOD_ID = makeID(OneTimeDamageBonusCardmod.class.getSimpleName());
+    public static final String ID = makeID(OneTimeDamageBonusCardmod.class.getSimpleName());
 
     public OneTimeDamageBonusCardmod(int damageAmount) {
-        ID = CARDMOD_ID;
         damage = damageAmount;
     }
 
     public static void add(AbstractCard card, int damageAmount) {
-        Optional<AbstractChefCardmod> current = getForCard(card, CARDMOD_ID);
+        Optional<AbstractChefCardmod> current = getForCard(card, ID);
         if (current.isPresent()) {
             current.get().damage += damageAmount;
         } else {
@@ -30,11 +29,6 @@ public class OneTimeDamageBonusCardmod extends AbstractChefCardmod {
     @Override
     public AbstractCardModifier makeCopy() {
         return new OneTimeDamageBonusCardmod(damage);
-    }
-
-    @Override
-    public String identifier(AbstractCard card) {
-        return ID;
     }
 
     @Override

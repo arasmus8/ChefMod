@@ -56,7 +56,7 @@ public class RecipeManager {
 
     private int addTo(CardGroup group, int count) {
         List<AbstractCard> cards = group.group.stream()
-                .filter(c -> !IngredientCardmod.getForCard(c, IngredientCardmod.CARDMOD_ID).isPresent())
+                .filter(c -> !IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent())
                 .filter(c -> c.cost >= -1)
                 .collect(Collectors.toList());
         Collections.shuffle(cards, AbstractDungeon.cardRandomRng.random);

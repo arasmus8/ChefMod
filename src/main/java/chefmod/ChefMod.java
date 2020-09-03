@@ -218,6 +218,7 @@ public class ChefMod implements
 
     @Override
     public void onLoad(ArrayList<String> strings) {
+        RecipeManager.unlockedRecipes.clear();
         if (strings != null) {
             RecipeManager.unlockedRecipes.addAll(strings);
             if (RecipeManager.unlockedRecipes.size() == 0) {
