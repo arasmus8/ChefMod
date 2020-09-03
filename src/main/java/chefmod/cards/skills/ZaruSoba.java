@@ -29,7 +29,7 @@ public class ZaruSoba extends AbstractChefCard {
             @Override
             public void update() {
                 isDone = true;
-                for (int i = 0; i < magicNumber; i++) {
+                for (int i = 0; i < magicNumber && ChefMod.frozenPile.size() > 0; i++) {
                     ChefMod.frozenPile.moveToHand(ChefMod.frozenPile.getBottomCard(), ChefMod.frozenPile);
                 }
             }
