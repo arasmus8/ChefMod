@@ -29,6 +29,7 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
 
     private AbstractCreature getFrozenTarget(AbstractCard card) {
         if (card.target == AbstractCard.CardTarget.ENEMY) {
+            // TODO: use the actual power once I make it
             Optional<AbstractMonster> supercooled = AbstractDungeon.getMonsters().monsters.stream()
                     .filter(m -> m.hasPower("SUPERCOOL") && !m.isDeadOrEscaped())
                     .findFirst();

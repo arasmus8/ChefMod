@@ -108,6 +108,10 @@
     "NAME": "Today's Special",
     "DESCRIPTION": "Startup: Choose a Recipe to cook. NL Apply chefmod:Hunger"
   },
+  "chefmod:ZaruSoba": {
+    "NAME": "Zaru Soba",
+    "DESCRIPTION": "Draw !M! chefmod:Frozen cards. chefmod:Freeze !M!."
+  },
   "chefmod:NeowNuggets": {
     "NAME": "Neow Nuggets",
     "DESCRIPTION": "2 chefmod:Ingredients NL Your Strike and Defend cards have double Damage or Block and Exhuast"
