@@ -55,6 +55,10 @@
     "NAME": "Gelato",
     "DESCRIPTION": "chefmod:Freeze !M! Skills. NL Gain Block equal to !B! times their total cost."
   },
+  "chefmod:Granita": {
+    "NAME": "Granita",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL chefmod:Freeze 2 attacks."
+  },
   "chefmod:HotSoup": {
     "NAME": "Hot Soup",
     "DESCRIPTION": "Deal !D! Damage. At the end of turn, chefmod:Freeze this if it's in your hand."
