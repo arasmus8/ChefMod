@@ -59,6 +59,7 @@ public class RetainThisTurnPower extends AbstractPower implements CloneablePower
                 } else {
                     if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                         AbstractDungeon.handCardSelectScreen.selectedCards.group.forEach(c -> {
+                            AbstractDungeon.player.hand.addToTop(c);
                             if (!c.isEthereal) {
                                 c.retain = true;
                             }

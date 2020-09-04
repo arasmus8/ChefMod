@@ -49,7 +49,7 @@
       "At the end of this turn, you may retain #b1 card.",
       "At the end of this turn, you may retain up to #b",
       " cards.",
-      "Select which cards to Retain:"
+      " Retain:"
     ]
   },
   "chefmod:SatiatedPower": {
