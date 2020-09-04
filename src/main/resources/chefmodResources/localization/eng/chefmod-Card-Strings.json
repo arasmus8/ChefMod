@@ -114,6 +114,11 @@
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! Damage"
   },
+  "chefmod:SushiPlatter": {
+    "NAME": "Sushi Platter",
+    "DESCRIPTION": "chefmod:Recipe: !M! chefmod:Ingredients NL Your attacks deal double damage this turn.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: !M! chefmod:Ingredients NL Your attacks deal double damage this turn and next turn."
+  },
   "chefmod:Tenderizer": {
     "NAME": "Tenderizer",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Apply !M! Vulnerable."

@@ -34,5 +34,12 @@
       "Sentry Brittle",
       "When you draw a Status, exhaust it and deal 10 damage to all enemies."
     ]
+  },
+  "chefmod:SushiPlatterRecipe": {
+    "TEXT": [
+      "Sushi Platter",
+      "Your attacks deal double damage this turn.",
+      "Your attacks deal double damage this turn and next turn."
+    ]
   }
 }
