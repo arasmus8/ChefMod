@@ -34,6 +34,11 @@
     "NAME": "Chop",
     "DESCRIPTION": "Deal !D! Damage NL If played while chefmod:Frozen, deal !D! Damage twice."
   },
+  "chefmod:Cleavers": {
+    "NAME": "Cleavers",
+    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: Deal !D! Damage to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: Deal !D! Damage to two random enemies."
+  },
   "chefmod:ColdSteel": {
     "NAME": "Cold Steel",
     "DESCRIPTION": "Deal !D! Damage NL When chefmod:Frozen, costs 1 less [E] this combat."
