@@ -39,6 +39,11 @@
     "DESCRIPTION": "Retain a random card each turn.",
     "UPGRADE_DESCRIPTION": "Retain a random card each turn, prioritizing cards with chefmod:Prepped effects."
   },
+  "chefmod:DeepFreeze": {
+    "NAME": "DeepFreeze",
+    "DESCRIPTION": "Move all your chefmod:Frozen cards to your discard pile. chefmod:Freeze your draw pile. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Move all your chefmod:Frozen cards to your discard pile. chefmod:Freeze your draw pile."
+  },
   "chefmod:Defend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block"
