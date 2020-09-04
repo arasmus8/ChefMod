@@ -12,6 +12,11 @@
     "DESCRIPTION": "Apply chefmod:Hunger to a random enemy X times.",
     "UPGRADE_DESCRIPTION": "Apply chefmod:Hunger to a random enemy X + 1 times."
   },
+  "chefmod:CandyBowl": {
+    "NAME": "Candy Bowl",
+    "DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat."
+  },
   "chefmod:CayenneCloud": {
     "NAME": "Cayenne Cloud",
     "DESCRIPTION": "Deal !D! Damage to ALL enemies.",

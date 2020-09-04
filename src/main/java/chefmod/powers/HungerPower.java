@@ -1,25 +1,25 @@
 package chefmod.powers;
 
+import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
-import com.megacrit.cardcrawl.relics.RunicPyramid;
 
 import static chefmod.ChefMod.makeID;
 
-public class HungerPower extends AbstractPower {
+public class HungerPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(HungerPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
+
+    private static final int DEFAULT_DAMAGE = 10;
 
     public HungerPower(AbstractCreature owner) {
         name = NAME;
@@ -44,8 +44,12 @@ public class HungerPower extends AbstractPower {
 
     @Override
     public void stackPower(int stackAmount) {
-        // TODO: check for hunger damage up power
-        addToBot(new DamageAction(owner, new DamageInfo(owner, 10, DamageInfo.DamageType.THORNS), true));
+        int damage = DEFAULT_DAMAGE;
+        AbstractPower damageBonusPower = AbstractDungeon.player.getPower(HungerDamageUpPower.POWER_ID);
+        if (damageBonusPower != null) {
+            damage += damageBonusPower.amount;
+        }
+        addToBot(new DamageAction(owner, new DamageInfo(owner, damage, DamageInfo.DamageType.THORNS), true));
     }
 
     @Override
@@ -56,5 +60,10 @@ public class HungerPower extends AbstractPower {
     @Override
     public void atEndOfRound() {
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));
+    }
+
+    @Override
+    public AbstractPower makeCopy() {
+        return new HungerPower(owner);
     }
 }

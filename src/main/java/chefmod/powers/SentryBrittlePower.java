@@ -1,5 +1,6 @@
 package chefmod.powers;
 
+import basemod.interfaces.CloneablePowerInterface;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class SentryBrittlePower extends AbstractPower {
+public class SentryBrittlePower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(SentryBrittlePower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -38,5 +39,10 @@ public class SentryBrittlePower extends AbstractPower {
             addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
 
+    }
+
+    @Override
+    public AbstractPower makeCopy() {
+        return new SentryBrittlePower(owner, amount);
     }
 }

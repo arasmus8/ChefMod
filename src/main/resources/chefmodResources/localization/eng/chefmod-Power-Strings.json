@@ -21,6 +21,13 @@
       "This monster deals half Damage, and takes half Damage from attacks."
     ]
   },
+  "chefmod:HungerDamageUpPower": {
+    "NAME": "Hunger Damage Up",
+    "DESCRIPTIONS": [
+      "Hunger deals #b",
+      " more damage this combat."
+    ]
+  },
   "chefmod:NobStewPower": {
     "NAME": "Nob Stew",
     "DESCRIPTIONS": [
@@ -28,7 +35,7 @@
     ]
   },
   "chefmod:RetainRandomCardPower": {
-    "NAME": "Retain random card.",
+    "NAME": "Retain Random Card",
     "DESCRIPTIONS": [
       "At the end of your turn, retain #b",
       " random card",
@@ -37,11 +44,12 @@
     ]
   },
   "chefmod:RetainThisTurnPower": {
-    "NAME": "Retain cards this turn.",
+    "NAME": "Retain This Turn",
     "DESCRIPTIONS": [
       "At the end of this turn, you may retain #b1 card.",
       "At the end of this turn, you may retain up to #b",
-      " cards."
+      " cards.",
+      "Select which cards to Retain:"
     ]
   },
   "chefmod:SatiatedPower": {

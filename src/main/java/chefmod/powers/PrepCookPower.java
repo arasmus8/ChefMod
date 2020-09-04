@@ -1,5 +1,6 @@
 package chefmod.powers;
 
+import basemod.interfaces.CloneablePowerInterface;
 import chefmod.cardmods.OneTimeBlockBonusCardmod;
 import chefmod.cardmods.OneTimeDamageBonusCardmod;
 import chefmod.cardmods.PermanentBlockBonusCardmod;
@@ -11,10 +12,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class PrepCookPower extends TwoAmountPower {
+public class PrepCookPower extends TwoAmountPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(PrepCookPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -114,5 +116,14 @@ public class PrepCookPower extends TwoAmountPower {
                         });
             }
         });
+    }
+
+    @Override
+    public AbstractPower makeCopy() {
+        PrepCookPower copy = new PrepCookPower(owner, amount, false);
+        if (amount2 > 0) {
+            copy.stackPower(-1 * amount2);
+        }
+        return copy;
     }
 }

@@ -1,8 +1,7 @@
 package chefmod.powers;
 
+import basemod.interfaces.CloneablePowerInterface;
 import chefmod.cards.AbstractChefCard;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 
 import static chefmod.ChefMod.makeID;
 
-public class RetainRandomCardPower extends AbstractPower {
+public class RetainRandomCardPower extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(RetainRandomCardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -90,6 +89,7 @@ public class RetainRandomCardPower extends AbstractPower {
                 if (prioritizePrepped) {
                     List<AbstractCard> preppedCards = hand.group.stream()
                             .filter(preppedFilter)
+                            .filter(notStatusOrCurse)
                             .collect(Collectors.toList());
                     Collections.shuffle(preppedCards, AbstractDungeon.cardRandomRng.random);
                     preppedCards.stream()
@@ -101,6 +101,7 @@ public class RetainRandomCardPower extends AbstractPower {
                 if (cardsToRetain > 0) {
                     List<AbstractCard> cardsInHand = hand.group.stream()
                             .filter(notAlreadyRetained)
+                            .filter(notStatusOrCurse)
                             .collect(Collectors.toList());
                     Collections.shuffle(cardsInHand, AbstractDungeon.cardRandomRng.random);
                     cardsInHand.stream()
@@ -109,5 +110,10 @@ public class RetainRandomCardPower extends AbstractPower {
                 }
             }
         }
+    }
+
+    @Override
+    public AbstractPower makeCopy() {
+        return new RetainRandomCardPower(owner, amount, prioritizePrepped);
     }
 }
