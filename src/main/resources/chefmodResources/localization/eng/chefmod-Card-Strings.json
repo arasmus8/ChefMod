@@ -66,6 +66,10 @@
     "NAME": "Dino Kale",
     "DESCRIPTION": "Gain !B! Block. NL chefmod:Prepped: Gain !B! Block next turn."
   },
+  "chefmod:DoubleChop": {
+    "NAME": "Double Chop",
+    "DESCRIPTION": "Deal !D! Damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
+  },
   "chefmod:Fillet": {
     "NAME": "Fillet",
     "DESCRIPTION": "Deal !D! Damage. Make a copy of this card and chefmod:Freeze it."
