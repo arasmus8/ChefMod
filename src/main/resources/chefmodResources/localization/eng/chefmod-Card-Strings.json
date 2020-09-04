@@ -105,6 +105,10 @@
     "DESCRIPTION": "chefmod:No-Freeze NL Play the oldest chefmod:Frozen card. chefmod:Freeze 1.",
     "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Play the !M! oldest chefmod:Frozen cards. chefmod:Freeze !M!."
   },
+  "chefmod:RaidPantry": {
+    "NAME": "Raid Pantry",
+    "DESCRIPTION": "chefmod:No-Freeze NL Play all your chefmod:Frozen Attacks."
+  },
   "chefmod:RisingDough": {
     "NAME": "Rising Dough",
     "DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile. NL Exhuast",
