@@ -78,6 +78,10 @@
     "NAME": "Fire Up",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Hunger."
   },
+  "chefmod:Flambe": {
+    "NAME": "Flambé",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
+  },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
     "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",
