@@ -65,10 +65,16 @@
     ]
   },
   "chefmod:TemporaryStrengthDownPower": {
-      "NAME": "Damage Reduced",
-      "DESCRIPTIONS": [
-        "Reduces attack Damage by #b",
-        " this turn."
-      ]
+    "NAME": "Damage Reduced",
+    "DESCRIPTIONS": [
+      "Reduces attack Damage by #b",
+      " this turn."
+    ]
+  },
+  "chefmod:WeakenWhenHitPower": {
+    "NAME": "Bleed Out",
+    "DESCRIPTIONS": [
+      "When this enemy takes unblocked attack damage, #yWeaken it."
+    ]
   }
 }
