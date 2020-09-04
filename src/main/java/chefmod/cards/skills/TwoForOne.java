@@ -2,12 +2,14 @@ package chefmod.cards.skills;
 
 import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
+import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.PlayTwiceCardmod;
 import chefmod.cards.AbstractChefCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.function.Consumer;
 
 import static chefmod.ChefMod.makeID;
 
@@ -26,17 +28,14 @@ public class TwoForOne extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                isDone = true;
-                ChefMod.frozenPile.group.forEach(this::applyCardmod);
-            }
-
-            private void applyCardmod(AbstractCard c) {
-                CardModifierManager.removeModifiersById(c, PlayTwiceCardmod.ID, true);
-                CardModifierManager.addModifier(c, new PlayTwiceCardmod(upgraded));
-            }
-        });
+        Consumer<AbstractCard> applyCardmod = c -> {
+            CardModifierManager.removeModifiersById(c, PlayTwiceCardmod.ID, true);
+            CardModifierManager.addModifier(c, new PlayTwiceCardmod(upgraded));
+        };
+        addToBot(new FunctionalAction(first -> {
+                    ChefMod.frozenPile.group.forEach(applyCardmod);
+                    return true;
+                })
+        );
     }
 }

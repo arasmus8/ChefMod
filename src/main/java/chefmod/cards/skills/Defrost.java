@@ -1,10 +1,9 @@
 package chefmod.cards.skills;
 
 import chefmod.ChefMod;
+import chefmod.actions.FunctionalAction;
 import chefmod.actions.GridSelectAndPerformAction;
 import chefmod.cards.AbstractChefCard;
-import chefmod.powers.RetainThisTurnPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -30,19 +29,16 @@ public class Defrost extends AbstractChefCard {
                 false,
                 ChefMod.frozenPile,
                 null,
-                new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        isDone = true;
-                        GridSelectAndPerformAction.selectedCards.forEach(c -> {
-                            ChefMod.frozenPile.moveToHand(c, ChefMod.frozenPile);
-                            if (c instanceof AbstractChefCard) {
-                                AbstractChefCard chefCard = (AbstractChefCard) c;
-                                chefCard.frozen = false;
-                            }
-                        });
-                    }
-                }
+                new FunctionalAction(firstUpdate -> {
+                    GridSelectAndPerformAction.selectedCards.forEach(c -> {
+                        ChefMod.frozenPile.moveToHand(c, ChefMod.frozenPile);
+                        if (c instanceof AbstractChefCard) {
+                            AbstractChefCard chefCard = (AbstractChefCard) c;
+                            chefCard.frozen = false;
+                        }
+                    });
+                    return true;
+                })
         ));
     }
 }

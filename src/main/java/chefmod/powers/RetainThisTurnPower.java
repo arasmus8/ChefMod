@@ -1,7 +1,7 @@
 package chefmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import chefmod.actions.FunctionalAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -45,38 +45,30 @@ public class RetainThisTurnPower extends AbstractPower implements CloneablePower
         if (isPlayer &&
                 !AbstractDungeon.player.hand.isEmpty() &&
                 !AbstractDungeon.player.hasRelic(RunicPyramid.ID) &&
-                !AbstractDungeon.player.hasPower(EquilibriumPower.POWER_ID)) {
-            if (AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
-                addToBot(new AbstractGameAction() {
-                    private boolean firstUpdate = true;
-
-                    @Override
-                    public void update() {
-                        if (firstUpdate) {
-                            firstUpdate = false;
-                            if (AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
-                                AbstractDungeon.handCardSelectScreen.open(DESCRIPTIONS[3], this.amount, false, true, false, false, true);
-                                this.addToBot(new WaitAction(0.25F));
-                                this.tickDuration();
-                            } else {
-                                isDone = true;
-                            }
-                        } else {
-                            if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-                                AbstractDungeon.handCardSelectScreen.selectedCards.group.forEach(c -> {
-                                    if (!c.isEthereal) {
-                                        c.retain = true;
-                                    }
-                                });
-                                AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
-                                isDone = true;
-                            }
-
-                            this.tickDuration();
-                        }
+                !AbstractDungeon.player.hasPower(EquilibriumPower.POWER_ID) &&
+                AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
+            addToBot(new FunctionalAction(firstUpdate -> {
+                if (firstUpdate) {
+                    if (AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
+                        AbstractDungeon.handCardSelectScreen.open(DESCRIPTIONS[3], this.amount, false, true, false, false, true);
+                        this.addToBot(new WaitAction(0.25F));
+                        return false;
+                    } else {
+                        return true;
                     }
-                });
-            }
+                } else {
+                    if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+                        AbstractDungeon.handCardSelectScreen.selectedCards.group.forEach(c -> {
+                            if (!c.isEthereal) {
+                                c.retain = true;
+                            }
+                        });
+                        AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+                        return true;
+                    }
+                }
+                return false;
+            }));
         }
 
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));

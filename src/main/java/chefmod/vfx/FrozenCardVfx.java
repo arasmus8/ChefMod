@@ -32,8 +32,8 @@ public class FrozenCardVfx extends AbstractGameEffect {
         startingDuration = duration = EFFECT_DUR;
         c.drawScale = 0.01f;
         c.targetDrawScale = 1.0f;
-        c.current_x = Settings.WIDTH / 2.0f - (PADDING * count);
-        c.current_y = Settings.HEIGHT / 2.0f;
+        c.current_x = Settings.WIDTH / 4.0f - (PADDING * count);
+        c.current_y = Settings.HEIGHT / 1.8f;
         c.target_x = c.current_x;
         c.target_y = c.current_y;
         c.targetAngle = MathUtils.random(-6f, 6f);

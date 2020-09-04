@@ -1,13 +1,12 @@
 package chefmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
+import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.OneTimeBlockBonusCardmod;
 import chefmod.cardmods.OneTimeDamageBonusCardmod;
 import chefmod.cardmods.PermanentBlockBonusCardmod;
 import chefmod.cardmods.PermanentDamageBonusCardmod;
-import chefmod.cards.AbstractChefCard;
 import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -77,45 +76,22 @@ public class PrepCookPower extends TwoAmountPower implements CloneablePowerInter
         final int oneTimeAmount = amount;
         final int permanentAmount = amount2;
 
-        addToBot(new AbstractGameAction() {
-            @Override
-            public void update() {
-                isDone = true;
-                AbstractDungeon.player.hand.group.stream()
-                        .filter(c -> c.selfRetain || c.retain)
-                        .forEach(c -> {
-                            if (oneTimeAmount > 0) {
-                                if (c instanceof AbstractChefCard) {
-                                    AbstractChefCard cc = (AbstractChefCard) c;
-                                    if (cc.blocks) {
-                                        OneTimeBlockBonusCardmod.add(cc, oneTimeAmount);
-                                    }
-                                    if (cc.damages) {
-                                        OneTimeDamageBonusCardmod.add(cc, oneTimeAmount);
-                                    }
-                                } else {
-                                    OneTimeDamageBonusCardmod.add(c, oneTimeAmount);
-                                    OneTimeBlockBonusCardmod.add(c, oneTimeAmount);
-                                }
-                            }
+        addToBot(new FunctionalAction(first -> {
+            AbstractDungeon.player.hand.group.stream()
+                    .filter(c -> c.selfRetain || c.retain)
+                    .forEach(c -> {
+                        if (oneTimeAmount > 0) {
+                            OneTimeDamageBonusCardmod.add(c, oneTimeAmount);
+                            OneTimeBlockBonusCardmod.add(c, oneTimeAmount);
+                        }
 
-                            if (permanentAmount > 0) {
-                                if (c instanceof AbstractChefCard) {
-                                    AbstractChefCard cc = (AbstractChefCard) c;
-                                    if (cc.blocks) {
-                                        PermanentBlockBonusCardmod.add(cc, permanentAmount);
-                                    }
-                                    if (cc.damages) {
-                                        PermanentDamageBonusCardmod.add(cc, permanentAmount);
-                                    }
-                                } else {
-                                    PermanentDamageBonusCardmod.add(c, permanentAmount);
-                                    PermanentBlockBonusCardmod.add(c, permanentAmount);
-                                }
-                            }
-                        });
-            }
-        });
+                        if (permanentAmount > 0) {
+                            PermanentDamageBonusCardmod.add(c, permanentAmount);
+                            PermanentBlockBonusCardmod.add(c, permanentAmount);
+                        }
+                    });
+            return true;
+        }));
     }
 
     @Override

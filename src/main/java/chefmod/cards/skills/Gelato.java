@@ -1,8 +1,8 @@
 package chefmod.cards.skills;
 
 import chefmod.actions.FreezeAction;
+import chefmod.actions.FunctionalAction;
 import chefmod.cards.AbstractChefCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -30,16 +30,13 @@ public class Gelato extends AbstractChefCard {
         addToBot(new FreezeAction(
                 magicNumber,
                 c -> c.type == CardType.SKILL,
-                new AbstractGameAction() {
-                    @Override
-                    public void update() {
-                        isDone = true;
-                        int count = FreezeAction.frozenCards.size();
-                        if (count > 0) {
-                            addToBot(new GainBlockAction(p, block * count));
-                        }
+                new FunctionalAction(initialUpdate -> {
+                    int count = FreezeAction.frozenCards.size();
+                    if (count > 0) {
+                        addToBot(new GainBlockAction(p, block * count));
                     }
-                }
+                    return true;
+                })
         ));
     }
 }
