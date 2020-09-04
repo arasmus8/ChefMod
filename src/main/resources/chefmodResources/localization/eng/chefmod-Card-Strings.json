@@ -17,6 +17,10 @@
     "DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat. NL Exhaust",
     "UPGRADE_DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat."
   },
+  "chefmod:CapreseSalad": {
+    "NAME": "Caprese Salad",
+    "DESCRIPTION": "Gain !B! Block. NL When you shuffle, this card is always on top of the Draw Pile."
+  },
   "chefmod:CayenneCloud": {
     "NAME": "Cayenne Cloud",
     "DESCRIPTION": "Deal !D! Damage to ALL enemies.",
