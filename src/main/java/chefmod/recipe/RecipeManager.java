@@ -39,7 +39,8 @@ public class RecipeManager {
     public RecipeManager() {
         float offsetH = 128f * 1.618f * Settings.scale;
         float x = 256f * Settings.scale;
-        float y = Settings.HEIGHT * 0.75f;
+        // float y = AbstractDungeon.player.relics.get(0);
+        float y = Settings.POTION_Y + 256f * Settings.scale;
         for (int i = 0; i < RENDER_COUNT; i++) {
             Vector2 vec = new Vector2(x + offsetH * i, y);
             renderers.add(new RecipeRenderer(vec));

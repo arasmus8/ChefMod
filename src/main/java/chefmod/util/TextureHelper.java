@@ -55,8 +55,8 @@ public class TextureHelper {
     }
 
     public static void drawScaledAndRotated(SpriteBatch sb, Texture texture, float cX, float cY, float scale, float rotation) {
-        float w = texture.getWidth() * Settings.scale;
-        float h = texture.getHeight() * Settings.scale;
+        float w = texture.getWidth();// * Settings.scale;
+        float h = texture.getHeight();// * Settings.scale;
         float halfW = w / 2f;
         float halfH = h / 2f;
         sb.draw(texture,
