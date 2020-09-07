@@ -33,7 +33,7 @@ public interface ActionUnit {
     }
 
     default void shuffleIn(AbstractCard c, int i) {
-        qAction(new MakeTempCardInDrawPileAction(c, i, false, true));
+        qAction(new MakeTempCardInDrawPileAction(c, i, true, true));
     }
 
     default void shuffleIn(AbstractCard c) {
