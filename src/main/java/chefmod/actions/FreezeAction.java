@@ -82,7 +82,7 @@ public class FreezeAction extends AbstractGameAction {
                 frozenCards.clear();
                 List<AbstractCard> eligibleCards = drawPile.group.stream()
                         .filter(noFreezeFilter)
-                        .filter(filterCriteria != null ? filterCriteria : c -> true)
+                        .filter(Optional.ofNullable(filterCriteria).orElseGet(() -> c -> true))
                         .collect(Collectors.toList());
                 Collections.reverse(eligibleCards);
                 eligibleCards.stream()
