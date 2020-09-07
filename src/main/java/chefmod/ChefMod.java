@@ -46,6 +46,7 @@ public class ChefMod implements
 
     public static CardGroup frozenPile;
     public static ArrayList<AbstractCard> cardsToFreeze;
+    public static ArrayList<AbstractCard> frozenThisCombat;
     private static FrozenPileButton frozenPileButton;
     public static RecipeManager recipeManager;
 
@@ -105,7 +106,6 @@ public class ChefMod implements
         return modID + ":" + idText;
     }
 
-    @SuppressWarnings("unused")
     public static void initialize() {
         ChefMod chefMod = new ChefMod();
     }
@@ -181,6 +181,7 @@ public class ChefMod implements
         frozenPileButton = new FrozenPileButton();
         frozenPile = new CardGroup(CardGroup.CardGroupType.DRAW_PILE);
         cardsToFreeze = new ArrayList<>();
+        frozenThisCombat = new ArrayList<>();
         recipeManager = new RecipeManager();
     }
 
@@ -188,6 +189,7 @@ public class ChefMod implements
     public void receivePostBattle(AbstractRoom abstractRoom) {
         frozenPile.clear();
         cardsToFreeze.clear();
+        frozenThisCombat.clear();
         recipeManager.clear();
         if (!abstractRoom.smoked && abstractRoom.eliteTrigger) {
             recipeManager.unlock(abstractRoom.monsters, AbstractDungeon.actNum);

@@ -23,6 +23,7 @@ public class SoulPatches {
         public static void Insert(Soul _instance, AbstractCard card) {
             if (ChefMod.cardsToFreeze.contains(card)) {
                 _instance.group = ChefMod.frozenPile;
+                ChefMod.frozenThisCombat.add(card.makeSameInstanceOf());
             }
         }
 
@@ -48,6 +49,7 @@ public class SoulPatches {
         public static void Insert(Soul _instance, AbstractCard card, boolean visualOnly) {
             if (ChefMod.cardsToFreeze.contains(card)) {
                 _instance.group = ChefMod.frozenPile;
+                ChefMod.frozenThisCombat.add(card.makeSameInstanceOf());
                 ChefMod.cardsToFreeze.remove(card);
                 AbstractDungeon.effectList.add(new FrozenCardVfx(card));
             }

@@ -82,6 +82,12 @@
     "NAME": "Flambé",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
   },
+  "chefmod:FreezerBurn": {
+    "NAME": "Freezer Burn",
+    "DESCRIPTION": "Deal !M! Damage for every chefmod:Frozen card.",
+    "UPGRADE_DESCRIPTION": "Deal !M! Damage for every card chefmod:Frozen this combat.",
+    "EXTENDED_DESCRIPTION": [" NL ( !D! Damage)"]
+  },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
     "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",
