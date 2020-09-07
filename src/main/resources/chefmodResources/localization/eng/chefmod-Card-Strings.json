@@ -93,6 +93,10 @@
     "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",
     "UPGRADE_DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies. NL Increase damage by !M! each turn."
   },
+  "chefmod:FryPan": {
+    "NAME": "Fry Pan",
+    "DESCRIPTION": "chefmod:No-Freeze NL Deal !D! Damage."
+  },
   "chefmod:FullBurn": {
     "NAME": "Full Burn",
     "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] .",
