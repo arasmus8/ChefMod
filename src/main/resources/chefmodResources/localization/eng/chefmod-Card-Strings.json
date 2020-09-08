@@ -118,6 +118,10 @@
     "NAME": "Julienne",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze the next card you use."
   },
+  "chefmod:KnifeFlurry": {
+    "NAME": "Knife Flurry",
+    "DESCRIPTION": "Deal !D! Damage !M! times."
+  },
   "chefmod:Mince": {
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."
