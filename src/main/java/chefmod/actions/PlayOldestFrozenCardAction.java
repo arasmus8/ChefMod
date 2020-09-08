@@ -1,7 +1,7 @@
 package chefmod.actions;
 
 import chefmod.ChefMod;
-import chefmod.cards.AbstractChefCard;
+import chefmod.powers.SupercooledPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
@@ -12,10 +12,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 public class PlayOldestFrozenCardAction extends AbstractGameAction {
     private final boolean exhaustCards;
@@ -29,9 +26,8 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
 
     private AbstractCreature getFrozenTarget(AbstractCard card) {
         if (card.target == AbstractCard.CardTarget.ENEMY) {
-            // TODO: use the actual power once I make it
             Optional<AbstractMonster> supercooled = AbstractDungeon.getMonsters().monsters.stream()
-                    .filter(m -> m.hasPower("SUPERCOOL") && !m.isDeadOrEscaped())
+                    .filter(m -> m.hasPower(SupercooledPower.POWER_ID) && !m.isDeadOrEscaped())
                     .findFirst();
             return supercooled.orElseGet(AbstractDungeon::getRandomMonster);
         }

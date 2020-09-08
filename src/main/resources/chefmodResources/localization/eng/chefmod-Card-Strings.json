@@ -122,6 +122,10 @@
     "NAME": "Knife Flurry",
     "DESCRIPTION": "Deal !D! Damage !M! times."
   },
+  "chefmod:LiquidNitrogen": {
+    "NAME": "Liquid Nitrogen",
+    "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Supercooled."
+  },
   "chefmod:Mince": {
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."

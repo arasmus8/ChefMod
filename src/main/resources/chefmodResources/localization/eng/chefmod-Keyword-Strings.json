@@ -21,6 +21,13 @@
     "DESCRIPTION": "This card cannot be #yFrozen."
   },
   {
+    "PROPER_NAME": "Supercooled",
+    "NAMES": [
+      "supercooled"
+    ],
+    "DESCRIPTION": "#yFrozen cards will target this enemy."
+  },
+  {
     "PROPER_NAME": "Hunger",
     "NAMES": [
       "hunger"
