@@ -26,12 +26,13 @@ import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class RecipeManager {
     public static final ArrayList<String> unlockedRecipes = new ArrayList<>();
     public ArrayList<AbstractRecipe> recipes;
     private static final ArrayList<RecipeRenderer> renderers = new ArrayList<>();
-    private static final long RENDER_COUNT = 5;
+    private static final int RENDER_COUNT = 5;
     private final Vector2 additionalPos;
 
     private static final List<String> ACT1_RECIPES = Arrays.asList(NobStew.ID, FriedLagavulin.ID, SentryBrittle.ID);
@@ -40,11 +41,12 @@ public class RecipeManager {
         float offsetH = 128f * 1.618f * Settings.scale;
         float x = 256f * Settings.scale;
         // float y = AbstractDungeon.player.relics.get(0);
-        float y = Settings.POTION_Y + 256f * Settings.scale;
-        for (int i = 0; i < RENDER_COUNT; i++) {
-            Vector2 vec = new Vector2(x + offsetH * i, y);
-            renderers.add(new RecipeRenderer(vec));
-        }
+        float y = (float) Settings.HEIGHT - 256f * Settings.scale;
+        IntStream.range(0, RENDER_COUNT)
+                .forEachOrdered(i -> {
+                    Vector2 vec = new Vector2(x + offsetH * i, y);
+                    renderers.add(new RecipeRenderer(vec));
+                });
         additionalPos = new Vector2(x + offsetH * RENDER_COUNT, y);
         recipes = new ArrayList<>();
     }
@@ -148,9 +150,9 @@ public class RecipeManager {
 
     public void render(SpriteBatch sb) {
         if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
-            for (int i = 0; i < recipes.size() && i < renderers.size(); i++) {
-                renderers.get(i).render(sb, recipes.get(i));
-            }
+            IntStream.range(0, recipes.size())
+                    .limit(renderers.size())
+                    .forEachOrdered(i -> renderers.get(i).render(sb, recipes.get(i)));
             int additionalRecipes = recipes.size() - renderers.size();
             if (additionalRecipes > 0) {
                 String msg = "+" + additionalRecipes;
