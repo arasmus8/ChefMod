@@ -139,6 +139,10 @@
     "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! the next time you use it.",
     "UPGRADE_DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! this combat."
   },
+  "chefmod:Puree": {
+    "NAME": "Purée",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: chefmod:Freeze this card."
+  },
   "chefmod:QuickThaw": {
     "NAME": "Quick Thaw",
     "DESCRIPTION": "chefmod:No-Freeze NL Play the oldest chefmod:Frozen card. chefmod:Freeze 1.",
