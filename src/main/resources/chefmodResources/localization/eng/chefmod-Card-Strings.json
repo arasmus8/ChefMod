@@ -114,6 +114,10 @@
     "NAME": "Ice Pick",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze 1."
   },
+  "chefmod:Julienne": {
+    "NAME": "Julienne",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze the next card you use."
+  },
   "chefmod:Mince": {
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."
@@ -170,7 +174,7 @@
   },
   "chefmod:TwoForOne": {
     "NAME": "2-For-1 Coupon",
-    "DESCRIPTION": "Your currently chefmod:Frozen cards are played twice. NL Exhaust",
+    "DESCRIPTION": "Your currently chefmod:Frozen cards are played twice the next time you use them. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Your currently chefmod:Frozen cards are played twice this combat. NL Exhaust"
   },
   "chefmod:ZaruSoba": {

@@ -1,30 +1,32 @@
 package chefmod.cards.attacks;
 
-import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
+import chefmod.powers.FreezeNextCardPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
-public class IcePick extends AbstractChefCard {
-    public static String ID = makeID(IcePick.class.getSimpleName());
+public class Julienne extends AbstractChefCard {
+    public static String ID = makeID(Julienne.class.getSimpleName());
 
-    public IcePick() {
+    public Julienne() {
         super(ID,
                 1,
                 CardType.ATTACK,
-                CardRarity.COMMON,
+                CardRarity.UNCOMMON,
                 CardTarget.ENEMY
         );
-        baseDamage = damage = 7;
+        baseDamage = damage = 8;
         upgradeDamageBy = 3;
+        baseMagicNumber = magicNumber = 1;
         damages = true;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dealDamage(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
-        addToBot(new FreezeAction(1));
+        dealDamage(m, AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        applyToSelf(new FreezeNextCardPower(p, magicNumber));
     }
 }

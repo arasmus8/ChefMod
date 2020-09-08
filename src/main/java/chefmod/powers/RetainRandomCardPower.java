@@ -54,6 +54,7 @@ public class RetainRandomCardPower extends AbstractPower implements CloneablePow
         if (prioritizePrepped) {
             ((RetainRandomCardPower) current).upgrade();
         }
+        current.updateDescription();
         return true;
     }
 

@@ -1,18 +1,14 @@
 {
-  "chefmod:PrepCookPower": {
-    "NAME": "Prep Cook",
-    "DESCRIPTIONS": [
-      "Whenever you retain a card, it does #b",
-      " more Block and/or Damage",
-      " the next time you use it",
-      " this combat",
-      " and #b"
-    ]
-  },
   "chefmod:FriedLagavulinPower": {
     "NAME": "Fried Lagavulin",
     "DESCRIPTIONS": [
       "You can only play 1 attack each turn. Deal triple Damage."
+    ]
+  },
+  "chefmod:FreezeNextCardPower": {
+    "NAME": "Freeze Next Card",
+    "DESCRIPTIONS": [
+      "The next card you play will be #yFrozen."
     ]
   },
   "chefmod:HungerPower": {
@@ -32,6 +28,16 @@
     "NAME": "Nob Stew",
     "DESCRIPTIONS": [
       "When you play a Skill, a random Attack gets +1 Damage."
+    ]
+  },
+  "chefmod:PrepCookPower": {
+    "NAME": "Prep Cook",
+    "DESCRIPTIONS": [
+      "Whenever you retain a card, it does #b",
+      " more Block and/or Damage",
+      " the next time you use it",
+      " this combat",
+      " and #b"
     ]
   },
   "chefmod:RetainRandomCardPower": {
