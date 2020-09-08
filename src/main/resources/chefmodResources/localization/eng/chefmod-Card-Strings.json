@@ -130,6 +130,10 @@
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."
   },
+  "chefmod:MonsterBait": {
+    "NAME": "Monster Bait",
+    "DESCRIPTION": "Deal !D! Damage. If the target has chefmod:Hunger, increase the damage by !M!."
+  },
   "chefmod:PrepCook": {
     "NAME": "Prep Cook",
     "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! the next time you use it.",
