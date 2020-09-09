@@ -78,6 +78,10 @@
     "NAME": "Fire Up",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Hunger."
   },
+  "chefmod:FiveAlarmChili": {
+    "NAME": "5-Alarm Chili",
+    "DESCRIPTION": "chefmod:Recipe: 3 chefmod:Ingredients NL Choose a skill. It deals !M! Damage to ALL enemies whenever you use it."
+  },
   "chefmod:Flambe": {
     "NAME": "Flambé",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
@@ -86,7 +90,9 @@
     "NAME": "Freezer Burn",
     "DESCRIPTION": "Deal !M! Damage for every chefmod:Frozen card.",
     "UPGRADE_DESCRIPTION": "Deal !M! Damage for every card chefmod:Frozen this combat.",
-    "EXTENDED_DESCRIPTION": [" NL ( !D! Damage)"]
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !D! Damage)"
+    ]
   },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",

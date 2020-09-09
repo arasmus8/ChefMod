@@ -41,5 +41,12 @@
       "Your attacks deal double damage this turn.",
       "Your attacks deal double damage this turn and next turn."
     ]
+  },
+  "chefmod:ChiliRecipe": {
+    "TEXT": [
+      "5-Alarm Chili",
+      "Choose a skill. Whenever you play it, deal #b",
+      " damage to all enemies."
+    ]
   }
 }
