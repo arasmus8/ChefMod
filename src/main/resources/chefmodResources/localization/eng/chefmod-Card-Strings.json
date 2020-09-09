@@ -122,6 +122,10 @@
     "NAME": "Knife Flurry",
     "DESCRIPTION": "Deal !D! Damage !M! times."
   },
+  "chefmod:Leftovers": {
+    "NAME": "Leftovers",
+    "DESCRIPTION": "Deal !D! Damage. NL Whenever you chefmod:Freeze this card, double its Damage."
+  },
   "chefmod:LiquidNitrogen": {
     "NAME": "Liquid Nitrogen",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Supercooled."
