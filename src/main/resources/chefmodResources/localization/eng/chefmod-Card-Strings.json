@@ -143,6 +143,11 @@
     "NAME": "Purée",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: chefmod:Freeze this card."
   },
+  "chefmod:QuickChop": {
+    "NAME": "Quick Chop",
+    "DESCRIPTION": "Deal !D! Damage. NL Play the oldest chefmod:Frozen card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Play the !M! oldest chefmod:Frozen cards."
+  },
   "chefmod:QuickThaw": {
     "NAME": "Quick Thaw",
     "DESCRIPTION": "chefmod:No-Freeze NL Play the oldest chefmod:Frozen card. chefmod:Freeze 1.",
