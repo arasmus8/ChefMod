@@ -7,7 +7,6 @@ import chefmod.util.TextureHelper;
 import chefmod.vfx.SnowParticleManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.BobEffect;
 
 import static chefmod.ChefMod.makeImagePath;
 
@@ -29,10 +29,11 @@ public class FrozenPileButton extends ClickableUIElement {
     private static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
     private static final float DECK_TIP_X = 0F * Settings.scale;
     private static final float DECK_TIP_Y = 128.0F * Settings.scale;
-    private final GlyphLayout gl = new GlyphLayout();
-    private static final float COUNT_CIRCLE_W = 128.0F * Settings.scale;
+    private static final float BOB_DISTANCE = 22F * Settings.scale;
     private static final Texture frozenDeck = TextureHelper.getTexture(makeImagePath("frozenDeck.png"));
     private static SnowParticleManager snowParticleManager;
+
+    private BobEffect bob;
 
     public FrozenPileButton() {
         super((Texture) null,
@@ -41,6 +42,7 @@ public class FrozenPileButton extends ClickableUIElement {
                 HB_WIDTH,
                 HB_HEIGHT);
         snowParticleManager = new SnowParticleManager(hitbox.cX, hitbox.cY);
+        bob = new BobEffect(1f);
     }
 
     @Override
@@ -53,15 +55,17 @@ public class FrozenPileButton extends ClickableUIElement {
 
     @Override
     protected void onClick() {
-        System.out.println("Frozen Pile Clicked");
-        ExhaustPileViewScreenPatches.showFrozen = true;
-        AbstractDungeon.exhaustPileViewScreen.open();
+        if (!AbstractDungeon.isScreenUp) {
+            ExhaustPileViewScreenPatches.showFrozen = true;
+            AbstractDungeon.exhaustPileViewScreen.open();
+        }
     }
 
     @Override
     public void update() {
         super.update();
         snowParticleManager.update(hitbox.cX, hitbox.cY);
+        bob.update();
     }
 
     @Override
@@ -72,10 +76,9 @@ public class FrozenPileButton extends ClickableUIElement {
             if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
                 snowParticleManager.render(sb, hitbox.cX, hitbox.cY);
                 sb.setColor(Color.WHITE);
-                TextureHelper.draw(sb, frozenDeck, hitbox.cX, hitbox.cY);
+                TextureHelper.draw(sb, frozenDeck, hitbox.cX, hitbox.cY + bob.y);
 
                 String msg = Integer.toString(ChefMod.frozenPile.size());
-                gl.setText(FontHelper.eventBodyText, msg);
                 sb.setColor(Color.WHITE);
                 TextureHelper.draw(sb,
                         ImageMaster.DECK_COUNT_CIRCLE,

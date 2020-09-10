@@ -48,5 +48,12 @@
       "Choose a skill. Whenever you play it, deal #b",
       " damage to all enemies."
     ]
+  },
+  "chefmod:EscargotRecipe": {
+    "TEXT": [
+      "Escargót",
+      "Upgrade ALL your #yFrozen cards.",
+      "Upgrade ALL your cards."
+    ]
   }
 }

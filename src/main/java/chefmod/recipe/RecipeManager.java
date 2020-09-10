@@ -47,7 +47,7 @@ public class RecipeManager {
                     Vector2 vec = new Vector2(x + offsetH * i, y);
                     renderers.add(new RecipeRenderer(vec));
                 });
-        additionalPos = new Vector2(x + offsetH * RENDER_COUNT, y);
+        additionalPos = new Vector2(x + offsetH * RENDER_COUNT, y + 64f * Settings.scale);
         recipes = new ArrayList<>();
     }
 

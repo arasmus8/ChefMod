@@ -1,6 +1,7 @@
 package chefmod.patches.frozen;
 
 import chefmod.ChefMod;
+import chefmod.cards.AbstractChefCard;
 import chefmod.vfx.FrozenCardVfx;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,6 +25,11 @@ public class SoulPatches {
             if (ChefMod.cardsToFreeze.contains(card)) {
                 _instance.group = ChefMod.frozenPile;
                 ChefMod.frozenThisCombat.add(card.makeSameInstanceOf());
+                if (card instanceof AbstractChefCard) {
+                    ((AbstractChefCard) card).frozen = true;
+                    ((AbstractChefCard) card).triggerWhenFrozen();
+                }
+                AbstractDungeon.effectList.add(new FrozenCardVfx(card));
             }
         }
 
@@ -50,6 +56,10 @@ public class SoulPatches {
             if (ChefMod.cardsToFreeze.contains(card)) {
                 _instance.group = ChefMod.frozenPile;
                 ChefMod.frozenThisCombat.add(card.makeSameInstanceOf());
+                if (card instanceof AbstractChefCard) {
+                    ((AbstractChefCard) card).frozen = true;
+                    ((AbstractChefCard) card).triggerWhenFrozen();
+                }
                 ChefMod.cardsToFreeze.remove(card);
                 AbstractDungeon.effectList.add(new FrozenCardVfx(card));
             }

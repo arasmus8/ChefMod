@@ -70,6 +70,11 @@
     "NAME": "Double Chop",
     "DESCRIPTION": "Deal !D! Damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
   },
+  "chefmod:Escargot": {
+    "NAME": "Escargót",
+    "DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Upgrade ALL your chefmod:Frozen cards.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Upgrade ALL your cards."
+  },
   "chefmod:Fillet": {
     "NAME": "Fillet",
     "DESCRIPTION": "Deal !D! Damage. Make a copy of this card and chefmod:Freeze it."
