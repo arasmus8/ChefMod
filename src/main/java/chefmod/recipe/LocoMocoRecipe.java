@@ -22,7 +22,7 @@ public class LocoMocoRecipe extends AbstractRecipe {
         this.drawAmount = drawAmount;
         this.reduceAttackCost = reduceAttackCost;
         tipHeader = TEXT[0];
-        tipBody = TEXT[1] + (reduceAttackCost ? TEXT[3] : TEXT[2]);
+        tipBody = TEXT[1] + drawAmount + (reduceAttackCost ? TEXT[3] : TEXT[2]);
         ingredientCount = 2;
     }
 

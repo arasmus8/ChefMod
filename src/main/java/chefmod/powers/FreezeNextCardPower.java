@@ -2,6 +2,7 @@ package chefmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import chefmod.ChefMod;
+import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -36,7 +37,7 @@ public class FreezeNextCardPower extends AbstractPower implements CloneablePower
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!card.purgeOnUse && amount > 0) {
+        if (!card.purgeOnUse && !card.exhaust && !AbstractChefCard.isNoFreeze(card) && amount > 0) {
             ChefMod.cardsToFreeze.add(card);
             addToBot(new ReducePowerAction(owner, owner, this, 1));
         }

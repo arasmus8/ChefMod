@@ -158,6 +158,10 @@
     "NAME": "Monster Bait",
     "DESCRIPTION": "Deal !D! Damage. If the target has chefmod:Hunger, increase the damage by !M!."
   },
+  "chefmod:OrderUp": {
+    "NAME": "Order Up",
+    "DESCRIPTION": "Each turn, play your oldest chefmod:Frozen card and chefmod:Freeze 1"
+  },
   "chefmod:PrepCook": {
     "NAME": "Prep Cook",
     "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! the next time you use it.",

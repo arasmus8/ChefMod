@@ -37,6 +37,14 @@
       "When you play a Skill, a random Attack gets +1 Damage."
     ]
   },
+  "chefmod:OrderUpPower": {
+    "NAME": "Order Up",
+    "DESCRIPTIONS": [
+      "Each turn, play your oldest #yFrozen card and #yFreeze #b1",
+      "Each turn, play your oldest #b",
+      " #yFrozen cards and #yFreeze #b"
+    ]
+  },
   "chefmod:PrepCookPower": {
     "NAME": "Prep Cook",
     "DESCRIPTIONS": [
