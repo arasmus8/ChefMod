@@ -74,6 +74,11 @@
     "DESCRIPTION": "Move !M! chefmod:Frozen card to your hand.",
     "UPGRADE_DESCRIPTION": "Move !M! chefmod:Frozen cards to your hand."
   },
+  "chefmod:DimSum": {
+    "NAME": "Dim Sum",
+    "DESCRIPTION": "Innate NL Apply chefmod:Hunger. NL chefmod:Prepped: Shuffle this into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate NL Startup: chefmod:Hunger deals !M! more damage. NL Apply chefmod:Hunger."
+  },
   "chefmod:DinoKale": {
     "NAME": "Dino Kale",
     "DESCRIPTION": "Gain !B! Block. NL chefmod:Prepped: Gain !B! Block next turn."
