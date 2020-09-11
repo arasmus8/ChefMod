@@ -15,6 +15,10 @@
     "NAME": "Bleed Out",
     "DESCRIPTION": "Deal !D! Damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust"
   },
+  "chefmod:Bruschetta": {
+    "NAME": "Bruschetta",
+    "DESCRIPTION": "Apply chefmod:Hunger. Retain a card this turn."
+  },
   "chefmod:Canape": {
     "NAME": "Canapé",
     "DESCRIPTION": "Apply chefmod:Hunger to a random enemy X times.",
