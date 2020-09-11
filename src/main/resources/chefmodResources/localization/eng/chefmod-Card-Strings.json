@@ -3,6 +3,10 @@
     "NAME": "All-you-can-eat",
     "DESCRIPTION": "Apply chefmod:Satiated for every Attack card in your hand."
   },
+  "chefmod:AlooGobi": {
+    "NAME": "Aloo Gobi",
+    "DESCRIPTION": "Gain !B! Block. Whenever you chefmod:Freeze this card, increase its Block by !M!."
+  },
   "chefmod:BaoBuns": {
     "NAME": "Bao Buns",
     "DESCRIPTION": "Gain !B! Block. Retain !M! card this turn."
