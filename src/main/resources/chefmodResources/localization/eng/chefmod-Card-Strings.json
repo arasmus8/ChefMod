@@ -42,6 +42,10 @@
     "NAME": "Chop",
     "DESCRIPTION": "Deal !D! Damage NL If played while chefmod:Frozen, deal !D! Damage twice."
   },
+  "chefmod:CleanHouse": {
+    "NAME": "Clean House",
+    "DESCRIPTION": "Gain !B! Block. chefmod:Freeze !M! Status or Curse cards."
+  },
   "chefmod:Cleavers": {
     "NAME": "Cleavers",
     "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: Deal !D! Damage to a random enemy.",
