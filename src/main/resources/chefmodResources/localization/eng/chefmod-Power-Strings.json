@@ -11,6 +11,13 @@
       "The next card you play will be #yFrozen."
     ]
   },
+  "chefmod:FreezeSolidPower": {
+    "NAME": "Freeze Solid",
+    "DESCRIPTIONS": [
+      "Whenever you #yFreeze a card, gain #b",
+      " Block."
+    ]
+  },
   "chefmod:HungerPower": {
     "NAME": "Hunger",
     "DESCRIPTIONS": [

@@ -2,6 +2,7 @@ package chefmod.actions;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractChefCard;
+import chefmod.powers.TriggerOnFrozenPower;
 import chefmod.vfx.FrozenCardVfx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -77,6 +78,10 @@ public class FreezeAction extends AbstractGameAction {
                     }
                     ChefMod.frozenPile.addToTop(newCard);
                     AbstractDungeon.effectList.add(new FrozenCardVfx(newCard));
+                    AbstractDungeon.player.powers.stream()
+                            .filter(p -> p instanceof TriggerOnFrozenPower)
+                            .map(p -> (TriggerOnFrozenPower) p)
+                            .forEach(p -> p.triggerOnFrozen(newCard));
                 }
             } else {
                 frozenCards.clear();

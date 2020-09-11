@@ -99,6 +99,10 @@
       " NL ( !D! Damage)"
     ]
   },
+  "chefmod:FreezeSolid": {
+    "NAME": "Freeze Solid",
+    "DESCRIPTION": "Whenever you chefmod:Freeze a card, gain !M! Block."
+  },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
     "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",
