@@ -145,6 +145,11 @@
     "NAME": "Liquid Nitrogen",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Supercooled."
   },
+  "chefmod:LocoMoco": {
+    "NAME": "Loco Moco",
+    "DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Apply chefmod:Satiated to ALL enemies. Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Apply chefmod:Satiated to ALL enemies. Draw !M! cards. Attacks drawn this way cost 0 this combat."
+  },
   "chefmod:Mince": {
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."

@@ -55,5 +55,13 @@
       "Upgrade ALL your #yFrozen cards.",
       "Upgrade ALL your cards."
     ]
+  },
+  "chefmod:LocoMocoRecipe": {
+    "TEXT": [
+      "Loco Moco",
+      "Apply #ySatiated to ALL enemies. Draw #b",
+      " cards.",
+      " cards. Attacks drawn this way cost 0 this combat."
+    ]
   }
 }
