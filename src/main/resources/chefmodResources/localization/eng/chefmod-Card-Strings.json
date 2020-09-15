@@ -130,6 +130,11 @@
     "NAME": "Freeze Solid",
     "DESCRIPTION": "Whenever you chefmod:Freeze a card, gain !M! Block."
   },
+  "chefmod:FreshProduce": {
+    "NAME": "Fresh Produce",
+    "DESCRIPTION": "Whenever you play an chefmod:Ingredient, draw a card.",
+    "UPGRADE_DESCRIPTION": "Whenever you play an chefmod:Ingredient, draw !M! cards."
+  },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
     "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",

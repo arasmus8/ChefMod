@@ -23,7 +23,6 @@ import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
 import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RecipeManager {
@@ -55,16 +54,22 @@ public class RecipeManager {
         }
     }
 
-    private int addTo(CardGroup group, int count) {
-        List<AbstractCard> cards = group.group.stream()
-                .filter(c -> !IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent())
-                .filter(c -> c.cost >= -1)
-                .collect(Collectors.toList());
-        Collections.shuffle(cards, AbstractDungeon.cardRandomRng.random);
-        cards.stream()
-                .limit(count)
-                .forEachOrdered(c -> CardModifierManager.addModifier(c, new IngredientCardmod()));
-        return cards.size();
+    public void checkIngredientCount() {
+        AbstractPlayer p = AbstractDungeon.player;
+        CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        cg.group.addAll(p.hand.group);
+        cg.group.addAll(p.discardPile.group);
+        cg.group.addAll(p.drawPile.group);
+        cg.group.addAll(ChefMod.frozenPile.group);
+        int ingredientCount = (int) cg.group.stream()
+                .filter(c -> IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent())
+                .count();
+        int wantedIngredientCount = recipes.stream()
+                .mapToInt(r -> r.ingredientCount)
+                .sum();
+        if (wantedIngredientCount > ingredientCount) {
+            addIngredients(wantedIngredientCount - ingredientCount);
+        }
     }
 
     private void addIngredients(int count) {

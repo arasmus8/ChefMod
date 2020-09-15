@@ -18,6 +18,14 @@
       " Block."
     ]
   },
+  "chefmod:FreshProducePower": {
+    "NAME": "Fresh Produce",
+    "DESCRIPTIONS": [
+      "Whenever you play an #yIngredient, draw #b",
+      " card.",
+      " cards."
+    ]
+  },
   "chefmod:HungerPower": {
     "NAME": "Hunger",
     "DESCRIPTIONS": [
