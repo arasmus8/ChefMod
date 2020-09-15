@@ -167,6 +167,11 @@
     "NAME": "Hot Soup",
     "DESCRIPTION": "Deal !D! Damage. At the end of turn, chefmod:Freeze this if it's in your hand."
   },
+  "chefmod:IceCreamCone": {
+    "NAME": "Ice Cream Cone",
+    "DESCRIPTION": "Apply chefmod:Satiated and chefmod:Supercooled. Play your oldest chefmod:Frozen attack.",
+    "UPGRADE_DESCRIPTION": "Apply chefmod:Satiated and chefmod:Supercooled. Play your !M! oldest chefmod:Frozen attacks."
+  },
   "chefmod:IcePick": {
     "NAME": "Ice Pick",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze 1."

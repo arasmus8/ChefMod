@@ -13,15 +13,22 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public class PlayOldestFrozenCardAction extends AbstractGameAction {
     private final boolean exhaustCards;
+    private Predicate<AbstractCard> filterFn = null;
 
     public PlayOldestFrozenCardAction(boolean exhausts) {
         duration = Settings.ACTION_DUR_FAST;
         actionType = ActionType.WAIT;
         source = AbstractDungeon.player;
         exhaustCards = exhausts;
+    }
+
+    public PlayOldestFrozenCardAction(Predicate<AbstractCard> filterFn) {
+        this(false);
+        this.filterFn = filterFn;
     }
 
     private AbstractCreature getFrozenTarget(AbstractCard card) {
@@ -38,31 +45,32 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
         if (duration == Settings.ACTION_DUR_FAST) {
             isDone = true;
 
-            if (ChefMod.frozenPile.isEmpty()) {
-                return;
-            }
-
-            AbstractCard card = ChefMod.frozenPile.getBottomCard();
-            ChefMod.frozenPile.group.remove(card);
-            AbstractDungeon.getCurrRoom().souls.remove(card);
-            card.exhaustOnUseOnce = exhaustCards;
-            AbstractDungeon.player.limbo.group.add(card);
-            card.current_y = -200.0F * Settings.scale;
-            card.target_x = (float) Settings.WIDTH / 2.0F + 200.0F * Settings.scale;
-            card.target_y = (float) Settings.HEIGHT / 2.0F;
-            card.targetAngle = 0.0F;
-            card.lighten(false);
-            card.drawScale = 0.12F;
-            card.targetDrawScale = 0.75F;
-            card.applyPowers();
-            target = getFrozenTarget(card);
-            addToTop(new NewQueueCardAction(card, target, false, true));
-            addToTop(new UnlimboAction(card));
-            if (!Settings.FAST_MODE) {
-                addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-            } else {
-                addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
-            }
+            Predicate<AbstractCard> f = Optional.ofNullable(filterFn).orElse(c -> true);
+            Optional<AbstractCard> c = ChefMod.frozenPile.group.stream()
+                    .filter(f)
+                    .findFirst();
+            c.ifPresent(card -> {
+                ChefMod.frozenPile.group.remove(card);
+                AbstractDungeon.getCurrRoom().souls.remove(card);
+                card.exhaustOnUseOnce = exhaustCards;
+                AbstractDungeon.player.limbo.group.add(card);
+                card.current_y = -200.0F * Settings.scale;
+                card.target_x = (float) Settings.WIDTH / 2.0F + 200.0F * Settings.scale;
+                card.target_y = (float) Settings.HEIGHT / 2.0F;
+                card.targetAngle = 0.0F;
+                card.lighten(false);
+                card.drawScale = 0.12F;
+                card.targetDrawScale = 0.75F;
+                card.applyPowers();
+                target = getFrozenTarget(card);
+                addToTop(new NewQueueCardAction(card, target, false, true));
+                addToTop(new UnlimboAction(card));
+                if (!Settings.FAST_MODE) {
+                    addToTop(new WaitAction(Settings.ACTION_DUR_MED));
+                } else {
+                    addToTop(new WaitAction(Settings.ACTION_DUR_FASTER));
+                }
+            });
         }
 
     }
