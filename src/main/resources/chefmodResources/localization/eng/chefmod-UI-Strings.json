@@ -63,5 +63,14 @@
       " cards.",
       " cards. Attacks drawn this way cost 0 this combat."
     ]
+  },
+  "chefmod:FullCourseMealRecipe": {
+    "TEXT": [
+      "Full-Course Meal",
+      "Gain #b",
+      " Block.",
+      " Block, and #b",
+      " Block next turn."
+    ]
   }
 }

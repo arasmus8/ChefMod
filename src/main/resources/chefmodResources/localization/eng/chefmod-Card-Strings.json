@@ -135,6 +135,11 @@
     "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] .",
     "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] [E] ."
   },
+  "chefmod:FullCourseMeal": {
+    "NAME": "Full-Course Meal",
+    "DESCRIPTION": "chefmod:Recipe: 4 chefmod:Ingredients NL Gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: 4 chefmod:Ingredients NL Gain !M! Block, and !M! Block next turn."
+  },
   "chefmod:Gelato": {
     "NAME": "Gelato",
     "DESCRIPTION": "chefmod:Freeze !M! Skills. NL Gain Block equal to !B! times their total cost."

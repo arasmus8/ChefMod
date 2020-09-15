@@ -8,14 +8,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -71,22 +69,24 @@ public class RecipeManager {
 
     private void addIngredients(int count) {
         AbstractPlayer p = AbstractDungeon.player;
-        CardGroup cg = p.drawPile;
-        count -= addTo(cg, count);
-        if (count > 0) {
-            cg = p.discardPile;
-            count -= addTo(cg, count);
-        }
-        if (count > 0) {
-            cg = ChefMod.frozenPile;
-            count -= addTo(cg, count);
-        }
-        if (count > 0) {
+        CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        cg.group.addAll(p.hand.group);
+        cg.group.addAll(p.discardPile.group);
+        cg.group.addAll(p.drawPile.group);
+        cg.group.addAll(ChefMod.frozenPile.group);
+
+        cg.group.removeIf(c -> c.cost < -1 || c.type == AbstractCard.CardType.CURSE || c.purgeOnUse);
+
+        while (cg.size() < count) {
             // TODO: make a custom status instead of slimes
-            AbstractCard newCard = CardLibrary.getCard(Slimed.ID).makeCopy();
-            CardModifierManager.addModifier(newCard, new IngredientCardmod());
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(newCard, count, true, true));
+            cg.addToBottom(new Slimed());
         }
+
+        cg.shuffle(AbstractDungeon.cardRandomRng);
+
+        cg.group.stream()
+                .limit(count)
+                .forEach(c -> CardModifierManager.addModifier(c, new IngredientCardmod()));
     }
 
     public void startRecipe(AbstractRecipe recipe) {
