@@ -42,7 +42,9 @@ public class DimSum extends AbstractChefCard implements StartupCard {
 
     @Override
     public void upgrade() {
-        super.upgrade();
-        hasPreppedActions = false;
+        if (!upgraded && canUpgrade()) {
+            super.upgrade();
+            hasPreppedActions = false;
+        }
     }
 }
