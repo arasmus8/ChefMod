@@ -75,7 +75,10 @@ public class RecipeManager {
         cg.group.addAll(p.drawPile.group);
         cg.group.addAll(ChefMod.frozenPile.group);
 
-        cg.group.removeIf(c -> c.cost < -1 || c.type == AbstractCard.CardType.CURSE || c.purgeOnUse);
+        cg.group.removeIf(c -> c.cost < -1 ||
+                c.type == AbstractCard.CardType.CURSE ||
+                IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent() ||
+                c.purgeOnUse);
 
         while (cg.size() < count) {
             // TODO: make a custom status instead of slimes

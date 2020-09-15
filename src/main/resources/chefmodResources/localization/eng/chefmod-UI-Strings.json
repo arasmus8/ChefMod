@@ -72,5 +72,13 @@
       " Block, and #b",
       " Block next turn."
     ]
+  },
+  "chefmod:BananaSplitRecipe": {
+    "TEXT": [
+      "Banana Split",
+      "Hunger deals #b",
+      " more damage this combat.",
+      " Play a copy of this #yRecipe"
+    ]
   }
 }

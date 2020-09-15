@@ -7,6 +7,11 @@
     "NAME": "Aloo Gobi",
     "DESCRIPTION": "Gain !B! Block. Whenever you chefmod:Freeze this card, increase its Block by !M!."
   },
+  "chefmod:BananaSplit": {
+    "NAME": "Banana Split",
+    "DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL chefmod:Hunger deals !M! more damage this combat.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL chefmod:Hunger deals !M! more damage this combat. Play a copy of this chefmod:Recipe."
+  },
   "chefmod:BaoBuns": {
     "NAME": "Bao Buns",
     "DESCRIPTION": "Gain !B! Block. Retain !M! card this turn."

@@ -53,7 +53,7 @@
     "NAMES": [
       "recipe"
     ],
-    "DESCRIPTION": "A special one-time effect that is triggered when you play enough #yIngredients. #yRecipes are activated in order."
+    "DESCRIPTION": "A one-time effect that is triggered when you play enough #yIngredients. #yRecipes are activated in order."
   },
   {
     "PROPER_NAME": "Ingredient",
