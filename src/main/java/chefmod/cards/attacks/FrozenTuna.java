@@ -4,8 +4,6 @@ import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
-import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -23,7 +21,7 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
         );
         baseDamage = damage = 18;
         baseMagicNumber = magicNumber = 0;
-        upgradeMagicNumberBy = 3;
+        upgradeMagicNumberBy = 6;
         damages = true;
     }
 
@@ -34,7 +32,9 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
 
     @Override
     public void atTurnStart() {
-        baseDamage += magicNumber;
+        if (upgraded && frozen) {
+            baseDamage += magicNumber;
+        }
     }
 
     @Override

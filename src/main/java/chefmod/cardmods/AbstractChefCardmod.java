@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.lang.invoke.MethodHandles;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -30,10 +29,6 @@ public abstract class AbstractChefCardmod extends AbstractCardModifier implement
         } else {
             return Optional.empty();
         }
-    }
-
-    public static Optional<AbstractChefCardmod> getForCard(AbstractCard card) {
-        return getForCard(card, makeID(MethodHandles.lookup().lookupClass().getSimpleName()));
     }
 
     @Override

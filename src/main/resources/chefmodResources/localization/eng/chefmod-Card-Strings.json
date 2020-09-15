@@ -3,6 +3,10 @@
     "NAME": "All-you-can-eat",
     "DESCRIPTION": "Apply chefmod:Satiated for every Attack card in your hand."
   },
+  "chefmod:AlooGobi": {
+    "NAME": "Aloo Gobi",
+    "DESCRIPTION": "Gain !B! Block. Whenever you chefmod:Freeze this card, increase its Block by !M!."
+  },
   "chefmod:BaoBuns": {
     "NAME": "Bao Buns",
     "DESCRIPTION": "Gain !B! Block. Retain !M! card this turn."
@@ -10,6 +14,10 @@
   "chefmod:BleedOut": {
     "NAME": "Bleed Out",
     "DESCRIPTION": "Deal !D! Damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust"
+  },
+  "chefmod:Bruschetta": {
+    "NAME": "Bruschetta",
+    "DESCRIPTION": "Apply chefmod:Hunger. Retain a card this turn."
   },
   "chefmod:Canape": {
     "NAME": "Canapé",
@@ -33,6 +41,10 @@
   "chefmod:Chop": {
     "NAME": "Chop",
     "DESCRIPTION": "Deal !D! Damage NL If played while chefmod:Frozen, deal !D! Damage twice."
+  },
+  "chefmod:CleanHouse": {
+    "NAME": "Clean House",
+    "DESCRIPTION": "Gain !B! Block. chefmod:Freeze !M! Status or Curse cards."
   },
   "chefmod:Cleavers": {
     "NAME": "Cleavers",
@@ -62,6 +74,11 @@
     "DESCRIPTION": "Move !M! chefmod:Frozen card to your hand.",
     "UPGRADE_DESCRIPTION": "Move !M! chefmod:Frozen cards to your hand."
   },
+  "chefmod:DimSum": {
+    "NAME": "Dim Sum",
+    "DESCRIPTION": "Innate NL Apply chefmod:Hunger. NL chefmod:Prepped: Shuffle this into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Innate NL Startup: chefmod:Hunger deals !M! more damage. NL Apply chefmod:Hunger."
+  },
   "chefmod:DinoKale": {
     "NAME": "Dino Kale",
     "DESCRIPTION": "Gain !B! Block. NL chefmod:Prepped: Gain !B! Block next turn."
@@ -69,6 +86,16 @@
   "chefmod:DoubleChop": {
     "NAME": "Double Chop",
     "DESCRIPTION": "Deal !D! Damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
+  },
+  "chefmod:Escargot": {
+    "NAME": "Escargót",
+    "DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Upgrade ALL your chefmod:Frozen cards.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Upgrade ALL your cards."
+  },
+  "chefmod:FarmersMarket": {
+    "NAME": "Farmer's Market",
+    "DESCRIPTION": "Fetch an chefmod:Ingredient from your Draw pile. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Fetch !M! chefmod:Ingredients from your Draw pile. They cost 0 until played. NL Exhaust"
   },
   "chefmod:Fillet": {
     "NAME": "Fillet",
@@ -78,6 +105,10 @@
     "NAME": "Fire Up",
     "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Hunger."
   },
+  "chefmod:FiveAlarmChili": {
+    "NAME": "5-Alarm Chili",
+    "DESCRIPTION": "chefmod:Recipe: 3 chefmod:Ingredients NL Choose a skill. It deals !M! Damage to ALL enemies whenever you use it."
+  },
   "chefmod:Flambe": {
     "NAME": "Flambé",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
@@ -86,7 +117,13 @@
     "NAME": "Freezer Burn",
     "DESCRIPTION": "Deal !M! Damage for every chefmod:Frozen card.",
     "UPGRADE_DESCRIPTION": "Deal !M! Damage for every card chefmod:Frozen this combat.",
-    "EXTENDED_DESCRIPTION": [" NL ( !D! Damage)"]
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !D! Damage)"
+    ]
+  },
+  "chefmod:FreezeSolid": {
+    "NAME": "Freeze Solid",
+    "DESCRIPTION": "Whenever you chefmod:Freeze a card, gain !M! Block."
   },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
@@ -118,14 +155,52 @@
     "NAME": "Ice Pick",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze 1."
   },
+  "chefmod:Julienne": {
+    "NAME": "Julienne",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze the next card you use."
+  },
+  "chefmod:KnifeFlurry": {
+    "NAME": "Knife Flurry",
+    "DESCRIPTION": "Deal !D! Damage !M! times."
+  },
+  "chefmod:Leftovers": {
+    "NAME": "Leftovers",
+    "DESCRIPTION": "Deal !D! Damage. NL Whenever you chefmod:Freeze this card, double its Damage."
+  },
+  "chefmod:LiquidNitrogen": {
+    "NAME": "Liquid Nitrogen",
+    "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Supercooled."
+  },
+  "chefmod:LocoMoco": {
+    "NAME": "Loco Moco",
+    "DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Apply chefmod:Satiated to ALL enemies. Draw !M! cards.",
+    "UPGRADE_DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Apply chefmod:Satiated to ALL enemies. Draw !M! cards. Attacks drawn this way cost 0 this combat."
+  },
   "chefmod:Mince": {
     "NAME": "Mince",
     "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."
+  },
+  "chefmod:MonsterBait": {
+    "NAME": "Monster Bait",
+    "DESCRIPTION": "Deal !D! Damage. If the target has chefmod:Hunger, increase the damage by !M!."
+  },
+  "chefmod:OrderUp": {
+    "NAME": "Order Up",
+    "DESCRIPTION": "Each turn, play your oldest chefmod:Frozen card and chefmod:Freeze 1"
   },
   "chefmod:PrepCook": {
     "NAME": "Prep Cook",
     "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! the next time you use it.",
     "UPGRADE_DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! this combat."
+  },
+  "chefmod:Puree": {
+    "NAME": "Purée",
+    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: chefmod:Freeze this card."
+  },
+  "chefmod:QuickChop": {
+    "NAME": "Quick Chop",
+    "DESCRIPTION": "Deal !D! Damage. NL Play the oldest chefmod:Frozen card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Play the !M! oldest chefmod:Frozen cards."
   },
   "chefmod:QuickThaw": {
     "NAME": "Quick Thaw",
@@ -174,7 +249,7 @@
   },
   "chefmod:TwoForOne": {
     "NAME": "2-For-1 Coupon",
-    "DESCRIPTION": "Your currently chefmod:Frozen cards are played twice. NL Exhaust",
+    "DESCRIPTION": "Your currently chefmod:Frozen cards are played twice the next time you use them. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Your currently chefmod:Frozen cards are played twice this combat. NL Exhaust"
   },
   "chefmod:ZaruSoba": {

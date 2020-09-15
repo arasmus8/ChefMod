@@ -26,6 +26,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.*;
 
@@ -62,12 +63,10 @@ public class TheChef extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            retVal.add(Strike.ID);
-        }
-        for (int i = 0; i < 4; i++) {
-            retVal.add(Defend.ID);
-        }
+        IntStream.rangeClosed(1, 4)
+                .forEach(i -> retVal.add(Strike.ID));
+        IntStream.rangeClosed(1, 4)
+                .forEach(i -> retVal.add(Defend.ID));
         retVal.add(QuickThaw.ID);
         retVal.add(TodaysSpecial.ID);
         return retVal;

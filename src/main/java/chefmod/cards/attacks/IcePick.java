@@ -2,7 +2,6 @@ package chefmod.cards.attacks;
 
 import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
-import chefmod.powers.HungerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,7 +24,7 @@ public class IcePick extends AbstractChefCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dealDamage(m, AbstractGameAction.AttackEffect.FIRE);
+        dealDamage(m, AbstractGameAction.AttackEffect.BLUNT_LIGHT);
         addToBot(new FreezeAction(1));
     }
 }

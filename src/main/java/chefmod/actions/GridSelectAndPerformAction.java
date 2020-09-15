@@ -12,8 +12,10 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
@@ -77,10 +79,9 @@ public class GridSelectAndPerformAction extends AbstractGameAction {
                 group = ChefMod.frozenPile;
             }
 
-            if (filterCriteria == null) {
-                filterCriteria = abstractCard -> true;
-            }
-            List<AbstractCard> filteredList = group.group.stream().filter(filterCriteria).collect(Collectors.toList());
+            List<AbstractCard> filteredList = group.group.stream()
+                    .filter(Optional.ofNullable(filterCriteria).orElseGet(() -> abstractCard -> true))
+                    .collect(Collectors.toList());
 
             if (filteredList.size() <= amount) {
                 selectedCards.addAll(filteredList);
@@ -116,14 +117,14 @@ public class GridSelectAndPerformAction extends AbstractGameAction {
                     return;
                 }
             } else {
-                AbstractCard card;
                 CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 filtered.group.addAll(filteredList);
-                for (int i = 0; i < amount; ++i) {
-                    card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
-                    filtered.removeCard(card);
-                    selectedCards.add(card);
-                }
+                IntStream.rangeClosed(1, amount)
+                        .forEach(i -> {
+                            AbstractCard card = filtered.getRandomCard(AbstractDungeon.cardRandomRng);
+                            filtered.removeCard(card);
+                            selectedCards.add(card);
+                        });
                 endActionWithFollowUp();
             }
         }

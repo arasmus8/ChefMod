@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.BobEffect;
 
 import static chefmod.ChefMod.makeImagePath;
 
@@ -26,15 +27,23 @@ public class RecipeRenderer extends ClickableUIElement {
     private static final float DECK_TIP_X = -64f * Settings.scale;
     private static final float DECK_TIP_Y = -96 * Settings.scale;
     private static final Random rng = new Random(Settings.seed);
+    private final BobEffect bob;
 
     public RecipeRenderer(Vector2 offset) {
         super(recipeCardImage, offset.x, offset.y, recipeCardImage.getWidth(), recipeCardImage.getHeight());
-        angle = rng.random(-0.1f, 0.1f);
+        angle = rng.random(-5f, 5f);
+        bob = new BobEffect(rng.random(2f, 6f), rng.random(0.6f, 1.4f));
     }
 
-    public void render (SpriteBatch sb, AbstractRecipe recipe) {
-        super.render(sb);
+    @Override
+    public void update() {
+        super.update();
+        bob.update();
+    }
+
+    public void render(SpriteBatch sb, AbstractRecipe recipe) {
         sb.setColor(Color.WHITE);
+        TextureHelper.drawScaledAndRotated(sb, image, hitbox.cX, hitbox.cY + bob.y, 1f, angle);
         TextureHelper.draw(sb, ImageMaster.DECK_COUNT_CIRCLE, hitbox.cX + COUNT_OFFSET_X, hitbox.cY + COUNT_OFFSET_Y);
         String msg = Integer.toString(recipe.ingredientCount);
         FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX + COUNT_X, hitbox.cY + COUNT_Y);

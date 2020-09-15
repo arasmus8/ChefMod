@@ -2,6 +2,7 @@ package chefmod.actions;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractChefCard;
+import chefmod.powers.TriggerOnFrozenPower;
 import chefmod.vfx.FrozenCardVfx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -65,7 +66,6 @@ public class FreezeAction extends AbstractGameAction {
 
             CardGroup drawPile = AbstractDungeon.player.drawPile;
             if (card != null) {
-                AbstractDungeon.effectList.add(new FrozenCardVfx(card));
                 Optional<CardGroup> currentGroup = findCurrentGroup(card);
                 if (currentGroup.isPresent()) {
                     ChefMod.cardsToFreeze.add(card);
@@ -77,6 +77,11 @@ public class FreezeAction extends AbstractGameAction {
                         ((AbstractChefCard) newCard).frozen = true;
                     }
                     ChefMod.frozenPile.addToTop(newCard);
+                    AbstractDungeon.effectList.add(new FrozenCardVfx(newCard));
+                    AbstractDungeon.player.powers.stream()
+                            .filter(p -> p instanceof TriggerOnFrozenPower)
+                            .map(p -> (TriggerOnFrozenPower) p)
+                            .forEach(p -> p.triggerOnFrozen(newCard));
                 }
             } else {
                 frozenCards.clear();
@@ -91,14 +96,7 @@ public class FreezeAction extends AbstractGameAction {
                             ChefMod.cardsToFreeze.add(c);
                             frozenCards.add(c);
                         });
-                ChefMod.cardsToFreeze.forEach(c -> {
-                    if (c instanceof AbstractChefCard) {
-                        ((AbstractChefCard) c).frozen = true;
-                        ((AbstractChefCard) c).triggerWhenFrozen();
-                    }
-                    drawPile.moveToDeck(c, false);
-                    AbstractDungeon.effectList.add(new FrozenCardVfx(c));
-                });
+                ChefMod.cardsToFreeze.forEach(c -> drawPile.moveToDeck(c, false));
                 ChefMod.cardsToFreeze.clear();
                 endActionWithFollowUp();
             }

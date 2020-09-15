@@ -41,5 +41,27 @@
       "Your attacks deal double damage this turn.",
       "Your attacks deal double damage this turn and next turn."
     ]
+  },
+  "chefmod:ChiliRecipe": {
+    "TEXT": [
+      "5-Alarm Chili",
+      "Choose a skill. Whenever you play it, deal #b",
+      " damage to all enemies."
+    ]
+  },
+  "chefmod:EscargotRecipe": {
+    "TEXT": [
+      "Escargót",
+      "Upgrade ALL your #yFrozen cards.",
+      "Upgrade ALL your cards."
+    ]
+  },
+  "chefmod:LocoMocoRecipe": {
+    "TEXT": [
+      "Loco Moco",
+      "Apply #ySatiated to ALL enemies. Draw #b",
+      " cards.",
+      " cards. Attacks drawn this way cost 0 this combat."
+    ]
   }
 }

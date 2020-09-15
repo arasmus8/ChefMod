@@ -5,6 +5,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.stream.IntStream;
+
 import static chefmod.ChefMod.makeID;
 
 public class CayenneCloud extends AbstractChefCard {
@@ -26,8 +28,7 @@ public class CayenneCloud extends AbstractChefCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < magicNumber; i++) {
-            dealAoeDamage(AbstractGameAction.AttackEffect.FIRE);
-        }
+        IntStream.rangeClosed(1, magicNumber)
+                .forEach(i -> dealAoeDamage(AbstractGameAction.AttackEffect.FIRE));
     }
 }

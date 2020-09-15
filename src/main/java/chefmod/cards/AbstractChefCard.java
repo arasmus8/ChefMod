@@ -155,6 +155,14 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
         return this == hand.getBottomCard();
     }
 
+    public static boolean isNoFreeze(AbstractCard card) {
+        if (card instanceof AbstractChefCard) {
+            AbstractChefCard cc = (AbstractChefCard) card;
+            return cc.nofreeze;
+        }
+        return false;
+    }
+
     public DamageInfo makeDamageInfo(DamageInfo.DamageType type) {
         return new DamageInfo(AbstractDungeon.player, damage, damageTypeForTurn);
     }

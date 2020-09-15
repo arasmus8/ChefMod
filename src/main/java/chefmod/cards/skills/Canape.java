@@ -6,6 +6,8 @@ import chefmod.powers.HungerPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import java.util.stream.IntStream;
+
 import static chefmod.ChefMod.makeID;
 
 public class Canape extends AbstractChefCard {
@@ -25,9 +27,8 @@ public class Canape extends AbstractChefCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new XCostAction(this, (x, params) -> {
-            for (int i = 0; i < x + params[0]; i++) {
-                applyToEnemy(m, new HungerPower(m));
-            }
+            IntStream.rangeClosed(1, x + params[0])
+                    .forEach(i -> applyToEnemy(m, new HungerPower(m)));
             return true;
         }, magicNumber));
     }
