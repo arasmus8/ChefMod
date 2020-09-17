@@ -268,6 +268,10 @@
     "DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile. NL Exhuast",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile."
   },
+  "chefmod:SaveForLater": {
+    "NAME": "Save for Later",
+    "DESCRIPTION": "Choose a card. Exhaust it and shuffle !M! copies into your draw pile."
+  },
   "chefmod:SearedScallops": {
     "NAME": "Seared Scallops",
     "DESCRIPTION": "Inflict chefmod:Hunger on ALL enemies.",
