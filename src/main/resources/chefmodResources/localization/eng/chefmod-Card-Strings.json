@@ -210,6 +210,11 @@
     "DESCRIPTION": "Draw !M! cards. If no attacks are drawn, apply chefmod:Hunger to ALL enemies.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. For each non-attack drawn, apply chefmod:Hunger to ALL enemies."
   },
+  "chefmod:NoSoupForYou": {
+    "NAME": "No Soup For You",
+    "DESCRIPTION": "Apply chefmod:Hunger. chefmod:Freeze an attack that costs 2 or more [E] .",
+    "UPGRADE_DESCRIPTION": "Apply chefmod:Hunger. chefmod:Freeze an attack that costs 2 or more [E] and play your oldest chefmod:Frozen card."
+  },
   "chefmod:OldCookbook": {
     "NAME": "Old Cookbook",
     "DESCRIPTION": "Add a random chefmod:Recipe to your hand. NL Exhuast",
