@@ -205,6 +205,11 @@
     "NAME": "Monster Bait",
     "DESCRIPTION": "Deal !D! Damage. If the target has chefmod:Hunger, increase the damage by !M!."
   },
+  "chefmod:NewMenu": {
+    "NAME": "New Menu",
+    "DESCRIPTION": "Draw !M! cards. If no attacks are drawn, apply chefmod:Hunger to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. For each non-attack drawn, apply chefmod:Hunger to ALL enemies."
+  },
   "chefmod:OldCookbook": {
     "NAME": "Old Cookbook",
     "DESCRIPTION": "Add a random chefmod:Recipe to your hand. NL Exhuast",
