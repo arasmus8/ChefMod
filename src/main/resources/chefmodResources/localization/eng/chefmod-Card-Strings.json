@@ -259,6 +259,10 @@
     "NAME": "Raid Pantry",
     "DESCRIPTION": "chefmod:No-Freeze NL Play all your chefmod:Frozen Attacks."
   },
+  "chefmod:Ratatouille": {
+    "NAME": "Ratatouille",
+    "DESCRIPTION": "Gain !B! Block. NL chefmod:Prepped: Increase Block by !M!"
+  },
   "chefmod:RisingDough": {
     "NAME": "Rising Dough",
     "DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile. NL Exhuast",
