@@ -220,6 +220,14 @@
     "DESCRIPTION": "Add a random chefmod:Recipe to your hand. NL Exhuast",
     "UPGRADE_DESCRIPTION": "Add a random chefmod:Recipe to your hand. It costs 0 this turn. NL Exhuast"
   },
+  "chefmod:Omelette": {
+    "NAME": "Omelette",
+    "DESCRIPTION": "Choose an attack. It deals !M! more damage. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Choose an attack. It deals !M! more damage. Whenever you play it, shuffle a copy of this card into your draw pile. NL Exhaust",
+    "EXTENDED_DESCRIPTION": [
+      "Choose an attack"
+    ]
+  },
   "chefmod:OrderUp": {
     "NAME": "Order Up",
     "DESCRIPTION": "Each turn, play your oldest chefmod:Frozen card and chefmod:Freeze 1"
