@@ -99,6 +99,14 @@
       "#yFrozen cards will target this enemy."
     ]
   },
+  "chefmod:TastyDistractionPower": {
+    "NAME": "Tasty Distraction",
+    "DESCRIPTIONS": [
+      "The first time each turn you would take unblocked attack damage, prevent it and #yExhaust your oldest #yFrozen card.",
+      "The first #b",
+      " times each turn you would take unblocked attack damage, prevent it and #yExhaust your oldest #yFrozen card."
+    ]
+  },
   "chefmod:TemporaryStrengthDownPower": {
     "NAME": "Damage Reduced",
     "DESCRIPTIONS": [

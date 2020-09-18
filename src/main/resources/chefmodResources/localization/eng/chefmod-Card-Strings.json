@@ -303,6 +303,10 @@
     "DESCRIPTION": "chefmod:Recipe: !M! chefmod:Ingredients NL Your attacks deal double damage this turn.",
     "UPGRADE_DESCRIPTION": "chefmod:Recipe: !M! chefmod:Ingredients NL Your attacks deal double damage this turn and next turn."
   },
+  "chefmod:TastyDistraction": {
+    "NAME": "Tasty Distraction",
+    "DESCRIPTION": "The first time each turn you would take unblocked attack damage, prevent it and Exhaust your oldest chefmod:Frozen card."
+  },
   "chefmod:Tenderizer": {
     "NAME": "Tenderizer",
     "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Apply !M! Vulnerable."
