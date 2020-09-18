@@ -1,31 +1,32 @@
 package chefmod.cards.skills;
 
-import chefmod.actions.FreezeAction;
+import basemod.helpers.CardModifierManager;
+import chefmod.ChefMod;
 import chefmod.actions.PlayOldestFrozenCardAction;
+import chefmod.cardmods.ReboundCardmod;
 import chefmod.cards.AbstractChefCard;
-import chefmod.powers.HungerPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
-public class NoSoupForYou extends AbstractChefCard {
-    public static String ID = makeID(NoSoupForYou.class.getSimpleName());
+public class TonkotsuRamen extends AbstractChefCard {
+    public static String ID = makeID(TonkotsuRamen.class.getSimpleName());
 
-    public NoSoupForYou() {
+    public TonkotsuRamen() {
         super(ID,
                 1,
                 CardType.SKILL,
                 CardRarity.UNCOMMON,
-                CardTarget.ENEMY
+                CardTarget.SELF
         );
+        upgradeCostTo = 0;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToEnemy(m, new HungerPower(m));
-        addToBot(new FreezeAction(1, c -> c.type == CardType.ATTACK && c.cost >= 2));
-        if (upgraded) {
+        if (ChefMod.frozenPile.size() > 0) {
+            CardModifierManager.addModifier(ChefMod.frozenPile.getBottomCard(), new ReboundCardmod());
             addToBot(new PlayOldestFrozenCardAction());
         }
     }

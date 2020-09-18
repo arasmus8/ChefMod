@@ -28,7 +28,7 @@ public class QuickThaw extends AbstractChefCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         IntStream.rangeClosed(1, magicNumber)
-                .forEach(i -> addToBot(new PlayOldestFrozenCardAction(false)));
+                .forEach(i -> addToBot(new PlayOldestFrozenCardAction()));
         addToBot(new FreezeAction(magicNumber));
     }
 }

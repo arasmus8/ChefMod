@@ -291,8 +291,8 @@
   },
   "chefmod:SpaghettiCarbonara": {
     "NAME": "Spaghetti Carbonara",
-    "DESCRIPTION": "chefmod:No-Freeze NL Play the X oldest frozen cards.",
-    "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Draw the X oldest frozen cards. They cost 0 until played."
+    "DESCRIPTION": "chefmod:No-Freeze NL Play the X oldest chefmod:Frozen cards.",
+    "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Draw the X oldest chefmod:Frozen cards. They cost 0 until played."
   },
   "chefmod:Strike": {
     "NAME": "Strike",
@@ -310,6 +310,10 @@
   "chefmod:TodaysSpecial": {
     "NAME": "Today's Special",
     "DESCRIPTION": "Startup: Choose a Recipe to cook. NL Apply chefmod:Hunger"
+  },
+  "chefmod:TonkotsuRamen": {
+    "NAME": "Tonkotsu Ramen",
+    "DESCRIPTION": "chefmod:No-Freeze NL Play your oldest chefmod:Frozen card and put it on top of your draw pile."
   },
   "chefmod:TwoForOne": {
     "NAME": "2-For-1 Coupon",

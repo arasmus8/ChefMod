@@ -30,7 +30,7 @@ public class SpaghettiCarbonara extends AbstractChefCard {
         addToBot(new XCostAction(this, (amount, params) -> {
             if (params[0] == 0) {
                 IntStream.rangeClosed(1, amount)
-                        .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction(false)));
+                        .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction()));
             } else {
                 IntStream.rangeClosed(1, amount)
                         .forEachOrdered(i -> {

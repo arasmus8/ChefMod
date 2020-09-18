@@ -40,7 +40,7 @@ public class OrderUpPower extends AbstractPower implements CloneablePowerInterfa
     public void atStartOfTurn() {
         this.flash();
         IntStream.rangeClosed(1, amount)
-                .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction(false)));
+                .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction()));
         addToBot(new FreezeAction(amount));
     }
 

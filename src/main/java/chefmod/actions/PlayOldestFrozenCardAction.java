@@ -16,18 +16,16 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public class PlayOldestFrozenCardAction extends AbstractGameAction {
-    private final boolean exhaustCards;
     private Predicate<AbstractCard> filterFn = null;
 
-    public PlayOldestFrozenCardAction(boolean exhausts) {
+    public PlayOldestFrozenCardAction() {
         duration = Settings.ACTION_DUR_FAST;
         actionType = ActionType.WAIT;
         source = AbstractDungeon.player;
-        exhaustCards = exhausts;
     }
 
     public PlayOldestFrozenCardAction(Predicate<AbstractCard> filterFn) {
-        this(false);
+        this();
         this.filterFn = filterFn;
     }
 
@@ -52,7 +50,6 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
             c.ifPresent(card -> {
                 ChefMod.frozenPile.group.remove(card);
                 AbstractDungeon.getCurrRoom().souls.remove(card);
-                card.exhaustOnUseOnce = exhaustCards;
                 AbstractDungeon.player.limbo.group.add(card);
                 card.current_y = -200.0F * Settings.scale;
                 card.target_x = (float) Settings.WIDTH / 2.0F + 200.0F * Settings.scale;
