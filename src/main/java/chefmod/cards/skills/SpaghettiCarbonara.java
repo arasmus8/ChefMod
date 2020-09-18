@@ -22,6 +22,7 @@ public class SpaghettiCarbonara extends AbstractChefCard {
                 CardRarity.UNCOMMON,
                 CardTarget.SELF
         );
+        nofreeze = true;
     }
 
     @Override

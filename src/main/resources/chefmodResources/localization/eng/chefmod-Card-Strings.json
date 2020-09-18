@@ -291,8 +291,8 @@
   },
   "chefmod:SpaghettiCarbonara": {
     "NAME": "Spaghetti Carbonara",
-    "DESCRIPTION": "Play the X oldest frozen cards.",
-    "UPGRADE_DESCRIPTION": "Draw the X oldest frozen cards. They cost 0 until played."
+    "DESCRIPTION": "chefmod:No-Freeze NL Play the X oldest frozen cards.",
+    "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Draw the X oldest frozen cards. They cost 0 until played."
   },
   "chefmod:Strike": {
     "NAME": "Strike",
