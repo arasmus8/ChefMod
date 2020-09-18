@@ -52,6 +52,7 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
                 if (eligible.size() > 0) {
                     actionFunction.accept(eligible);
                 }
+                return;
             }
             originalHand.addAll(hand.group);
 

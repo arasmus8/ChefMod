@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.relics.RunicPyramid;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -85,6 +86,10 @@ public class RetainRandomCardPower extends AbstractPower implements CloneablePow
             Predicate<AbstractCard> preppedFilter = c -> (c instanceof AbstractChefCard) && ((AbstractChefCard) c).hasPreppedActions;
             Predicate<AbstractCard> notAlreadyRetained = c -> !c.retain && !c.selfRetain && !c.isEthereal;
             Predicate<AbstractCard> notStatusOrCurse = c -> c.type != AbstractCard.CardType.STATUS && c.type != AbstractCard.CardType.CURSE;
+            Consumer<AbstractCard> retainAndFlash = c -> {
+                c.retain = true;
+                c.superFlash();
+            };
             if (hand.group.stream().anyMatch(notAlreadyRetained)) {
                 int cardsToRetain = amount;
                 if (prioritizePrepped) {
@@ -95,7 +100,7 @@ public class RetainRandomCardPower extends AbstractPower implements CloneablePow
                     Collections.shuffle(preppedCards, AbstractDungeon.cardRandomRng.random);
                     preppedCards.stream()
                             .limit(cardsToRetain)
-                            .forEachOrdered(c -> c.retain = true);
+                            .forEachOrdered(retainAndFlash);
                     cardsToRetain -= preppedCards.size();
                 }
 
@@ -107,7 +112,7 @@ public class RetainRandomCardPower extends AbstractPower implements CloneablePow
                     Collections.shuffle(cardsInHand, AbstractDungeon.cardRandomRng.random);
                     cardsInHand.stream()
                             .limit(cardsToRetain)
-                            .forEachOrdered(c -> c.retain = true);
+                            .forEachOrdered(retainAndFlash);
                 }
             }
         }
