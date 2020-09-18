@@ -40,6 +40,7 @@ public class NobStewPower extends AbstractPower implements CloneablePowerInterfa
             AbstractCard atk = AbstractDungeon.player.hand.getRandomCard(AbstractCard.CardType.ATTACK, true);
             if (atk != null) {
                 PermanentDamageBonusCardmod.add(atk, amount);
+                atk.superFlash();
             }
         }
     }

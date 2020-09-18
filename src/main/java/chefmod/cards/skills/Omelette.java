@@ -1,17 +1,13 @@
 package chefmod.cards.skills;
 
-import chefmod.actions.FunctionalAction;
-import chefmod.actions.GridSelectAndPerformAction;
+import chefmod.actions.HandSelectFunctionalAction;
 import chefmod.cardmods.OmeletteCardmod;
 import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static chefmod.ChefMod.makeID;
 
@@ -38,39 +34,13 @@ public class Omelette extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new FunctionalAction(firstUpdate -> {
-            List<AbstractCard> attacks = AbstractDungeon.player.hand.getAttacks().group.stream()
-                    .map(AbstractCard::makeSameInstanceOf)
-                    .collect(Collectors.toList());
-
-            if (attacks.size() == 1) {
-                try {
-                    AbstractCard card = findOriginal(attacks.get(0));
+        addToBot(new HandSelectFunctionalAction(Settings.ACTION_DUR_XFAST,
+                1,
+                selectedCards -> selectedCards.forEach(card -> {
                     OmeletteCardmod.addToCard(card, magicNumber, upgraded);
                     card.superFlash();
-                } catch (Exception e) {
-                    System.out.println("Couldn't find original card for some reason.");
-                    e.printStackTrace();
-                }
-            } else if (attacks.size() > 0) {
-                CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-                cg.group.addAll(attacks);
-                FunctionalAction followupAction = new FunctionalAction(f -> {
-                    GridSelectAndPerformAction.selectedCards.forEach(selected -> {
-                        try {
-                            AbstractCard c = findOriginal(selected);
-                            OmeletteCardmod.addToCard(c, magicNumber, upgraded);
-                            c.superFlash();
-                        } catch (Exception e) {
-                            System.out.println("Couldn't find original card for some reason.");
-                            e.printStackTrace();
-                        }
-                    });
-                    return true;
-                });
-                addToBot(new GridSelectAndPerformAction(1, false, cg, null, followupAction));
-            }
-            return true;
-        }));
+                }),
+                c -> c.type == CardType.ATTACK,
+                EXTENDED_DESCRIPTION[0]));
     }
 }

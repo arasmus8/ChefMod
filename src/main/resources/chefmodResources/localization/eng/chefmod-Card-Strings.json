@@ -225,7 +225,7 @@
     "DESCRIPTION": "Choose an attack. It deals !M! more damage. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Choose an attack. It deals !M! more damage. Whenever you play it, shuffle a copy of this card into your draw pile. NL Exhaust",
     "EXTENDED_DESCRIPTION": [
-      "Choose an attack"
+      "deal more damage."
     ]
   },
   "chefmod:OrderUp": {
@@ -270,7 +270,10 @@
   },
   "chefmod:SaveForLater": {
     "NAME": "Save for Later",
-    "DESCRIPTION": "Choose a card. Exhaust it and shuffle !M! copies into your draw pile."
+    "DESCRIPTION": "Choose a card. Exhaust it and shuffle !M! copies into your draw pile.",
+    "EXTENDED_DESCRIPTION": [
+      "exhaust and shuffle copies of."
+    ]
   },
   "chefmod:SearedScallops": {
     "NAME": "Seared Scallops",
