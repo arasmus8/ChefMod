@@ -123,13 +123,19 @@ public class RecipeManager {
         }
     }
 
+    public boolean notYetUnlocked(String id) {
+        return unlockedRecipes.stream().noneMatch(r -> r.equals(id));
+    }
+
     public void unlock(MonsterGroup eliteMonsters, int actNum) {
         Optional<String> unlockId = eliteMonsters.monsters.stream()
                 .map(this::recipeIdForMonster)
                 .filter(Objects::nonNull)
                 .findFirst();
         if (unlockId.isPresent()) {
-            unlockedRecipes.add(unlockId.get());
+            if (notYetUnlocked(unlockId.get())) {
+                unlockedRecipes.add(unlockId.get());
+            }
         } else {
             String recipeToAdd = null;
             switch (actNum) {
@@ -147,7 +153,9 @@ public class RecipeManager {
                     break;
             }
             if (recipeToAdd != null) {
-                unlockedRecipes.add(recipeToAdd);
+                if (notYetUnlocked(recipeToAdd)) {
+                    unlockedRecipes.add(recipeToAdd);
+                }
             }
         }
     }
