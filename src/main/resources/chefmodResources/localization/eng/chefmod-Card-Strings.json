@@ -339,5 +339,9 @@
   "chefmod:SentryBrittle": {
     "NAME": "Sentry Brittle",
     "DESCRIPTION": "3 chefmod:Ingredients NL When you draw a Status, exhaust it and deal 10 damage to all enemies."
+  },
+  "chefmod:VegetableTart": {
+    "NAME": "Vegetable Tart",
+    "DESCRIPTION": "Costs 1 less [E] for each chefmod:Frozen card. Gain !B! Block."
   }
 }
