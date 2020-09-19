@@ -30,7 +30,11 @@ public class RecipeRenderer extends ClickableUIElement {
     private final BobEffect bob;
 
     public RecipeRenderer(Vector2 offset) {
-        super(recipeCardImage, offset.x, offset.y, recipeCardImage.getWidth(), recipeCardImage.getHeight());
+        super(recipeCardImage,
+                offset.x / Settings.scale,
+                offset.y / Settings.scale,
+                recipeCardImage.getWidth(),
+                recipeCardImage.getHeight());
         angle = rng.random(-5f, 5f);
         bob = new BobEffect(rng.random(2f, 6f), rng.random(0.6f, 1.4f));
     }

@@ -152,7 +152,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
     protected boolean isPrepped() {
         AbstractPlayer p = AbstractDungeon.player;
         CardGroup hand = p.hand;
-        return this == hand.getBottomCard();
+        return hand.size() > 0 && this == hand.getBottomCard();
     }
 
     public static boolean isNoFreeze(AbstractCard card) {

@@ -23,6 +23,7 @@ public class RaidPantry extends AbstractChefCard {
                 CardTarget.SELF
         );
         upgradeCostTo = 1;
+        nofreeze = true;
     }
 
     @Override

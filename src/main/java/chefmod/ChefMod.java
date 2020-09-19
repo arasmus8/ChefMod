@@ -27,6 +27,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 @SpireInitializer
 public class ChefMod implements
@@ -222,7 +223,7 @@ public class ChefMod implements
     public void onLoad(ArrayList<String> strings) {
         RecipeManager.unlockedRecipes.clear();
         if (strings != null) {
-            RecipeManager.unlockedRecipes.addAll(strings);
+            RecipeManager.unlockedRecipes.addAll(strings.stream().distinct().collect(Collectors.toList()));
             if (RecipeManager.unlockedRecipes.size() == 0) {
                 RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
             }
