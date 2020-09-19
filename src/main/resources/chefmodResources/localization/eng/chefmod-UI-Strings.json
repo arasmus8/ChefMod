@@ -11,28 +11,28 @@
       " cards"
     ]
   },
-  "chefmod:NeowNuggets": {
+  "chefmod:NeowNuggetsRecipe": {
     "TEXT": [
       "Neow Nuggets",
-      "Your Strike and Defend cards have Double damage or Block and Exhuast"
+      "Your starter Strike and Defend cards are upgraded and #yExhuast"
     ]
   },
-  "chefmod:FriedLagavulin": {
+  "chefmod:FriedLagavulinRecipe": {
     "TEXT": [
       "Fried Lagavulin",
-      "You may only play 1 Attack each turn. Deal triple damage."
+      "You may only play 1 Attack each turn. It deals double damage."
     ]
   },
-  "chefmod:NobStew": {
+  "chefmod:NobStewRecipe": {
     "TEXT": [
       "Nob Stew",
-      "Every Skill you play gives a random Attack in your hand +1 Damage."
+      "Every Skill you play gives a random Attack in your hand +2 Damage."
     ]
   },
-  "chefmod:SentryBrittle": {
+  "chefmod:SentryBrittleRecipe": {
     "TEXT": [
       "Sentry Brittle",
-      "When you draw a Status, exhaust it and deal 10 damage to all enemies."
+      "When you draw a Status, exhaust it and deal 3 damage to all enemies."
     ]
   },
   "chefmod:SushiPlatterRecipe": {

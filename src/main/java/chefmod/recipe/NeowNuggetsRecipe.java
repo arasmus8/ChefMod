@@ -13,12 +13,12 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import static chefmod.ChefMod.makeID;
 
-public class NeowNuggets extends AbstractRecipe {
-    public static final String ID = makeID(NeowNuggets.class.getSimpleName());
+public class NeowNuggetsRecipe extends AbstractRecipe {
+    public static final String ID = makeID(NeowNuggetsRecipe.class.getSimpleName());
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = uiStrings.TEXT;
 
-    public NeowNuggets() {
+    public NeowNuggetsRecipe() {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 2;
@@ -27,7 +27,10 @@ public class NeowNuggets extends AbstractRecipe {
     private void applyToGroup(CardGroup cg) {
         cg.group.stream()
                 .filter(c -> c.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || c.hasTag(AbstractCard.CardTags.STARTER_STRIKE))
-                .forEach(c -> CardModifierManager.addModifier(c, new NeowNuggetsCardmod()));
+                .forEach(c -> {
+                    c.superFlash();
+                    c.upgrade();
+                });
     }
 
     @Override

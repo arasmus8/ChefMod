@@ -2,6 +2,7 @@ package chefmod.cards.options;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractChefCard;
+import chefmod.recipe.NeowNuggetsRecipe;
 
 import static chefmod.ChefMod.makeID;
 
@@ -19,6 +20,6 @@ public class NeowNuggets extends AbstractChefCard {
 
     @Override
     public void onChoseThisOption() {
-        ChefMod.recipeManager.startRecipe(new chefmod.recipe.NeowNuggets());
+        ChefMod.recipeManager.startRecipe(new NeowNuggetsRecipe());
     }
 }

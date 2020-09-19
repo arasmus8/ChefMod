@@ -32,7 +32,7 @@ public class RecipeManager {
     private static final int RENDER_COUNT = 5;
     private final Vector2 additionalPos;
 
-    private static final List<String> ACT1_RECIPES = Arrays.asList(NobStew.ID, FriedLagavulin.ID, SentryBrittle.ID);
+    private static final List<String> ACT1_RECIPES = Arrays.asList(NobStewRecipe.ID, FriedLagavulinRecipe.ID, SentryBrittleRecipe.ID);
 
     public RecipeManager() {
         float offsetH = 128f * 1.618f * Settings.scale;
@@ -113,11 +113,11 @@ public class RecipeManager {
     public String recipeIdForMonster(AbstractMonster m) {
         switch (m.id) {
             case GremlinNob.ID:
-                return NobStew.ID;
+                return NobStewRecipe.ID;
             case Lagavulin.ID:
-                return FriedLagavulin.ID;
+                return FriedLagavulinRecipe.ID;
             case Sentry.ID:
-                return SentryBrittle.ID;
+                return SentryBrittleRecipe.ID;
             default:
                 return null;
         }

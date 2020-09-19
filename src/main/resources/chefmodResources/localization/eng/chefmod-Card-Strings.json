@@ -338,19 +338,19 @@
   },
   "chefmod:NeowNuggets": {
     "NAME": "Neow Nuggets",
-    "DESCRIPTION": "2 chefmod:Ingredients NL Your Strike and Defend cards have double Damage or Block and Exhuast"
+    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are upgraded and Exhuast"
   },
   "chefmod:FriedLagavulin": {
     "NAME": "Fried Lagavulin",
-    "DESCRIPTION": "3 chefmod:Ingredients NL You may only play 1 Attack each turn. Deal triple damage."
+    "DESCRIPTION": "3 chefmod:Ingredients NL You may only play 1 Attack each turn. It deals double damage."
   },
   "chefmod:NobStew": {
     "NAME": "Nob Stew",
-    "DESCRIPTION": "3 chefmod:Ingredients NL Every Skill you play gives a random Attack in your hand +1 Damage."
+    "DESCRIPTION": "3 chefmod:Ingredients NL Every Skill you play gives a random Attack in your hand +2 Damage."
   },
   "chefmod:SentryBrittle": {
     "NAME": "Sentry Brittle",
-    "DESCRIPTION": "3 chefmod:Ingredients NL When you draw a Status, exhaust it and deal 10 damage to all enemies."
+    "DESCRIPTION": "3 chefmod:Ingredients NL When you draw a Status, exhaust it and deal 3 damage to all enemies."
   },
   "chefmod:VegetableTart": {
     "NAME": "Vegetable Tart",

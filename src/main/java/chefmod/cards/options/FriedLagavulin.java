@@ -2,6 +2,7 @@ package chefmod.cards.options;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractChefCard;
+import chefmod.recipe.FriedLagavulinRecipe;
 
 import static chefmod.ChefMod.makeID;
 
@@ -19,6 +20,6 @@ public class FriedLagavulin extends AbstractChefCard {
 
     @Override
     public void onChoseThisOption() {
-        ChefMod.recipeManager.startRecipe(new chefmod.recipe.FriedLagavulin());
+        ChefMod.recipeManager.startRecipe(new FriedLagavulinRecipe());
     }
 }

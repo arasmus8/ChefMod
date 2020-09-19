@@ -21,11 +21,11 @@ public class NobStewPower extends AbstractPower implements CloneablePowerInterfa
 
     private boolean prioritizePrepped;
 
-    public NobStewPower(AbstractCreature owner) {
+    public NobStewPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
         this.owner = owner;
-        amount = 1;
+        this.amount = amount;
         updateDescription();
         loadRegion("anger");
     }
@@ -47,6 +47,6 @@ public class NobStewPower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public AbstractPower makeCopy() {
-        return new NobStewPower(owner);
+        return new NobStewPower(owner, amount);
     }
 }

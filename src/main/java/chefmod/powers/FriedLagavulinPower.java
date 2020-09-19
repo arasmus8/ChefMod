@@ -45,7 +45,7 @@ public class FriedLagavulinPower extends AbstractPower implements CloneablePower
     @Override
     public float atDamageFinalGive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
-            return damage * 3;
+            return damage * 2;
         }
         return damage;
     }

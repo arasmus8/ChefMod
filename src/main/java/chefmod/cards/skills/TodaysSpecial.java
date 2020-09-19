@@ -1,15 +1,12 @@
 package chefmod.cards.skills;
 
-import chefmod.ChefMod;
-import chefmod.actions.FreezeAction;
-import chefmod.actions.PlayOldestFrozenCardAction;
 import chefmod.cards.AbstractChefCard;
 import chefmod.cards.options.FriedLagavulin;
 import chefmod.cards.options.NeowNuggets;
 import chefmod.cards.options.NobStew;
 import chefmod.cards.options.SentryBrittle;
 import chefmod.powers.HungerPower;
-import chefmod.recipe.RecipeManager;
+import chefmod.recipe.*;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -73,9 +70,9 @@ public class TodaysSpecial extends AbstractChefCard implements StartupCard {
 
     static {
         recipeMap = new HashMap<>();
-        recipeMap.put(chefmod.recipe.NeowNuggets.ID, NeowNuggets.class);
-        recipeMap.put(chefmod.recipe.NobStew.ID, NobStew.class);
-        recipeMap.put(chefmod.recipe.FriedLagavulin.ID, FriedLagavulin.class);
-        recipeMap.put(chefmod.recipe.SentryBrittle.ID, SentryBrittle.class);
+        recipeMap.put(NeowNuggetsRecipe.ID, NeowNuggets.class);
+        recipeMap.put(NobStewRecipe.ID, NobStew.class);
+        recipeMap.put(FriedLagavulinRecipe.ID, FriedLagavulin.class);
+        recipeMap.put(SentryBrittleRecipe.ID, SentryBrittle.class);
     }
 }

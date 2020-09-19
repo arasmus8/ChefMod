@@ -6,7 +6,7 @@ import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
-import chefmod.recipe.NeowNuggets;
+import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
@@ -214,7 +214,7 @@ public class ChefMod implements
     @Override
     public ArrayList<String> onSave() {
         if (RecipeManager.unlockedRecipes.size() == 0) {
-            RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
+            RecipeManager.unlockedRecipes.add(NeowNuggetsRecipe.ID);
         }
         return RecipeManager.unlockedRecipes;
     }
@@ -225,10 +225,10 @@ public class ChefMod implements
         if (strings != null) {
             RecipeManager.unlockedRecipes.addAll(strings.stream().distinct().collect(Collectors.toList()));
             if (RecipeManager.unlockedRecipes.size() == 0) {
-                RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
+                RecipeManager.unlockedRecipes.add(NeowNuggetsRecipe.ID);
             }
         } else {
-            RecipeManager.unlockedRecipes.add(NeowNuggets.ID);
+            RecipeManager.unlockedRecipes.add(NeowNuggetsRecipe.ID);
         }
     }
 }
