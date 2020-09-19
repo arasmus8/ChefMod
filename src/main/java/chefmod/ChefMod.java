@@ -8,6 +8,7 @@ import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
+import chefmod.recipe.StabKabobRecipe;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
 import chefmod.util.TextureHelper;
@@ -107,6 +108,7 @@ public class ChefMod implements
         return modID + ":" + idText;
     }
 
+    @SuppressWarnings("unused")
     public static void initialize() {
         ChefMod chefMod = new ChefMod();
     }

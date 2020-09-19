@@ -1,10 +1,7 @@
 package chefmod.cards.skills;
 
 import chefmod.cards.AbstractChefCard;
-import chefmod.cards.options.FriedLagavulin;
-import chefmod.cards.options.NeowNuggets;
-import chefmod.cards.options.NobStew;
-import chefmod.cards.options.SentryBrittle;
+import chefmod.cards.options.*;
 import chefmod.powers.HungerPower;
 import chefmod.recipe.*;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
@@ -74,5 +71,6 @@ public class TodaysSpecial extends AbstractChefCard implements StartupCard {
         recipeMap.put(NobStewRecipe.ID, NobStew.class);
         recipeMap.put(FriedLagavulinRecipe.ID, FriedLagavulin.class);
         recipeMap.put(SentryBrittleRecipe.ID, SentryBrittle.class);
+        recipeMap.put(StabKabobRecipe.ID, StabKabob.class);
     }
 }

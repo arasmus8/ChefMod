@@ -93,6 +93,12 @@
       "When you draw a Status, exhaust it and deal 10 Damage to all enemies."
     ]
   },
+  "chefmod:StabKabobPower": {
+    "NAME": "Stab Kabob",
+    "DESCRIPTIONS": [
+      "Draw an extra attack each turn."
+    ]
+  },
   "chefmod:SupercooledPower": {
     "NAME": "Supercooled",
     "DESCRIPTIONS": [

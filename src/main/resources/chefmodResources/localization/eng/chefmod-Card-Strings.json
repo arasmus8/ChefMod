@@ -332,6 +332,10 @@
     "DESCRIPTION": "Your currently chefmod:Frozen cards are played twice the next time you use them. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Your currently chefmod:Frozen cards are played twice this combat. NL Exhaust"
   },
+  "chefmod:VegetableTart": {
+    "NAME": "Vegetable Tart",
+    "DESCRIPTION": "Costs 1 less [E] for each chefmod:Frozen card. Gain !B! Block."
+  },
   "chefmod:ZaruSoba": {
     "NAME": "Zaru Soba",
     "DESCRIPTION": "Draw !M! chefmod:Frozen cards. chefmod:Freeze !M!."
@@ -352,8 +356,8 @@
     "NAME": "Sentry Brittle",
     "DESCRIPTION": "3 chefmod:Ingredients NL When you draw a Status, exhaust it and deal 3 damage to all enemies."
   },
-  "chefmod:VegetableTart": {
-    "NAME": "Vegetable Tart",
-    "DESCRIPTION": "Costs 1 less [E] for each chefmod:Frozen card. Gain !B! Block."
+  "chefmod:StabKabob": {
+    "NAME": "Stab Kabob",
+    "DESCRIPTION": "4 chefmod:Ingredients NL Draw an extra attack each turn."
   }
 }

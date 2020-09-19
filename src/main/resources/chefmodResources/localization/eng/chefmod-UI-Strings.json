@@ -35,6 +35,12 @@
       "When you draw a Status, exhaust it and deal 3 damage to all enemies."
     ]
   },
+  "chefmod:StabKabobRecipe": {
+    "TEXT": [
+      "Stab Kabob",
+      "Draw an extra attack each turn."
+    ]
+  },
   "chefmod:SushiPlatterRecipe": {
     "TEXT": [
       "Sushi Platter",
