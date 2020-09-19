@@ -1,11 +1,11 @@
 package chefmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import chefmod.actions.FunctionalAction;
+import chefmod.actions.HandSelectFunctionalAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -46,30 +46,13 @@ public class RetainThisTurnPower extends AbstractPower implements CloneablePower
                 !AbstractDungeon.player.hand.isEmpty() &&
                 !AbstractDungeon.player.hasRelic(RunicPyramid.ID) &&
                 !AbstractDungeon.player.hasPower(EquilibriumPower.POWER_ID) &&
-                AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
-            addToBot(new FunctionalAction(firstUpdate -> {
-                if (firstUpdate) {
-                    if (AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain)) {
-                        AbstractDungeon.handCardSelectScreen.open(DESCRIPTIONS[3], this.amount, false, true, false, false, true);
-                        this.addToBot(new WaitAction(0.25F));
-                        return false;
-                    } else {
-                        return true;
-                    }
-                } else {
-                    if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-                        AbstractDungeon.handCardSelectScreen.selectedCards.group.forEach(c -> {
-                            AbstractDungeon.player.hand.addToTop(c);
-                            if (!c.isEthereal) {
-                                c.retain = true;
-                            }
-                        });
-                        AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
-                        return true;
-                    }
-                }
-                return false;
-            }));
+                AbstractDungeon.player.hand.group.stream().anyMatch(c -> !c.selfRetain && !c.retain && !c.isEthereal)) {
+            addToBot(new HandSelectFunctionalAction(Settings.ACTION_DUR_XFAST,
+                    amount,
+                    selectedCards -> selectedCards.forEach(c -> c.retain = true),
+                    c -> !c.selfRetain && !c.retain,
+                    DESCRIPTIONS[3]
+            ));
         }
 
         addToBot(new RemoveSpecificPowerAction(owner, owner, this));

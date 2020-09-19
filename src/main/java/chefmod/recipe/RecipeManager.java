@@ -8,14 +8,12 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -25,7 +23,6 @@ import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
 import com.megacrit.cardcrawl.monsters.exordium.Sentry;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class RecipeManager {
@@ -57,36 +54,47 @@ public class RecipeManager {
         }
     }
 
-    private int addTo(CardGroup group, int count) {
-        List<AbstractCard> cards = group.group.stream()
-                .filter(c -> !IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent())
-                .filter(c -> c.cost >= -1)
-                .collect(Collectors.toList());
-        Collections.shuffle(cards, AbstractDungeon.cardRandomRng.random);
-        cards.stream()
-                .limit(count)
-                .forEachOrdered(c -> CardModifierManager.addModifier(c, new IngredientCardmod()));
-        return cards.size();
+    public void checkIngredientCount() {
+        AbstractPlayer p = AbstractDungeon.player;
+        CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        cg.group.addAll(p.hand.group);
+        cg.group.addAll(p.discardPile.group);
+        cg.group.addAll(p.drawPile.group);
+        cg.group.addAll(ChefMod.frozenPile.group);
+        int ingredientCount = (int) cg.group.stream()
+                .filter(c -> IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent())
+                .count();
+        int wantedIngredientCount = recipes.stream()
+                .mapToInt(r -> r.ingredientCount)
+                .sum();
+        if (wantedIngredientCount > ingredientCount) {
+            addIngredients(wantedIngredientCount - ingredientCount);
+        }
     }
 
     private void addIngredients(int count) {
         AbstractPlayer p = AbstractDungeon.player;
-        CardGroup cg = p.drawPile;
-        count -= addTo(cg, count);
-        if (count > 0) {
-            cg = p.discardPile;
-            count -= addTo(cg, count);
-        }
-        if (count > 0) {
-            cg = ChefMod.frozenPile;
-            count -= addTo(cg, count);
-        }
-        if (count > 0) {
+        CardGroup cg = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        cg.group.addAll(p.hand.group);
+        cg.group.addAll(p.discardPile.group);
+        cg.group.addAll(p.drawPile.group);
+        cg.group.addAll(ChefMod.frozenPile.group);
+
+        cg.group.removeIf(c -> c.cost < -1 ||
+                c.type == AbstractCard.CardType.CURSE ||
+                IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent() ||
+                c.purgeOnUse);
+
+        while (cg.size() < count) {
             // TODO: make a custom status instead of slimes
-            AbstractCard newCard = CardLibrary.getCard(Slimed.ID).makeCopy();
-            CardModifierManager.addModifier(newCard, new IngredientCardmod());
-            AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(newCard, count, true, true));
+            cg.addToBottom(new Slimed());
         }
+
+        cg.shuffle(AbstractDungeon.cardRandomRng);
+
+        cg.group.stream()
+                .limit(count)
+                .forEach(c -> CardModifierManager.addModifier(c, new IngredientCardmod()));
     }
 
     public void startRecipe(AbstractRecipe recipe) {
@@ -115,13 +123,19 @@ public class RecipeManager {
         }
     }
 
+    public boolean notYetUnlocked(String id) {
+        return unlockedRecipes.stream().noneMatch(r -> r.equals(id));
+    }
+
     public void unlock(MonsterGroup eliteMonsters, int actNum) {
         Optional<String> unlockId = eliteMonsters.monsters.stream()
                 .map(this::recipeIdForMonster)
                 .filter(Objects::nonNull)
                 .findFirst();
         if (unlockId.isPresent()) {
-            unlockedRecipes.add(unlockId.get());
+            if (notYetUnlocked(unlockId.get())) {
+                unlockedRecipes.add(unlockId.get());
+            }
         } else {
             String recipeToAdd = null;
             switch (actNum) {
@@ -139,7 +153,9 @@ public class RecipeManager {
                     break;
             }
             if (recipeToAdd != null) {
-                unlockedRecipes.add(recipeToAdd);
+                if (notYetUnlocked(recipeToAdd)) {
+                    unlockedRecipes.add(recipeToAdd);
+                }
             }
         }
     }

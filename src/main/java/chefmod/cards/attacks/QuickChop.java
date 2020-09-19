@@ -31,6 +31,6 @@ public class QuickChop extends AbstractChefCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         dealDamage(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
         IntStream.rangeClosed(1, magicNumber)
-                .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction(false)));
+                .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction()));
     }
 }

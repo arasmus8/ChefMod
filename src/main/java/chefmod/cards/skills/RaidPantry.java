@@ -33,7 +33,7 @@ public class RaidPantry extends AbstractChefCard {
         ChefMod.frozenPile.group.removeIf(attacks::contains);
         attacks.forEach(c -> {
             ChefMod.frozenPile.addToBottom(c);
-            addToBot(new PlayOldestFrozenCardAction(false));
+            addToBot(new PlayOldestFrozenCardAction());
         });
     }
 }

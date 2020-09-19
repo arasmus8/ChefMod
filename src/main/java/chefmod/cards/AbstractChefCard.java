@@ -117,7 +117,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
 
     @Override
     public void upgrade() {
-        if (!upgraded) {
+        if (!upgraded && canUpgrade()) {
             upgradeName();
             if (upgradeDamageBy != null) {
                 upgradeDamage(upgradeDamageBy);

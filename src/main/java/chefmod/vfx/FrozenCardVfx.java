@@ -28,7 +28,7 @@ public class FrozenCardVfx extends AbstractGameEffect {
     private static int count = 0;
 
     public FrozenCardVfx(AbstractCard card) {
-        c = card.makeCopy();
+        c = card.makeStatEquivalentCopy();
         startingDuration = duration = EFFECT_DUR;
         c.drawScale = 0.01f;
         c.targetDrawScale = 1.0f;
