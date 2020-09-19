@@ -30,6 +30,7 @@ public class NeowNuggetsRecipe extends AbstractRecipe {
                 .forEach(c -> {
                     c.superFlash();
                     c.upgrade();
+                    CardModifierManager.addModifier(c, new NeowNuggetsCardmod());
                 });
     }
 
