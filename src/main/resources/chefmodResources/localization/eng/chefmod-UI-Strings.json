@@ -41,6 +41,12 @@
       "Draw an extra attack each turn."
     ]
   },
+  "chefmod:SlaverSaladRecipe": {
+    "TEXT": [
+      "Slaver Salad",
+      "4 chefmod:Ingredients NL Add a #yBandage #yUp, a #yBlind, and a #yTrip to your hand."
+    ]
+  },
   "chefmod:SushiPlatterRecipe": {
     "TEXT": [
       "Sushi Platter",

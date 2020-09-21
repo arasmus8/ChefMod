@@ -19,9 +19,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
-import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
-import com.megacrit.cardcrawl.monsters.exordium.Lagavulin;
-import com.megacrit.cardcrawl.monsters.exordium.Sentry;
+import com.megacrit.cardcrawl.monsters.exordium.*;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -34,7 +32,7 @@ public class RecipeManager {
     private final Vector2 additionalPos;
 
     private static final List<String> ACT1_RECIPES = Arrays.asList(NobStewRecipe.ID, FriedLagavulinRecipe.ID, SentryBrittleRecipe.ID);
-    private static final List<String> ACT2_RECIPES = Arrays.asList(StabKabobRecipe.ID);
+    private static final List<String> ACT2_RECIPES = Arrays.asList(StabKabobRecipe.ID, SlaverSaladRecipe.ID);
 
     public RecipeManager() {
         float offsetH = 128f * 1.618f * Settings.scale;
@@ -122,6 +120,9 @@ public class RecipeManager {
                 return SentryBrittleRecipe.ID;
             case BookOfStabbing.ID:
                 return StabKabobRecipe.ID;
+            case SlaverBlue.ID: //fallthrough
+            case SlaverRed.ID:
+                return SlaverSaladRecipe.ID;
             default:
                 return null;
         }
