@@ -1,6 +1,7 @@
 package chefmod.cardmods;
 
 import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
@@ -8,6 +9,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.Optional;
 
 import static chefmod.ChefMod.makeID;
 
@@ -17,6 +20,19 @@ public class PlayTwiceCardmod extends AbstractChefCardmod {
 
     public PlayTwiceCardmod(boolean permanent) {
         this.permanent = permanent;
+    }
+
+    public static void addToCard(AbstractCard card, boolean permanent) {
+        Optional<AbstractChefCardmod> abstractChefCardmod = PlayTwiceCardmod.getForCard(card, PlayTwiceCardmod.ID);
+        if (abstractChefCardmod.isPresent()) {
+            PlayTwiceCardmod current = (PlayTwiceCardmod) (abstractChefCardmod.get());
+            if (permanent && !current.permanent) {
+                CardModifierManager.removeModifiersById(card, PlayTwiceCardmod.ID, true);
+                CardModifierManager.addModifier(card, new PlayTwiceCardmod(true));
+            }
+            return;
+        }
+        CardModifierManager.addModifier(card, new PlayTwiceCardmod(permanent));
     }
 
     @Override

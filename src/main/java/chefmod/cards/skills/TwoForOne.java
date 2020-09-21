@@ -30,7 +30,7 @@ public class TwoForOne extends AbstractChefCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         Consumer<AbstractCard> applyCardmod = c -> {
             CardModifierManager.removeModifiersById(c, PlayTwiceCardmod.ID, true);
-            CardModifierManager.addModifier(c, new PlayTwiceCardmod(upgraded));
+            PlayTwiceCardmod.addToCard(c, upgraded);
         };
         addToBot(new FunctionalAction(first -> {
                     ChefMod.frozenPile.group.forEach(applyCardmod);

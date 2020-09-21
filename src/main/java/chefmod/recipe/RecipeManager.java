@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
+import com.megacrit.cardcrawl.monsters.city.GremlinLeader;
 import com.megacrit.cardcrawl.monsters.exordium.*;
 
 import java.util.*;
@@ -32,7 +33,8 @@ public class RecipeManager {
     private final Vector2 additionalPos;
 
     private static final List<String> ACT1_RECIPES = Arrays.asList(NobStewRecipe.ID, FriedLagavulinRecipe.ID, SentryBrittleRecipe.ID);
-    private static final List<String> ACT2_RECIPES = Arrays.asList(StabKabobRecipe.ID, SlaverSaladRecipe.ID);
+    private static final List<String> ACT2_RECIPES = Arrays.asList(StabKabobRecipe.ID, SlaverSaladRecipe.ID, GremlinGoulashRecipe.ID);
+    private static final List<String> ACT3_RECIPES = Arrays.asList();
 
     public RecipeManager() {
         float offsetH = 128f * 1.618f * Settings.scale;
@@ -60,8 +62,12 @@ public class RecipeManager {
         cg.group.addAll(p.hand.group);
         cg.group.addAll(p.discardPile.group);
         cg.group.addAll(p.drawPile.group);
+        cg.group.add(p.cardInUse);
         cg.group.addAll(ChefMod.frozenPile.group);
+        cg.group.addAll(ChefMod.cardsToFreeze);
         int ingredientCount = (int) cg.group.stream()
+                .distinct()
+                .filter(Objects::nonNull)
                 .filter(c -> IngredientCardmod.getForCard(c, IngredientCardmod.ID).isPresent())
                 .count();
         int wantedIngredientCount = recipes.stream()
@@ -123,6 +129,8 @@ public class RecipeManager {
             case SlaverBlue.ID: //fallthrough
             case SlaverRed.ID:
                 return SlaverSaladRecipe.ID;
+            case GremlinLeader.ID:
+                return GremlinGoulashRecipe.ID;
             default:
                 return null;
         }
@@ -130,6 +138,13 @@ public class RecipeManager {
 
     public boolean notYetUnlocked(String id) {
         return unlockedRecipes.stream().noneMatch(r -> r.equals(id));
+    }
+
+    private String randomRecipeForAct(List<String> possibleIds) {
+        return possibleIds.stream()
+                .filter(s -> !unlockedRecipes.contains(s))
+                .findFirst()
+                .orElse(null);
     }
 
     public void unlock(MonsterGroup eliteMonsters, int actNum) {
@@ -145,14 +160,13 @@ public class RecipeManager {
             String recipeToAdd = null;
             switch (actNum) {
                 case 1:
-                    recipeToAdd = ACT1_RECIPES.stream()
-                            .filter(s -> !unlockedRecipes.contains(s))
-                            .findFirst()
-                            .orElse(null);
+                    recipeToAdd = randomRecipeForAct(ACT1_RECIPES);
                     break;
                 case 2:
+                    recipeToAdd = randomRecipeForAct(ACT2_RECIPES);
                     break;
                 case 3:
+                    recipeToAdd = randomRecipeForAct(ACT3_RECIPES);
                     break;
                 default:
                     break;

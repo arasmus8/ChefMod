@@ -363,5 +363,9 @@
   "chefmod:SlaverSalad": {
     "NAME": "Slaver Salad",
     "DESCRIPTION": "4 chefmod:Ingredients NL Add a *Bandage *Up, a *Blind, and a *Trip to your hand."
+  },
+  "chefmod:GremlinGoulash": {
+    "NAME": "Gremlin Goulash",
+    "DESCRIPTION": "4 chefmod:Ingredients NL Choose a card in your hand. It gets played twice this combat."
   }
 }
