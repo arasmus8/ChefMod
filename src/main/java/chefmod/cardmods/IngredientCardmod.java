@@ -67,7 +67,7 @@ public class IngredientCardmod extends AbstractChefCardmod {
         if (card.purgeOnUse) {
             return;
         }
-        Vector2 vec = new Vector2(140, 200);
+        Vector2 vec = new Vector2(-85, 200);
         vec.scl(card.drawScale * Settings.scale);
         vec.rotate(card.angle);
 
