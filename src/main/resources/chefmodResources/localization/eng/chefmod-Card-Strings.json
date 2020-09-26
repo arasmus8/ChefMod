@@ -358,7 +358,7 @@
   },
   "chefmod:StabKabob": {
     "NAME": "Stab Kabob",
-    "DESCRIPTION": "4 chefmod:Ingredients NL Draw an extra attack each turn."
+    "DESCRIPTION": "4 chefmod:Ingredients NL Each turn, put an attack from your draw pile into your hand."
   },
   "chefmod:SlaverSalad": {
     "NAME": "Slaver Salad",
@@ -367,5 +367,9 @@
   "chefmod:GremlinGoulash": {
     "NAME": "Gremlin Goulash",
     "DESCRIPTION": "4 chefmod:Ingredients NL Choose a card in your hand. It gets played twice this combat."
+  },
+  "chefmod:NemesisSouffle": {
+    "NAME": "Nemesis Soufflé",
+    "DESCRIPTION": "4 chefmod:Ingredients NL Gain 1 Intangible. Apply chefmod:Satiated to a random enemy."
   }
 }

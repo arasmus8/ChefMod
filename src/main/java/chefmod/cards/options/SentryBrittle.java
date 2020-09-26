@@ -1,21 +1,16 @@
 package chefmod.cards.options;
 
 import chefmod.ChefMod;
-import chefmod.cards.AbstractChefCard;
+import chefmod.cards.AbstractOptionCard;
 import chefmod.recipe.SentryBrittleRecipe;
 
 import static chefmod.ChefMod.makeID;
 
-public class SentryBrittle extends AbstractChefCard {
+public class SentryBrittle extends AbstractOptionCard {
     public static String ID = makeID(SentryBrittle.class.getSimpleName());
 
     public SentryBrittle() {
-        super(ID,
-                -2,
-                CardType.SKILL,
-                CardRarity.SPECIAL,
-                CardTarget.SELF
-        );
+        super(ID);
     }
 
     @Override

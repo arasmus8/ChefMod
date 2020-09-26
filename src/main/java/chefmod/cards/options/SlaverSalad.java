@@ -1,7 +1,7 @@
 package chefmod.cards.options;
 
 import chefmod.ChefMod;
-import chefmod.cards.AbstractChefCard;
+import chefmod.cards.AbstractOptionCard;
 import chefmod.recipe.SlaverSaladRecipe;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.cards.colorless.BandageUp;
@@ -10,18 +10,13 @@ import com.megacrit.cardcrawl.cards.colorless.Trip;
 
 import static chefmod.ChefMod.makeID;
 
-public class SlaverSalad extends AbstractChefCard {
+public class SlaverSalad extends AbstractOptionCard {
     public static String ID = makeID(SlaverSalad.class.getSimpleName());
 
     private float switchPreviewTimer;
 
     public SlaverSalad() {
-        super(ID,
-                -2,
-                CardType.SKILL,
-                CardRarity.SPECIAL,
-                CardTarget.SELF
-        );
+        super(ID);
 
         switchPreviewTimer = 2f;
         cardsToPreview = new BandageUp();

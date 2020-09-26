@@ -1,21 +1,16 @@
 package chefmod.cards.options;
 
 import chefmod.ChefMod;
-import chefmod.cards.AbstractChefCard;
+import chefmod.cards.AbstractOptionCard;
 import chefmod.recipe.GremlinGoulashRecipe;
 
 import static chefmod.ChefMod.makeID;
 
-public class GremlinGoulash extends AbstractChefCard {
+public class GremlinGoulash extends AbstractOptionCard {
     public static String ID = makeID(GremlinGoulash.class.getSimpleName());
 
     public GremlinGoulash() {
-        super(ID,
-                -2,
-                CardType.SKILL,
-                CardRarity.SPECIAL,
-                CardTarget.SELF
-        );
+        super(ID);
     }
 
     @Override

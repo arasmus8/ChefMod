@@ -38,7 +38,7 @@
   "chefmod:StabKabobRecipe": {
     "TEXT": [
       "Stab Kabob",
-      "Draw an extra attack each turn."
+      "Each turn, put an attack from your draw pile into your hand."
     ]
   },
   "chefmod:SlaverSaladRecipe": {
@@ -52,6 +52,12 @@
       "Gremlin Goulash",
       "Choose a card in your hand. It gets played twice this combat.",
       "play twice this combat."
+    ]
+  },
+  "chefmod:NemesisSouffleRecipe": {
+    "TEXT": [
+      "Nemesis Soufflé",
+      "Gain 1 #yIntangible. Apply #ySatiated to a random enemy."
     ]
   },
   "chefmod:SushiPlatterRecipe": {
