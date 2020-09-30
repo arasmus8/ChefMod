@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.beyond.GiantHead;
 import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.city.GremlinLeader;
@@ -35,7 +36,7 @@ public class RecipeManager {
 
     private static final List<String> ACT1_RECIPES = Arrays.asList(NobStewRecipe.ID, FriedLagavulinRecipe.ID, SentryBrittleRecipe.ID);
     private static final List<String> ACT2_RECIPES = Arrays.asList(StabKabobRecipe.ID, SlaverSaladRecipe.ID, GremlinGoulashRecipe.ID);
-    private static final List<String> ACT3_RECIPES = Arrays.asList(NemesisSouffleRecipe.ID);
+    private static final List<String> ACT3_RECIPES = Arrays.asList(NemesisSouffleRecipe.ID, GiantMarbleCakeRecipe.ID);
 
     public RecipeManager() {
         float offsetH = 128f * 1.618f * Settings.scale;
@@ -134,6 +135,8 @@ public class RecipeManager {
                 return GremlinGoulashRecipe.ID;
             case Nemesis.ID:
                 return NemesisSouffleRecipe.ID;
+            case GiantHead.ID:
+                return GiantMarbleCakeRecipe.ID;
             default:
                 return null;
         }

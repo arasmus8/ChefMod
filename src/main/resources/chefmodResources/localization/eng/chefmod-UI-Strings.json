@@ -60,6 +60,12 @@
       "Gain 1 #yIntangible. Apply #ySatiated to a random enemy."
     ]
   },
+  "chefmod:GiantMarbleCakeRecipe": {
+    "TEXT": [
+      "Giant Marble Cake",
+      "Draw 2 cards. ALL attacks in your hand deal 5 more damage this combat."
+    ]
+  },
   "chefmod:SushiPlatterRecipe": {
     "TEXT": [
       "Sushi Platter",

@@ -7,7 +7,7 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.cards.AbstractOptionCard;
-import chefmod.recipe.NemesisSouffleRecipe;
+import chefmod.recipe.GiantMarbleCakeRecipe;
 import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
 import chefmod.relics.AbstractChefRelic;
@@ -30,6 +30,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 @SpireInitializer
 public class ChefMod implements
         CustomSavable<ArrayList<String>>,
@@ -108,7 +109,6 @@ public class ChefMod implements
         return modID + ":" + idText;
     }
 
-    @SuppressWarnings("unused")
     public static void initialize() {
         ChefMod chefMod = new ChefMod();
     }
@@ -228,7 +228,7 @@ public class ChefMod implements
     @Override
     public void onLoad(ArrayList<String> strings) {
         RecipeManager.unlockedRecipes.clear();
-        RecipeManager.unlockedRecipes.add(NemesisSouffleRecipe.ID);
+        RecipeManager.unlockedRecipes.add(GiantMarbleCakeRecipe.ID);
         /*
         if (strings != null) {
             RecipeManager.unlockedRecipes.addAll(strings.stream().distinct().collect(Collectors.toList()));
