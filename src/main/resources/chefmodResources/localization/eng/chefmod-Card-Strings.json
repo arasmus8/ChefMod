@@ -375,5 +375,13 @@
   "chefmod:GiantMarbleCake": {
     "NAME": "Giant Marble Cake",
     "DESCRIPTION": "4 chefmod:Ingredients NL Draw 2 cards. ALL attacks in your hand deal 5 more damage this combat."
+  },
+  "chefmod:ReptoRavioli": {
+    "NAME": "Repto-Ravioli",
+    "DESCRIPTION": "4 chefmod:Ingredients NL Add a *Repto *Dagger to your hand."
+  },
+  "chefmod:ReptoDagger": {
+    "NAME": "Repto Dagger",
+    "DESCRIPTION": "Deal !D! damage !M! times. Shuffle this card into your draw pile. It deals damage an additional time when next used."
   }
 }

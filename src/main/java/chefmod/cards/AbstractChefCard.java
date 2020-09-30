@@ -1,7 +1,6 @@
 package chefmod.cards;
 
 import basemod.abstracts.CustomCard;
-import chefmod.TheChef;
 import chefmod.util.ActionUnit;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,6 +19,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.List;
 
 import static chefmod.ChefMod.*;
+import static chefmod.TheChef.Enums.CHEF_COLOR;
 
 public abstract class AbstractChefCard extends CustomCard implements ActionUnit {
 
@@ -45,7 +45,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
                             final CardType type,
                             final CardRarity rarity,
                             final CardTarget target) {
-        this(id, cost, type, rarity, target, TheChef.Enums.CHEF_COLOR, null);
+        this(id, cost, type, rarity, target, CHEF_COLOR, null);
     }
 
     public AbstractChefCard(final String id,
@@ -54,7 +54,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
                             final CardRarity rarity,
                             final CardTarget target,
                             final List<CardTags> tagsList) {
-        this(id, cost, type, rarity, target, TheChef.Enums.CHEF_COLOR, tagsList);
+        this(id, cost, type, rarity, target, CHEF_COLOR, tagsList);
     }
 
     public AbstractChefCard(final String id,
@@ -74,8 +74,10 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
         EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
         initializeTitle();
         initializeDescription();
-        setCorrectBannerImage();
-        setCorrectFrameImage();
+        if (color == CHEF_COLOR) {
+            setCorrectBannerImage();
+            setCorrectFrameImage();
+        }
         if (tagsList != null) {
             tags.addAll(tagsList);
         }

@@ -32,7 +32,7 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
 
     @Override
     public void atTurnStart() {
-        if (upgraded && frozen) {
+        if (upgraded) {
             baseDamage += magicNumber;
         }
     }

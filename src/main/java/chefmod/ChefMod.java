@@ -7,9 +7,9 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.cards.AbstractOptionCard;
-import chefmod.recipe.GiantMarbleCakeRecipe;
 import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
+import chefmod.recipe.ReptoRavioliRecipe;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
 import chefmod.util.TextureHelper;
@@ -22,6 +22,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -159,21 +160,33 @@ public class ChefMod implements
 
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Resources/localization/eng/chefmod-Card-Strings.json");
+        String lang = "eng";
 
-        BaseMod.loadCustomStringsFile(RelicStrings.class, getModID() + "Resources/localization/eng/chefmod-Relic-Strings.json");
+        if (Settings.language == Settings.GameLanguage.ENG) {
+            lang = "eng";
+        }
 
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, getModID() + "Resources/localization/eng/chefmod-Character-Strings.json");
+        BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Card-Strings.json");
 
-        BaseMod.loadCustomStringsFile(PowerStrings.class, getModID() + "Resources/localization/eng/chefmod-Power-Strings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Relic-Strings.json");
 
-        BaseMod.loadCustomStringsFile(UIStrings.class, getModID() + "Resources/localization/eng/chefmod-UI-Strings.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Character-Strings.json");
+
+        BaseMod.loadCustomStringsFile(PowerStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Power-Strings.json");
+
+        BaseMod.loadCustomStringsFile(UIStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-UI-Strings.json");
     }
 
     @Override
     public void receiveEditKeywords() {
+        String lang = "eng";
+
+        if (Settings.language == Settings.GameLanguage.ENG) {
+            lang = "eng";
+        }
+
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/chefmod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+        String json = Gdx.files.internal(getModID() + "Resources/localization/" + lang + "/chefmod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null) {
@@ -228,7 +241,7 @@ public class ChefMod implements
     @Override
     public void onLoad(ArrayList<String> strings) {
         RecipeManager.unlockedRecipes.clear();
-        RecipeManager.unlockedRecipes.add(GiantMarbleCakeRecipe.ID);
+        RecipeManager.unlockedRecipes.add(ReptoRavioliRecipe.ID);
         /*
         if (strings != null) {
             RecipeManager.unlockedRecipes.addAll(strings.stream().distinct().collect(Collectors.toList()));

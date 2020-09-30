@@ -76,5 +76,6 @@ public class TodaysSpecial extends AbstractChefCard implements StartupCard {
         recipeMap.put(GremlinGoulashRecipe.ID, GremlinGoulash.class);
         recipeMap.put(NemesisSouffleRecipe.ID, NemesisSouffle.class);
         recipeMap.put(GiantMarbleCakeRecipe.ID, GiantMarbleCake.class);
+        recipeMap.put(ReptoRavioliRecipe.ID, ReptoRavioli.class);
     }
 }
