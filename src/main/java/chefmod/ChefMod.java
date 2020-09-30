@@ -9,7 +9,6 @@ import chefmod.cards.AbstractChefCard;
 import chefmod.cards.AbstractOptionCard;
 import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
-import chefmod.recipe.ReptoRavioliRecipe;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
 import chefmod.util.TextureHelper;
@@ -30,6 +29,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("unused")
 @SpireInitializer
@@ -241,8 +241,6 @@ public class ChefMod implements
     @Override
     public void onLoad(ArrayList<String> strings) {
         RecipeManager.unlockedRecipes.clear();
-        RecipeManager.unlockedRecipes.add(ReptoRavioliRecipe.ID);
-        /*
         if (strings != null) {
             RecipeManager.unlockedRecipes.addAll(strings.stream().distinct().collect(Collectors.toList()));
             if (RecipeManager.unlockedRecipes.size() == 0) {
@@ -251,6 +249,5 @@ public class ChefMod implements
         } else {
             RecipeManager.unlockedRecipes.add(NeowNuggetsRecipe.ID);
         }
-        */
     }
 }
