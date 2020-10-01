@@ -16,7 +16,7 @@ public class ReptoDagger extends AbstractChefCard {
         super(ID,
                 1,
                 CardType.ATTACK,
-                CardRarity.COMMON,
+                CardRarity.SPECIAL,
                 CardTarget.ENEMY,
                 CardColor.COLORLESS,
                 null

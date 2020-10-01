@@ -24,7 +24,7 @@ public abstract class AbstractOptionCard extends CustomCard {
                 "ERROR",
                 CardType.SKILL,
                 CardColor.COLORLESS,
-                CardRarity.COMMON,
+                CardRarity.SPECIAL,
                 CardTarget.NONE);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
         name = NAME = cardStrings.NAME;
