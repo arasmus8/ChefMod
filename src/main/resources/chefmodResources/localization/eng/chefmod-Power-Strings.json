@@ -108,9 +108,9 @@
   "chefmod:TastyDistractionPower": {
     "NAME": "Tasty Distraction",
     "DESCRIPTIONS": [
-      "The first time each turn you would take unblocked attack damage, prevent it and #yExhaust your oldest #yFrozen card.",
+      "The first time each turn you would take unblocked attack damage, instead play your oldest #yFrozen card and #yExhaust it.",
       "The first #b",
-      " times each turn you would take unblocked attack damage, prevent it and #yExhaust your oldest #yFrozen card."
+      " times each turn you would take unblocked attack damage, instead play your oldest #yFrozen card and #yExhaust it."
     ]
   },
   "chefmod:TemporaryStrengthDownPower": {

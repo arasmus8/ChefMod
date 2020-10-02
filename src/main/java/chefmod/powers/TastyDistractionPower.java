@@ -2,13 +2,14 @@ package chefmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import chefmod.ChefMod;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import chefmod.actions.PlayOldestFrozenCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+
+import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
@@ -19,7 +20,7 @@ public class TastyDistractionPower extends AbstractPower implements CloneablePow
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
-    private int blockedThisTurn = 99;
+    private int blockedThisTurn = 0;
 
     public TastyDistractionPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -43,8 +44,6 @@ public class TastyDistractionPower extends AbstractPower implements CloneablePow
         if (damageAmount > 0 && blockedThisTurn < amount && ChefMod.frozenPile.size() > 0) {
             this.flashWithoutSound();
             blockedThisTurn += 1;
-            AbstractCard oldestFrozen = ChefMod.frozenPile.getBottomCard();
-            addToTop(new ExhaustSpecificCardAction(oldestFrozen, ChefMod.frozenPile));
             return 0;
         }
 
@@ -53,7 +52,13 @@ public class TastyDistractionPower extends AbstractPower implements CloneablePow
 
     @Override
     public void atStartOfTurn() {
-        blockedThisTurn = 0;
+        if (blockedThisTurn > 0) {
+            flash();
+            IntStream.rangeClosed(1, blockedThisTurn).forEachOrdered(i -> {
+                addToBot(new PlayOldestFrozenCardAction(true));
+            });
+            blockedThisTurn = 0;
+        }
     }
 
     @Override

@@ -18,7 +18,7 @@
   },
   "chefmod:BleedOut": {
     "NAME": "Bleed Out",
-    "DESCRIPTION": "Deal !D! Damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust"
   },
   "chefmod:Bruschetta": {
     "NAME": "Bruschetta",
@@ -40,12 +40,12 @@
   },
   "chefmod:CayenneCloud": {
     "NAME": "Cayenne Cloud",
-    "DESCRIPTION": "Deal !D! Damage to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies !M! times."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
   },
   "chefmod:Chop": {
     "NAME": "Chop",
-    "DESCRIPTION": "Deal !D! Damage NL If played while chefmod:Frozen, deal !D! Damage twice."
+    "DESCRIPTION": "Deal !D! damage NL If played while chefmod:Frozen, deal !D! damage twice."
   },
   "chefmod:CleanHouse": {
     "NAME": "Clean House",
@@ -53,12 +53,12 @@
   },
   "chefmod:Cleavers": {
     "NAME": "Cleavers",
-    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: Deal !D! Damage to a random enemy.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: Deal !D! Damage to two random enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL chefmod:Prepped: Deal !D! damage to a random enemy.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL chefmod:Prepped: Deal !D! damage to two random enemies."
   },
   "chefmod:ColdSteel": {
     "NAME": "Cold Steel",
-    "DESCRIPTION": "Deal !D! Damage NL When chefmod:Frozen, costs 1 less [E] this combat."
+    "DESCRIPTION": "Deal !D! damage NL When chefmod:Frozen, costs 1 less [E] this combat."
   },
   "chefmod:CuttingBoard": {
     "NAME": "Cutting Board",
@@ -94,7 +94,7 @@
   },
   "chefmod:DoubleChop": {
     "NAME": "Double Chop",
-    "DESCRIPTION": "Deal !D! Damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
+    "DESCRIPTION": "Deal !D! damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
   },
   "chefmod:Escargot": {
     "NAME": "Escargót",
@@ -108,26 +108,26 @@
   },
   "chefmod:Fillet": {
     "NAME": "Fillet",
-    "DESCRIPTION": "Deal !D! Damage. Make a copy of this card and chefmod:Freeze it."
+    "DESCRIPTION": "Deal !D! damage. Make a copy of this card and chefmod:Freeze it."
   },
   "chefmod:FireUp": {
     "NAME": "Fire Up",
-    "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Hunger."
+    "DESCRIPTION": "Deal !D! damage. Apply chefmod:Hunger."
   },
   "chefmod:FiveAlarmChili": {
     "NAME": "5-Alarm Chili",
-    "DESCRIPTION": "chefmod:Recipe: 3 chefmod:Ingredients NL Choose a skill. It deals !M! Damage to ALL enemies whenever you use it."
+    "DESCRIPTION": "chefmod:Recipe: 3 chefmod:Ingredients NL Choose a skill. It deals !M! damage to ALL enemies whenever you use it."
   },
   "chefmod:Flambe": {
     "NAME": "Flambé",
-    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
   },
   "chefmod:FreezerBurn": {
     "NAME": "Freezer Burn",
-    "DESCRIPTION": "Deal !M! Damage for every chefmod:Frozen card.",
-    "UPGRADE_DESCRIPTION": "Deal !M! Damage for every card chefmod:Frozen this combat.",
+    "DESCRIPTION": "Deal !M! damage for every chefmod:Frozen card.",
+    "UPGRADE_DESCRIPTION": "Deal !M! damage for every card chefmod:Frozen this combat.",
     "EXTENDED_DESCRIPTION": [
-      " NL ( !D! Damage)"
+      " NL ( !D! damage)"
     ]
   },
   "chefmod:FreezeSolid": {
@@ -141,17 +141,17 @@
   },
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
-    "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! Damage to ALL enemies. NL Increase damage by !M! each turn."
+    "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! damage to ALL enemies. NL Increase damage by !M! each turn."
   },
   "chefmod:FryPan": {
     "NAME": "Fry Pan",
-    "DESCRIPTION": "chefmod:No-Freeze NL Deal !D! Damage."
+    "DESCRIPTION": "chefmod:No-Freeze NL Deal !D! damage."
   },
   "chefmod:FullBurn": {
     "NAME": "Full Burn",
-    "DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] .",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage to ALL enemies. NL chefmod:Prepped: gain [E] [E] ."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL chefmod:Prepped: gain [E] .",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to ALL enemies. NL chefmod:Prepped: gain [E] [E] ."
   },
   "chefmod:FullCourseMeal": {
     "NAME": "Full-Course Meal",
@@ -173,7 +173,7 @@
   },
   "chefmod:HotSoup": {
     "NAME": "Hot Soup",
-    "DESCRIPTION": "Deal !D! Damage. At the end of turn, chefmod:Freeze this if it's in your hand."
+    "DESCRIPTION": "Deal !D! damage. At the end of turn, chefmod:Freeze this if it's in your hand."
   },
   "chefmod:IceCreamCone": {
     "NAME": "Ice Cream Cone",
@@ -182,23 +182,23 @@
   },
   "chefmod:IcePick": {
     "NAME": "Ice Pick",
-    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze 1."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Freeze 1."
   },
   "chefmod:Julienne": {
     "NAME": "Julienne",
-    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Freeze the next card you use."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Freeze the next card you use."
   },
   "chefmod:KnifeFlurry": {
     "NAME": "Knife Flurry",
-    "DESCRIPTION": "Deal !D! Damage !M! times."
+    "DESCRIPTION": "Deal !D! damage !M! times."
   },
   "chefmod:Leftovers": {
     "NAME": "Leftovers",
-    "DESCRIPTION": "Deal !D! Damage. NL Whenever you chefmod:Freeze this card, double its Damage."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you chefmod:Freeze this card, double its damage."
   },
   "chefmod:LiquidNitrogen": {
     "NAME": "Liquid Nitrogen",
-    "DESCRIPTION": "Deal !D! Damage. Apply chefmod:Supercooled."
+    "DESCRIPTION": "Deal !D! damage. Apply chefmod:Supercooled."
   },
   "chefmod:LocoMoco": {
     "NAME": "Loco Moco",
@@ -207,11 +207,11 @@
   },
   "chefmod:Mince": {
     "NAME": "Mince",
-    "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! Damage to a random enemy !M! times."
+    "DESCRIPTION": "When drawn, draw a skill. NL Deal !D! damage to a random enemy !M! times."
   },
   "chefmod:MonsterBait": {
     "NAME": "Monster Bait",
-    "DESCRIPTION": "Deal !D! Damage. If the target has chefmod:Hunger, increase the damage by !M!."
+    "DESCRIPTION": "Deal !D! damage. If the target has chefmod:Hunger, increase the damage by !M!."
   },
   "chefmod:NewMenu": {
     "NAME": "New Menu",
@@ -246,17 +246,17 @@
   },
   "chefmod:PrepCook": {
     "NAME": "Prep Cook",
-    "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! the next time you use it.",
-    "UPGRADE_DESCRIPTION": "Whenever you Retain a card, increase its Block and/or Damage by !M! this combat."
+    "DESCRIPTION": "Whenever you Retain a card, increase its Block and/or damage by !M! the next time you use it.",
+    "UPGRADE_DESCRIPTION": "Whenever you Retain a card, increase its Block and/or damage by !M! this combat."
   },
   "chefmod:Puree": {
     "NAME": "Purée",
-    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: chefmod:Freeze this card."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: chefmod:Freeze this card."
   },
   "chefmod:QuickChop": {
     "NAME": "Quick Chop",
-    "DESCRIPTION": "Deal !D! Damage. NL Play the oldest chefmod:Frozen card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! Damage. NL Play the !M! oldest chefmod:Frozen cards."
+    "DESCRIPTION": "Deal !D! damage. NL Play the oldest chefmod:Frozen card.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Play the !M! oldest chefmod:Frozen cards."
   },
   "chefmod:QuickThaw": {
     "NAME": "Quick Thaw",
@@ -290,7 +290,7 @@
   },
   "chefmod:SliceAndDice": {
     "NAME": "Slice & Dice",
-    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Deal !D! Damage twice."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Deal !D! damage twice."
   },
   "chefmod:Sorbet": {
     "NAME": "Sorbet",
@@ -304,7 +304,7 @@
   },
   "chefmod:Strike": {
     "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage"
+    "DESCRIPTION": "Deal !D! damage"
   },
   "chefmod:SushiPlatter": {
     "NAME": "Sushi Platter",
@@ -313,11 +313,11 @@
   },
   "chefmod:TastyDistraction": {
     "NAME": "Tasty Distraction",
-    "DESCRIPTION": "The first time each turn you would take unblocked attack damage, prevent it and Exhaust your oldest chefmod:Frozen card."
+    "DESCRIPTION": "The first time each turn you would take unblocked attack damage, instead play your oldest chefmod:Frozen card and Exhaust it."
   },
   "chefmod:Tenderizer": {
     "NAME": "Tenderizer",
-    "DESCRIPTION": "Deal !D! Damage. NL chefmod:Prepped: Apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Apply !M! Vulnerable."
   },
   "chefmod:TodaysSpecial": {
     "NAME": "Today's Special",
@@ -350,7 +350,7 @@
   },
   "chefmod:NobStew": {
     "NAME": "Nob Stew",
-    "DESCRIPTION": "3 chefmod:Ingredients NL Every Skill you play gives a random Attack in your hand +2 Damage."
+    "DESCRIPTION": "3 chefmod:Ingredients NL Every Skill you play gives a random Attack in your hand +2 damage."
   },
   "chefmod:SentryBrittle": {
     "NAME": "Sentry Brittle",

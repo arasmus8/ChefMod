@@ -80,15 +80,14 @@ public class TheChef extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("UNLOCK_PING", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA("ATTACK_IRON_1", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
-        //TODO: Change this to a sound befitting your character.
     }
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "UNLOCK_PING"; //TODO: Change this to a sound befitting your character.
+        return "ATTACK_IRON_1";
     }
 
     @Override
@@ -144,9 +143,9 @@ public class TheChef extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{
-                AbstractGameAction.AttackEffect.FIRE,
-                AbstractGameAction.AttackEffect.BLUNT_HEAVY,
-                AbstractGameAction.AttackEffect.FIRE};
+                AbstractGameAction.AttackEffect.SLASH_VERTICAL,
+                AbstractGameAction.AttackEffect.SLASH_DIAGONAL,
+                AbstractGameAction.AttackEffect.SLASH_VERTICAL};
     }
 
     @Override
