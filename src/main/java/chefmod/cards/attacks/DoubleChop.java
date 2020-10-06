@@ -4,8 +4,13 @@ import chefmod.ChefMod;
 import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EquilibriumPower;
+import com.megacrit.cardcrawl.relics.RunicPyramid;
 
 import java.util.stream.IntStream;
 
@@ -35,8 +40,14 @@ public class DoubleChop extends AbstractChefCard {
 
     @Override
     public void triggerOnEndOfPlayerTurn() {
-        super.triggerOnEndOfPlayerTurn();
-        ChefMod.cardsToFreeze.add(this);
+        if (isEthereal) {
+            addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+        } else {
+            ChefMod.cardsToFreeze.add(this);
+            if (AbstractDungeon.player.hasRelic(RunicPyramid.ID) || AbstractDungeon.player.hasPower(EquilibriumPower.POWER_ID) || retain || selfRetain) {
+                addToTop(new DiscardSpecificCardAction(this, AbstractDungeon.player.hand));
+            }
+        }
     }
 
     @Override
