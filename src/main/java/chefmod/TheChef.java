@@ -7,6 +7,7 @@ import chefmod.cards.skills.QuickThaw;
 import chefmod.cards.skills.TodaysSpecial;
 import chefmod.energyorb.ChefEnergyOrb;
 import chefmod.relics.TrustyPot;
+import chefmod.vfx.VictoryVfx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -23,6 +24,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -150,8 +152,22 @@ public class TheChef extends CustomPlayer {
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {
-        return super.getCutscenePanels();
-        //TODO: Override this if you want an alternate heart win comic
+        ArrayList<CutscenePanel> panels = new ArrayList<>();
+        panels.add(new CutscenePanel(makeImagePath("heart1.png"), "ATTACK_DAGGER_6"));
+        panels.add(new CutscenePanel(makeImagePath("heart2.png"), "ATTACK_FIRE"));
+        panels.add(new CutscenePanel(makeImagePath("heart3.png")));
+        return panels;
+    }
+
+    @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        for (AbstractGameEffect effect : effects) {
+            if (effect instanceof VictoryVfx) {
+                // already created the effect
+                return;
+            }
+        }
+        effects.add(new VictoryVfx());
     }
 
     @Override
