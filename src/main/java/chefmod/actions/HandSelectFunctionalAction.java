@@ -1,6 +1,7 @@
 package chefmod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
@@ -58,7 +59,9 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
 
             hand.group.clear();
             hand.group.addAll(eligible);
-            AbstractDungeon.handCardSelectScreen.open(message, amount, false);
+            AbstractDungeon.handCardSelectScreen.open(message, amount, false, true, false, false, true);
+            addToBot(new WaitAction(Settings.ACTION_DUR_FAST));
+            tickDuration();
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 // Restore original hand positions
