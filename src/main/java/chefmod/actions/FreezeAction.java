@@ -70,7 +70,7 @@ public class FreezeAction extends AbstractGameAction {
                 if (currentGroup.isPresent()) {
                     ChefMod.cardsToFreeze.add(card);
                     currentGroup.get().moveToDeck(card, false);
-                    ChefMod.cardsToFreeze.clear();
+                    ChefMod.cardsToFreeze.remove(card);
                 } else {
                     AbstractCard newCard = card.makeSameInstanceOf();
                     if (newCard instanceof AbstractChefCard) {
@@ -96,8 +96,8 @@ public class FreezeAction extends AbstractGameAction {
                             ChefMod.cardsToFreeze.add(c);
                             frozenCards.add(c);
                         });
-                ChefMod.cardsToFreeze.forEach(c -> drawPile.moveToDeck(c, false));
-                ChefMod.cardsToFreeze.clear();
+                frozenCards.forEach(c -> drawPile.moveToDeck(c, false));
+                ChefMod.cardsToFreeze.removeIf(frozenCards::contains);
                 endActionWithFollowUp();
             }
         }

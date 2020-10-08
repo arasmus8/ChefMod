@@ -43,7 +43,7 @@ public class ChefEnergyOrb extends CustomEnergyOrb {
                 false,
                 false);
 
-        ChefMod.renderFrozenPile(sb);
+        ChefMod.renderFrozenPile(sb, x);
         ChefMod.recipeManager.render(sb);
     }
 

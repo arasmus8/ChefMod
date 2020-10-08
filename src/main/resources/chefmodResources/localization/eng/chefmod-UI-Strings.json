@@ -1,4 +1,11 @@
 {
+  "chefmod:FrozenPile": {
+    "TEXT": [
+      "Frozen Pile",
+      "This is the Frozen Pile",
+      "The Frozen Pile is empty!"
+    ]
+  },
   "chefmod:FrozenPileViewScreen": {
     "TEXT": [
       "These are your Frozen cards, shown in order."

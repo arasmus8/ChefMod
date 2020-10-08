@@ -8,18 +8,23 @@ import chefmod.vfx.SnowParticleManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BobEffect;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
+import static chefmod.ChefMod.makeID;
 import static chefmod.ChefMod.makeImagePath;
 
 public class FrozenPileButton extends ClickableUIElement {
-    private static final float X_OFF = 0f;
+    private static final float X_OFF = 200f * Settings.scale;
     private static final float Y_OFF = 228f;
     private static final float HB_WIDTH = 128f;
     private static final float HB_HEIGHT = 128f;
@@ -29,15 +34,18 @@ public class FrozenPileButton extends ClickableUIElement {
     private static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
     private static final float DECK_TIP_X = 0F * Settings.scale;
     private static final float DECK_TIP_Y = 128.0F * Settings.scale;
-    private static final float BOB_DISTANCE = 22F * Settings.scale;
     private static final Texture frozenDeck = TextureHelper.getTexture(makeImagePath("frozenDeck.png"));
     private static SnowParticleManager snowParticleManager;
+    private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("FrozenPile"));
+    public static final String[] TEXT = uiStrings.TEXT;
 
-    private BobEffect bob;
+    private final BobEffect bob;
+
+    private boolean isOpen = false;
 
     public FrozenPileButton() {
         super((Texture) null,
-                X_OFF,
+                0f,
                 Y_OFF,
                 HB_WIDTH,
                 HB_HEIGHT);
@@ -55,10 +63,25 @@ public class FrozenPileButton extends ClickableUIElement {
 
     @Override
     protected void onClick() {
-        if (!AbstractDungeon.isScreenUp) {
-            ExhaustPileViewScreenPatches.showFrozen = true;
-            AbstractDungeon.exhaustPileViewScreen.open();
+        if (isOpen && AbstractDungeon.screen == AbstractDungeon.CurrentScreen.EXHAUST_VIEW) {
+            isOpen = false;
+            CardCrawlGame.sound.play("DECK_CLOSE");
+            AbstractDungeon.closeCurrentScreen();
+        } else if (!AbstractDungeon.isScreenUp) {
+            if (ChefMod.frozenPile.isEmpty()) {
+                AbstractPlayer p = AbstractDungeon.player;
+                AbstractDungeon.effectList.add(new ThoughtBubble(p.dialogX, p.dialogY, 3.0F, TEXT[2], true));
+            } else {
+                ExhaustPileViewScreenPatches.showFrozen = true;
+                AbstractDungeon.exhaustPileViewScreen.open();
+                isOpen = true;
+            }
         }
+    }
+
+    @Override
+    public void setX(float x) {
+        super.setX(x - X_OFF);
     }
 
     @Override
@@ -70,25 +93,25 @@ public class FrozenPileButton extends ClickableUIElement {
 
     @Override
     public void render(SpriteBatch sb) {
-        super.render(sb);
-
-        if (ChefMod.frozenPile != null && ChefMod.frozenPile.size() > 0) {
+        if (ChefMod.frozenPile != null) {
             if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
-                snowParticleManager.render(sb, hitbox.cX, hitbox.cY);
+                float x = hitbox.x + hitbox.width / 2f;
+                float y = hitbox.y + hitbox.height / 2f;
+                snowParticleManager.render(sb, x, y);
                 sb.setColor(Color.WHITE);
-                TextureHelper.draw(sb, frozenDeck, hitbox.cX, hitbox.cY + bob.y);
+                TextureHelper.draw(sb, frozenDeck, x, y + bob.y);
 
                 String msg = Integer.toString(ChefMod.frozenPile.size());
                 sb.setColor(Color.WHITE);
                 TextureHelper.draw(sb,
                         ImageMaster.DECK_COUNT_CIRCLE,
-                        hitbox.cX + COUNT_OFFSET_X,
-                        hitbox.cY + COUNT_OFFSET_Y);
-                FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX + COUNT_X, hitbox.cY + COUNT_Y);
+                        x + COUNT_OFFSET_X,
+                        y + COUNT_OFFSET_Y);
+                FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, x + COUNT_X, y + COUNT_Y);
 
                 hitbox.render(sb);
                 if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
-                    TipHelper.renderGenericTip(hitbox.cX + DECK_TIP_X, hitbox.cY + DECK_TIP_Y, "Frozen Pile", "This is the Frozen Pile");
+                    TipHelper.renderGenericTip(x + DECK_TIP_X, y + DECK_TIP_Y, TEXT[0], TEXT[1]);
                 }
             }
         }

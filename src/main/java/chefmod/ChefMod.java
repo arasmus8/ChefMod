@@ -216,8 +216,9 @@ public class ChefMod implements
         }
     }
 
-    public static void renderFrozenPile(SpriteBatch spriteBatch) {
+    public static void renderFrozenPile(SpriteBatch spriteBatch, float x) {
         if (frozenPileButton != null) {
+            frozenPileButton.setX(x);
             frozenPileButton.render(spriteBatch);
         }
     }
