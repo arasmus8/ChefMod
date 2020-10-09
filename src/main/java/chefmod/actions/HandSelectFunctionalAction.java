@@ -35,10 +35,6 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
         originalHand = new ArrayList<>();
     }
 
-    public HandSelectFunctionalAction(int amount, Consumer<List<AbstractCard>> actionFunction, String message) {
-        this(Settings.ACTION_DUR_XFAST, amount, actionFunction, Objects::nonNull, message);
-    }
-
     public HandSelectFunctionalAction(Consumer<List<AbstractCard>> actionFunction, String message) {
         this(Settings.ACTION_DUR_XFAST, 1, actionFunction, Objects::nonNull, message);
     }
@@ -46,8 +42,8 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
     @Override
     public void update() {
         CardGroup hand = AbstractDungeon.player.hand;
-        List<AbstractCard> eligible = hand.group.stream().filter(filter).collect(Collectors.toList());
         if (duration == startDuration) {
+            List<AbstractCard> eligible = hand.group.stream().filter(filter).collect(Collectors.toList());
             if (eligible.size() <= amount) {
                 isDone = true;
                 if (eligible.size() > 0) {

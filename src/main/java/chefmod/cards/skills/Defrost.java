@@ -26,9 +26,6 @@ public class Defrost extends AbstractChefCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new GridSelectAndPerformAction(magicNumber,
-                false,
-                ChefMod.frozenPile,
-                null,
                 new FunctionalAction(firstUpdate -> {
                     GridSelectAndPerformAction.selectedCards.forEach(c -> {
                         ChefMod.frozenPile.moveToHand(c, ChefMod.frozenPile);

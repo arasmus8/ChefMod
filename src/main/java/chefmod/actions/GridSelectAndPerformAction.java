@@ -50,14 +50,6 @@ public class GridSelectAndPerformAction extends AbstractGameAction {
         this.filterCriteria = filterCriteria;
     }
 
-    public GridSelectAndPerformAction(
-            int amount,
-            boolean random,
-            AbstractGameAction action
-    ) {
-        this(amount, random, ChefMod.frozenPile, null, action);
-    }
-
     public GridSelectAndPerformAction(int amount, AbstractGameAction action) {
         this(amount, false, ChefMod.frozenPile, null, action);
     }
