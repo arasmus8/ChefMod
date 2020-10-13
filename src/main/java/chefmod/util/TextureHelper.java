@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.TextureData;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.core.Settings;
 import org.apache.logging.log4j.LogManager;
@@ -44,7 +44,7 @@ public class TextureHelper {
         return pm;
     }
 
-    public static Texture buildTextureFromAtlasRegion(TextureAtlas.AtlasRegion atlasRegion) {
+    public static Texture buildTextureFromAtlasRegion(AtlasRegion atlasRegion) {
         TextureData textureData = atlasRegion.getTexture().getTextureData();
         if (!textureData.isPrepared()) {
             textureData.prepare();
@@ -66,6 +66,16 @@ public class TextureHelper {
         return new Texture(pixmap);
     }
 
+    public static AtlasRegion buildAtlasRegionFromTexture(Texture texture) {
+        return new AtlasRegion(
+                texture,
+                0,
+                0,
+                texture.getWidth(),
+                texture.getHeight()
+        );
+    }
+
     public static void draw(SpriteBatch sb, Texture texture, float cX, float cY) {
         drawScaledAndRotated(sb, texture, cX, cY, 1f, 0f);
     }
@@ -79,8 +89,8 @@ public class TextureHelper {
     }
 
     public static void drawScaledAndRotated(SpriteBatch sb, Texture texture, float cX, float cY, float scale, float rotation) {
-        float w = texture.getWidth();// * Settings.scale;
-        float h = texture.getHeight();// * Settings.scale;
+        float w = texture.getWidth();
+        float h = texture.getHeight();
         float halfW = w / 2f;
         float halfH = h / 2f;
         sb.draw(texture,
@@ -99,6 +109,25 @@ public class TextureHelper {
                 (int) h,
                 false,
                 false);
+    }
+
+    public static void drawScaledAndRotated(SpriteBatch sb, AtlasRegion img, float cX, float cY, float scale, float rotation) {
+        float w = img.packedWidth;
+        float h = img.packedHeight;
+        float halfW = w / 2f;
+        float halfH = h / 2f;
+        sb.draw(
+                img,
+                cX - halfW,
+                cY - halfH,
+                halfW,
+                halfH,
+                w,
+                h,
+                scale * Settings.scale,
+                scale * Settings.scale,
+                rotation
+        );
     }
 
     static {

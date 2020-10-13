@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -24,12 +25,23 @@ public class VfxBuilder {
     public float alpha = 1f;
     public float x;
     public float y;
-    public Texture texture;
+    public AtlasRegion img;
     public Color color = Color.WHITE.cpy();
     public ArrayList<Predicate<Float>> updaters;
 
-    public VfxBuilder(Texture img) {
-        texture = img;
+    public VfxBuilder(AtlasRegion img, float x, float y, float duration) {
+        this.img = img;
+        this.x = x;
+        this.y = y;
+        this.duration = duration;
+        updaters = new ArrayList<>();
+    }
+
+    public VfxBuilder(Texture texture, float x, float y, float duration) {
+        this.img = TextureHelper.buildAtlasRegionFromTexture(texture);
+        this.x = x;
+        this.y = y;
+        this.duration = duration;
         updaters = new ArrayList<>();
     }
 
@@ -224,10 +236,7 @@ public class VfxBuilder {
         return this;
     }
 
-    public AbstractGameEffect build(float x, float y, float duration) {
-        this.x = x;
-        this.y = y;
-        this.duration = duration;
+    public AbstractGameEffect build() {
         return new BuiltEffect(this);
     }
 
@@ -255,12 +264,20 @@ public class VfxBuilder {
             Color color = builder.color;
             color.a = builder.alpha;
             sb.setColor(color);
-            TextureHelper.drawScaledAndRotated(
-                    sb,
-                    builder.texture,
-                    builder.x,
-                    builder.y,
-                    builder.scale,
+            float w = builder.img.packedWidth;
+            float h = builder.img.packedHeight;
+            float halfW = w / 2f;
+            float halfH = h / 2f;
+            sb.draw(
+                    builder.img,
+                    builder.x - halfW,
+                    builder.y - halfH,
+                    halfW,
+                    halfH,
+                    w,
+                    h,
+                    builder.scale * Settings.scale,
+                    builder.scale * Settings.scale,
                     builder.angle
             );
         }
