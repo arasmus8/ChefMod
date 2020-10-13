@@ -2,7 +2,9 @@ package chefmod.util;
 
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.TextureData;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.core.Settings;
 import org.apache.logging.log4j.LogManager;
@@ -40,6 +42,28 @@ public class TextureHelper {
         pm.setColor(0xff0000);
         pm.drawPixel(0, 0);
         return pm;
+    }
+
+    public static Texture buildTextureFromAtlasRegion(TextureAtlas.AtlasRegion atlasRegion) {
+        TextureData textureData = atlasRegion.getTexture().getTextureData();
+        if (!textureData.isPrepared()) {
+            textureData.prepare();
+        }
+        Pixmap pixmap = new Pixmap(
+                atlasRegion.getRegionWidth(),
+                atlasRegion.getRegionHeight(),
+                textureData.getFormat()
+        );
+        pixmap.drawPixmap(
+                textureData.consumePixmap(),
+                0,
+                0,
+                atlasRegion.getRegionX(),
+                atlasRegion.getRegionY(),
+                atlasRegion.packedWidth,
+                atlasRegion.packedHeight
+        );
+        return new Texture(pixmap);
     }
 
     public static void draw(SpriteBatch sb, Texture texture, float cX, float cY) {

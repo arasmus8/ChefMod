@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
@@ -24,6 +25,7 @@ public class VfxBuilder {
     public float x;
     public float y;
     public Texture texture;
+    public Color color = Color.WHITE.cpy();
     public ArrayList<Predicate<Float>> updaters;
 
     public VfxBuilder(Texture img) {
@@ -93,7 +95,7 @@ public class VfxBuilder {
 
     public VfxBuilder gravity(float strength) {
         updaters.add(t -> {
-            y -= strength * t / duration;
+            y -= Settings.scale * strength * t / duration;
             return false;
         });
         return this;
@@ -126,14 +128,20 @@ public class VfxBuilder {
     }
 
     public VfxBuilder velocity(float angle, float speed) {
+        float rads = MathUtils.degreesToRadians * angle;
+        float scaledSpeed = speed * Settings.scale;
         updaters.add(t -> {
-            x += MathUtils.cos(angle) * speed;
-            y += MathUtils.sin(angle) * speed;
+            x += MathUtils.cos(rads) * scaledSpeed;
+            y += MathUtils.sin(rads) * scaledSpeed;
             return false;
         });
         return this;
     }
 
+    public VfxBuilder setColor(Color value) {
+        color = value;
+        return this;
+    }
     public VfxBuilder setAlpha(float value) {
         alpha = value;
         return this;
@@ -149,7 +157,7 @@ public class VfxBuilder {
 
     public VfxBuilder fadeOut(float fadeTime) {
         updaters.add(t -> {
-            alpha = (duration - t) > fadeTime ? Interpolation.fade.apply((duration - t) / fadeTime) : 1f;
+            alpha = t > (duration - fadeTime) ? Interpolation.fade.apply((duration - t) / fadeTime) : 1f;
             return false;
         });
         return this;
@@ -173,9 +181,22 @@ public class VfxBuilder {
         return scale(from, to, Interpolations.SWING);
     }
 
+    public VfxBuilder setAngle(float value) {
+        angle = MathUtils.degreesToRadians * value;
+        return this;
+    }
+
     public VfxBuilder rotate(float speed) {
         updaters.add(t -> {
-            angle += speed;
+            angle += MathUtils.degreesToRadians * speed;
+            return false;
+        });
+        return this;
+    }
+
+    public VfxBuilder wobble(float minAngle, float maxAngle, float speed) {
+        updaters.add(t -> {
+            angle = minAngle + (maxAngle - minAngle) * MathUtils.sin(MathUtils.degreesToRadians * t * speed);
             return false;
         });
         return this;
@@ -231,7 +252,8 @@ public class VfxBuilder {
 
         @Override
         public void render(SpriteBatch sb) {
-            Color color = new Color(1f, 1f, 1f, builder.alpha);
+            Color color = builder.color;
+            color.a = builder.alpha;
             sb.setColor(color);
             TextureHelper.drawScaledAndRotated(
                     sb,
