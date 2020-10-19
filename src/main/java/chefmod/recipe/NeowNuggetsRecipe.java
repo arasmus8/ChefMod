@@ -50,6 +50,8 @@ public class NeowNuggetsRecipe extends AbstractRecipe {
             applyToGroup(cg);
             AbstractCard cardInPlay = p.cardInUse;
             if (cardInPlay.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || cardInPlay.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
+                cardInPlay.superFlash();
+                cardInPlay.upgrade();
                 CardModifierManager.addModifier(cardInPlay, new NeowNuggetsCardmod());
             }
             return true;
