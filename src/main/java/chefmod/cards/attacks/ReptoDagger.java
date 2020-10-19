@@ -37,11 +37,12 @@ public class ReptoDagger extends AbstractChefCard {
     }
 
     private void daggerVfx(AbstractPlayer p, AbstractMonster m) {
+        float x = p.drawX;
+        float y = MathUtils.random(p.hb.y, p.hb.y + p.hb.height);
         addToBot(new VFXAction(
-                new VfxBuilder(dagger, Settings.ACTION_DUR_FAST)
-                        .xRange(p.drawX, m.drawX, VfxBuilder.Interpolations.LINEAR)
-                        .yRange(MathUtils.random(p.hb.y, p.hb.y + p.hb.height), m.hb.cY, VfxBuilder.Interpolations.LINEAR)
-                        .setAngle(90f)
+                new VfxBuilder(dagger, x, y, Settings.ACTION_DUR_FAST)
+                        .velocity(MathUtils.radiansToDegrees * MathUtils.atan2(m.hb.cY - y, m.hb.cX - p.hb.cX), 5500f * Settings.scale)
+                        .setAngle(60f)
                         .setScale(0.6f)
                         .rotate(-1500f)
                         .build()

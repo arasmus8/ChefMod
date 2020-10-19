@@ -59,7 +59,7 @@ public class DeathByChocolate extends AbstractChefCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m.hasPower(SatiatedPower.POWER_ID) && m.hasPower(HungerPower.POWER_ID)) {
             VfxBuilder vfxBuilder = new VfxBuilder(t, m.hb.cX, Settings.HEIGHT + 256f, 1.5f)
-                    .yRange(Settings.HEIGHT, m.hb.y + m.hb.height / 6, VfxBuilder.Interpolations.BOUNCE)
+                    .moveY(Settings.HEIGHT, m.hb.y + m.hb.height / 6, VfxBuilder.Interpolations.BOUNCE)
                     .fadeIn(0.25f)
                     .setScale(1.25f * m.hb.width / t.getWidth())
                     .fadeOut(0.25f)

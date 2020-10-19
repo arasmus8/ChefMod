@@ -177,7 +177,7 @@ public class VfxBuilder {
      * @param interpolation the interpolation to use
      * @return this builder
      */
-    public VfxBuilder xRange(float from, float to, Interpolations interpolation) {
+    public VfxBuilder moveX(float from, float to, Interpolations interpolation) {
         Function<Float, Float> fn = interpolator(from, to, interpolation);
         updaters.add(t -> {
             x = fn.apply(t / duration);
@@ -193,8 +193,8 @@ public class VfxBuilder {
      * @param to   end x position
      * @return this builder
      */
-    public VfxBuilder xRange(float from, float to) {
-        return xRange(from, to, Interpolations.EXP5);
+    public VfxBuilder moveX(float from, float to) {
+        return moveX(from, to, Interpolations.EXP5);
     }
 
     /**
@@ -205,7 +205,7 @@ public class VfxBuilder {
      * @param interpolation the interpolation scheme to use
      * @return this builder
      */
-    public VfxBuilder yRange(float from, float to, Interpolations interpolation) {
+    public VfxBuilder moveY(float from, float to, Interpolations interpolation) {
         Function<Float, Float> fn = interpolator(from, to, interpolation);
         updaters.add(t -> {
             y = fn.apply(t / duration);
@@ -221,8 +221,8 @@ public class VfxBuilder {
      * @param to   end y position
      * @return this builder
      */
-    public VfxBuilder yRange(float from, float to) {
-        return yRange(from, to, Interpolations.EXP5);
+    public VfxBuilder moveY(float from, float to) {
+        return moveY(from, to, Interpolations.EXP5);
     }
 
     /**
