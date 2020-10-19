@@ -294,8 +294,8 @@
   },
   "chefmod:Sorbet": {
     "NAME": "Sorbet",
-    "DESCRIPTION": "Apply chefmod:Hunger. NL chefmod:Freeze !M! powers.",
-    "UPGRADE_DESCRIPTION": "Apply chefmod:Hunger. NL chefmod:Freeze !M! power."
+    "DESCRIPTION": "Apply chefmod:Hunger. NL chefmod:Freeze !M! power.",
+    "UPGRADE_DESCRIPTION": "Play your oldest chefmod:Frozen power. NL Apply chefmod:Hunger. NL chefmod:Freeze !M! power."
   },
   "chefmod:SpaghettiCarbonara": {
     "NAME": "Spaghetti Carbonara",
