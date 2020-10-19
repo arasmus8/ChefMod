@@ -24,6 +24,7 @@ public class TrustyPot extends AbstractChefRelic {
     @Override
     public void onCardDraw(AbstractCard drawnCard) {
         if (!activated) {
+            flash();
             activated = true;
             CardModifierManager.addModifier(drawnCard, new BonusBlockCardmod(BLOCK_AMOUNT));
         }
