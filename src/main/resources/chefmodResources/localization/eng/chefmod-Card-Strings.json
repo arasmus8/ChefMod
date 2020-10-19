@@ -269,7 +269,7 @@
   },
   "chefmod:Ratatouille": {
     "NAME": "Ratatouille",
-    "DESCRIPTION": "Gain !B! Block. NL chefmod:Prepped: Increase Block by !M!"
+    "DESCRIPTION": "Gain !B! Block. NL chefmod:Prepped: Increase this card's Block by !M! this combat."
   },
   "chefmod:RisingDough": {
     "NAME": "Rising Dough",
