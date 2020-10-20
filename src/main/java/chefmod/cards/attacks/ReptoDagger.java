@@ -17,8 +17,8 @@ import static chefmod.ChefMod.makeID;
 
 public class ReptoDagger extends AbstractChefCard {
     public static String ID = makeID(ReptoDagger.class.getSimpleName());
-    private static final TextureAtlas daggerAtlas = new TextureAtlas(Gdx.files.internal("images/monsters/theForest/mage_dagger/skeleton.atlas"));
-    private static final TextureAtlas.AtlasRegion dagger = daggerAtlas.findRegion("dagger copy");
+    private final TextureAtlas daggerAtlas = new TextureAtlas(Gdx.files.internal("images/monsters/theForest/mage_dagger/skeleton.atlas"));
+    private final TextureAtlas.AtlasRegion dagger = daggerAtlas.findRegion("dagger copy");
 
     public ReptoDagger() {
         super(ID,
@@ -32,7 +32,7 @@ public class ReptoDagger extends AbstractChefCard {
         baseDamage = damage = 4;
         upgradeDamageBy = 2;
         damages = true;
-        baseMagicNumber = magicNumber = 1;
+        baseMagicNumber = magicNumber = 2;
         shuffleBackIntoDrawPile = true;
     }
 
