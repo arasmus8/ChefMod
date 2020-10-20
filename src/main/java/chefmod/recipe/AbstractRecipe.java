@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public abstract class AbstractRecipe implements ActionUnit {
@@ -23,7 +24,7 @@ public abstract class AbstractRecipe implements ActionUnit {
             onActivate();
             ChefMod.recipeManager.remove(this);
             card.current_x = card.target_x = ChefMod.recipeManager.activeXPos;
-            card.current_y = card.target_y = ChefMod.recipeManager.activeYPos;
+            card.current_y = card.target_y = ChefMod.recipeManager.activeYPos - 256f * card.drawScale * Settings.scale;
             qAction(new ShowCardAndPoofAction(card));
         }
     }
