@@ -111,6 +111,13 @@ public class VfxBuilder {
     }
 
     /**
+     * Build a visual effect without an image. Can be used to emit particles or trigger other effects.
+     */
+    public VfxBuilder(float duration) {
+        this((AtlasRegion) null, 0f, 0f, duration);
+    }
+
+    /**
      * Build a visual effect using a Texture
      *
      * @param texture  the image to draw
@@ -596,6 +603,9 @@ public class VfxBuilder {
 
         @Override
         public void render(SpriteBatch sb) {
+            if (builder.img == null) {
+                return;
+            }
             Color color = builder.color;
             color.a = builder.alpha;
             sb.setColor(color);

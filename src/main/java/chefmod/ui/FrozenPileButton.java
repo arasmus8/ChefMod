@@ -34,7 +34,7 @@ public class FrozenPileButton extends ClickableUIElement {
     private static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
     private static final float DECK_TIP_X = 0F * Settings.scale;
     private static final float DECK_TIP_Y = 128.0F * Settings.scale;
-    private static final Texture frozenDeck = TextureHelper.getTexture(makeImagePath("frozenDeck.png"));
+    private final Texture frozenDeck = TextureHelper.getTexture(makeImagePath("frozenDeck.png"));
     private static SnowParticleManager snowParticleManager;
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("FrozenPile"));
     public static final String[] TEXT = uiStrings.TEXT;
@@ -50,7 +50,7 @@ public class FrozenPileButton extends ClickableUIElement {
                 HB_WIDTH,
                 HB_HEIGHT);
         snowParticleManager = new SnowParticleManager(hitbox.cX, hitbox.cY);
-        bob = new BobEffect(1f);
+        bob = new BobEffect(1.1f);
     }
 
     @Override
