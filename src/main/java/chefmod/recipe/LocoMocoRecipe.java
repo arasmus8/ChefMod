@@ -18,12 +18,13 @@ public class LocoMocoRecipe extends AbstractRecipe {
     private final int drawAmount;
     private final boolean reduceAttackCost;
 
-    public LocoMocoRecipe(int drawAmount, boolean reduceAttackCost) {
+    public LocoMocoRecipe(int drawAmount, boolean reduceAttackCost, AbstractCard card) {
         this.drawAmount = drawAmount;
         this.reduceAttackCost = reduceAttackCost;
         tipHeader = TEXT[0];
         tipBody = TEXT[1] + drawAmount + (reduceAttackCost ? TEXT[3] : TEXT[2]);
         ingredientCount = 2;
+        this.card = card.makeStatEquivalentCopy();
     }
 
     @Override

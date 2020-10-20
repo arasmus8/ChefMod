@@ -24,6 +24,6 @@ public class FiveAlarmChili extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ChefMod.recipeManager.startRecipe(new ChiliRecipe(magicNumber));
+        ChefMod.recipeManager.startRecipe(new ChiliRecipe(magicNumber, this));
     }
 }

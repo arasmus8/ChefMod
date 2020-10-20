@@ -23,6 +23,6 @@ public class LocoMoco extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ChefMod.recipeManager.startRecipe(new LocoMocoRecipe(magicNumber, upgraded));
+        ChefMod.recipeManager.startRecipe(new LocoMocoRecipe(magicNumber, upgraded, this));
     }
 }

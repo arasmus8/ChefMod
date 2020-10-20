@@ -23,6 +23,6 @@ public class SushiPlatter extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ChefMod.recipeManager.startRecipe(new SushiPlatterRecipe(magicNumber, upgraded));
+        ChefMod.recipeManager.startRecipe(new SushiPlatterRecipe(magicNumber, upgraded, this));
     }
 }

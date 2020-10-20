@@ -4,6 +4,7 @@ import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
 import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.NeowNuggetsCardmod;
+import chefmod.cards.options.NeowNuggets;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,6 +23,7 @@ public class NeowNuggetsRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 2;
+        card = new NeowNuggets();
     }
 
     private void applyToGroup(CardGroup cg) {

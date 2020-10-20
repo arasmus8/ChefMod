@@ -1,6 +1,7 @@
 package chefmod.recipe;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -16,12 +17,13 @@ public class FullCourseMealRecipe extends AbstractRecipe {
     private final int block;
     private final boolean nextTurnAsWell;
 
-    public FullCourseMealRecipe(int block, boolean nextTurnAsWell) {
+    public FullCourseMealRecipe(int block, boolean nextTurnAsWell, AbstractCard card) {
         tipHeader = TEXT[0];
         tipBody = TEXT[1] + block + (nextTurnAsWell ? (TEXT[3] + block + TEXT[4]) : TEXT[2]);
         this.block = block;
         this.ingredientCount = 4;
         this.nextTurnAsWell = nextTurnAsWell;
+        this.card = card.makeStatEquivalentCopy();
     }
 
     @Override

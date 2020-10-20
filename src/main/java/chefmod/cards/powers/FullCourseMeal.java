@@ -23,6 +23,6 @@ public class FullCourseMeal extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ChefMod.recipeManager.startRecipe(new FullCourseMealRecipe(magicNumber, upgraded));
+        ChefMod.recipeManager.startRecipe(new FullCourseMealRecipe(magicNumber, upgraded, this));
     }
 }

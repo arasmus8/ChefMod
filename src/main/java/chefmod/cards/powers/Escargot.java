@@ -22,6 +22,6 @@ public class Escargot extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ChefMod.recipeManager.startRecipe(new EscargotRecipe(upgraded));
+        ChefMod.recipeManager.startRecipe(new EscargotRecipe(upgraded, this));
     }
 }

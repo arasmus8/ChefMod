@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.actions.HandSelectFunctionalAction;
 import chefmod.cardmods.PlayTwiceCardmod;
+import chefmod.cards.options.GremlinGoulash;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
@@ -16,6 +17,7 @@ public class GremlinGoulashRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 4;
+        card = new GremlinGoulash();
     }
 
     @Override

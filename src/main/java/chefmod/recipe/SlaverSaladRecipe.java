@@ -1,5 +1,6 @@
 package chefmod.recipe;
 
+import chefmod.cards.options.SlaverSalad;
 import com.megacrit.cardcrawl.cards.colorless.BandageUp;
 import com.megacrit.cardcrawl.cards.colorless.Blind;
 import com.megacrit.cardcrawl.cards.colorless.Trip;
@@ -17,6 +18,7 @@ public class SlaverSaladRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 4;
+        card = new SlaverSalad();
     }
 
     @Override

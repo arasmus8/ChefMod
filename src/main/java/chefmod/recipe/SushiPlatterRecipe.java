@@ -1,5 +1,6 @@
 package chefmod.recipe;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -15,11 +16,12 @@ public class SushiPlatterRecipe extends AbstractRecipe {
 
     private final boolean nextTurnAsWell;
 
-    public SushiPlatterRecipe(int ingredientCount, boolean nextTurnAsWell) {
+    public SushiPlatterRecipe(int ingredientCount, boolean nextTurnAsWell, AbstractCard card) {
         tipHeader = TEXT[0];
         tipBody = nextTurnAsWell ? TEXT[2] : TEXT[1];
         this.ingredientCount = ingredientCount;
         this.nextTurnAsWell = nextTurnAsWell;
+        this.card = card.makeStatEquivalentCopy();
     }
 
     @Override

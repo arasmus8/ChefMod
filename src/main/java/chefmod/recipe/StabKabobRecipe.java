@@ -1,6 +1,6 @@
 package chefmod.recipe;
 
-import chefmod.powers.FriedLagavulinPower;
+import chefmod.cards.options.StabKabob;
 import chefmod.powers.StabKabobPower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,6 +17,7 @@ public class StabKabobRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 4;
+        card = new StabKabob();
     }
 
     @Override

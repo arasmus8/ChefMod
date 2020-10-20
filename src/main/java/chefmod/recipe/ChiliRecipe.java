@@ -20,13 +20,14 @@ public class ChiliRecipe extends AbstractRecipe {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = uiStrings.TEXT;
 
-    private int damage;
+    private final int damage;
 
-    public ChiliRecipe(int damage) {
+    public ChiliRecipe(int damage, AbstractCard card) {
         this.damage = damage;
         tipHeader = TEXT[0];
         tipBody = TEXT[1] + damage + TEXT[2];
         ingredientCount = 3;
+        this.card = card.makeStatEquivalentCopy();
     }
 
     @Override

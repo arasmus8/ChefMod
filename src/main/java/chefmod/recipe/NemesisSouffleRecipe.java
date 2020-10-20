@@ -1,5 +1,6 @@
 package chefmod.recipe;
 
+import chefmod.cards.options.NemesisSouffle;
 import chefmod.powers.SatiatedPower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,6 +19,7 @@ public class NemesisSouffleRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 4;
+        card = new NemesisSouffle();
     }
 
     @Override

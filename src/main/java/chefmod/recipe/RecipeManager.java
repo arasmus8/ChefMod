@@ -31,6 +31,8 @@ import java.util.stream.IntStream;
 public class RecipeManager {
     public static final ArrayList<String> unlockedRecipes = new ArrayList<>();
     public ArrayList<AbstractRecipe> recipes;
+    public float activeXPos;
+    public float activeYPos;
     private static final ArrayList<RecipeRenderer> renderers = new ArrayList<>();
     private static final int RENDER_COUNT = 5;
     private final Vector2 additionalPos;
@@ -44,6 +46,8 @@ public class RecipeManager {
         float x = 256f * Settings.scale;
         // float y = AbstractDungeon.player.relics.get(0);
         float y = (float) Settings.HEIGHT - 256f * Settings.scale;
+        activeXPos = x;
+        activeYPos = y;
         IntStream.range(0, RENDER_COUNT)
                 .forEachOrdered(i -> {
                     Vector2 vec = new Vector2(x + offsetH * i, y);

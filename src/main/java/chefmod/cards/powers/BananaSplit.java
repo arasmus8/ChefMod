@@ -23,6 +23,6 @@ public class BananaSplit extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ChefMod.recipeManager.startRecipe(new BananaSplitRecipe(magicNumber, upgraded));
+        ChefMod.recipeManager.startRecipe(new BananaSplitRecipe(magicNumber, upgraded, this));
     }
 }

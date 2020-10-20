@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.PermanentDamageBonusCardmod;
+import chefmod.cards.options.GiantMarbleCake;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,6 +20,7 @@ public class GiantMarbleCakeRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 4;
+        card = new GiantMarbleCake();
     }
 
     @Override

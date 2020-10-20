@@ -1,5 +1,6 @@
 package chefmod.recipe;
 
+import chefmod.cards.options.FriedLagavulin;
 import chefmod.powers.FriedLagavulinPower;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,6 +17,7 @@ public class FriedLagavulinRecipe extends AbstractRecipe {
         tipHeader = TEXT[0];
         tipBody = TEXT[1];
         ingredientCount = 3;
+        card = new FriedLagavulin();
     }
 
     @Override

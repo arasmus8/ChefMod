@@ -22,11 +22,12 @@ public class EscargotRecipe extends AbstractRecipe {
 
     private final boolean upgradeNonFrozen;
 
-    public EscargotRecipe(boolean upgradeNonFrozen) {
+    public EscargotRecipe(boolean upgradeNonFrozen, AbstractCard card) {
         this.upgradeNonFrozen = upgradeNonFrozen;
         tipHeader = TEXT[0];
         tipBody = upgradeNonFrozen ? TEXT[2] : TEXT[1];
         ingredientCount = 2;
+        this.card = card.makeStatEquivalentCopy();
     }
 
     @Override

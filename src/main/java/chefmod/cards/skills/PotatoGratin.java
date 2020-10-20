@@ -15,7 +15,7 @@ public class PotatoGratin extends AbstractChefCard {
                 1,
                 CardType.SKILL,
                 CardRarity.UNCOMMON,
-                CardTarget.SELF_AND_ENEMY
+                CardTarget.SELF
         );
         baseBlock = block = 10;
         upgradeBlockBy = 4;
