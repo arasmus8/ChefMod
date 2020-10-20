@@ -13,9 +13,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 /**
  * <p>
@@ -66,15 +70,17 @@ import java.util.function.Predicate;
  * </pre>
  */
 public class VfxBuilder {
-    public float duration;
-    public float scale = 1f;
-    public float angle = 0f;
-    public float alpha = 1f;
-    public float x;
-    public float y;
-    public AtlasRegion img;
-    public Color color = Color.WHITE.cpy();
-    public ArrayList<Predicate<Float>> updaters;
+    private float duration;
+    private float scale = 1f;
+    private float angle = 0f;
+    private float alpha = 1f;
+    private float x;
+    private float y;
+    private final AtlasRegion img;
+    private Color color = Color.WHITE.cpy();
+    private List<Predicate<Float>> updaters;
+    private final Queue<List<Predicate<Float>>> animStages;
+    private final Queue<Float> durationList;
 
     /**
      * Build a visual effect using an AtlasRegion
@@ -90,6 +96,8 @@ public class VfxBuilder {
         this.y = y;
         this.duration = duration;
         updaters = new ArrayList<>();
+        animStages = new LinkedList<>();
+        durationList = new LinkedList<>();
     }
 
     /**
@@ -167,6 +175,36 @@ public class VfxBuilder {
             default:
                 return t -> Interpolation.linear.apply(from, to, t);
         }
+    }
+
+    /**
+     * Set the X coordinate of the image to a value. This value will be overridden by any of the functions that animate
+     * the X position.
+     *
+     * @param value the x coordinate to set
+     * @return this builder
+     */
+    public VfxBuilder setX(float value) {
+        updaters.add(t -> {
+            x = value;
+            return true;
+        });
+        return this;
+    }
+
+    /**
+     * Set the Y coordinate of the image to a value. This value will be overridden by any of the functions that animate
+     * the Y position.
+     *
+     * @param value the y coordinate to set
+     * @return this builder
+     */
+    public VfxBuilder setY(float value) {
+        updaters.add(t -> {
+            y = value;
+            return true;
+        });
+        return this;
     }
 
     /**
@@ -255,7 +293,8 @@ public class VfxBuilder {
         updaters.add(t -> {
             float halfDuration = duration / 2f;
             if (t > halfDuration) {
-                y = downFn.apply((duration - t) / halfDuration);
+                float a = MathUtils.clamp(duration - t, 0, 1);
+                y = downFn.apply(a / halfDuration);
             }
             return false;
         });
@@ -287,9 +326,11 @@ public class VfxBuilder {
     public VfxBuilder velocity(float angle, float speed) {
         float rads = MathUtils.degreesToRadians * angle;
         float scaledSpeed = speed * Settings.scale * Gdx.graphics.getDeltaTime();
+        float dx = MathUtils.cos(rads) * scaledSpeed;
+        float dy = MathUtils.sin(rads) * scaledSpeed;
         updaters.add(t -> {
-            x += MathUtils.cos(rads) * scaledSpeed;
-            y += MathUtils.sin(rads) * scaledSpeed;
+            x += dx;
+            y += dy;
             return false;
         });
         return this;
@@ -302,7 +343,7 @@ public class VfxBuilder {
      * @return this builder
      */
     public VfxBuilder setColor(Color value) {
-        color = value;
+        color = value.cpy();
         return this;
     }
 
@@ -342,7 +383,8 @@ public class VfxBuilder {
      */
     public VfxBuilder fadeOut(float fadeTime) {
         updaters.add(t -> {
-            alpha = t > (duration - fadeTime) ? Interpolation.fade.apply((duration - t) / fadeTime) : 1f;
+            float a = MathUtils.clamp(duration - t, 0f, 1f);
+            alpha = t > (duration - fadeTime) ? Interpolation.fade.apply(a / fadeTime) : 1f;
             return false;
         });
         return this;
@@ -451,8 +493,9 @@ public class VfxBuilder {
     /**
      * Trigger another effect at the specified delay - you can chain multiple effects together!
      *
-     * @param effectFn   A function that will create the effect. It will be passed the current x and y coordinates as parameters
-     *                   e.g. myBuilder.triggerVfxAt((x, y) -> new com.megacrit.cardcrawl.vfx.combat.IceShatterEffect(x, y), 0.8f)
+     * @param effectFn   A function that will create the effect. It will be passed the current x and y coordinates as
+     *                   parameters. For example, this call will generate an IceShatterEffect after a delay of 0.8 seconds:
+     *                   <code>myBuilder.triggerVfxAt((x, y) -> new IceShatterEffect(x, y), 0.8f)</code>
      * @param timeOffset The delay from the start of this effect to trigger the chained effect.
      * @return this builder
      */
@@ -468,6 +511,54 @@ public class VfxBuilder {
     }
 
     /**
+     * Trigger another effect periodically - this acts something like a particle emitter.
+     *
+     * @param effectGeneratorFn A function that will create the effect. It will be passed the current x and y coordinates
+     *                          as parameters. For example, this call will create a new instance of the CoolParticleEffect
+     *                          every 0.25 seconds:
+     *                          <code>myBuilder.emitEvery((x, y) -> new CoolParticleEffect(x, y), 0.25f)</code>
+     * @param period            The periodic interval to wait between calls to the generator function.
+     * @return this builder
+     */
+    public VfxBuilder emitEvery(BiFunction<Float, Float, AbstractGameEffect> effectGeneratorFn, float period) {
+        IntStream.rangeClosed(1, (int) (duration / period))
+                .forEachOrdered(offset -> {
+                    updaters.add(t -> {
+                        if (t >= period * offset) {
+                            AbstractDungeon.effectsQueue.add(effectGeneratorFn.apply(x, y));
+                            return true;
+                        }
+                        return false;
+                    });
+                });
+        return this;
+    }
+
+    /**
+     * Start a new phase of the animation that starts from the end of the current phase.
+     *
+     * @param nextDuration The new duration to animate over.
+     * @return this builder
+     */
+    public VfxBuilder andThen(float nextDuration) {
+        animStages.add(updaters);
+        durationList.add(duration);
+        updaters = new ArrayList<>();
+        duration = nextDuration;
+        return this;
+    }
+
+    private boolean nextStage() {
+        if (durationList.size() > 0) {
+            duration = durationList.poll();
+            updaters = animStages.poll();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
      * Call this function to generate the AbstractGameEffect. You can run the effect with code like
      * addToBot(new VFXAction(yourEffect))
      * or
@@ -476,6 +567,9 @@ public class VfxBuilder {
      * @return the effect you have built
      */
     public AbstractGameEffect build() {
+        durationList.add(duration);
+        animStages.add(updaters);
+        nextStage();
         return new BuiltEffect(this);
     }
 
@@ -492,10 +586,12 @@ public class VfxBuilder {
         @Override
         public void update() {
             t += Gdx.graphics.getDeltaTime();
-            if (t >= duration) {
-                isDone = true;
-            }
             builder.updaters.removeIf(fn -> fn.test(t));
+            if (t >= duration) {
+                isDone = builder.nextStage();
+                startingDuration = duration = builder.duration;
+                t = 0;
+            }
         }
 
         @Override
