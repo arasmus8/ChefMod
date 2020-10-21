@@ -2,15 +2,29 @@ package chefmod.cards.attacks;
 
 import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
+import chefmod.util.TextureHelper;
+import chefmod.vfx.VfxBuilder;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+
+import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
+import static chefmod.ChefMod.makeImagePath;
 
 public class FrozenTuna extends AbstractChefCard implements StartupCard {
     public static String ID = makeID(FrozenTuna.class.getSimpleName());
+    private final Texture img = TextureHelper.getTexture(makeImagePath("vfx/FrozenTuna.png"));
 
     public FrozenTuna() {
         super(ID,
@@ -25,9 +39,44 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
         damages = true;
     }
 
+    private AbstractGameEffect particle(float x, float y) {
+        Texture t = ImageMaster.FROST_ORB_MIDDLE;
+        if (MathUtils.randomBoolean(0.2f)) {
+            t = ImageMaster.FROST_ORB_LEFT;
+        } else if (MathUtils.randomBoolean(0.2f)) {
+            t = ImageMaster.FROST_ORB_RIGHT;
+        }
+        return new VfxBuilder(t, 0.8f)
+                .setX(x + MathUtils.random(-200f * Settings.scale, 200f * Settings.scale))
+                .setY(y)
+                .setScale(MathUtils.random(2f, 2.8f))
+                .setAngle(MathUtils.random())
+                .velocity(MathUtils.random(45f, 135f), 800f)
+                .gravity(20f)
+                .fadeOut(0.6f)
+                .build();
+    }
+
+    private AbstractGameEffect vfx() {
+        VfxBuilder builder = new VfxBuilder(img, .8f)
+                .playSoundAt("ORB_FROST_CHANNEL", 0f)
+                .setScale(1.5f)
+                .arc(0f, Settings.HEIGHT / 2f, Settings.WIDTH * 0.75f, AbstractDungeon.floorY, Settings.HEIGHT)
+                .playSoundAt("ATTACK_IRON_2", 0.5f)
+                .andThen(1f)
+                .velocity(90f, 120f)
+                .fadeOut(0.4f)
+                .rotate(MathUtils.random(-600f, 600f));
+        IntStream.rangeClosed(1, 12)
+                .forEachOrdered(i -> builder.triggerVfxAt(this::particle, 0f));
+        return builder.build();
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        dealAoeDamage(AbstractGameAction.AttackEffect.SLASH_DIAGONAL);
+        addToBot(new VFXAction(vfx()));
+        addToBot(new WaitAction(1.5f));
+        dealAoeDamage(AbstractGameAction.AttackEffect.NONE);
     }
 
     @Override
