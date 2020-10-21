@@ -251,7 +251,7 @@
   },
   "chefmod:Puree": {
     "NAME": "Purée",
-    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: chefmod:Freeze this card."
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL chefmod:Prepped: chefmod:Freeze this card."
   },
   "chefmod:QuickChop": {
     "NAME": "Quick Chop",
@@ -273,7 +273,7 @@
   },
   "chefmod:RisingDough": {
     "NAME": "Rising Dough",
-    "DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile. NL Exhuast",
+    "DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile. NL Exhaust",
     "UPGRADE_DESCRIPTION": "Draw !M! cards. Choose a card to put on top of the draw pile."
   },
   "chefmod:SaveForLater": {
@@ -321,7 +321,7 @@
   },
   "chefmod:TodaysSpecial": {
     "NAME": "Today's Special",
-    "DESCRIPTION": "Startup: Choose a Recipe to cook. NL Apply chefmod:Hunger"
+    "DESCRIPTION": "Apply chefmod:Hunger. NL The first time you draw this, choose a chefmod:Recipe to cook."
   },
   "chefmod:TonkotsuRamen": {
     "NAME": "Tonkotsu Ramen",
@@ -342,7 +342,7 @@
   },
   "chefmod:NeowNuggets": {
     "NAME": "Neow Nuggets",
-    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are upgraded and Exhuast"
+    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are Upgraded and Exhuast"
   },
   "chefmod:FriedLagavulin": {
     "NAME": "Fried Lagavulin",
@@ -354,7 +354,7 @@
   },
   "chefmod:SentryBrittle": {
     "NAME": "Sentry Brittle",
-    "DESCRIPTION": "3 chefmod:Ingredients NL When you draw a Status, exhaust it and deal 3 damage to all enemies."
+    "DESCRIPTION": "3 chefmod:Ingredients NL When you draw a Status, Exhaust it and deal 3 damage to all enemies."
   },
   "chefmod:StabKabob": {
     "NAME": "Stab Kabob",

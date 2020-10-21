@@ -31,7 +31,7 @@ public class NobStewPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

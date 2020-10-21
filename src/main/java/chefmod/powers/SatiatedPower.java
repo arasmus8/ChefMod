@@ -1,7 +1,7 @@
 package chefmod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -43,7 +43,7 @@ public class SatiatedPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void stackPower(int stackAmount) {
-        addToBot(new ApplyPowerAction(owner, owner, new TemporaryStrengthDownPower(owner, DAMAGE_REDUCTION), DAMAGE_REDUCTION));
+        addToBot(new GainEnergyAction(1));
     }
 
     @Override

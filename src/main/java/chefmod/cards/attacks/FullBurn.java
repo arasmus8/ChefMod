@@ -1,7 +1,6 @@
 package chefmod.cards.attacks;
 
 import chefmod.cards.AbstractChefCard;
-import chefmod.powers.HungerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,7 +15,7 @@ public class FullBurn extends AbstractChefCard {
         super(ID,
                 3,
                 CardType.ATTACK,
-                CardRarity.COMMON,
+                CardRarity.UNCOMMON,
                 CardTarget.ALL_ENEMY
         );
         baseDamage = damage = 23;

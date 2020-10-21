@@ -39,7 +39,7 @@
     "NAMES": [
       "satiated"
     ],
-    "DESCRIPTION": "Enemies inflicted with #ySatiated deal double damage and take double damage from attacks for 1 turn. If an enemy already has #ySatiated, applying it again will reduce its #yDamage by 5 this turn."
+    "DESCRIPTION": "Enemies inflicted with #ySatiated deal double damage and take double damage from attacks for 1 turn. If an enemy already has #ySatiated, gain [E] when you apply it again."
   },
   {
     "PROPER_NAME": "Prepped",

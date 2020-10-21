@@ -28,7 +28,7 @@ public class DoubleChop extends AbstractChefCard {
         );
         baseDamage = damage = 4;
         baseMagicNumber = magicNumber = 2;
-        upgradeDamageBy = 1;
+        upgradeDamageBy = 2;
         damages = true;
     }
 

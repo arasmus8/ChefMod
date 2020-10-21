@@ -28,7 +28,7 @@ public class MonsterBait extends AbstractChefCard {
                 CardRarity.UNCOMMON,
                 CardTarget.ENEMY
         );
-        baseDamage = damage = 1; // 9;
+        baseDamage = damage = 9;
         upgradeDamageBy = 3;
         baseMagicNumber = magicNumber = 5;
         damages = true;

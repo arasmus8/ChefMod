@@ -4,7 +4,6 @@ import chefmod.cards.AbstractChefCard;
 import chefmod.cards.options.*;
 import chefmod.powers.HungerPower;
 import chefmod.recipe.*;
-import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -19,9 +18,10 @@ import java.util.stream.Collectors;
 
 import static chefmod.ChefMod.makeID;
 
-public class TodaysSpecial extends AbstractChefCard implements StartupCard {
+public class TodaysSpecial extends AbstractChefCard {
     public static String ID = makeID(TodaysSpecial.class.getSimpleName());
     private static final HashMap<String, Class<? extends AbstractCard>> recipeMap;
+    private boolean effectTriggered = false;
 
     public TodaysSpecial() {
         super(ID,
@@ -39,9 +39,13 @@ public class TodaysSpecial extends AbstractChefCard implements StartupCard {
     }
 
     @Override
-    public boolean atBattleStartPreDraw() {
-        addToBot(new ChooseOneAction(getChoices()));
-        return false;
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        if (!effectTriggered) {
+            effectTriggered = true;
+            this.superFlash();
+            addToBot(new ChooseOneAction(getChoices()));
+        }
     }
 
     private AbstractCard cardFromId(String id) {

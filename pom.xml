@@ -9,9 +9,9 @@
     <version>1.0.0</version>
     <description>
         Adds the Chef.
-        - Play Ingredients to complete Recipes for big swing turns.
+        - Play Ingredients to complete Recipes.
         - Freeze cards into a separate pile and play cards to interact with frozen cards.
-        - Collect new recipes from elite enemies and bosses
+        - Collect new recipes from elite enemies.
     </description>
 
     <properties>

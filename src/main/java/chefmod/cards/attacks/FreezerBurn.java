@@ -22,8 +22,8 @@ public class FreezerBurn extends AbstractChefCard {
                 CardRarity.UNCOMMON,
                 CardTarget.ENEMY
         );
-        baseMagicNumber = magicNumber = 2;
-        baseDamage = damage = 2;
+        baseMagicNumber = magicNumber = 3;
+        baseDamage = damage = 3;
         damages = true;
     }
 
