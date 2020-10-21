@@ -1,4 +1,11 @@
 {
+  "chefmod:OldKettle": {
+    "NAME": "Old Kettle",
+    "FLAVOR": "Actually, it gets along quite well with all other cookware.",
+    "DESCRIPTIONS": [
+      "The first attack card you draw each combat deals 5 additional damage."
+    ]
+  },
   "chefmod:TrustyPot": {
     "NAME": "Trusty Pot",
     "FLAVOR": "It's a pot. For cooking.",

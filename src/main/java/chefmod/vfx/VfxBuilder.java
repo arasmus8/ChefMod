@@ -41,7 +41,7 @@ import java.util.stream.IntStream;
  * <pre>
  * AbstractGameEffect shootStar = new VfxBuilder(ImageMaster.TINY_STAR, p.drawX, m.hb.cY, 0.8f)
  * .scale(0.8f, 2.2f, VfxBuilder.Interpolations.SWING)
- * .setColor(new Color(0xFFFD9C00))
+ * .setColor(new Color(0xFFFD9CFF))
  * .xRange(p.drawX, m.drawX, VfxBuilder.Interpolations.EXP5IN)
  * .rotate(-400f)
  * .build()
