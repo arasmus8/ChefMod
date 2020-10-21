@@ -225,8 +225,8 @@
   },
   "chefmod:OldCookbook": {
     "NAME": "Old Cookbook",
-    "DESCRIPTION": "Add a random chefmod:Recipe to your hand. NL Exhuast",
-    "UPGRADE_DESCRIPTION": "Add a random chefmod:Recipe to your hand. It costs 0 this turn. NL Exhuast"
+    "DESCRIPTION": "Add a random chefmod:Recipe to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Add a random chefmod:Recipe to your hand. It costs 0 this turn. NL Exhaust"
   },
   "chefmod:Omelette": {
     "NAME": "Omelette",
@@ -342,7 +342,7 @@
   },
   "chefmod:NeowNuggets": {
     "NAME": "Neow Nuggets",
-    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are Upgraded and Exhuast"
+    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are Upgraded and Exhaust"
   },
   "chefmod:FriedLagavulin": {
     "NAME": "Fried Lagavulin",
