@@ -17,8 +17,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
-import java.util.stream.IntStream;
-
 import static chefmod.ChefMod.makeID;
 import static chefmod.ChefMod.makeImagePath;
 
@@ -60,7 +58,7 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
     }
 
     private AbstractGameEffect vfx() {
-        VfxBuilder builder = new VfxBuilder(img, .8f)
+        return new VfxBuilder(img, .8f)
                 .playSoundAt(0f, "ORB_FROST_CHANNEL")
                 .setScale(1.5f)
                 .arc(0f, Settings.HEIGHT / 2f, Settings.WIDTH * 0.75f, AbstractDungeon.floorY, Settings.HEIGHT)
@@ -68,10 +66,9 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
                 .andThen(1f)
                 .velocity(90f, 120f)
                 .fadeOut(0.4f)
-                .rotate(MathUtils.random(-600f, 600f));
-        IntStream.rangeClosed(1, 12)
-                .forEachOrdered(i -> builder.triggerVfxAt(this::particle, 0f));
-        return builder.build();
+                .rotate(MathUtils.random(-600f, 600f))
+                .triggerVfxAt(0f, 12, this::particle)
+                .build();
     }
 
     @Override

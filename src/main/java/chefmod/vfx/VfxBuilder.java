@@ -439,13 +439,31 @@ public class VfxBuilder {
     }
 
     /**
-     * Set the draw rotation angle of the image. This setting will be overridden by the rotate and wobble functions.
+     * Set the draw rotation angle of the image. This setting will be overridden by the rotateTo, rotate, and wobble
+     * functions.
      *
      * @param value the angle of rotation, counter-clockwise, in degrees
      * @return this builder
      */
     public VfxBuilder setAngle(float value) {
         angle = value;
+        return this;
+    }
+
+    /**
+     * Rotate the image from one angle to another over the duration of the animation stage. Overrides setAngle.
+     *
+     * @param fromAngle     The angle at the start of the animation.
+     * @param toAngle       The angle at the end of the animation.
+     * @param interpolation The interpolation to use.
+     * @return this builder
+     */
+    public VfxBuilder rotateTo(float fromAngle, float toAngle, Interpolations interpolation) {
+        Function<Float, Float> fn = interpolator(fromAngle, toAngle, interpolation);
+        updaters.add(t -> {
+            angle = fn.apply(t / duration);
+            return false;
+        });
         return this;
     }
 
@@ -519,20 +537,22 @@ public class VfxBuilder {
     /**
      * Trigger another effect at the specified delay - you can chain multiple effects together!
      *
+     * @param timeOffset The delay from the start of this effect to trigger the chained effect.
+     * @param count      The number of effects to generate.
      * @param effectFn   A function that will create the effect. It will be passed the current x and y coordinates as
      *                   parameters. For example, this call will generate an IceShatterEffect after a delay of 0.8 seconds:
      *                   <code>myBuilder.triggerVfxAt((x, y) -> new IceShatterEffect(x, y), 0.8f)</code>
-     * @param timeOffset The delay from the start of this effect to trigger the chained effect.
      * @return this builder
      */
-    public VfxBuilder triggerVfxAt(BiFunction<Float, Float, AbstractGameEffect> effectFn, float timeOffset) {
-        updaters.add(t -> {
-            if (t >= timeOffset) {
-                AbstractDungeon.effectsQueue.add(effectFn.apply(x, y));
-                return true;
-            }
-            return false;
-        });
+    public VfxBuilder triggerVfxAt(float timeOffset, int count, BiFunction<Float, Float, AbstractGameEffect> effectFn) {
+        IntStream.rangeClosed(1, MathUtils.clamp(count, 1, 50))
+                .forEachOrdered(i -> updaters.add(t -> {
+                    if (t >= timeOffset) {
+                        AbstractDungeon.effectsQueue.add(effectFn.apply(x, y));
+                        return true;
+                    }
+                    return false;
+                }));
         return this;
     }
 
@@ -548,15 +568,13 @@ public class VfxBuilder {
      */
     public VfxBuilder emitEvery(BiFunction<Float, Float, AbstractGameEffect> effectGeneratorFn, float period) {
         IntStream.rangeClosed(1, (int) (duration / period))
-                .forEachOrdered(offset -> {
-                    updaters.add(t -> {
-                        if (t >= period * offset) {
-                            AbstractDungeon.effectsQueue.add(effectGeneratorFn.apply(x, y));
-                            return true;
-                        }
-                        return false;
-                    });
-                });
+                .forEachOrdered(offset -> updaters.add(t -> {
+                    if (t >= period * offset) {
+                        AbstractDungeon.effectsQueue.add(effectGeneratorFn.apply(x, y));
+                        return true;
+                    }
+                    return false;
+                }));
         return this;
     }
 

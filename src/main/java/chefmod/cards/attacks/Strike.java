@@ -26,6 +26,7 @@ public class Strike extends AbstractChefCard {
         upgradeDamageBy = 3;
         damages = true;
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         dealDamage(m, AbstractGameAction.AttackEffect.SLASH_VERTICAL);
