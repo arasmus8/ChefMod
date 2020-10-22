@@ -480,13 +480,32 @@ public class VfxBuilder {
     }
 
     /**
-     * Trigger a sound effect at the specified delay
+     * Trigger a sound effect at the specified delay, with the pitch adjusted
      *
-     * @param key        Find the list of valid strings in the SoundMaster class
-     * @param timeOffset The delay from the start of this effect to start playing the sound
+     * @param timeOffset  The delay from the start of this effect to start playing the sound
+     * @param pitchAdjust The factor to adjust the sound's pitch by
+     * @param key         Find the list of valid strings in the SoundMaster class
      * @return this builder
      */
-    public VfxBuilder playSoundAt(String key, float timeOffset) {
+    public VfxBuilder playSoundAt(float timeOffset, float pitchAdjust, String key) {
+        updaters.add(t -> {
+            if (t >= timeOffset) {
+                CardCrawlGame.sound.playA(key, pitchAdjust);
+                return true;
+            }
+            return false;
+        });
+        return this;
+    }
+
+    /**
+     * Trigger a sound effect at the specified delay
+     *
+     * @param timeOffset The delay from the start of this effect to start playing the sound
+     * @param key        Find the list of valid strings in the SoundMaster class
+     * @return this builder
+     */
+    public VfxBuilder playSoundAt(float timeOffset, String key) {
         updaters.add(t -> {
             if (t >= timeOffset) {
                 CardCrawlGame.sound.play(key);

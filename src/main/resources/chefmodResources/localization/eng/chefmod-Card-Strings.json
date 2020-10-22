@@ -142,7 +142,7 @@
   "chefmod:FrozenTuna": {
     "NAME": "Frozen Tuna",
     "DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! damage to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! damage to ALL enemies. NL Increase damage by !M! each turn."
+    "UPGRADE_DESCRIPTION": "Startup: chefmod:Freeze this card. NL Deal !D! damage to ALL enemies. NL Whenever this card is chefmod:Frozen, increase its damage by !M!."
   },
   "chefmod:FryPan": {
     "NAME": "Fry Pan",

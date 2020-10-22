@@ -46,23 +46,25 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
         } else if (MathUtils.randomBoolean(0.2f)) {
             t = ImageMaster.FROST_ORB_RIGHT;
         }
+        float pitch = 0.8F + MathUtils.random(-0.2f, 0.2f);
         return new VfxBuilder(t, 0.8f)
                 .setX(x + MathUtils.random(-200f * Settings.scale, 200f * Settings.scale))
                 .setY(y)
                 .setScale(MathUtils.random(2f, 2.8f))
-                .setAngle(MathUtils.random())
+                .setAngle(MathUtils.random(0f, 360f))
                 .velocity(MathUtils.random(45f, 135f), 800f)
                 .gravity(20f)
                 .fadeOut(0.6f)
+                .playSoundAt(MathUtils.random(0f, 0.6f), pitch, "ORB_FROST_EVOKE")
                 .build();
     }
 
     private AbstractGameEffect vfx() {
         VfxBuilder builder = new VfxBuilder(img, .8f)
-                .playSoundAt("ORB_FROST_CHANNEL", 0f)
+                .playSoundAt(0f, "ORB_FROST_CHANNEL")
                 .setScale(1.5f)
                 .arc(0f, Settings.HEIGHT / 2f, Settings.WIDTH * 0.75f, AbstractDungeon.floorY, Settings.HEIGHT)
-                .playSoundAt("ATTACK_IRON_2", 0.5f)
+                .playSoundAt(0.5f, -0.5f, "ATTACK_IRON_2")
                 .andThen(1f)
                 .velocity(90f, 120f)
                 .fadeOut(0.4f)
@@ -80,7 +82,7 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
     }
 
     @Override
-    public void atTurnStart() {
+    public void triggerWhenFrozen() {
         if (upgraded) {
             baseDamage += magicNumber;
         }

@@ -65,7 +65,7 @@ public class DeathByChocolate extends AbstractChefCard {
                     .fadeIn(0.25f)
                     .setScale(1.25f * m.hb.width / t.getWidth())
                     .fadeOut(0.25f)
-                    .playSoundAt("BLUNT_HEAVY", 0.35f);
+                    .playSoundAt(0.35f, "BLUNT_HEAVY");
             IntStream.rangeClosed(1, 20)
                     .forEachOrdered(i -> vfxBuilder.triggerVfxAt((x, y) -> new StarBounceEffect(
                                     x + MathUtils.random(-m.hb.width / 2, m.hb.width / 2),
