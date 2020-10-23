@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <!--Hello! You'll basically should only need to change these names and the steam path (just below)-->
@@ -21,6 +22,12 @@
         <ModTheSpire.version>3.15.0</ModTheSpire.version>
         <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
         <Steam.path>D:\Programs\steamapps</Steam.path>
+
+        <pack.cards.srcDir>productionAssets/cards</pack.cards.srcDir>
+        <pack.cards.target>target/cards</pack.cards.target>
+
+        <pack.powers.srcDir>productionAssets/powers</pack.powers.srcDir>
+        <pack.powers.target>target/powers</pack.powers.target>
     </properties>
 
     <dependencies>
@@ -74,16 +81,105 @@
                 <version>1.8</version>
                 <executions>
                     <execution>
-                        <phase>package</phase>
+                        <id>card art</id>
+                        <phase>generate-resources</phase>
                         <configuration>
-                            <target>
-                                <!-- This moves your mod into a common folder where all mods you make can go. -->
-                                <copy file="target/${project.artifactId}.jar" tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                            <target name="copy card images">
+                                <copy todir="${pack.cards.target}">
+                                    <fileset dir="${pack.cards.srcDir}" includes="**/*.png"/>
+                                </copy>
                             </target>
                         </configuration>
                         <goals>
                             <goal>run</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>power art</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target name="copy power images">
+                                <copy todir="${pack.powers.target}">
+                                    <fileset dir="${pack.powers.srcDir}" includes="**/*.png"/>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <!-- This moves your mod into a common folder where all mods you make can go. -->
+                                <copy file="target/${project.artifactId}.jar"
+                                      tofile="${Steam.path}/common/SlayTheSpire/mods/${project.artifactId}.jar"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.github.junkdog</groupId>
+                <artifactId>libgdx-packer-maven-plugin</artifactId>
+                <version>0.1.0-SNAPSHOT</version>
+                <executions>
+                    <!--execution>
+                        <id>pack cardTemplates</id>
+                        <goals>
+                            <goal>pack</goal>
+                        </goals>
+                        <configuration>
+                            <assetFolder>tools/${make.cardTemplates.target}</assetFolder>
+                            <packName>bardAssets/images/cardTemplates/cardTemplates</packName>
+                            <packer>
+                                <maxWidth>2048</maxWidth>
+                                <maxHeight>2048</maxHeight>
+                                <filterMin>Linear</filterMin>
+                                <filterMag>Linear</filterMag>
+                                <combineSubdirectories>true</combineSubdirectories>
+                            </packer>
+                        </configuration>
+                    </execution-->
+                    <execution>
+                        <id>pack cards</id>
+                        <goals>
+                            <goal>pack</goal>
+                        </goals>
+                        <configuration>
+                            <assetFolder>${pack.cards.target}</assetFolder>
+                            <packName>chefAssets/images/cards/cards</packName>
+                            <packer>
+                                <maxWidth>2048</maxWidth>
+                                <maxHeight>2048</maxHeight>
+                                <filterMin>Linear</filterMin>
+                                <filterMag>Linear</filterMag>
+                                <combineSubdirectories>true</combineSubdirectories>
+                            </packer>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>pack powers</id>
+                        <goals>
+                            <goal>pack</goal>
+                        </goals>
+                        <configuration>
+                            <assetFolder>${pack.powers.target}</assetFolder>
+                            <packName>chefAssets/images/powers/powers</packName>
+                            <packer>
+                                <maxWidth>2048</maxWidth>
+                                <maxHeight>2048</maxHeight>
+                                <filterMin>Linear</filterMin>
+                                <filterMag>Linear</filterMag>
+                                <stripWhitespaceX>true</stripWhitespaceX>
+                                <stripWhitespaceY>true</stripWhitespaceY>
+                                <combineSubdirectories>true</combineSubdirectories>
+                            </packer>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

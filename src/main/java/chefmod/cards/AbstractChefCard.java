@@ -1,8 +1,10 @@
 package chefmod.cards;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
 import chefmod.util.ActionUnit;
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -13,6 +15,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -64,8 +67,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
                             final CardTarget target,
                             final CardColor color,
                             final List<CardTags> tagsList) {
-        super(id, "ERROR", getCorrectPlaceholderImage(type, id),
-                cost, "ERROR", type, color, rarity, target);
+        super(id, "FAKE TITLE", getRegionName(id), cost, "FAKE DESCRIPTION", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
         name = NAME = cardStrings.NAME;
         originalName = NAME;
@@ -83,18 +85,23 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
         }
     }
 
-    public static String getCorrectPlaceholderImage(CardType type, String id) {
-        String img = makeCardPath(id.replaceAll((getModID() + ":"), "") + ".png");
-        if ((!Gdx.files.internal(img).exists()))
-            switch (type) {
-                case ATTACK:
-                    return makeImagePath("Attack.png");
-                case SKILL:
-                    return makeImagePath("Skill.png");
-                case POWER:
-                    return makeImagePath("Power.png");
-            }
-        return img;
+    protected static String getBaseImagePath(String id) {
+        return id.replaceAll(getModID() + ":", "");
+    }
+
+    protected static CustomCard.RegionName getRegionName(String id) {
+        return new RegionName(String.format("%s/%s", getModID(), getBaseImagePath(id)));
+    }
+
+    @Override
+    public void loadCardImage(String img) {
+        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        portrait = cardAtlas.findRegion(img);
+    }
+
+    @Override
+    protected Texture getPortraitImage() {
+        return ImageMaster.loadImage(makeCardPath(String.format("%s.png", getBaseImagePath(cardID))));
     }
 
     private void setCorrectBannerImage() {

@@ -1,24 +1,24 @@
 package chefmod.util;
 
+import chefmod.ChefMod;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.TextureData;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
-import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.megacrit.cardcrawl.core.Settings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.HashMap;
-
 public class TextureHelper {
-    private static final HashMap<String, Texture> textures = new HashMap<>();
+    // private static final HashMap<String, Texture> textures = new HashMap<>();
     public static final Logger logger = LogManager.getLogger(TextureHelper.class.getName());
 
     private static final Texture defaultTexture;
 
     public static Texture getTexture(final String textureString) {
+        return ChefMod.assets.loadImage(textureString);
+        /*
         if (textures.get(textureString) == null) {
             try {
                 loadTexture(textureString);
@@ -28,14 +28,17 @@ public class TextureHelper {
             }
         }
         return textures.get(textureString);
+         */
     }
 
+    /*
     private static void loadTexture(final String textureString) throws GdxRuntimeException {
         logger.info("ChefMod | Loading Texture: " + textureString);
         Texture texture = new Texture(textureString);
         texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
         textures.put(textureString, texture);
     }
+     */
 
     private static Pixmap redPixel() {
         Pixmap pm = new Pixmap(1, 1, Pixmap.Format.RGB888);

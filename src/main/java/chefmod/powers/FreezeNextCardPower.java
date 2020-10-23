@@ -14,12 +14,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class FreezeNextCardPower extends AbstractPower implements CloneablePowerInterface {
+public class FreezeNextCardPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(FreezeNextCardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     public FreezeNextCardPower(AbstractCreature owner, int numCards) {
         name = NAME;
@@ -28,7 +27,7 @@ public class FreezeNextCardPower extends AbstractPower implements CloneablePower
         amount = numCards;
         isTurnBased = true;
         updateDescription();
-        loadRegion("burst");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void updateDescription() {

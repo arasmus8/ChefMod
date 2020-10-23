@@ -2,6 +2,7 @@ package chefmod;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -11,11 +12,13 @@ import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
+import chefmod.util.AssetLoader;
 import chefmod.util.TextureHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -69,12 +72,18 @@ public class ChefMod implements
     }
 
     public static String makePowerPath(String resourcePath) {
-        return getModID() + "Resources/images/powers/" + resourcePath;
+        return getModID() + "Resources/images/powers/" + resourcePath + ".png";
     }
 
     public static String makeImagePath(String imagePath) {
         return getModID() + "Resources/images/" + imagePath;
     }
+
+    public static String assetPath(String path) {
+        return "chefAssets/" + path;
+    }
+
+    public static AssetLoader assets = new AssetLoader();
 
     public ChefMod() {
         BaseMod.subscribe(this);
@@ -132,6 +141,13 @@ public class ChefMod implements
 
     @Override
     public void receiveEditCards() {
+        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+
+        TextureAtlas myCardAtlas = assets.loadAtlas(assetPath("images/cards/cards.atlas"));
+        for (TextureAtlas.AtlasRegion region : myCardAtlas.getRegions()) {
+            cardAtlas.addRegion(getModID() + "/" + region.name, region);
+        }
+
         new AutoAdd(artifactID)
                 .packageFilter(AbstractChefCard.class)
                 .setDefaultSeen(true)
