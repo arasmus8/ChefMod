@@ -4,6 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomSavable;
+import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
@@ -128,6 +129,7 @@ public class ChefMod implements
         Texture badgeImage = TextureHelper.getTexture(IMAGE_PATH + "/Badge.png");
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", null);
         BaseMod.addSaveField("chefmod", this);
+        ConsoleCommand.addCommand("recipe", RecipeConsoleCommand.class);
     }
 
     @Override

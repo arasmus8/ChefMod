@@ -13,12 +13,11 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
-public class TastyDistractionPower extends AbstractPower implements CloneablePowerInterface {
+public class TastyDistractionPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(TastyDistractionPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     private int blockedThisTurn = 0;
 
@@ -28,7 +27,7 @@ public class TastyDistractionPower extends AbstractPower implements CloneablePow
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.loadRegion("buffer");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void updateDescription() {

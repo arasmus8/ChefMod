@@ -13,12 +13,11 @@ import com.megacrit.cardcrawl.powers.EntanglePower;
 
 import static chefmod.ChefMod.makeID;
 
-public class FriedLagavulinPower extends AbstractPower implements CloneablePowerInterface {
+public class FriedLagavulinPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(FriedLagavulinPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     public FriedLagavulinPower(AbstractCreature owner) {
         name = NAME;
@@ -26,7 +25,7 @@ public class FriedLagavulinPower extends AbstractPower implements CloneablePower
         this.owner = owner;
         amount = 1;
         updateDescription();
-        this.loadRegion("mantra");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void updateDescription() {

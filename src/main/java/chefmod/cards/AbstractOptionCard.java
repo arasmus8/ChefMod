@@ -1,13 +1,18 @@
 package chefmod.cards;
 
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomCard;
-import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static chefmod.ChefMod.*;
+import static chefmod.ChefMod.getModID;
+import static chefmod.ChefMod.makeCardPath;
 
 public abstract class AbstractOptionCard extends CustomCard {
     protected final CardStrings cardStrings;
@@ -18,10 +23,10 @@ public abstract class AbstractOptionCard extends CustomCard {
 
     public AbstractOptionCard(final String id) {
         super(id,
-                "ERROR",
-                getCorrectPlaceholderImage(id),
+                "FAKE TITLE",
+                getRegionName(id),
                 -2,
-                "ERROR",
+                "FAKE DESCRIPTION",
                 CardType.SKILL,
                 CardColor.COLORLESS,
                 CardRarity.SPECIAL,
@@ -36,12 +41,23 @@ public abstract class AbstractOptionCard extends CustomCard {
         initializeDescription();
     }
 
-    private static String getCorrectPlaceholderImage(String id) {
-        String img = makeCardPath(id.replaceAll((getModID() + ":"), "") + ".png");
-        if ((!Gdx.files.internal(img).exists())) {
-            return makeImagePath("Skill.png");
-        }
-        return img;
+    protected static String getBaseImagePath(String id) {
+        return id.replaceAll(getModID() + ":", "");
+    }
+
+    protected static CustomCard.RegionName getRegionName(String id) {
+        return new RegionName(String.format("%s/%s", getModID(), getBaseImagePath(id)));
+    }
+
+    @Override
+    public void loadCardImage(String img) {
+        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        portrait = cardAtlas.findRegion(img);
+    }
+
+    @Override
+    protected Texture getPortraitImage() {
+        return ImageMaster.loadImage(makeCardPath(String.format("%s.png", getBaseImagePath(cardID))));
     }
 
     @Override

@@ -14,12 +14,11 @@ import com.megacrit.cardcrawl.relics.RunicPyramid;
 
 import static chefmod.ChefMod.makeID;
 
-public class RetainThisTurnPower extends AbstractPower implements CloneablePowerInterface {
+public class RetainThisTurnPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(RetainThisTurnPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     public RetainThisTurnPower(AbstractCreature owner, int numCards) {
         name = NAME;
@@ -29,7 +28,7 @@ public class RetainThisTurnPower extends AbstractPower implements CloneablePower
         priority = 3;
         isTurnBased = true;
         updateDescription();
-        loadRegion("retain");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void updateDescription() {

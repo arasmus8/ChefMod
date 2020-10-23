@@ -19,7 +19,6 @@ public class SentryBrittlePower extends AbstractPower implements CloneablePowerI
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     public SentryBrittlePower(AbstractCreature owner, int amount) {
         name = NAME;
@@ -27,11 +26,11 @@ public class SentryBrittlePower extends AbstractPower implements CloneablePowerI
         this.owner = owner;
         this.amount = amount;
         updateDescription();
-        loadRegion("firebreathing");
+        loadRegion("stasis");
     }
 
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

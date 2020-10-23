@@ -6,7 +6,6 @@ import chefmod.cardmods.OneTimeBlockBonusCardmod;
 import chefmod.cardmods.OneTimeDamageBonusCardmod;
 import chefmod.cardmods.PermanentBlockBonusCardmod;
 import chefmod.cardmods.PermanentDamageBonusCardmod;
-import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -15,12 +14,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class PrepCookPower extends TwoAmountPower implements CloneablePowerInterface {
+public class PrepCookPower extends AbstractChefTwoAmountPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(PrepCookPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     public PrepCookPower(AbstractCreature owner, int powerBonus, boolean permanent) {
         this.name = NAME;
@@ -34,7 +32,7 @@ public class PrepCookPower extends TwoAmountPower implements CloneablePowerInter
             amount2 = 0;
         }
         this.updateDescription();
-        this.loadRegion("retain");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void updateDescription() {

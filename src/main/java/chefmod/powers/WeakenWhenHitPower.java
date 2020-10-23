@@ -11,12 +11,11 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class WeakenWhenHitPower extends AbstractPower implements CloneablePowerInterface {
+public class WeakenWhenHitPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(WeakenWhenHitPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     private static final int DEFAULT_DAMAGE = 10;
 
@@ -27,7 +26,7 @@ public class WeakenWhenHitPower extends AbstractPower implements CloneablePowerI
         amount = -1;
         type = PowerType.DEBUFF;
         updateDescription();
-        loadRegion("talk_to_hand");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     @Override

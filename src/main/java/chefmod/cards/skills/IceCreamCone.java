@@ -27,8 +27,8 @@ public class IceCreamCone extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        applyToEnemy(m, new SupercooledPower(m, 1));
         applyToEnemy(m, new SatiatedPower(m));
+        applyToEnemy(m, new SupercooledPower(m, 1));
         IntStream.rangeClosed(1, magicNumber)
                 .forEachOrdered(i -> addToBot(new PlayOldestFrozenCardAction(c -> c.type == CardType.ATTACK)));
     }

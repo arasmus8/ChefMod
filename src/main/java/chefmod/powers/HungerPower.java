@@ -12,12 +12,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static chefmod.ChefMod.makeID;
 
-public class HungerPower extends AbstractPower implements CloneablePowerInterface {
+public class HungerPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(HungerPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     private static final int DEFAULT_DAMAGE = 10;
 
@@ -29,7 +28,7 @@ public class HungerPower extends AbstractPower implements CloneablePowerInterfac
         isTurnBased = true;
         type = PowerType.DEBUFF;
         updateDescription();
-        loadRegion("fasting");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     @Override

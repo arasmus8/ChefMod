@@ -12,12 +12,11 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
-public class OrderUpPower extends AbstractPower implements CloneablePowerInterface {
+public class OrderUpPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(OrderUpPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     public OrderUpPower(AbstractCreature owner, int amount) {
         this.name = NAME;
@@ -25,7 +24,7 @@ public class OrderUpPower extends AbstractPower implements CloneablePowerInterfa
         this.owner = owner;
         this.amount = amount;
         this.updateDescription();
-        this.loadRegion("mayhem");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void updateDescription() {

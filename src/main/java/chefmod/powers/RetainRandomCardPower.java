@@ -21,12 +21,11 @@ import java.util.stream.Collectors;
 
 import static chefmod.ChefMod.makeID;
 
-public class RetainRandomCardPower extends AbstractPower implements CloneablePowerInterface {
+public class RetainRandomCardPower extends AbstractChefPower implements CloneablePowerInterface {
     public static final String POWER_ID = makeID(RetainRandomCardPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    // private static final Texture texture = TextureLoader.getTexture(makePowerPath("prep-cook.png"));
 
     private boolean prioritizePrepped;
 
@@ -37,7 +36,7 @@ public class RetainRandomCardPower extends AbstractPower implements CloneablePow
         this.prioritizePrepped = prioritizePrepped;
         amount = numCards;
         updateDescription();
-        loadRegion("retain");
+        loadRegion(this.getClass().getSimpleName());
     }
 
     public void upgrade() {

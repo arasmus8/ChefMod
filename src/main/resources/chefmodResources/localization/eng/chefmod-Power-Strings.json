@@ -2,7 +2,7 @@
   "chefmod:FriedLagavulinPower": {
     "NAME": "Fried Lagavulin",
     "DESCRIPTIONS": [
-      "You can only play 1 attack each turn. Deal triple Damage."
+      "You can only play 1 attack each turn. Deal double damage."
     ]
   },
   "chefmod:FreezeNextCardPower": {
@@ -29,7 +29,7 @@
   "chefmod:HungerPower": {
     "NAME": "Hunger",
     "DESCRIPTIONS": [
-      "This monster deals half Damage, and takes half Damage from attacks."
+      "This monster deals half damage, and takes half damage from attacks."
     ]
   },
   "chefmod:HungerDamageUpPower": {
@@ -43,13 +43,13 @@
     "NAME": "Nob Stew",
     "DESCRIPTIONS": [
       "When you play a Skill, a random Attack gets +#b",
-      "1 Damage."
+      "1 damage."
     ]
   },
   "chefmod:OrderUpPower": {
     "NAME": "Order Up",
     "DESCRIPTIONS": [
-      "Each turn, play your oldest #yFrozen card and #yFreeze #b1",
+      "Each turn, play your oldest #yFrozen card and #yFreeze #b",
       "Each turn, play your oldest #b",
       " #yFrozen cards and #yFreeze #b"
     ]
@@ -58,7 +58,7 @@
     "NAME": "Prep Cook",
     "DESCRIPTIONS": [
       "Whenever you retain a card, it does #b",
-      " more Block and/or Damage",
+      " more Block and/or damage",
       " the next time you use it",
       " this combat",
       " and #b"
@@ -85,13 +85,14 @@
   "chefmod:SatiatedPower": {
     "NAME": "Satiated",
     "DESCRIPTIONS": [
-      "This monster deals double Damage, and takes double Damage from attacks."
+      "This monster deals double damage, and takes double damage from attacks."
     ]
   },
   "chefmod:SentryBrittlePower": {
     "NAME": "Sentry Brittle",
     "DESCRIPTIONS": [
-      "When you draw a Status, exhaust it and deal 10 Damage to all enemies."
+      "When you draw a Status, exhaust it and deal #b",
+      " damage to all enemies."
     ]
   },
   "chefmod:StabKabobPower": {
@@ -117,7 +118,7 @@
   "chefmod:TemporaryStrengthDownPower": {
     "NAME": "Damage Reduced",
     "DESCRIPTIONS": [
-      "Reduces attack Damage by #b",
+      "Reduces attack damage by #b",
       " this turn."
     ]
   },
