@@ -1,9 +1,9 @@
 package chefmod.vfx;
 
 import chefmod.util.TextureHelper;
+import chefmod.util.VfxMaster;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-
-import static chefmod.ChefMod.makeImagePath;
 
 public class FrozenCardVfx extends AbstractGameEffect {
     private static final float EFFECT_DUR = 1.0F;
@@ -22,7 +20,6 @@ public class FrozenCardVfx extends AbstractGameEffect {
     private final AbstractCard c;
     private static final float PADDING = 50.0f * Settings.scale;
     private boolean soundPlayed;
-    private static final Texture texture = TextureHelper.getTexture(makeImagePath("vfx/frozenCardVfx.png"));
     private float alpha;
 
     private static int count = 0;
@@ -78,24 +75,14 @@ public class FrozenCardVfx extends AbstractGameEffect {
             Color drawColor = new Color(1, 1, 1, alpha * c.transparency);
             sb.setColor(drawColor);
 
-            float texW = texture.getWidth();
-            float texH = texture.getHeight();
-            sb.draw(texture,
-                    c.current_x - texW / 2f,
-                    c.current_y - texH / 2f,
-                    texW / 2f,
-                    texH / 2f,
-                    texW,
-                    texH,
-                    c.drawScale * Settings.scale,
-                    c.drawScale * Settings.scale,
-                    c.angle,
-                    0,
-                    0,
-                    (int) texW,
-                    (int) texH,
-                    false,
-                    false);
+            TextureHelper.drawScaledAndRotated(
+                    sb,
+                    VfxMaster.FROZEN_CARD_VFX,
+                    c.current_x,
+                    c.current_y,
+                    1f,
+                    0f
+            );
         }
     }
 

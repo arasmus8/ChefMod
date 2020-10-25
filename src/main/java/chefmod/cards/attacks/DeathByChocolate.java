@@ -3,9 +3,8 @@ package chefmod.cards.attacks;
 import chefmod.cards.AbstractChefCard;
 import chefmod.powers.HungerPower;
 import chefmod.powers.SatiatedPower;
-import chefmod.util.TextureHelper;
+import chefmod.util.VfxMaster;
 import chefmod.vfx.VfxBuilder;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -18,11 +17,9 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 
 import static chefmod.ChefMod.makeID;
-import static chefmod.ChefMod.makeImagePath;
 
 public class DeathByChocolate extends AbstractChefCard {
     public static String ID = makeID(DeathByChocolate.class.getSimpleName());
-    private static Texture t = TextureHelper.getTexture(makeImagePath("vfx/chocolate.png"));
 
     public DeathByChocolate() {
         super(ID,
@@ -58,15 +55,15 @@ public class DeathByChocolate extends AbstractChefCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m.hasPower(SatiatedPower.POWER_ID) && m.hasPower(HungerPower.POWER_ID)) {
-            AbstractGameEffect vfx = new VfxBuilder(t, m.hb.cX, Settings.HEIGHT + 256f, 1.5f)
+            AbstractGameEffect vfx = new VfxBuilder(VfxMaster.CHOCOLATE, m.hb.cX, Settings.HEIGHT + 256f, 1.5f)
                     .moveY(Settings.HEIGHT, m.hb.y + m.hb.height / 6, VfxBuilder.Interpolations.BOUNCE)
                     .fadeIn(0.25f)
-                    .setScale(1.25f * m.hb.width / t.getWidth())
+                    .setScale(1.25f * m.hb.width / VfxMaster.CHOCOLATE.packedWidth / 2f)
                     .fadeOut(0.25f)
                     .playSoundAt(0.35f, "BLUNT_HEAVY")
                     .triggerVfxAt(0.4f, 20, (x, y) -> new StarBounceEffect(
                             x + MathUtils.random(-m.hb.width / 2, m.hb.width / 2),
-                            y + MathUtils.random(-1 * t.getHeight() / 2f, t.getHeight() / 2f)))
+                            y + MathUtils.random(-1 * VfxMaster.CHOCOLATE.packedHeight / 2f, VfxMaster.CHOCOLATE.packedHeight / 2f)))
                     .build();
             addToBot(new VFXAction(vfx));
             addToBot(new DamageAction(m, new DamageInfo(p, magicNumber, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));

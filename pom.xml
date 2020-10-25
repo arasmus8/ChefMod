@@ -28,6 +28,9 @@
 
         <pack.powers.srcDir>productionAssets/powers</pack.powers.srcDir>
         <pack.powers.target>target/powers</pack.powers.target>
+
+        <pack.vfx.srcDir>productionAssets/vfx</pack.vfx.srcDir>
+        <pack.vfx.target>target/vfx</pack.vfx.target>
     </properties>
 
     <dependencies>
@@ -109,6 +112,20 @@
                         </goals>
                     </execution>
                     <execution>
+                        <id>vfx art</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target name="copy vfx images">
+                                <copy todir="${pack.vfx.target}">
+                                    <fileset dir="${pack.vfx.srcDir}" includes="**/*.png"/>
+                                </copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
                         <phase>package</phase>
                         <configuration>
                             <target>
@@ -128,23 +145,6 @@
                 <artifactId>libgdx-packer-maven-plugin</artifactId>
                 <version>0.1.0-SNAPSHOT</version>
                 <executions>
-                    <!--execution>
-                        <id>pack cardTemplates</id>
-                        <goals>
-                            <goal>pack</goal>
-                        </goals>
-                        <configuration>
-                            <assetFolder>tools/${make.cardTemplates.target}</assetFolder>
-                            <packName>bardAssets/images/cardTemplates/cardTemplates</packName>
-                            <packer>
-                                <maxWidth>2048</maxWidth>
-                                <maxHeight>2048</maxHeight>
-                                <filterMin>Linear</filterMin>
-                                <filterMag>Linear</filterMag>
-                                <combineSubdirectories>true</combineSubdirectories>
-                            </packer>
-                        </configuration>
-                    </execution-->
                     <execution>
                         <id>pack cards</id>
                         <goals>
@@ -170,6 +170,25 @@
                         <configuration>
                             <assetFolder>${pack.powers.target}</assetFolder>
                             <packName>chefAssets/images/powers/powers</packName>
+                            <packer>
+                                <maxWidth>2048</maxWidth>
+                                <maxHeight>2048</maxHeight>
+                                <filterMin>Linear</filterMin>
+                                <filterMag>Linear</filterMag>
+                                <stripWhitespaceX>true</stripWhitespaceX>
+                                <stripWhitespaceY>true</stripWhitespaceY>
+                                <combineSubdirectories>true</combineSubdirectories>
+                            </packer>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>pack vfx</id>
+                        <goals>
+                            <goal>pack</goal>
+                        </goals>
+                        <configuration>
+                            <assetFolder>${pack.vfx.target}</assetFolder>
+                            <packName>chefAssets/images/vfx/vfx</packName>
                             <packer>
                                 <maxWidth>2048</maxWidth>
                                 <maxHeight>2048</maxHeight>

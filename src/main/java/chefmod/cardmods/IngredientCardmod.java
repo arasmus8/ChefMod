@@ -5,8 +5,8 @@ import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
 import chefmod.powers.FreshProducePower;
 import chefmod.util.TextureHelper;
+import chefmod.util.VfxMaster;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -19,10 +19,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.Optional;
 
 import static chefmod.ChefMod.makeID;
-import static chefmod.ChefMod.makeImagePath;
 
 public class IngredientCardmod extends AbstractChefCardmod {
-    private static final Texture icon = TextureHelper.getTexture(makeImagePath("vfx/ingredient_badge.png"));
     public static final String ID = makeID(IngredientCardmod.class.getSimpleName());
 
     private boolean removeImmediately = false;
@@ -75,6 +73,6 @@ public class IngredientCardmod extends AbstractChefCardmod {
         color.a = card.transparency;
         sb.setColor(color);
 
-        TextureHelper.drawScaledAndRotated(sb, icon, card.current_x + vec.x, card.current_y + vec.y, 1.25f, card.angle);
+        TextureHelper.drawScaledAndRotated(sb, VfxMaster.INGREDIENT_BADGE, card.current_x + vec.x, card.current_y + vec.y, 1.25f, card.angle);
     }
 }

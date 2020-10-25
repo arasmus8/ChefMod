@@ -2,7 +2,7 @@ package chefmod.cards.attacks;
 
 import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
-import chefmod.util.TextureHelper;
+import chefmod.util.VfxMaster;
 import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
@@ -18,11 +18,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import static chefmod.ChefMod.makeID;
-import static chefmod.ChefMod.makeImagePath;
 
 public class FrozenTuna extends AbstractChefCard implements StartupCard {
     public static String ID = makeID(FrozenTuna.class.getSimpleName());
-    private final Texture img = TextureHelper.getTexture(makeImagePath("vfx/FrozenTuna.png"));
 
     public FrozenTuna() {
         super(ID,
@@ -58,7 +56,7 @@ public class FrozenTuna extends AbstractChefCard implements StartupCard {
     }
 
     private AbstractGameEffect vfx() {
-        return new VfxBuilder(img, .8f)
+        return new VfxBuilder(VfxMaster.FROZEN_TUNA, .8f)
                 .playSoundAt(0f, "ORB_FROST_CHANNEL")
                 .setScale(1.5f)
                 .arc(0f, Settings.HEIGHT / 2f, Settings.WIDTH * 0.75f, AbstractDungeon.floorY, Settings.HEIGHT)

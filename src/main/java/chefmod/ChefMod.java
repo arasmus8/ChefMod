@@ -15,6 +15,7 @@ import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
 import chefmod.util.AssetLoader;
 import chefmod.util.TextureHelper;
+import chefmod.util.VfxMaster;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -130,6 +131,7 @@ public class ChefMod implements
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", null);
         BaseMod.addSaveField("chefmod", this);
         ConsoleCommand.addCommand("recipe", RecipeConsoleCommand.class);
+        VfxMaster.initialize();
     }
 
     @Override
