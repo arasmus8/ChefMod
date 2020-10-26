@@ -3,14 +3,21 @@
     "NAME": "Cookie Jar",
     "FLAVOR": "Sadly, it's empty.",
     "DESCRIPTIONS": [
-      "Gain 1 charge each time you climb a floor. #ychefmod:Hunger deals 1 more damage for each charge."
+      "Gain #b1 charge each time you climb a floor. #ychefmod:Hunger deals #b1 more damage for each charge."
     ]
   },
   "chefmod:OldKettle": {
     "NAME": "Old Kettle",
     "FLAVOR": "Actually, it gets along quite well with all other cookware.",
     "DESCRIPTIONS": [
-      "Replaces Trusty Pot. The first attack card you draw each combat deals 5 additional damage."
+      "Replaces Trusty Pot. The first attack card you draw each combat deals #b5 additional damage."
+    ]
+  },
+  "chefmod:RollingPin": {
+    "NAME": "Rolling Pin",
+    "FLAVOR": "Perfect for making pastries.",
+    "DESCRIPTIONS": [
+      "At the beginning of each combat, #ychefmod:Freeze #b3."
     ]
   },
   "chefmod:Spatula": {
@@ -24,7 +31,7 @@
     "NAME": "Trusty Pot",
     "FLAVOR": "It's a pot. For cooking.",
     "DESCRIPTIONS": [
-      "Gain 5 #yBlock whenever you play the first card you draw in each combat."
+      "Gain #b5 #yBlock whenever you play the first card you draw in each combat."
     ]
   },
   "chefmod:WoodenSpoon": {
