@@ -3,6 +3,7 @@ package chefmod.patches.frozen;
 import chefmod.ChefMod;
 import chefmod.cards.AbstractChefCard;
 import chefmod.powers.TriggerOnFrozenPower;
+import chefmod.relics.TriggerOnFrozenRelic;
 import chefmod.vfx.FrozenCardVfx;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,6 +32,12 @@ public class MoveToFrozenPilePatches {
                     ((AbstractChefCard) card).triggerWhenFrozen();
                 }
                 AbstractDungeon.effectList.add(new FrozenCardVfx(card));
+
+                AbstractDungeon.player.relics.stream()
+                        .filter(r -> r instanceof TriggerOnFrozenRelic)
+                        .map(r -> (TriggerOnFrozenRelic) r)
+                        .forEach(r -> r.triggerOnFrozen(card));
+
                 AbstractDungeon.player.powers.stream()
                         .filter(p -> p instanceof TriggerOnFrozenPower)
                         .map(p -> (TriggerOnFrozenPower) p)
@@ -67,6 +74,12 @@ public class MoveToFrozenPilePatches {
                 }
                 ChefMod.cardsToFreeze.remove(card);
                 AbstractDungeon.effectList.add(new FrozenCardVfx(card));
+
+                AbstractDungeon.player.relics.stream()
+                        .filter(r -> r instanceof TriggerOnFrozenRelic)
+                        .map(r -> (TriggerOnFrozenRelic) r)
+                        .forEach(r -> r.triggerOnFrozen(card));
+
                 AbstractDungeon.player.powers.stream()
                         .filter(p -> p instanceof TriggerOnFrozenPower)
                         .map(p -> (TriggerOnFrozenPower) p)

@@ -59,7 +59,7 @@ public class ChefMod implements
     private static FrozenPileButton frozenPileButton;
     public static RecipeManager recipeManager;
 
-    public static Color chefColor = new Color(237, 242, 244, 1); //TODO: Set this to your character's favorite color!
+    public static Color chefColor = new Color(0xCCC39AFF);
 
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;

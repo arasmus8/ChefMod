@@ -13,6 +13,13 @@
       "Replaces Trusty Pot. The first attack card you draw each combat deals 5 additional damage."
     ]
   },
+  "chefmod:Spatula": {
+    "NAME": "Spatula",
+    "FLAVOR": "Recommended for SpireCo. Brand Pancakes.",
+    "DESCRIPTIONS": [
+      "Whenever you #ychefmod:Freeze a card, deal #b4 damage to a random enemy."
+    ]
+  },
   "chefmod:TrustyPot": {
     "NAME": "Trusty Pot",
     "FLAVOR": "It's a pot. For cooking.",
