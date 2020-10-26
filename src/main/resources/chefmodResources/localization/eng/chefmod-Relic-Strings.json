@@ -1,4 +1,11 @@
 {
+  "chefmod:CookieJar": {
+    "NAME": "Cookie Jar",
+    "FLAVOR": "Sadly, it's empty.",
+    "DESCRIPTIONS": [
+      "Gain 1 charge each time you climb a floor. #ychefmod:Hunger deals 1 more damage for each charge."
+    ]
+  },
   "chefmod:OldKettle": {
     "NAME": "Old Kettle",
     "FLAVOR": "Actually, it gets along quite well with all other cookware.",
