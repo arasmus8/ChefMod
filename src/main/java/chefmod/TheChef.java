@@ -65,9 +65,9 @@ public class TheChef extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        IntStream.rangeClosed(1, 4)
+        IntStream.rangeClosed(1, 5)
                 .forEach(i -> retVal.add(Strike.ID));
-        IntStream.rangeClosed(1, 4)
+        IntStream.rangeClosed(1, 3)
                 .forEach(i -> retVal.add(Defend.ID));
         retVal.add(QuickThaw.ID);
         retVal.add(TodaysSpecial.ID);
