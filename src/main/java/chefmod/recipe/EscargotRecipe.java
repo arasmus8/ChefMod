@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 
 import java.util.ArrayList;
 import java.util.function.Consumer;
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 import static chefmod.ChefMod.makeID;
 
@@ -32,7 +32,7 @@ public class EscargotRecipe extends AbstractRecipe {
 
     @Override
     public void onActivate() {
-        Function<Boolean, Boolean> upgradeAction = firstUpdate -> {
+        Predicate<Boolean> upgradeAction = firstUpdate -> {
             Consumer<AbstractCard> upgradeCard = c -> {
                 if (c.canUpgrade()) {
                     c.upgrade();
