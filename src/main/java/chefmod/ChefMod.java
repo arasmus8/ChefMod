@@ -95,12 +95,6 @@ public class ChefMod implements
 
         BaseMod.addColor(TheChef.Enums.CHEF_COLOR,
                 chefColor,
-                chefColor,
-                chefColor,
-                chefColor,
-                chefColor,
-                chefColor,
-                chefColor,
                 makeImagePath("cardframe/attack512.png"),
                 makeImagePath("cardframe/skill512.png"),
                 makeImagePath("cardframe/power512.png"),
