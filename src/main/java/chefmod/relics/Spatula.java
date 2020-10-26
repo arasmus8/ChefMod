@@ -21,6 +21,7 @@ public class Spatula extends AbstractChefRelic implements TriggerOnFrozenRelic {
 
     @Override
     public void triggerOnFrozen(AbstractCard card) {
+        flash();
         dealDamage(AbstractDungeon.getRandomMonster(), AbstractGameAction.AttackEffect.SLASH_VERTICAL);
     }
 }

@@ -14,6 +14,7 @@ public class RollingPin extends AbstractChefRelic {
 
     @Override
     public void atBattleStart() {
+        flash();
         addToBot(new FreezeAction(3));
     }
 }

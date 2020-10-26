@@ -2,6 +2,7 @@ package chefmod.actions;
 
 import chefmod.ChefMod;
 import chefmod.powers.SupercooledPower;
+import chefmod.relics.TriggerOnFrozenCardPlayedRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
@@ -70,6 +71,10 @@ public class PlayOldestFrozenCardAction extends AbstractGameAction {
                 target = getFrozenTarget(card);
                 addToTop(new NewQueueCardAction(card, target, false, true));
                 addToTop(new UnlimboAction(card));
+                AbstractDungeon.player.relics.stream()
+                        .filter(r -> r instanceof TriggerOnFrozenCardPlayedRelic)
+                        .map(r -> (TriggerOnFrozenCardPlayedRelic) r)
+                        .forEach(r -> r.triggerOnFrozenCardPlayed(card));
                 if (!Settings.FAST_MODE) {
                     addToTop(new WaitAction(Settings.ACTION_DUR_MED));
                 } else {

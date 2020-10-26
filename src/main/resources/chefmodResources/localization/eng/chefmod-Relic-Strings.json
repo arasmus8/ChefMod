@@ -13,6 +13,13 @@
       "Replaces Trusty Pot. The first attack card you draw each combat deals #b5 additional damage."
     ]
   },
+  "chefmod:PepperMill": {
+    "NAME": "Pepper Mill",
+    "FLAVOR": "The essential tool for the essential spice.",
+    "DESCRIPTIONS": [
+      "Gain [E] each turn. Whenever you play a #ychefmod:Frozen card, lose [E] ."
+    ]
+  },
   "chefmod:RollingPin": {
     "NAME": "Rolling Pin",
     "FLAVOR": "Perfect for making pastries.",

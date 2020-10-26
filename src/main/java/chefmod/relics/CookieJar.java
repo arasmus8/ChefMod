@@ -21,6 +21,7 @@ public class CookieJar extends AbstractChefRelic {
 
     @Override
     public void atBattleStartPreDraw() {
+        flash();
         applyToSelf(new HungerDamageUpPower(AbstractDungeon.player, counter));
     }
 }
