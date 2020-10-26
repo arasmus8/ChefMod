@@ -3,7 +3,7 @@
     "NAME": "Old Kettle",
     "FLAVOR": "Actually, it gets along quite well with all other cookware.",
     "DESCRIPTIONS": [
-      "The first attack card you draw each combat deals 5 additional damage."
+      "Replaces Trusty Pot. The first attack card you draw each combat deals 5 additional damage."
     ]
   },
   "chefmod:TrustyPot": {
@@ -11,6 +11,13 @@
     "FLAVOR": "It's a pot. For cooking.",
     "DESCRIPTIONS": [
       "Gain 5 #yBlock whenever you play the first card you draw in each combat."
+    ]
+  },
+  "chefmod:WoodenSpoon": {
+    "NAME": "Wooden Spoon",
+    "FLAVOR": "Sturdy and well-used, this spoon has stirred many a meal.",
+    "DESCRIPTIONS": [
+      "#ychefmod:Ingredients are #yRetained."
     ]
   }
 }
