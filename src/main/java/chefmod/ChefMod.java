@@ -47,11 +47,11 @@ public class ChefMod implements
         EditStringsSubscriber,
         PostBattleSubscriber,
         PostDungeonUpdateSubscriber,
+        PostDeathSubscriber,
         PostInitializeSubscriber,
         StartGameSubscriber {
     public static String IMAGE_PATH = "chefmodResources/images";
     private static String modID;
-    private static String artifactID;
 
     public static CardGroup frozenPile;
     public static ArrayList<AbstractCard> cardsToFreeze;
@@ -91,7 +91,6 @@ public class ChefMod implements
         BaseMod.subscribe(this);
 
         modID = "chefmod";
-        artifactID = "chefmod";
 
         BaseMod.addColor(TheChef.Enums.CHEF_COLOR,
                 chefColor,
@@ -146,11 +145,11 @@ public class ChefMod implements
             cardAtlas.addRegion(getModID() + "/" + region.name, region);
         }
 
-        new AutoAdd(artifactID)
+        new AutoAdd(modID)
                 .packageFilter(AbstractChefCard.class)
                 .setDefaultSeen(true)
                 .cards();
-        new AutoAdd(artifactID)
+        new AutoAdd(modID)
                 .packageFilter(AbstractOptionCard.class)
                 .setDefaultSeen(true)
                 .cards();
@@ -158,7 +157,7 @@ public class ChefMod implements
 
     @Override
     public void receiveEditRelics() {
-        new AutoAdd(artifactID)
+        new AutoAdd(modID)
                 .packageFilter(AbstractChefRelic.class)
                 .any(AbstractChefRelic.class, (info, relic) -> {
                     if (relic.color == null) {
@@ -243,6 +242,11 @@ public class ChefMod implements
             frozenPileButton.update();
             recipeManager.update();
         }
+    }
+
+    @Override
+    public void receivePostDeath() {
+        RecipeManager.unlockedRecipes.clear();
     }
 
     @Override

@@ -2,13 +2,13 @@
   "chefmod:FrozenPile": {
     "TEXT": [
       "Frozen Pile",
-      "This is the Frozen Pile",
+      "When cards are Frozen, they go into the Frozen Pile. NL NL Frozen cards are not drawn or shuffled normally, but can be played or drawn by using certain cards.",
       "The Frozen Pile is empty!"
     ]
   },
   "chefmod:FrozenPileViewScreen": {
     "TEXT": [
-      "These are your Frozen cards, shown in order."
+      "These are your Frozen cards, shown in order from oldest to newest."
     ]
   },
   "chefmod:GridSelectAndPerformAction": {

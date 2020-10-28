@@ -1,5 +1,6 @@
 package chefmod.recipe;
 
+import basemod.BaseMod;
 import basemod.ClickableUIElement;
 import chefmod.util.TextureHelper;
 import chefmod.util.VfxMaster;
@@ -15,13 +16,16 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 
+import static chefmod.ChefMod.makeID;
+
 public class RecipeRenderer extends ClickableUIElement {
     private static final float COUNT_X = 48.0F * Settings.scale;
     private static final float COUNT_Y = -16.0F * Settings.scale;
     private static final float COUNT_OFFSET_X = 48.0F * Settings.scale;
     private static final float COUNT_OFFSET_Y = -18.0F * Settings.scale;
-    private static final float DECK_TIP_X = -64f * Settings.scale;
-    private static final float DECK_TIP_Y = -96 * Settings.scale;
+    private static final float TIP_X = -64f * Settings.scale;
+    private static final float SPECIFIC_TIP_Y = -96 * Settings.scale;
+    private static final float GENERIC_TIP_Y = -196 * Settings.scale;
     private static final Random rng = new Random(Settings.seed);
     private final BobEffect bob;
 
@@ -50,7 +54,8 @@ public class RecipeRenderer extends ClickableUIElement {
 
         hitbox.render(sb);
         if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
-            TipHelper.renderGenericTip(hitbox.cX + DECK_TIP_X, hitbox.cY + DECK_TIP_Y, recipe.tipHeader, recipe.tipBody);
+            String tipMsg = recipe.tipBody + " NL NL " + BaseMod.getKeywordDescription(makeID("recipe"));
+            TipHelper.renderGenericTip(hitbox.cX + TIP_X, hitbox.cY + SPECIFIC_TIP_Y, recipe.tipHeader, tipMsg);
         }
     }
 
