@@ -17,7 +17,7 @@ public class CandyBowl extends AbstractChefCard {
                 CardRarity.RARE,
                 CardTarget.SELF
         );
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 8;
         exhaust = true;
     }
 

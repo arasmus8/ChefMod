@@ -16,7 +16,7 @@ public class Omelette extends AbstractChefCard {
 
     public Omelette() {
         super(ID,
-                0,
+                1,
                 CardType.SKILL,
                 CardRarity.UNCOMMON,
                 CardTarget.SELF
