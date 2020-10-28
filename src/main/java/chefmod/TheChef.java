@@ -58,7 +58,7 @@ public class TheChef extends CustomPlayer {
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                80, 80, 0, 99, 5, this, getStartingRelics(),
+                76, 76, 0, 99, 5, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
 
@@ -82,14 +82,14 @@ public class TheChef extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("ATTACK_IRON_1", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA("MONSTER_BOOK_STAB_0", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "ATTACK_IRON_1";
+        return "MONSTER_BOOK_STAB_0";
     }
 
     @Override
