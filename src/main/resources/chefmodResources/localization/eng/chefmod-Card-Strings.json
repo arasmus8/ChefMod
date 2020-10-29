@@ -80,8 +80,8 @@
   },
   "chefmod:Defrost": {
     "NAME": "Defrost",
-    "DESCRIPTION": "Move !M! chefmod:Frozen card to your hand.",
-    "UPGRADE_DESCRIPTION": "Move !M! chefmod:Frozen cards to your hand.",
+    "DESCRIPTION": "Choose !M! chefmod:Frozen card to move your hand.",
+    "UPGRADE_DESCRIPTION": "Choose !M! chefmod:Frozen cards to move to your hand.",
     "EXTENDED_DESCRIPTION": [
       "to move from your Frozen pile to your hand."
     ]
