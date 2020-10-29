@@ -81,7 +81,10 @@
   "chefmod:Defrost": {
     "NAME": "Defrost",
     "DESCRIPTION": "Move !M! chefmod:Frozen card to your hand.",
-    "UPGRADE_DESCRIPTION": "Move !M! chefmod:Frozen cards to your hand."
+    "UPGRADE_DESCRIPTION": "Move !M! chefmod:Frozen cards to your hand.",
+    "EXTENDED_DESCRIPTION": [
+      "to move from your Frozen pile to your hand."
+    ]
   },
   "chefmod:DimSum": {
     "NAME": "Dim Sum",
@@ -112,7 +115,7 @@
   },
   "chefmod:FireUp": {
     "NAME": "Fire Up",
-    "DESCRIPTION": "Deal !D! damage. Apply chefmod:Hunger."
+    "DESCRIPTION": "Deal !D! damage. NL Apply chefmod:Hunger."
   },
   "chefmod:FiveAlarmChili": {
     "NAME": "5-Alarm Chili",

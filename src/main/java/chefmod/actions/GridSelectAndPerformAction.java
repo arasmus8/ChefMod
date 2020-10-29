@@ -29,12 +29,14 @@ public class GridSelectAndPerformAction extends AbstractGameAction {
     private static AbstractPlayer p;
     private static final float DURATION;
     private static final UIStrings uiStrings;
+    private final String purposeMsg;
     public static final String[] TEXT;
     public static final String ID = makeID(GridSelectAndPerformAction.class.getSimpleName());
 
     public GridSelectAndPerformAction(
             int amount,
             boolean random,
+            String message,
             CardGroup group,
             Predicate<AbstractCard> filterCriteria,
             AbstractGameAction followUpAction
@@ -46,12 +48,13 @@ public class GridSelectAndPerformAction extends AbstractGameAction {
         this.followUpAction = followUpAction;
         isRandom = random;
         clearSelectedCards = true;
+        purposeMsg = message;
         this.group = group;
         this.filterCriteria = filterCriteria;
     }
 
-    public GridSelectAndPerformAction(int amount, AbstractGameAction action) {
-        this(amount, false, ChefMod.frozenPile, null, action);
+    public GridSelectAndPerformAction(int amount, String message, AbstractGameAction action) {
+        this(amount, false, message, ChefMod.frozenPile, null, action);
     }
 
     @Override
@@ -101,9 +104,16 @@ public class GridSelectAndPerformAction extends AbstractGameAction {
                     CardGroup filtered = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                     filtered.group.addAll(filteredList);
                     if (amount < 0) {
-                        AbstractDungeon.gridSelectScreen.open(filtered, 99, true, TEXT[1] + TEXT[2]);
+                        String msg = TEXT[1] + TEXT[3] + purposeMsg;
+                        AbstractDungeon.gridSelectScreen.open(filtered, 99, true, msg);
                     } else {
-                        AbstractDungeon.gridSelectScreen.open(filtered, amount, true, TEXT[0] + amount + TEXT[2]);
+                        String msg = TEXT[0] + amount;
+                        if (amount == 1) {
+                            msg = msg + TEXT[2] + purposeMsg;
+                        } else {
+                            msg = msg + TEXT[3] + purposeMsg;
+                        }
+                        AbstractDungeon.gridSelectScreen.open(filtered, amount, true, msg);
                     }
                     tickDuration();
                     return;

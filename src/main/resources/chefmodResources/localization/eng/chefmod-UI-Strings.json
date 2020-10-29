@@ -13,9 +13,10 @@
   },
   "chefmod:GridSelectAndPerformAction": {
     "TEXT": [
-      "Choose up to ",
+      "Choose ",
       "Choose any number of ",
-      " cards"
+      " card ",
+      " cards "
     ]
   },
   "chefmod:NeowNuggetsRecipe": {
@@ -90,7 +91,8 @@
     "TEXT": [
       "5-Alarm Chili",
       "Choose a skill. Whenever you play it, deal #b",
-      " damage to all enemies."
+      " damage to all enemies.",
+      " - whenever you play it, deal "
     ]
   },
   "chefmod:EscargotRecipe": {

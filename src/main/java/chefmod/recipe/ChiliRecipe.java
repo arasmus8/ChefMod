@@ -41,6 +41,7 @@ public class ChiliRecipe extends AbstractRecipe {
         cardGroup.sortByRarity(true);
         qAction(new GridSelectAndPerformAction(1,
                 false,
+                TEXT[3] + damage + TEXT[2],
                 cardGroup,
                 c -> c.type == AbstractCard.CardType.SKILL,
                 new FunctionalAction(firstUpdate -> {

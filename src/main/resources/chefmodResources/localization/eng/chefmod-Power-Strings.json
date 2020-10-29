@@ -42,8 +42,8 @@
   "chefmod:NobStewPower": {
     "NAME": "Nob Stew",
     "DESCRIPTIONS": [
-      "When you play a Skill, a random Attack gets +#b",
-      "1 damage."
+      "When you play a Skill, a random Attack deals #b",
+      " more damage."
     ]
   },
   "chefmod:OrderUpPower": {
