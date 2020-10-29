@@ -2,8 +2,10 @@ package chefmod.recipe;
 
 import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
+import chefmod.actions.FreezeAction;
 import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.NeowNuggetsCardmod;
+import chefmod.cards.attacks.NuggetStrike;
 import chefmod.cards.options.NeowNuggets;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -58,5 +60,8 @@ public class NeowNuggetsRecipe extends AbstractRecipe {
             }
             return true;
         }));
+        AbstractCard card = new NuggetStrike();
+        card.upgrade();
+        qAction(new FreezeAction(card));
     }
 }

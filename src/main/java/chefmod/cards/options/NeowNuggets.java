@@ -2,6 +2,7 @@ package chefmod.cards.options;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractOptionCard;
+import chefmod.cards.attacks.NuggetStrike;
 import chefmod.recipe.NeowNuggetsRecipe;
 
 import static chefmod.ChefMod.makeID;
@@ -11,6 +12,7 @@ public class NeowNuggets extends AbstractOptionCard {
 
     public NeowNuggets() {
         super(ID);
+        cardsToPreview = new NuggetStrike();
     }
 
     @Override

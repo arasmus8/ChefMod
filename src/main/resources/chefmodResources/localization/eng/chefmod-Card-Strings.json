@@ -342,7 +342,11 @@
   },
   "chefmod:NeowNuggets": {
     "NAME": "Neow Nuggets",
-    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are Upgraded and Exhaust"
+    "DESCRIPTION": "2 chefmod:Ingredients NL Your starter Strike and Defend cards are Upgraded and Exhaust. NL Add a *Nugget *Strike to your chefmod:Frozen pile."
+  },
+  "chefmod:NuggetStrike": {
+    "NAME": "Nugget Strike",
+    "DESCRIPTION": "Deal !D! damage."
   },
   "chefmod:FriedLagavulin": {
     "NAME": "Fried Lagavulin",
