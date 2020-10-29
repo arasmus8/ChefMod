@@ -5,7 +5,6 @@ import chefmod.powers.PrepCookPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.RetainCardPower;
 
 import static chefmod.ChefMod.makeID;
 
@@ -14,7 +13,7 @@ public class PrepCook extends AbstractChefCard {
 
     public PrepCook() {
         super(ID,
-                3,
+                2,
                 CardType.POWER,
                 CardRarity.RARE,
                 CardTarget.SELF
