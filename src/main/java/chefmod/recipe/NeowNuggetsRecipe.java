@@ -53,10 +53,12 @@ public class NeowNuggetsRecipe extends AbstractRecipe {
             cg = ChefMod.frozenPile;
             applyToGroup(cg);
             AbstractCard cardInPlay = p.cardInUse;
-            if (cardInPlay.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || cardInPlay.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
-                cardInPlay.superFlash();
-                cardInPlay.upgrade();
-                CardModifierManager.addModifier(cardInPlay, new NeowNuggetsCardmod());
+            if (cardInPlay != null) {
+                if (cardInPlay.hasTag(AbstractCard.CardTags.STARTER_DEFEND) || cardInPlay.hasTag(AbstractCard.CardTags.STARTER_STRIKE)) {
+                    cardInPlay.superFlash();
+                    cardInPlay.upgrade();
+                    CardModifierManager.addModifier(cardInPlay, new NeowNuggetsCardmod());
+                }
             }
             return true;
         }));
