@@ -3,10 +3,8 @@ package chefmod.cards.skills;
 import chefmod.actions.HandSelectFunctionalAction;
 import chefmod.cardmods.OmeletteCardmod;
 import chefmod.cards.AbstractChefCard;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
@@ -23,13 +21,6 @@ public class Omelette extends AbstractChefCard {
         );
         baseMagicNumber = magicNumber = 5;
         exhaust = true;
-    }
-
-    private AbstractCard findOriginal(AbstractCard selected) throws Exception {
-        return AbstractDungeon.player.hand.group.stream()
-                .filter(c -> c.uuid.equals(selected.uuid))
-                .findFirst()
-                .orElseThrow(Exception::new);
     }
 
     @Override
