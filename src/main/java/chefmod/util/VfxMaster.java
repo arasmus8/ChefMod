@@ -13,6 +13,7 @@ public class VfxMaster {
     public static TextureAtlas.AtlasRegion INGREDIENT_BADGE;
     public static TextureAtlas.AtlasRegion RECIPE;
     public static TextureAtlas.AtlasRegion TASTY;
+    public static TextureAtlas.AtlasRegion NUGGETS;
 
     public static void initialize() {
         vfxAtlas = ChefMod.assets.loadAtlas(assetPath("images/vfx/vfx.atlas"));
@@ -22,5 +23,6 @@ public class VfxMaster {
         INGREDIENT_BADGE = vfxAtlas.findRegion("ingredientBadge");
         RECIPE = vfxAtlas.findRegion("recipe");
         TASTY = vfxAtlas.findRegion("tasty");
+        NUGGETS = vfxAtlas.findRegion("nuggets");
     }
 }

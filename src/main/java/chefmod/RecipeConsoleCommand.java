@@ -3,10 +3,10 @@ package chefmod;
 import basemod.DevConsole;
 import basemod.devcommands.ConsoleCommand;
 import chefmod.recipe.*;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class RecipeConsoleCommand extends ConsoleCommand {
 
@@ -17,7 +17,7 @@ public class RecipeConsoleCommand extends ConsoleCommand {
         simpleCheck = true;
     }
 
-    private static ArrayList<String> recipeList;
+    private static final ArrayList<String> recipeList;
 
     static {
         recipeList = new ArrayList<>();
@@ -61,7 +61,11 @@ public class RecipeConsoleCommand extends ConsoleCommand {
             DevConsole.log("Cannot start recipe - player is null");
         } else {
             if (tokens.length == 1) {
-                ChefMod.recipeManager.startRecipe(recipeById(recipeList.get(MathUtils.random(recipeList.size() - 1))));
+                if (ChefMod.recipeManager.recipes.size() > 0) {
+                    int ingredientCount = ChefMod.recipeManager.recipes.get(0).ingredientCount();
+                    IntStream.rangeClosed(1, ingredientCount)
+                            .forEachOrdered(i -> ChefMod.recipeManager.useIngredient(null));
+                }
             } else if (tokens.length == 2) {
                 try {
                     ChefMod.recipeManager.startRecipe(recipeById(tokens[1]));

@@ -7,6 +7,7 @@ import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.NeowNuggetsCardmod;
 import chefmod.cards.attacks.NuggetStrike;
 import chefmod.cards.options.NeowNuggets;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -65,5 +66,7 @@ public class NeowNuggetsRecipe extends AbstractRecipe {
         AbstractCard card = new NuggetStrike();
         card.upgrade();
         qAction(new FreezeAction(card));
+
+        super.renderFood(VfxMaster.NUGGETS);
     }
 }
