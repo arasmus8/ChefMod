@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.ChefMod;
 import chefmod.powers.HungerDamageUpPower;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -32,5 +33,6 @@ public class BananaSplitRecipe extends AbstractRecipe {
         if (replayRecipe) {
             ChefMod.recipeManager.startRecipe(new BananaSplitRecipe(damageBonus, true, card));
         }
+        super.renderFood(VfxMaster.BANANA_SPLIT);
     }
 }
