@@ -5,6 +5,7 @@ import chefmod.ChefMod;
 import chefmod.actions.FunctionalAction;
 import chefmod.actions.GridSelectAndPerformAction;
 import chefmod.cardmods.ChiliCardmod;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,5 +50,6 @@ public class ChiliRecipe extends AbstractRecipe {
                     return true;
                 })
         ));
+        super.renderFood(VfxMaster.CHILI);
     }
 }

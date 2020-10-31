@@ -123,7 +123,7 @@
   },
   "chefmod:Flambe": {
     "NAME": "Flambé",
-    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Shuffle a copy of this card into your draw pile. NL Exhaust"
   },
   "chefmod:FreezerBurn": {
     "NAME": "Freezer Burn",

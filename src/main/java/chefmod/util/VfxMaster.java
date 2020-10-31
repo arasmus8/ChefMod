@@ -15,6 +15,7 @@ public class VfxMaster {
     public static TextureAtlas.AtlasRegion TASTY;
     public static TextureAtlas.AtlasRegion NUGGETS;
     public static TextureAtlas.AtlasRegion BANANA_SPLIT;
+    public static TextureAtlas.AtlasRegion CHILI;
 
     public static void initialize() {
         vfxAtlas = ChefMod.assets.loadAtlas(assetPath("images/vfx/vfx.atlas"));
@@ -26,5 +27,6 @@ public class VfxMaster {
         TASTY = vfxAtlas.findRegion("tasty");
         NUGGETS = vfxAtlas.findRegion("nuggets");
         BANANA_SPLIT = vfxAtlas.findRegion("bananaSplit");
+        CHILI = vfxAtlas.findRegion("chili");
     }
 }
