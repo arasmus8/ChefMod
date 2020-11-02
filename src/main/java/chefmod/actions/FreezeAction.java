@@ -77,6 +77,7 @@ public class FreezeAction extends AbstractGameAction {
                         ((AbstractChefCard) newCard).frozen = true;
                     }
                     ChefMod.frozenPile.addToTop(newCard);
+                    ChefMod.frozenThisCombat.add(newCard.makeStatEquivalentCopy());
                     AbstractDungeon.effectList.add(new FrozenCardVfx(newCard));
                     AbstractDungeon.player.powers.stream()
                             .filter(p -> p instanceof TriggerOnFrozenPower)
