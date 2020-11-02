@@ -46,6 +46,10 @@ public abstract class AbstractRecipe implements ActionUnit {
     }
 
     public void renderFood(TextureAtlas.AtlasRegion image) {
+        if (!ChefMod.cheesyRecipeAnimations) {
+            return;
+        }
+
         BiFunction<Float, Float, AbstractGameEffect> foodEffect = (x, y) -> new VfxBuilder(image, x, y, 1.25f)
                 .scale(.8f, 1f, VfxBuilder.Interpolations.SWING)
                 .fadeIn(0.25f)

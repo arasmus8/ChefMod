@@ -1,4 +1,9 @@
 {
+  "chefmod:Settings": {
+    "TEXT": [
+      "Enable cheesy recipe complete animations."
+    ]
+  },
   "chefmod:FrozenPile": {
     "TEXT": [
       "Frozen Pile",

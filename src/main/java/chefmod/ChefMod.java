@@ -1,8 +1,6 @@
 package chefmod;
 
-import basemod.AutoAdd;
-import basemod.BaseMod;
-import basemod.ReflectionHacks;
+import basemod.*;
 import basemod.abstracts.CustomSavable;
 import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.RelicType;
@@ -22,12 +20,15 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -58,6 +59,10 @@ public class ChefMod implements
     public static ArrayList<AbstractCard> frozenThisCombat;
     private static FrozenPileButton frozenPileButton;
     public static RecipeManager recipeManager;
+
+    //Settings
+    public static SpireConfig config;
+    public static boolean cheesyRecipeAnimations = false;
 
     public static Color chefColor = new Color(0xCCC39AFF);
 
@@ -118,10 +123,46 @@ public class ChefMod implements
         ChefMod chefMod = new ChefMod();
     }
 
+    private void saveSettings() {
+        try {
+            // And based on that boolean, set the settings and save them
+            config = new SpireConfig("ChefMod", "chefModConfig");
+            config.load();
+            config.setBool("cheesyRecipeAnimations", cheesyRecipeAnimations);
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void receivePostInitialize() {
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(makeID("Settings"));
         Texture badgeImage = TextureHelper.getTexture(IMAGE_PATH + "/Badge.png");
-        BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", null);
+
+        try {
+            config = new SpireConfig("ChefMod", "chefModConfig");
+            config.load();
+            cheesyRecipeAnimations = config.getBool("cheesyRecipeAnimations");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ModPanel panel = new ModPanel();
+        // Create the on/off button:
+        ModLabeledToggleButton toggleCrueltyModeButton = new ModLabeledToggleButton(uiStrings.TEXT[0],
+                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                cheesyRecipeAnimations,
+                panel,
+                (label) -> {
+                },
+                (button) -> {
+                    cheesyRecipeAnimations = button.enabled;
+                    saveSettings();
+                });
+        panel.addUIElement(toggleCrueltyModeButton);
+
+        BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", panel);
         BaseMod.addSaveField("chefmod", this);
         ConsoleCommand.addCommand("recipe", RecipeConsoleCommand.class);
         VfxMaster.initialize();
