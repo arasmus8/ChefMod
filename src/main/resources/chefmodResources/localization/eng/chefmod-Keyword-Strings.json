@@ -25,7 +25,7 @@
     "NAMES": [
       "supercooled"
     ],
-    "DESCRIPTION": "#yFrozen cards will target this enemy."
+    "DESCRIPTION": "#yFrozen cards which normally target a single enemy will specifically target this enemy."
   },
   {
     "PROPER_NAME": "Hunger",

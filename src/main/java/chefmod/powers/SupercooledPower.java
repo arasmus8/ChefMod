@@ -15,8 +15,6 @@ public class SupercooledPower extends AbstractChefPower implements CloneablePowe
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final int DEFAULT_DAMAGE = 10;
-
     public SupercooledPower(AbstractCreature owner, int amount) {
         name = NAME;
         ID = POWER_ID;
