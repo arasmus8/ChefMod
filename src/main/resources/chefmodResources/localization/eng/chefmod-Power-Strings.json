@@ -104,7 +104,7 @@
   "chefmod:SupercooledPower": {
     "NAME": "Supercooled",
     "DESCRIPTIONS": [
-      "#yFrozen cards will target this enemy."
+      "#yFrozen cards which normally target a single enemy will specifically target this enemy."
     ]
   },
   "chefmod:TastyDistractionPower": {
