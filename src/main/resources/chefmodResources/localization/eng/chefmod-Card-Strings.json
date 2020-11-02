@@ -26,8 +26,8 @@
   },
   "chefmod:Canape": {
     "NAME": "Canapé",
-    "DESCRIPTION": "Apply chefmod:Hunger to a random enemy X times.",
-    "UPGRADE_DESCRIPTION": "Apply chefmod:Hunger to a random enemy X + 1 times."
+    "DESCRIPTION": "Apply chefmod:Hunger X times.",
+    "UPGRADE_DESCRIPTION": "Apply chefmod:Hunger X + 1 times."
   },
   "chefmod:CandyBowl": {
     "NAME": "Candy Bowl",
