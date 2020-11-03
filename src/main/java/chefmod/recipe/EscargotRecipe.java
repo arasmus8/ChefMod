@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.ChefMod;
 import chefmod.actions.FunctionalAction;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -64,5 +65,7 @@ public class EscargotRecipe extends AbstractRecipe {
         };
 
         qAction(new FunctionalAction(upgradeAction));
+
+        super.renderFood(VfxMaster.ESCARGOT);
     }
 }
