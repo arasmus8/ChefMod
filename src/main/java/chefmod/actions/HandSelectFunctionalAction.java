@@ -18,6 +18,7 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
     private final Consumer<List<AbstractCard>> actionFunction;
     private final Predicate<AbstractCard> filter;
     private final String message;
+    private boolean firstUpdate = true;
 
     private final ArrayList<AbstractCard> originalHand;
 
@@ -42,7 +43,8 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
     @Override
     public void update() {
         CardGroup hand = AbstractDungeon.player.hand;
-        if (duration == startDuration) {
+        if (firstUpdate) {
+            firstUpdate = false;
             List<AbstractCard> eligible = hand.group.stream().filter(filter).collect(Collectors.toList());
             if (eligible.size() <= amount) {
                 isDone = true;
@@ -57,7 +59,6 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
             hand.group.addAll(eligible);
             AbstractDungeon.handCardSelectScreen.open(message, amount, false, true, false, false, true);
             addToBot(new WaitAction(Settings.ACTION_DUR_FAST));
-            tickDuration();
         } else {
             if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
                 // Restore original hand positions
@@ -69,6 +70,5 @@ public class HandSelectFunctionalAction extends AbstractGameAction {
                 isDone = true;
             }
         }
-        tickDuration();
     }
 }
