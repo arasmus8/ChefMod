@@ -1,144 +1,16 @@
 {
-  "chefmod:AcidPotion": {
-    "NAME": "Acid Potion",
-    "DESCRIPTIONS": [ "Remove the target's Block and deal #b", " damage." ]
-  },
-  "chefmod:BlacksmithPotion": {
-    "NAME": "Blacksmith Potion",
+  "chefmod:AntifreezePotion": {
+    "NAME": "Antifreeze Potion",
     "DESCRIPTIONS": [
-      "Permanently upgrade #b",
-      " random card. (Can only be used outside of combat)",
-      " random cards. (Can only be used outside of combat)"
+      "Play the oldest #b",
+      " #yFrozen cards."
     ]
   },
-  "chefmod:BoundlessPotion": {
-    "NAME": "Boundless Potion",
+  "chefmod:PotionOfPlenty": {
+    "NAME": "Potion of Plenty",
     "DESCRIPTIONS": [
-      "Double your Strength",
-      ".",
-      " times."
+      "Fetch #b",
+      " #yIngredients from your draw pile. They cost #b0 until played."
     ]
-  },
-  "chefmod:BarricadePotion": {
-    "NAME": "Barricade Potion",
-    "DESCRIPTIONS": [
-      "Double your Block",
-      ".",
-      " times."
-    ]
-  },
-  "chefmod:CleansingPotion": {
-    "NAME": "Cleansing Potion",
-    "DESCRIPTIONS": [ "Remove #b", " debuffs from yourself." ]
-  },
-  "chefmod:ColorlessPotion": {
-    "NAME": "Colorless Potion",
-    "DESCRIPTIONS": [
-      "Add a random colorless card to your hand. It costs 0 this turn.",
-      "Add two random colorless cards to your hand. They cost 0 this turn."
-    ]
-  },
-  "chefmod:DiscountPotion": {
-    "NAME": "Discount Potion",
-    "DESCRIPTIONS": [ "A random card", "#b", " random cards", " in your hand cost 0 this combat." ]
-  },
-  "chefmod:EndurancePotion": {
-    "NAME": "Endurance Potion",
-    "DESCRIPTIONS": [
-      "Gain #b",
-      " Temporary HP"
-    ]
-  },
-  "chefmod:FreezingPotion": {
-    "NAME": "Freezing Potion",
-    "DESCRIPTIONS": [ "Apply #b", " Slow to an Enemy." ]
-  },
-  "chefmod:HastePotion": {
-    "NAME": "Haste Potion",
-    "DESCRIPTIONS": [ "Discard your hand, refill your energy, draw #b", " cards." ]
-  },
-  "chefmod:InfectionPotion": {
-    "NAME": "Infection Potion",
-    "DESCRIPTIONS": [
-      "Apply #b",
-      " Infection."
-    ]
-  },
-  "chefmod:MidasPotion": {
-    "NAME": "Midas Potion",
-    "DESCRIPTIONS": [
-      "Deal #b",
-      " Damage, if this defeats a non-minion enemy, gain #b",
-      " gold."
-    ]
-  },
-  "chefmod:NoxiousPotion": {
-    "NAME": "Noxious Potion",
-    "DESCRIPTIONS": [ "Deal #b", " Damage each time you play a card this turn." ]
-  },
-  "chefmod:QuicksilverPotion": {
-    "NAME": "Buffer in a Bottle",
-    "DESCRIPTIONS": [
-      "Prevent the next ",
-      "time",
-      "#b",
-      " times",
-      " you would take damage."
-    ]
-  },
-  "chefmod:SplittingPotion": {
-    "NAME": "Splitting Potion",
-    "DESCRIPTIONS": [ "Obtain #b", " random potions." ]
-  },
-  "chefmod:StunPotion": {
-    "NAME": "Stun Potion",
-    "DESCRIPTIONS": [
-      "Stun an enemy for #b",
-      " turn.",
-      " turns."
-    ]
-  },
-  "chefmod:ToxicPotion": {
-    "NAME": "Toxic Potion",
-    "DESCRIPTIONS": [ "Apply #b", " Toxic to an enemy." ]
-  },
-  "chefmod:BlockTonic": {
-    "NAME": "Block Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " Block." ]
-  },
-  "chefmod:EnergyTonic": {
-    "NAME": "Energy Tonic",
-    "DESCRIPTIONS": [
-      "Gain #b",
-      " energy."
-    ]
-  },
-  "chefmod:ExplosiveTonic": {
-    "NAME": "Explosive Tonic",
-    "DESCRIPTIONS": [ "Deal #b", " Damage to all enemies." ]
-  },
-  "chefmod:FearTonic": {
-    "NAME": "Fear Tonic",
-    "DESCRIPTIONS": [ "Apply #b", " Vulnerable to an enemy." ]
-  },
-  "chefmod:FireTonic": {
-    "NAME": "Fire Tonic",
-    "DESCRIPTIONS": [ "Deal #b", " Damage to an enemy." ]
-  },
-  "chefmod:FlexTonic": {
-    "NAME": "Flex Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " Strength until the end of this turn." ]
-  },
-  "chefmod:SpeedTonic": {
-    "NAME": "Speed Tonic",
-    "DESCRIPTIONS": [ "Gain #b", " Dexterity until the end of this turn." ]
-  },
-  "chefmod:SwiftTonic": {
-    "NAME": "Swift Tonic",
-    "DESCRIPTIONS": [ "Draw #b", " card.", " cards." ]
-  },
-  "chefmod:WeakTonic": {
-    "NAME": "Weak Tonic",
-    "DESCRIPTIONS": [ "Apply #b", " Weak to an enemy." ]
   }
 }

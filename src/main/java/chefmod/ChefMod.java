@@ -7,6 +7,8 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.cards.AbstractOptionCard;
+import chefmod.potions.AntifreezePotion;
+import chefmod.potions.PotionOfPlenty;
 import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
 import chefmod.relics.AbstractChefRelic;
@@ -175,6 +177,9 @@ public class ChefMod implements
                 makeImagePath("charselect/charselect.png"),
                 TheChef.Enums.THE_CHEF
         );
+
+        BaseMod.addPotion(AntifreezePotion.class, AntifreezePotion.LIQUID_COLOR, AntifreezePotion.HYBRID_COLOR, AntifreezePotion.SPOTS_COLOR, AntifreezePotion.POTION_ID, TheChef.Enums.THE_CHEF);
+        BaseMod.addPotion(PotionOfPlenty.class, PotionOfPlenty.LIQUID_COLOR, PotionOfPlenty.HYBRID_COLOR, PotionOfPlenty.SPOTS_COLOR, PotionOfPlenty.POTION_ID, TheChef.Enums.THE_CHEF);
     }
 
     @Override
@@ -229,6 +234,8 @@ public class ChefMod implements
         BaseMod.loadCustomStringsFile(PowerStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Power-Strings.json");
 
         BaseMod.loadCustomStringsFile(UIStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-UI-Strings.json");
+
+        BaseMod.loadCustomStringsFile(PotionStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Potion-Strings.json");
     }
 
     @Override
