@@ -7,10 +7,12 @@ import java.util.function.Predicate;
 
 public class FunctionalAction extends AbstractGameAction {
     private final Predicate<Boolean> actionFunction;
+    private boolean firstUpdate;
 
     public FunctionalAction(float duration, Predicate<Boolean> actionFunction) {
         this.duration = startDuration = duration;
         this.actionFunction = actionFunction;
+        firstUpdate = true;
     }
 
     public FunctionalAction(Predicate<Boolean> actionFunction) {
@@ -19,7 +21,8 @@ public class FunctionalAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if (duration == startDuration) {
+        if (firstUpdate) {
+            firstUpdate = false;
             isDone = actionFunction.test(true);
         } else {
             isDone = actionFunction.test(false);
