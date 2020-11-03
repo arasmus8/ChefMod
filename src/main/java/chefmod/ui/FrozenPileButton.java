@@ -2,6 +2,7 @@ package chefmod.ui;
 
 import basemod.ClickableUIElement;
 import chefmod.ChefMod;
+import chefmod.TheChef;
 import chefmod.patches.frozen.ExhaustPileViewScreenPatches;
 import chefmod.util.TextureHelper;
 import chefmod.vfx.SnowParticleManager;
@@ -24,7 +25,7 @@ import static chefmod.ChefMod.makeID;
 import static chefmod.ChefMod.makeImagePath;
 
 public class FrozenPileButton extends ClickableUIElement {
-    private static final float X_OFF = 200f * Settings.scale;
+    private static final float X_OFF = 0f; // 200f * Settings.scale;
     private static final float Y_OFF = 228f;
     private static final float HB_WIDTH = 128f;
     private static final float HB_HEIGHT = 128f;
@@ -93,7 +94,7 @@ public class FrozenPileButton extends ClickableUIElement {
 
     @Override
     public void render(SpriteBatch sb) {
-        if (ChefMod.frozenPile != null) {
+        if (ChefMod.frozenPile != null && (AbstractDungeon.player.chosenClass == TheChef.Enums.THE_CHEF || ChefMod.frozenPile.size() > 0)) {
             if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
                 float x = hitbox.x + hitbox.width / 2f;
                 float y = hitbox.y + hitbox.height / 2f;

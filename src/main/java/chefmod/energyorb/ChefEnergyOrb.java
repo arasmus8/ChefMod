@@ -1,7 +1,6 @@
 package chefmod.energyorb;
 
 import basemod.abstracts.CustomEnergyOrb;
-import chefmod.ChefMod;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -42,9 +41,6 @@ public class ChefEnergyOrb extends CustomEnergyOrb {
                 128,
                 false,
                 false);
-
-        ChefMod.renderFrozenPile(sb, x);
-        ChefMod.recipeManager.render(sb);
     }
 
     @Override

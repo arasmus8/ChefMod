@@ -317,4 +317,17 @@ public class ChefMod implements
             RecipeManager.unlockedRecipes.add(NeowNuggetsRecipe.ID);
         }
     }
+
+    public static void renderCombatUiElements(SpriteBatch sb) {
+        if (
+                AbstractDungeon.isPlayerInDungeon() &&
+                        AbstractDungeon.getCurrMapNode() != null &&
+                        AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
+                        AbstractDungeon.getMonsters() != null &&
+                        !AbstractDungeon.getMonsters().areMonstersDead()
+        ) {
+            ChefMod.renderFrozenPile(sb, AbstractDungeon.overlayMenu.combatDeckPanel.current_x);
+            ChefMod.recipeManager.render(sb);
+        }
+    }
 }
