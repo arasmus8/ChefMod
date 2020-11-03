@@ -26,7 +26,7 @@ public class VegetableTart extends AbstractChefCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.costForTurn = MathUtils.clamp(8 - ChefMod.frozenPile.size(), 0, 8);
+        costForTurn = MathUtils.clamp(cost - ChefMod.frozenPile.size(), 0, 8);
     }
 
     @Override
