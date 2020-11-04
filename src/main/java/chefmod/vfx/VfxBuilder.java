@@ -152,6 +152,11 @@ public class VfxBuilder {
         this(texture, 0f, 0f, duration);
     }
 
+    /**
+     * Use additive blending - colors are overlayed onto the underlying pixels.
+     *
+     * @return this builder
+     */
     public VfxBuilder useAdditiveBlending() {
         additive = true;
         return this;
