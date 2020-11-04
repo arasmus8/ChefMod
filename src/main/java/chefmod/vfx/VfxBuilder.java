@@ -2,6 +2,7 @@ package chefmod.vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas.AtlasRegion;
@@ -81,6 +82,7 @@ public class VfxBuilder {
     private List<Predicate<Float>> updaters;
     private final Queue<List<Predicate<Float>>> animStages;
     private final Queue<Float> durationList;
+    private boolean additive = false;
 
     /**
      * Build a visual effect using an AtlasRegion
@@ -148,6 +150,11 @@ public class VfxBuilder {
      */
     public VfxBuilder(Texture texture, float duration) {
         this(texture, 0f, 0f, duration);
+    }
+
+    public VfxBuilder useAdditiveBlending() {
+        additive = true;
+        return this;
     }
 
     private Function<Float, Float> interpolator(float from, float to, Interpolations interpolation) {
@@ -243,6 +250,22 @@ public class VfxBuilder {
     }
 
     /**
+     * Oscillate the image along the x-axis throughout the duration.
+     *
+     * @param min   Minimum x value
+     * @param max   Maximum x value
+     * @param speed How fast to oscillate, in degrees per second.
+     * @return this builder
+     */
+    public VfxBuilder oscillateX(float min, float max, float speed) {
+        updaters.add(t -> {
+            x = min + (max - min) * (MathUtils.sin(MathUtils.degreesToRadians * t * speed) / 2f + 0.5f);
+            return false;
+        });
+        return this;
+    }
+
+    /**
      * Move the image along the y-axis over the duration. Incompatible with the arc, velocity, and gravity functions.
      *
      * @param from          start y position
@@ -268,6 +291,22 @@ public class VfxBuilder {
      */
     public VfxBuilder moveY(float from, float to) {
         return moveY(from, to, Interpolations.EXP5);
+    }
+
+    /**
+     * Oscillate the image along the y-axis throughout the duration.
+     *
+     * @param min   Minimum y value
+     * @param max   Maximum y value
+     * @param speed How fast to oscillate, in degrees per second.
+     * @return this builder
+     */
+    public VfxBuilder oscillateY(float min, float max, float speed) {
+        updaters.add(t -> {
+            y = min + (max - min) * (MathUtils.sin(MathUtils.degreesToRadians * t * speed) / 2f + 0.5f);
+            return false;
+        });
+        return this;
     }
 
     /**
@@ -398,6 +437,22 @@ public class VfxBuilder {
     }
 
     /**
+     * Oscillate the transparency of the image throughout the duration.
+     *
+     * @param min   Minimum alpha value
+     * @param max   Maximum alpha value
+     * @param speed How fast to oscillate, in degrees per second.
+     * @return this builder
+     */
+    public VfxBuilder oscillateAlpha(float min, float max, float speed) {
+        updaters.add(t -> {
+            alpha = min + (max - min) * (MathUtils.sin(MathUtils.degreesToRadians * t * speed) / 2f + 0.5f);
+            return false;
+        });
+        return this;
+    }
+
+    /**
      * Set the image scale to a constant value (between 0 and 1).
      *
      * @param value scale to use
@@ -436,6 +491,22 @@ public class VfxBuilder {
      */
     public VfxBuilder scale(float from, float to) {
         return scale(from, to, Interpolations.SWING);
+    }
+
+    /**
+     * Oscillate the scale of the image throughout the duration.
+     *
+     * @param min   Minimum scale value
+     * @param max   Maximum scale value
+     * @param speed How fast to oscillate, in degrees per second.
+     * @return this builder
+     */
+    public VfxBuilder oscillateScale(float min, float max, float speed) {
+        updaters.add(t -> {
+            scale = min + (max - min) * (MathUtils.sin(MathUtils.degreesToRadians * t * speed) / 2f + 0.5f);
+            return false;
+        });
+        return this;
     }
 
     /**
@@ -491,7 +562,7 @@ public class VfxBuilder {
      */
     public VfxBuilder wobble(float startAngle, float otherAngle, float speed) {
         updaters.add(t -> {
-            angle = startAngle + (otherAngle - startAngle) * MathUtils.sin(MathUtils.degreesToRadians * t * speed);
+            angle = startAngle + (otherAngle - startAngle) * (MathUtils.sin(MathUtils.degreesToRadians * t * speed) / 2f + 0.5f);
             return false;
         });
         return this;
@@ -650,6 +721,9 @@ public class VfxBuilder {
             float h = builder.img.packedHeight;
             float halfW = w / 2f;
             float halfH = h / 2f;
+            if (builder.additive) {
+                sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE);
+            }
             sb.draw(
                     builder.img,
                     builder.x - halfW,
@@ -662,6 +736,9 @@ public class VfxBuilder {
                     builder.scale * Settings.scale,
                     builder.angle
             );
+            if (builder.additive) {
+                sb.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
+            }
         }
 
         @Override
