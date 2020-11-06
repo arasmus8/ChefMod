@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.cards.options.FriedLagavulin;
 import chefmod.powers.FriedLagavulinPower;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -23,5 +24,6 @@ public class FriedLagavulinRecipe extends AbstractRecipe {
     @Override
     public void onActivate() {
         applyToSelf(new FriedLagavulinPower(AbstractDungeon.player));
+        super.renderFood(VfxMaster.FRIED_LAGAVULIN);
     }
 }
