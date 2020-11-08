@@ -160,14 +160,14 @@ public class RecipeManager {
                 .orElse(null);
     }
 
-    public void unlock(MonsterGroup eliteMonsters, int actNum) {
+    public String unlockForCombat(MonsterGroup eliteMonsters, int actNum) {
         Optional<String> unlockId = eliteMonsters.monsters.stream()
                 .map(this::recipeIdForMonster)
                 .filter(Objects::nonNull)
                 .findFirst();
         if (unlockId.isPresent()) {
             if (notYetUnlocked(unlockId.get())) {
-                unlockedRecipes.add(unlockId.get());
+                return unlockId.get();
             }
         } else {
             String recipeToAdd = null;
@@ -186,10 +186,15 @@ public class RecipeManager {
             }
             if (recipeToAdd != null) {
                 if (notYetUnlocked(recipeToAdd)) {
-                    unlockedRecipes.add(recipeToAdd);
+                    return recipeToAdd;
                 }
             }
         }
+        return null;
+    }
+
+    public void unlock(String recipeIdToUnlock) {
+        unlockedRecipes.add(recipeIdToUnlock);
     }
 
     public void update() {

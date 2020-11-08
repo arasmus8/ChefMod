@@ -4,6 +4,24 @@
       "Enable cheesy recipe complete animations."
     ]
   },
+  "chefmod:RecipeReward": {
+    "TEXT": [
+      "Unlock the recipe: ",
+      "#bNeow #bNuggets"
+      ],
+    "TEXT_DICT": {
+      "chefmod:SpireCrepesRecipe": "#bSpire #bCrepes",
+      "chefmod:FriedLagavulinRecipe": "#bFried #bLagavulin",
+      "chefmod:NobStewRecipe": "#bNob #bStew",
+      "chefmod:SentryBrittleRecipe": "#bSentry #bBrittle",
+      "chefmod:GremlinGoulashRecipe": "#bGremlin #bGoulash",
+      "chefmod:SlaverSaladRecipe": "#bSlaver #bSalad",
+      "chefmod:StabKabobRecipe": "#bStab #bKabob",
+      "chefmod:GiantMarbleCakeRecipe": "#bGiant #bMarble #Cake",
+      "chefmod:NemesisSouffleRecipe": "#bNemesis #bSouffle",
+      "chefmod:ReptoRavioliRecipe": "#bRepto #bRavioli"
+    }
+  },
   "chefmod:FrozenPile": {
     "TEXT": [
       "Frozen Pile",
@@ -28,6 +46,12 @@
     "TEXT": [
       "Neow Nuggets",
       "Your starter Strike and Defend cards are upgraded and #yExhaust. Add a #yNugget #yStrike to your #yFrozen pile."
+    ]
+  },
+  "chefmod:SpireCrepesRecipe": {
+    "TEXT": [
+      "Spire Crepes",
+      "For the rest of this combat, #yToday's #ySpecial is played twice when used."
     ]
   },
   "chefmod:FriedLagavulinRecipe": {

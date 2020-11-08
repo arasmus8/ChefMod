@@ -72,6 +72,7 @@ public class TodaysSpecial extends AbstractChefCard {
     static {
         recipeMap = new HashMap<>();
         recipeMap.put(NeowNuggetsRecipe.ID, NeowNuggets.class);
+        recipeMap.put(SpireCrepesRecipe.ID, SpireCrepes.class);
         recipeMap.put(NobStewRecipe.ID, NobStew.class);
         recipeMap.put(FriedLagavulinRecipe.ID, FriedLagavulin.class);
         recipeMap.put(SentryBrittleRecipe.ID, SentryBrittle.class);

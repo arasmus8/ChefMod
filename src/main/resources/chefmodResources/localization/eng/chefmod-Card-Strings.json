@@ -351,6 +351,10 @@
     "NAME": "Nugget Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
+  "chefmod:SpireCrepes": {
+    "NAME": "Spire Crêpes",
+    "DESCRIPTION": "2 chefmod:Ingredients NL For the rest of this combat, *Today's *Special is played twice when used."
+  },
   "chefmod:FriedLagavulin": {
     "NAME": "Fried Lagavulin",
     "DESCRIPTION": "3 chefmod:Ingredients NL You may only play 1 Attack each turn. It deals double damage."

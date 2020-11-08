@@ -7,10 +7,13 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.cards.AbstractOptionCard;
+import chefmod.patches.enums.RecipeRewardType;
 import chefmod.potions.AntifreezePotion;
 import chefmod.potions.PotionOfPlenty;
 import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.RecipeManager;
+import chefmod.recipe.RecipeReward;
+import chefmod.recipe.SpireCrepesRecipe;
 import chefmod.relics.AbstractChefRelic;
 import chefmod.ui.FrozenPileButton;
 import chefmod.util.AssetLoader;
@@ -32,6 +35,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -167,6 +171,13 @@ public class ChefMod implements
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", panel);
         BaseMod.addSaveField("chefmod", this);
         ConsoleCommand.addCommand("recipe", RecipeConsoleCommand.class);
+
+        BaseMod.registerCustomReward(
+                RecipeRewardType.RECIPE_REWARD,
+                rewardSave -> new RecipeReward(rewardSave.id),
+                customReward -> new RewardSave(customReward.type.toString(), ((RecipeReward) customReward).recipeId)
+        );
+
         VfxMaster.initialize();
     }
 
@@ -272,8 +283,13 @@ public class ChefMod implements
         cardsToFreeze.clear();
         frozenThisCombat.clear();
         recipeManager.clear();
-        if (!abstractRoom.smoked && abstractRoom.eliteTrigger) {
-            recipeManager.unlock(abstractRoom.monsters, AbstractDungeon.actNum);
+        if (!abstractRoom.smoked && abstractRoom.eliteTrigger && abstractRoom.rewardAllowed) {
+            String recipeToUnlock = recipeManager.unlockForCombat(abstractRoom.monsters, AbstractDungeon.actNum);
+            if (recipeToUnlock != null) {
+                abstractRoom.rewards.add(new RecipeReward(recipeToUnlock));
+            }
+        } else if (recipeManager.notYetUnlocked(SpireCrepesRecipe.ID) && !abstractRoom.smoked && abstractRoom.rewardAllowed) {
+            abstractRoom.rewards.add(new RecipeReward(SpireCrepesRecipe.ID));
         }
     }
 
