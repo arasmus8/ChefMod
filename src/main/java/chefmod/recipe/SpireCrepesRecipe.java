@@ -1,5 +1,6 @@
 package chefmod.recipe;
 
+import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.PlayTwiceCardmod;
 import chefmod.cards.options.SpireCrepes;
 import chefmod.cards.skills.TodaysSpecial;
@@ -32,7 +33,10 @@ public class SpireCrepesRecipe extends AbstractRecipe {
     public void onActivate() {
         if (todaysSpecial != null) {
             todaysSpecial.superFlash();
-            PlayTwiceCardmod.addToCard(todaysSpecial, true);
+            qAction(new FunctionalAction(firstUpdate -> {
+                PlayTwiceCardmod.addToCard(todaysSpecial, true);
+                return true;
+            }));
         }
     }
 }
