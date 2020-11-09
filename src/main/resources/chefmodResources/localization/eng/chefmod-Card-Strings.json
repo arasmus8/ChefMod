@@ -100,7 +100,7 @@
     "DESCRIPTION": "Deal !D! damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
   },
   "chefmod:Escargot": {
-    "NAME": "Escargót",
+    "NAME": "Escargot",
     "DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Upgrade ALL your chefmod:Frozen cards.",
     "UPGRADE_DESCRIPTION": "chefmod:Recipe: 2 chefmod:Ingredients NL Upgrade ALL your cards."
   },
