@@ -1,6 +1,5 @@
 package chefmod.recipe;
 
-import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
 import chefmod.actions.FunctionalAction;
 import chefmod.actions.GridSelectAndPerformAction;
@@ -46,7 +45,7 @@ public class ChiliRecipe extends AbstractRecipe {
                 cardGroup,
                 c -> c.type == AbstractCard.CardType.SKILL,
                 new FunctionalAction(firstUpdate -> {
-                    GridSelectAndPerformAction.selectedCards.forEach(c -> CardModifierManager.addModifier(c, new ChiliCardmod(damage)));
+                    GridSelectAndPerformAction.selectedCards.forEach(c -> ChiliCardmod.addToCard(c, damage));
                     return true;
                 })
         ));

@@ -1,6 +1,7 @@
 package chefmod.cardmods;
 
 import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -9,6 +10,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import java.util.Optional;
+
 import static chefmod.ChefMod.makeID;
 
 public class ChiliCardmod extends AbstractChefCardmod {
@@ -16,6 +19,15 @@ public class ChiliCardmod extends AbstractChefCardmod {
 
     public ChiliCardmod(int damage) {
         this.damage = damage;
+    }
+
+    public static void addToCard(AbstractCard card, int damageAmount) {
+        Optional<AbstractChefCardmod> current = getForCard(card, ID);
+        if (current.isPresent()) {
+            current.get().damage += damageAmount;
+        } else {
+            CardModifierManager.addModifier(card, new ChiliCardmod(damageAmount));
+        }
     }
 
     @Override
