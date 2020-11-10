@@ -1,6 +1,5 @@
 package chefmod.cards.skills;
 
-import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
 import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.PlayTwiceCardmod;
@@ -28,10 +27,7 @@ public class TwoForOne extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        Consumer<AbstractCard> applyCardmod = c -> {
-            CardModifierManager.removeModifiersById(c, PlayTwiceCardmod.ID, true);
-            PlayTwiceCardmod.addToCard(c, upgraded);
-        };
+        Consumer<AbstractCard> applyCardmod = c -> PlayTwiceCardmod.addToCard(c, upgraded);
         addToBot(new FunctionalAction(first -> {
                     ChefMod.frozenPile.group.forEach(applyCardmod);
                     return true;

@@ -42,7 +42,8 @@ public class PlayTwiceCardmod extends AbstractChefCardmod {
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        if (!card.purgeOnUse) {
+        // checking dontTriggerOnUseCard prevents a co-modification crash on time eater when playing cards twice from the frozen pile
+        if (!card.purgeOnUse && !card.dontTriggerOnUseCard) {
             AbstractCard tmp = card.makeSameInstanceOf();
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
