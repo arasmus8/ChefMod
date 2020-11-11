@@ -293,7 +293,7 @@
   },
   "chefmod:SliceAndDice": {
     "NAME": "Slice & Dice",
-    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Deal !D! damage twice."
+    "DESCRIPTION": "Deal !D! damage. NL chefmod:Prepped: Deal !D! damage again."
   },
   "chefmod:Sorbet": {
     "NAME": "Sorbet",

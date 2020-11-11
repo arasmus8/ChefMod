@@ -7,6 +7,7 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import chefmod.cards.AbstractChefCard;
 import chefmod.cards.AbstractOptionCard;
+import chefmod.cards.skills.TodaysSpecial;
 import chefmod.patches.enums.RecipeRewardType;
 import chefmod.potions.AntifreezePotion;
 import chefmod.potions.PotionOfPlenty;
@@ -283,13 +284,15 @@ public class ChefMod implements
         cardsToFreeze.clear();
         frozenThisCombat.clear();
         recipeManager.clear();
-        if (!abstractRoom.smoked && abstractRoom.eliteTrigger && abstractRoom.rewardAllowed) {
-            String recipeToUnlock = recipeManager.unlockForCombat(abstractRoom.monsters, AbstractDungeon.actNum);
-            if (recipeToUnlock != null) {
-                abstractRoom.rewards.add(new RecipeReward(recipeToUnlock));
+        if (AbstractDungeon.player.masterDeck.group.stream().anyMatch(c -> c.cardID.equals(TodaysSpecial.ID))) {
+            if (!abstractRoom.smoked && abstractRoom.eliteTrigger && abstractRoom.rewardAllowed) {
+                String recipeToUnlock = recipeManager.unlockForCombat(abstractRoom.monsters, AbstractDungeon.actNum);
+                if (recipeToUnlock != null) {
+                    abstractRoom.rewards.add(new RecipeReward(recipeToUnlock));
+                }
+            } else if (recipeManager.notYetUnlocked(SpireCrepesRecipe.ID) && !abstractRoom.smoked && abstractRoom.rewardAllowed) {
+                abstractRoom.rewards.add(new RecipeReward(SpireCrepesRecipe.ID));
             }
-        } else if (recipeManager.notYetUnlocked(SpireCrepesRecipe.ID) && !abstractRoom.smoked && abstractRoom.rewardAllowed) {
-            abstractRoom.rewards.add(new RecipeReward(SpireCrepesRecipe.ID));
         }
     }
 
