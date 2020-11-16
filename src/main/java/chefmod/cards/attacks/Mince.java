@@ -2,13 +2,12 @@ package chefmod.cards.attacks;
 
 import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.SwordBoomerangAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
@@ -30,7 +29,9 @@ public class Mince extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new SwordBoomerangAction(makeDamageInfo(damageTypeForTurn), magicNumber));
+        IntStream.rangeClosed(1, magicNumber).forEachOrdered(i ->
+                addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_VERTICAL))
+        );
     }
 
     @Override
