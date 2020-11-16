@@ -1,7 +1,8 @@
 {
   "chefmod:AllYouCanEat": {
     "NAME": "All-you-can-eat",
-    "DESCRIPTION": "Apply chefmod:Satiated for every Attack card in your hand."
+    "DESCRIPTION": "Apply chefmod:Satiated for every Attack card in your hand.",
+    "UPGRADE_DESCRIPTION": "Draw a card. NL Apply chefmod:Satiated for every Attack card in your hand."
   },
   "chefmod:AlooGobi": {
     "NAME": "Aloo Gobi",
