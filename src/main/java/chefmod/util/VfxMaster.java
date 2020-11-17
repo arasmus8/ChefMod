@@ -19,6 +19,7 @@ public class VfxMaster {
     public static TextureAtlas.AtlasRegion ESCARGOT;
     public static TextureAtlas.AtlasRegion FRIED_LAGAVULIN;
     public static TextureAtlas.AtlasRegion FULL_COURSE_MEAL;
+    public static TextureAtlas.AtlasRegion GIANT_MARBLE_CAKE;
 
     public static void initialize() {
         vfxAtlas = ChefMod.assets.loadAtlas(assetPath("images/vfx/vfx.atlas"));
@@ -34,5 +35,6 @@ public class VfxMaster {
         ESCARGOT = vfxAtlas.findRegion("escargot");
         FRIED_LAGAVULIN = vfxAtlas.findRegion("friedLagavulin");
         FULL_COURSE_MEAL = vfxAtlas.findRegion("fullCourseMeal");
+        GIANT_MARBLE_CAKE = vfxAtlas.findRegion("giantMarbleCake");
     }
 }

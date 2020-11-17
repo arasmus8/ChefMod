@@ -3,6 +3,7 @@ package chefmod.recipe;
 import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.PermanentDamageBonusCardmod;
 import chefmod.cards.options.GiantMarbleCake;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -31,5 +32,6 @@ public class GiantMarbleCakeRecipe extends AbstractRecipe {
                     .group.forEach(c -> PermanentDamageBonusCardmod.add(c, 5));
             return true;
         }));
+        super.renderFood(VfxMaster.GIANT_MARBLE_CAKE);
     }
 }
