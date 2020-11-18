@@ -60,6 +60,7 @@ public abstract class AbstractRecipe implements ActionUnit {
                 .setX(MathUtils.random(-120f, 120f) * Settings.scale + x)
                 .setY(MathUtils.random(-90f, 120f) * Settings.scale + y)
                 .setColor(new Color(0xFAFAD0FF))
+                .useAdditiveBlending()
                 .scale(0.8f, 0.9f, VfxBuilder.Interpolations.ELASTIC)
                 .setAlpha(0.5f)
                 .build();
