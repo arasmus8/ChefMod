@@ -46,9 +46,9 @@ public class ChiliRecipe extends AbstractRecipe {
                 c -> c.type == AbstractCard.CardType.SKILL,
                 new FunctionalAction(firstUpdate -> {
                     GridSelectAndPerformAction.selectedCards.forEach(c -> ChiliCardmod.addToCard(c, damage));
+                    super.renderFood(VfxMaster.CHILI);
                     return true;
                 })
         ));
-        super.renderFood(VfxMaster.CHILI);
     }
 }

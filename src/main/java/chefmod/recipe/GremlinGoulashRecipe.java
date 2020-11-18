@@ -3,6 +3,7 @@ package chefmod.recipe;
 import chefmod.actions.HandSelectFunctionalAction;
 import chefmod.cardmods.PlayTwiceCardmod;
 import chefmod.cards.options.GremlinGoulash;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
@@ -25,6 +26,7 @@ public class GremlinGoulashRecipe extends AbstractRecipe {
         qAction(new HandSelectFunctionalAction(selectedCards -> selectedCards.forEach(c -> {
             c.superFlash();
             PlayTwiceCardmod.addToCard(c, true);
+            super.renderFood(VfxMaster.GREMLIN_GOULASH);
         }), TEXT[2]));
     }
 }
