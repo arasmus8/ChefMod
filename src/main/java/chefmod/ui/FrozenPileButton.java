@@ -108,7 +108,7 @@ public class FrozenPileButton extends ClickableUIElement {
                         ImageMaster.DECK_COUNT_CIRCLE,
                         x + COUNT_OFFSET_X,
                         y + COUNT_OFFSET_Y);
-                FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, x + COUNT_X, y + COUNT_Y);
+                FontHelper.renderFontCentered(sb, FontHelper.turnNumFont, msg, x + COUNT_X, y + COUNT_Y);
 
                 hitbox.render(sb);
                 if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {

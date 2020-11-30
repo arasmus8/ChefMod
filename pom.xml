@@ -7,7 +7,7 @@
     <groupId>cardcrawl.mod</groupId>
     <artifactId>chefmod</artifactId>
     <name>ChefMod</name>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <description>
         Adds the Chef.
         - Play Ingredients to complete Recipes.

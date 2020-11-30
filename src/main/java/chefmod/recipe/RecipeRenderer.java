@@ -50,7 +50,7 @@ public class RecipeRenderer extends ClickableUIElement {
         TextureHelper.drawScaledAndRotated(sb, region, hitbox.cX, hitbox.cY + bob.y, 1f, angle);
         TextureHelper.draw(sb, ImageMaster.DECK_COUNT_CIRCLE, hitbox.cX + COUNT_OFFSET_X, hitbox.cY + COUNT_OFFSET_Y);
         String msg = Integer.toString(recipe.ingredientCount);
-        FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, hitbox.cX + COUNT_X, hitbox.cY + COUNT_Y);
+        FontHelper.renderFontCentered(sb, FontHelper.turnNumFont, msg, hitbox.cX + COUNT_X, hitbox.cY + COUNT_Y);
 
         hitbox.render(sb);
         if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {

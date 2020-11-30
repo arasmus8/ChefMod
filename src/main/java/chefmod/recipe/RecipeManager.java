@@ -210,10 +210,10 @@ public class RecipeManager {
             if (additionalRecipes > 0) {
                 String msg = "+" + additionalRecipes;
                 GlyphLayout gl = new GlyphLayout();
-                gl.setText(FontHelper.eventBodyText, msg);
+                gl.setText(FontHelper.turnNumFont, msg);
                 sb.setColor(Color.WHITE);
                 TextureHelper.drawScaled(sb, ImageMaster.DECK_COUNT_CIRCLE, additionalPos.x, additionalPos.y, 1.618f);
-                FontHelper.renderFontCentered(sb, FontHelper.speech_font, msg, additionalPos.x, additionalPos.y);
+                FontHelper.renderFontCentered(sb, FontHelper.turnNumFont, msg, additionalPos.x, additionalPos.y);
             }
         }
     }
