@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.cards.options.NemesisSouffle;
 import chefmod.powers.SatiatedPower;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -27,5 +28,6 @@ public class NemesisSouffleRecipe extends AbstractRecipe {
         applyToSelf(new IntangiblePlayerPower(AbstractDungeon.player, 1));
         AbstractMonster m = AbstractDungeon.getRandomMonster();
         applyToEnemy(m, new SatiatedPower(m));
+        super.renderFood(VfxMaster.NEMESIS_SOUFFLE);
     }
 }
