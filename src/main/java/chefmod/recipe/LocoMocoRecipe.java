@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.actions.FunctionalAction;
 import chefmod.powers.SatiatedPower;
+import chefmod.util.VfxMaster;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,5 +44,6 @@ public class LocoMocoRecipe extends AbstractRecipe {
             }
             return true;
         })));
+        super.renderFood(VfxMaster.LOCO_MOCO);
     }
 }
