@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 
 import static chefmod.ChefMod.assetPath;
 
+@SuppressWarnings("LibGDXStaticResource")
 public class VfxMaster {
     public static TextureAtlas vfxAtlas;
     public static TextureAtlas.AtlasRegion CHOCOLATE;

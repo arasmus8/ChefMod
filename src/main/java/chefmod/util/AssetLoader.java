@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 
 public class AssetLoader {
-    private AssetManager assets = new AssetManager();
+    private final AssetManager assets = new AssetManager();
 
     public Texture loadImage(String fileName) {
         if (!assets.isLoaded(fileName, Texture.class)) {

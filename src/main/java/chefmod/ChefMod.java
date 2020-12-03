@@ -194,9 +194,10 @@ public class ChefMod implements
         BaseMod.addPotion(PotionOfPlenty.class, PotionOfPlenty.LIQUID_COLOR, PotionOfPlenty.HYBRID_COLOR, PotionOfPlenty.SPOTS_COLOR, PotionOfPlenty.POTION_ID, TheChef.Enums.THE_CHEF);
     }
 
+    @SuppressWarnings("LibGDXUnsafeIterator")
     @Override
     public void receiveEditCards() {
-        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        TextureAtlas cardAtlas = ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
 
         TextureAtlas myCardAtlas = assets.loadAtlas(assetPath("images/cards/cards.atlas"));
         for (TextureAtlas.AtlasRegion region : myCardAtlas.getRegions()) {
