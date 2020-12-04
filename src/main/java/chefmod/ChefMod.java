@@ -346,8 +346,10 @@ public class ChefMod implements
                         AbstractDungeon.getMonsters() != null &&
                         !AbstractDungeon.getMonsters().areMonstersDead()
         ) {
-            ChefMod.renderFrozenPile(sb, AbstractDungeon.overlayMenu.combatDeckPanel.current_x);
-            ChefMod.recipeManager.render(sb);
+            renderFrozenPile(sb, AbstractDungeon.overlayMenu.combatDeckPanel.current_x);
+            if (recipeManager != null) {
+                recipeManager.render(sb);
+            }
         }
     }
 }
