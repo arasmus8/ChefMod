@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.cards.options.NobStew;
 import chefmod.powers.NobStewPower;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
@@ -23,5 +24,6 @@ public class NobStewRecipe extends AbstractRecipe {
     @Override
     public void onActivate() {
         applyToSelf(new NobStewPower(AbstractDungeon.player, 2));
+        super.renderFood(VfxMaster.NOB_STEW);
     }
 }
