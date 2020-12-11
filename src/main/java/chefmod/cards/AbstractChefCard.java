@@ -67,7 +67,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
                             final CardTarget target,
                             final CardColor color,
                             final List<CardTags> tagsList) {
-        super(id, "FAKE TITLE", getRegionName(id), cost, "FAKE DESCRIPTION", type, color, rarity, target);
+        super(id, "", getRegionName(id), cost, "", type, color, rarity, target);
         cardStrings = CardCrawlGame.languagePack.getCardStrings(id);
         name = NAME = cardStrings.NAME;
         originalName = NAME;
