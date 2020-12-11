@@ -6,6 +6,7 @@ import chefmod.cards.AbstractChefCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static chefmod.ChefMod.makeID;
 
@@ -31,9 +32,19 @@ public class Gelato extends AbstractChefCard {
                 magicNumber,
                 c -> c.type == CardType.SKILL,
                 new FunctionalAction(initialUpdate -> {
-                    int count = FreezeAction.frozenCards.size();
-                    if (count > 0) {
-                        addToBot(new GainBlockAction(p, block * count));
+                    int totalCost = FreezeAction.frozenCards.stream()
+                            .mapToInt(c -> c.costForTurn)
+                            .reduce(0, (acc, curr) -> {
+                                if (curr == -1) {
+                                    return acc + EnergyPanel.getCurrentEnergy();
+                                } else if (curr < -1) {
+                                    return acc;
+                                } else {
+                                    return acc + curr;
+                                }
+                            });
+                    if (totalCost > 0) {
+                        addToBot(new GainBlockAction(p, block * totalCost));
                     }
                     return true;
                 })
