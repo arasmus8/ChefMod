@@ -19,7 +19,8 @@
   },
   "chefmod:BleedOut": {
     "NAME": "Bleed Out",
-    "DESCRIPTION": "Deal !D! damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Innate NL Deal !D! damage. Whenever the target takes unblocked attack damage, Weaken it. NL Exhaust"
   },
   "chefmod:Bruschetta": {
     "NAME": "Bruschetta",

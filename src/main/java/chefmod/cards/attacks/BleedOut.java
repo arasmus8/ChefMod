@@ -19,9 +19,16 @@ public class BleedOut extends AbstractChefCard {
                 CardTarget.ENEMY
         );
         baseDamage = damage = 5;
-        upgradeDamageBy = 3;
         damages = true;
         exhaust = true;
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded && canUpgrade()) {
+            isInnate = true;
+        }
+        super.upgrade();
     }
 
     @Override
