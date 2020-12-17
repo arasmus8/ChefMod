@@ -1,0 +1,51 @@
+{
+  "chefmod:CookieJar": {
+    "NAME": "曲奇罐",
+    "FLAVOR": "很遗憾，它是空的。",
+    "DESCRIPTIONS": [
+      "没爬塔1层获得 #b1 层充能。每有1层， #ychefmod:饥饿 造成 #b1 点额外伤害。"
+    ]
+  },
+  "chefmod:OldKettle": {
+    "NAME": "旧釜",
+    "FLAVOR": "其实，它和其他厨具都相处得很好。",
+    "DESCRIPTIONS": [
+      "替代可靠的锅。每场战斗中，第一张抽到的攻击牌会造成 #b5 点额外伤害。"
+    ]
+  },
+  "chefmod:PepperMill": {
+    "NAME": "辣椒碾磨器",
+    "FLAVOR": "用来做重要的辣椒粉的最要工具。",
+    "DESCRIPTIONS": [
+      "每回合获得 [E] 。每当打出1张 #ychefmod:冷藏 卡，失去 [E] ."
+    ]
+  },
+  "chefmod:RollingPin": {
+    "NAME": "擀面杖",
+    "FLAVOR": "制作面粉糕饼必备。",
+    "DESCRIPTIONS": [
+      "每场战斗开始， #ychefmod:冷冻 #b3."
+    ]
+  },
+  "chefmod:Spatula": {
+    "NAME": "抹刀",
+    "FLAVOR": "一流的薄烤饼需要一流的抹刀。",
+    "DESCRIPTIONS": [
+      "每当 #ychefmod:冷冻 1张牌，对1名随机敌人造成 #b4 点伤害。"
+    ]
+  },
+  "chefmod:TrustyPot": {
+    "NAME": "可靠的锅",
+    "FLAVOR": "烹饪用的锅。",
+    "DESCRIPTIONS": [
+      "每当打出每场战斗中第一张抽到的牌时，获取 #b5 #y格挡 。"
+    ]
+  },
+  "chefmod:WoodenSpoon": {
+    "NAME": "木质勺子",
+    "FLAVOR": "结实好用，搅拌过无数汤食。",
+    "DESCRIPTIONS": [
+      "#ychefmod:食材 都变为 #y保留 。"
+    ]
+  }
+}

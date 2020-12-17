@@ -1,0 +1,45 @@
+{
+  "chefmod:Lab": {
+    "NAME": "药水实验室 —— 重置",
+    "DESCRIPTIONS": [
+      "你发现自己在你的旧 ~药水~ ~实验室。~ NL NL 有一些剩余的药水躺在那里，但你不知道你的珍贵财产是否仍然安全。你检查了它的隐藏隔间的门上的封条，确认它仍然安全。"
+    ],
+    "OPTIONS": [
+      "[打开秘密隔间] 失去所有药剂，拿走你 #g珍贵的财产。"
+    ]
+  },
+  "chefmod:WomanInBlue": {
+    "NAME": "蓝衣女人 —— 重置",
+    "DESCRIPTIONS": [
+      "从黑暗中，一只手臂把你拉进了一家小店。当你的眼睛适应后，你看到一个穿着利落的苍白女子在向一墙的药水指指点点。 NL \"你!\" 她呼喊着。 \"算了，赶紧买瓶药水，现在！\""
+    ]
+  },
+  "chefmod:JunkPileEvent": {
+    "NAME": "垃圾堆",
+    "DESCRIPTIONS": [
+      "在城市里一座倒塌的公寓后面，你发现了一座巨大的废弃垃圾堆。 NL NL 看来这里的垃圾已经堆了很多年了。不知道在这些无用的垃圾中，能不能找到有用的材料。",
+      "Digging through the ~Junk,~ you discover a few common ingredients, but you suspect that deeper in you will be able to find something rarer...",
+      "Deeper in the pile, you find some cast-off ~machine~ ~parts~ that could be useful, but you sense some powerful energy even deeper in...",
+      "At last, you find some rare ingredients - An #p~Enchanted~ #p~Book~ that could entrance an enemy, an old #r~Train~ #r~Ticket~ filled with dark energy, a #g~Treasure~ #g~Chest~ that uses gold against your foes, and a #y~Shining~ #y~Moth~ that empowers future attacks.",
+      "You turn around and leave with your find.",
+      "You turn around and leave."
+    ],
+    "OPTIONS": [
+      "[挖材料]",
+      "[Collect a Feather]",
+      "[收集丝绸]",
+      "[Collect a Tooth]",
+      "[Dig Deeper] #rLose #r",
+      " #rHP.",
+      "[Collect Steel]",
+      "[Collect Barb]",
+      "[Collect Bludgeon]",
+      "[Dig Deeper Still] #rLose #r",
+      "[Collect Storybook] Stuns Enemies.",
+      "[Collect Train Ticket] Damage based on floor number.",
+      "[Collect Treasure Chest] Damage foes based on gold.",
+      "[Collect Radiance] Stack additional damage on your next attack.",
+      "[Leave]"
+    ]
+  }
+}

@@ -236,6 +236,8 @@ public class ChefMod implements
 
         if (Settings.language == Settings.GameLanguage.ENG) {
             lang = "eng";
+        } else if (Settings.language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
         }
 
         BaseMod.loadCustomStringsFile(CardStrings.class, getModID() + "Resources/localization/" + lang + "/chefmod-Card-Strings.json");
@@ -257,6 +259,8 @@ public class ChefMod implements
 
         if (Settings.language == Settings.GameLanguage.ENG) {
             lang = "eng";
+        } else if (Settings.language == Settings.GameLanguage.ZHS) {
+            lang = "zhs";
         }
 
         Gson gson = new Gson();

@@ -1,0 +1,16 @@
+{
+  "chefmod:AntifreezePotion": {
+    "NAME": "抗冻药剂",
+    "DESCRIPTIONS": [
+      "打出 #b",
+      " 张 #y冷藏 最久的牌。"
+    ]
+  },
+  "chefmod:PotionOfPlenty": {
+    "NAME": "充足药剂",
+    "DESCRIPTIONS": [
+      "从抽牌堆取出 #b",
+      " #y食材 。使其可被免费打出1次。"
+    ]
+  }
+}

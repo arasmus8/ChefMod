@@ -1,0 +1,158 @@
+{
+  "chefmod:Settings": {
+    "TEXT": [
+      "启用完成配方的动画"
+    ]
+  },
+  "chefmod:RecipeReward": {
+    "TEXT": [
+      "解锁配方：",
+      "#b里奥炸肉块"
+    ],
+    "TEXT_DICT": {
+      "chefmod:SpireCrepesRecipe": "#b尖塔可丽饼",
+      "chefmod:FriedLagavulinRecipe": "#b油炸拉加维林",
+      "chefmod:NobStewRecipe": "#b大头炖煮",
+      "chefmod:SentryBrittleRecipe": "#b哨兵脆",
+      "chefmod:GremlinGoulashRecipe": "#b地精炖菜汤",
+      "chefmod:SlaverSaladRecipe": "#b奴隶商沙拉",
+      "chefmod:StabKabobRecipe": "#b戳戳烤肉串",
+      "chefmod:GiantMarbleCakeRecipe": "#b巨型大理石蛋糕",
+      "chefmod:NemesisSouffleRecipe": "#b天罚蛋奶酥",
+      "chefmod:ReptoRavioliRecipe": "#b机动小方饺"
+    }
+  },
+  "chefmod:FrozenPile": {
+    "TEXT": [
+      "冷藏堆",
+      "每当牌被冷冻，会进入冷藏堆。 NL NL 冷藏牌没法被正常抽取或打出，只能跟某些牌进行互动。",
+      "冷藏堆是空的。"
+    ]
+  },
+  "chefmod:FrozenPileViewScreen": {
+    "TEXT": [
+      "这些是你的冷藏牌，以从旧到新的顺序展示。"
+    ]
+  },
+  "chefmod:GridSelectAndPerformAction": {
+    "TEXT": [
+      "选择 ",
+      "选择任意数量的 ",
+      " 牌 ",
+      " 牌 "
+    ]
+  },
+  "chefmod:NeowNuggetsRecipe": {
+    "TEXT": [
+      "里奥炸肉块",
+      "基础打击和防御牌会被升级并设为可消耗。增加1张 #y肉块打击 到 #y冷藏堆 。"
+    ]
+  },
+  "chefmod:SpireCrepesRecipe": {
+    "TEXT": [
+      "尖顶可丽饼",
+      "此战中， #y今日特餐 打出时会被打出2次。"
+    ]
+  },
+  "chefmod:FriedLagavulinRecipe": {
+    "TEXT": [
+      "油炸拉加维林",
+      "每回合只能打出1张攻击牌，但造成双倍伤害。"
+    ]
+  },
+  "chefmod:NobStewRecipe": {
+    "TEXT": [
+      "大头炖煮",
+      "每打出1张技能牌，为手中随机1张攻击牌增加2点伤害。"
+    ]
+  },
+  "chefmod:SentryBrittleRecipe": {
+    "TEXT": [
+      "哨兵脆",
+      "每当抽取状态牌，消耗之并对所有敌人造成3伤害。"
+    ]
+  },
+  "chefmod:StabKabobRecipe": {
+    "TEXT": [
+      "戳戳烤肉串",
+      "在每回合，将抽牌堆中1张攻击牌置入手中。"
+    ]
+  },
+  "chefmod:SlaverSaladRecipe": {
+    "TEXT": [
+      "奴隶商沙拉",
+      "添加包扎、目盲、绊倒到手中。"
+    ]
+  },
+  "chefmod:GremlinGoulashRecipe": {
+    "TEXT": [
+      "地精炖菜汤",
+      "选择1张手牌，使其在此战中打出时会被打出2次。"
+    ]
+  },
+  "chefmod:NemesisSouffleRecipe": {
+    "TEXT": [
+      "天罚蛋奶酥",
+      "获得1层 #y无实体 。向随机一名敌人施加 #y饱足"
+    ]
+  },
+  "chefmod:GiantMarbleCakeRecipe": {
+    "TEXT": [
+      "巨型大理石蛋糕",
+      "抽取2张牌。所有手中的攻击牌在此战中造成5点额外伤害。"
+    ]
+  },
+  "chefmod:ReptoRavioliRecipe": {
+    "TEXT": [
+      "机动小方饺",
+      "添加1张 #y机动匕首 到手中。"
+    ]
+  },
+  "chefmod:SushiPlatterRecipe": {
+    "TEXT": [
+      "寿司拼盘",
+      "此回合，攻击牌造成双倍伤害。",
+      "此回合和下回合，攻击牌造成双倍伤害。"
+    ]
+  },
+  "chefmod:ChiliRecipe": {
+    "TEXT": [
+      "变态辣",
+      "选择1张技能牌。 每当使用，对所有敌人造成 #b",
+      " 伤害。",
+      " —— 每当使用它，造成 "
+    ]
+  },
+  "chefmod:EscargotRecipe": {
+    "TEXT": [
+      "法式蜗牛",
+      "升级所有 #y冷藏牌 。",
+      "升级所有牌。"
+    ]
+  },
+  "chefmod:LocoMocoRecipe": {
+    "TEXT": [
+      "米饭汉堡",
+      "对所有敌人施加 #y饱足 。抽取 #b",
+      " 张牌。",
+      " 张牌。以此方式抽到的攻击牌于此战中耗费变0。"
+    ]
+  },
+  "chefmod:FullCourseMealRecipe": {
+    "TEXT": [
+      "套餐",
+      "获得 #b",
+      " 格挡。",
+      " 格挡，和 #b",
+      " 格挡 于下回合。"
+    ]
+  },
+  "chefmod:BananaSplitRecipe": {
+    "TEXT": [
+      "香蕉圣代",
+      "饥饿造成 #b",
+      " 额外伤害于此战。",
+      " 打出1张此配方的复制品。"
+    ]
+  }
+}

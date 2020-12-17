@@ -1,0 +1,10 @@
+{
+  "chefmod:ReagentTip": {
+    "LABEL": [
+      "Collecting and using Reagents"
+    ],
+    "TEXT": [
+      "Your collected Reagents are shown over your head. If you use a Distill card, you will brew a potion from the Reagent on the right. If you collect 3 reagents, you can create a card with all 3 card effects after the battle. You keep the Reagents you have collected between combats."
+    ]
+  }
+}

@@ -27,6 +27,5 @@ public class FunctionalAction extends AbstractGameAction {
         } else {
             isDone = actionFunction.test(false);
         }
-        tickDuration();
     }
 }

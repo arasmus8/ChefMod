@@ -1,0 +1,131 @@
+{
+  "chefmod:FriedLagavulinPower": {
+    "NAME": "油炸拉加维林",
+    "DESCRIPTIONS": [
+      "每回合只能打出1张攻击牌，但造成双倍伤害。"
+    ]
+  },
+  "chefmod:FreezeNextCardPower": {
+    "NAME": "冷冻下张牌",
+    "DESCRIPTIONS": [
+      "下张打出的牌会被 #y冷藏 。"
+    ]
+  },
+  "chefmod:FreezeSolidPower": {
+    "NAME": "冻硬",
+    "DESCRIPTIONS": [
+      "每当 #y冷冻 1张牌，获得 #b",
+      " 格挡。"
+    ]
+  },
+  "chefmod:FreshProducePower": {
+    "NAME": "生鲜产品",
+    "DESCRIPTIONS": [
+      "每当打出1张 #y食材 ，抽取 #b",
+      " 张牌。",
+      " 张牌。"
+    ]
+  },
+  "chefmod:HungerPower": {
+    "NAME": "饥饿",
+    "DESCRIPTIONS": [
+      "饥饿的敌人只造成和承受一半的攻击伤害。"
+    ]
+  },
+  "chefmod:HungerDamageUpPower": {
+    "NAME": "饥饿伤害上升",
+    "DESCRIPTIONS": [
+      "饥饿造成 #b",
+      " 额外伤害。"
+    ]
+  },
+  "chefmod:NobStewPower": {
+    "NAME": "大头炖煮",
+    "DESCRIPTIONS": [
+      "每打出1张技能牌，为手中随机1张攻击牌增加 #b",
+      " 点伤害。"
+    ]
+  },
+  "chefmod:OrderUpPower": {
+    "NAME": "下单上菜",
+    "DESCRIPTIONS": [
+      "在每回合，打出 #y冷藏 最久的牌并 #y冷冻 #b",
+      "在每回合，打出 #b",
+      " 张 #y冷藏 最久的牌并 #y冷冻 #b"
+    ]
+  },
+  "chefmod:PrepCookPower": {
+    "NAME": "预烹",
+    "DESCRIPTIONS": [
+      "每当保留1张牌，增加其 #b",
+      " 点格挡或伤害效果，",
+      " 于下次打出时。",
+      " 于此战。",
+      " 和 #b"
+    ]
+  },
+  "chefmod:RetainRandomCardPower": {
+    "NAME": "保留随机牌",
+    "DESCRIPTIONS": [
+      "在回合结束，保留 #b",
+      " 张随机牌。",
+      " 张随机牌。",
+      "有限保留有 #y预备 属性的牌。"
+    ]
+  },
+  "chefmod:RetainThisTurnPower": {
+    "NAME": "本回合保留",
+    "DESCRIPTIONS": [
+      "在此回合结束，可保留 #b1 张牌。",
+      "在此回合结束，可保留最多 #b",
+      " 张牌",
+      " 保留:"
+    ]
+  },
+  "chefmod:SatiatedPower": {
+    "NAME": "饱足",
+    "DESCRIPTIONS": [
+      "饱足的敌人会造成和承受双倍的攻击伤害"
+    ]
+  },
+  "chefmod:SentryBrittlePower": {
+    "NAME": "哨兵脆",
+    "DESCRIPTIONS": [
+      "每当抽取状态牌，消耗之并对所有敌人造成 #b",
+      " 伤害。"
+    ]
+  },
+  "chefmod:StabKabobPower": {
+    "NAME": "戳戳烤肉串",
+    "DESCRIPTIONS": [
+      "在每回合，将抽牌堆中1张攻击牌置入手中。"
+    ]
+  },
+  "chefmod:SupercooledPower": {
+    "NAME": "过冷",
+    "DESCRIPTIONS": [
+      "作用于单个敌人的 #y冷藏 牌会额外作用于过冷的敌人。"
+    ]
+  },
+  "chefmod:TastyDistractionPower": {
+    "NAME": "辟味过口",
+    "DESCRIPTIONS": [
+      "每回合第一次将要受到未被格挡的伤害时，打出 #y冷藏 最久牌并消耗之，以抵消伤害。",
+      "每回合第 #b",
+      " 次将要受到未被格挡的伤害时，打出 #y冷藏 最久牌并消耗之，以抵消伤害。"
+    ]
+  },
+  "chefmod:TemporaryStrengthDownPower": {
+    "NAME": "伤害减少",
+    "DESCRIPTIONS": [
+      "减少攻击伤害 #b",
+      " 点于此回合。"
+    ]
+  },
+  "chefmod:WeakenWhenHitPower": {
+    "NAME": "流血不止",
+    "DESCRIPTIONS": [
+      "当此敌人受到未被格挡的攻击伤害， #y虚弱 之。"
+    ]
+  }
+}
