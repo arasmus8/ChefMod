@@ -82,14 +82,14 @@ public class TheChef extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA("MONSTER_BOOK_STAB_0", MathUtils.random(-0.2F, 0.2F));
+        CardCrawlGame.sound.playA("chefmod:SelectSound", MathUtils.random(-0.2F, 0.2F));
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }
 
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return "MONSTER_BOOK_STAB_0";
+        return "chefmod:SelectSound";
     }
 
     @Override

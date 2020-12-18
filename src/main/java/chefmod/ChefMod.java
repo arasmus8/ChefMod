@@ -47,6 +47,7 @@ import java.util.stream.Collectors;
 @SuppressWarnings("unused")
 @SpireInitializer
 public class ChefMod implements
+        AddAudioSubscriber,
         CustomSavable<ArrayList<String>>,
         EditCardsSubscriber,
         EditCharactersSubscriber,
@@ -91,6 +92,10 @@ public class ChefMod implements
 
     public static String makeImagePath(String imagePath) {
         return getModID() + "Resources/images/" + imagePath;
+    }
+
+    public static String makeResourcePath(String resourcePath) {
+        return getModID() + "Resources/" + resourcePath;
     }
 
     public static String assetPath(String path) {
@@ -272,6 +277,11 @@ public class ChefMod implements
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    @Override
+    public void receiveAddAudio() {
+        BaseMod.addAudio(makeID("SelectSound"), makeResourcePath("chefSelectSound.ogg"));
     }
 
     @Override
