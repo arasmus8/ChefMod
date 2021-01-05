@@ -1,5 +1,6 @@
 package chefmod.potions;
 
+import basemod.BaseMod;
 import chefmod.actions.FunctionalAction;
 import chefmod.cardmods.IngredientCardmod;
 import com.badlogic.gdx.graphics.Color;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -38,6 +40,17 @@ public class PotionOfPlenty extends AbstractPotion {
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            tips.add(new PowerTip(
+                    BaseMod.getKeywordTitle("chefmod:食材"),
+                    BaseMod.getKeywordDescription("chefmod:食材")
+            ));
+        } else {
+            tips.add(new PowerTip(
+                    BaseMod.getKeywordTitle("chefmod:ingredient"),
+                    BaseMod.getKeywordDescription("chefmod:ingredient")
+            ));
+        }
     }
 
     @Override

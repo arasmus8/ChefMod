@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import chefmod.cards.attacks.ReptoDagger;
 import chefmod.cards.options.ReptoRavioli;
+import chefmod.util.VfxMaster;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
@@ -21,6 +22,7 @@ public class ReptoRavioliRecipe extends AbstractRecipe {
 
     @Override
     public void onActivate() {
+        super.renderFood(VfxMaster.REPTO_RAVIOLI);
         makeInHand(new ReptoDagger());
     }
 }

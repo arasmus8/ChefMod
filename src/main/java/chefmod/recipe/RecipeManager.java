@@ -100,7 +100,9 @@ public class RecipeManager {
 
         while (cg.size() < count) {
             // TODO: make a custom status instead of slimes
-            cg.addToBottom(new Slimed());
+            AbstractCard newCard = new Slimed();
+            cg.addToBottom(newCard);
+            p.discardPile.addToBottom(newCard);
         }
 
         cg.shuffle(AbstractDungeon.cardRandomRng);
@@ -155,7 +157,7 @@ public class RecipeManager {
 
     private String randomRecipeForAct(List<String> possibleIds) {
         return possibleIds.stream()
-                .filter(s -> !unlockedRecipes.contains(s))
+                .filter(this::notYetUnlocked)
                 .findFirst()
                 .orElse(null);
     }

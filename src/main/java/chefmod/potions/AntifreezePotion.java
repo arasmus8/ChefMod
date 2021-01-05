@@ -1,9 +1,11 @@
 package chefmod.potions;
 
+import basemod.BaseMod;
 import chefmod.actions.PlayOldestFrozenCardAction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -32,6 +34,17 @@ public class AntifreezePotion extends AbstractPotion {
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
+        if (Settings.language == Settings.GameLanguage.ZHS) {
+            tips.add(new PowerTip(
+                    BaseMod.getKeywordTitle("chefmod:冷藏"),
+                    BaseMod.getKeywordDescription("chefmod:冷藏")
+            ));
+        } else {
+            tips.add(new PowerTip(
+                    BaseMod.getKeywordTitle("chefmod:frozen"),
+                    BaseMod.getKeywordDescription("chefmod:frozen")
+            ));
+        }
     }
 
     @Override
