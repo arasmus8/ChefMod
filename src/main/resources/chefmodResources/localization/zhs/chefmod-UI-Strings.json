@@ -7,19 +7,19 @@
   "chefmod:RecipeReward": {
     "TEXT": [
       "解锁配方：",
-      "#b里奥炸肉块"
+      "里奥炸肉块"
     ],
     "TEXT_DICT": {
-      "chefmod:SpireCrepesRecipe": "#b尖塔可丽饼",
-      "chefmod:FriedLagavulinRecipe": "#b油炸拉加维林",
-      "chefmod:NobStewRecipe": "#b大头炖煮",
-      "chefmod:SentryBrittleRecipe": "#b哨兵脆",
-      "chefmod:GremlinGoulashRecipe": "#b地精炖菜汤",
-      "chefmod:SlaverSaladRecipe": "#b奴隶商沙拉",
-      "chefmod:StabKabobRecipe": "#b戳戳烤肉串",
-      "chefmod:GiantMarbleCakeRecipe": "#b巨型大理石蛋糕",
-      "chefmod:NemesisSouffleRecipe": "#b天罚蛋奶酥",
-      "chefmod:ReptoRavioliRecipe": "#b机动小方饺"
+      "chefmod:SpireCrepesRecipe": "尖塔可丽饼",
+      "chefmod:FriedLagavulinRecipe": "油炸拉加维林",
+      "chefmod:NobStewRecipe": "大头炖煮",
+      "chefmod:SentryBrittleRecipe": "哨兵脆",
+      "chefmod:GremlinGoulashRecipe": "地精炖菜汤",
+      "chefmod:SlaverSaladRecipe": "奴隶商沙拉",
+      "chefmod:StabKabobRecipe": "戳戳烤肉串",
+      "chefmod:GiantMarbleCakeRecipe": "巨型大理石蛋糕",
+      "chefmod:NemesisSouffleRecipe": "天罚蛋奶酥",
+      "chefmod:ReptoRavioliRecipe": "机动小方饺"
     }
   },
   "chefmod:FrozenPile": {

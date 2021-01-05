@@ -3,7 +3,7 @@
     "NAME": "曲奇罐",
     "FLAVOR": "很遗憾，它是空的。",
     "DESCRIPTIONS": [
-      "没爬塔1层获得 #b1 层充能。每有1层， #ychefmod:饥饿 造成 #b1 点额外伤害。"
+      "每爬塔1层获得 #b1 层充能。每有1层， #ychefmod:饥饿 造成 #b1 点额外伤害。"
     ]
   },
   "chefmod:OldKettle": {

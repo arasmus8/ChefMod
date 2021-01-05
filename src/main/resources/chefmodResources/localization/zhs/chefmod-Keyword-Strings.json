@@ -56,6 +56,13 @@
     "DESCRIPTION": "若打出了足够的 #y食材 ，触发这种一次性效果。 #y配方 按顺序激活。"
   },
   {
+    "PROPER_NAME": "Recipe",
+    "NAMES": [
+      "recipe"
+    ],
+    "DESCRIPTION": "若打出了足够的 #y食材 ，触发这种一次性效果。 #y配方 按顺序激活。"
+  },
+  {
     "PROPER_NAME": "食材",
     "NAMES": [
       "食材",

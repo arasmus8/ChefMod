@@ -10,8 +10,8 @@
   },
   "chefmod:BananaSplit": {
     "NAME": "香蕉圣代",
-    "DESCRIPTION": "chefmod:配方 : 2 chefmod:食材 NL chefmod:饥饿 造成 !M! 额外伤害于此战。",
-    "UPGRADE_DESCRIPTION": "chefmod:配方 : 2 chefmod:食材 NL chefmod:饥饿 造成 !M! 额外伤害于此战。打出1张此 chefmod:配方 的复制品。"
+    "DESCRIPTION": "chefmod:配方 ： 2 chefmod:食材 NL chefmod:饥饿 造成 !M! 额外伤害于此战。",
+    "UPGRADE_DESCRIPTION": "chefmod:配方 ： 2 chefmod:食材 NL chefmod:饥饿 造成 !M! 额外伤害于此战。打出1张此 chefmod:配方 的复制品。"
   },
   "chefmod:BaoBuns": {
     "NAME": "包子",
@@ -45,7 +45,7 @@
     "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 伤害 !M! 次。"
   },
   "chefmod:Chop": {
-    "NAME": "砍碎",
+    "NAME": "切碎",
     "DESCRIPTION": "造成 !D! 伤害 NL 若在 chefmod:冷藏 状态下打出，造成 !D! 伤害两次。"
   },
   "chefmod:CleanHouse": {
@@ -54,8 +54,8 @@
   },
   "chefmod:Cleavers": {
     "NAME": "切肉刀",
-    "DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 : 对随机敌人造成 !D! 伤害。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 : 对随机两名敌人造成 !D! 伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 ：对随机敌人造成 !D! 伤害。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 ：对随机两名敌人造成 !D! 伤害。"
   },
   "chefmod:ColdSteel": {
     "NAME": "冷钢",
@@ -68,7 +68,7 @@
   },
   "chefmod:DeathByChocolate": {
     "NAME": "死神巧克力蛋糕",
-    "DESCRIPTION": "If the target has both chefmod:饥饿 and chefmod:饱足,造成!M! 伤害。 Otherwise, 造成 !D! 伤害。"
+    "DESCRIPTION": "如果目标同时处于 chefmod:饥饿 和 chefmod:饱足 ，造成!M! 伤害。否则，造成 !D! 伤害。"
   },
   "chefmod:DeepFreeze": {
     "NAME": "深度冷冻",
@@ -89,21 +89,21 @@
   },
   "chefmod:DimSum": {
     "NAME": "中式点心",
-    "DESCRIPTION": "固有 NL 施加 chefmod:饥饿 。 NL chefmod:预备 : 洗入抽牌堆。",
+    "DESCRIPTION": "固有 NL 施加 chefmod:饥饿 。 NL chefmod:预备 ：洗入抽牌堆。",
     "UPGRADE_DESCRIPTION": "固有 NL 起动: chefmod:饥饿 造成 !M! 额外伤害。 NL 施加 chefmod:饥饿 。"
   },
   "chefmod:DinoKale": {
     "NAME": "羽衣甘蓝",
-    "DESCRIPTION": "获得 !B! 格挡。 NL chefmod:预备 : 获得 !B! 格挡于下回合。"
+    "DESCRIPTION": "获得 !B! 格挡。 NL chefmod:预备 ：获得 !B! 格挡于下回合。"
   },
   "chefmod:DoubleChop": {
     "NAME": "双刀并用",
-    "DESCRIPTION": "造成 !D! 伤害两次。 NL 若回合末仍在手中，chefmod:冷冻 此牌。"
+    "DESCRIPTION": "造成 !D! 伤害两次。 NL 若回合末仍在手中， chefmod:冷冻 此牌。"
   },
   "chefmod:Escargot": {
     "NAME": "法式蜗牛",
-    "DESCRIPTION": "chefmod:配方 : 2 chefmod:食材 NL 升级所有 chefmod:冷藏 牌。",
-    "UPGRADE_DESCRIPTION": "chefmod:配方 : 2 chefmod:食材 NL 升级所有牌。"
+    "DESCRIPTION": "chefmod:配方 ： 2 chefmod:食材 NL 升级所有 chefmod:冷藏 牌。",
+    "UPGRADE_DESCRIPTION": "chefmod:配方 ： 2 chefmod:食材 NL 升级所有牌。"
   },
   "chefmod:FarmersMarket": {
     "NAME": "农贸市场",
@@ -120,11 +120,11 @@
   },
   "chefmod:FiveAlarmChili": {
     "NAME": "变态辣",
-    "DESCRIPTION": "chefmod:配方 : 3 chefmod:食材 NL 选择1张技能牌。 每当使用，对所有敌人造成 !M! 伤害。"
+    "DESCRIPTION": "chefmod:配方 ： 3 chefmod:食材 NL 选择1张技能牌。 每当使用，对所有敌人造成 !M! 伤害。"
   },
   "chefmod:Flambe": {
     "NAME": "浇酒点燃",
-    "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:预备 : 复制此牌并洗入抽牌堆。 NL 消耗"
+    "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:预备 ：复制此牌并洗入抽牌堆。 NL 消耗"
   },
   "chefmod:FreezerBurn": {
     "NAME": "冻斑",
@@ -154,13 +154,13 @@
   },
   "chefmod:FullBurn": {
     "NAME": "全层烧伤",
-    "DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 : 获得 [E] 。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 : 获得 [E] [E] 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 ：获得 [E] 。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 伤害。 NL chefmod:预备 ：获得 [E] [E] 。"
   },
   "chefmod:FullCourseMeal": {
     "NAME": "套餐",
-    "DESCRIPTION": "chefmod:配方 : 4 chefmod:食材 NL 获得 !M! 格挡。",
-    "UPGRADE_DESCRIPTION": "chefmod:配方 : 4 chefmod:食材 NL 获得 !M! 格挡，于下回合 !M! 格挡。"
+    "DESCRIPTION": "chefmod:配方 ： 4 chefmod:食材 NL 获得 !M! 格挡。",
+    "UPGRADE_DESCRIPTION": "chefmod:配方 ： 4 chefmod:食材 NL 获得 !M! 格挡，于下回合 !M! 格挡。"
   },
   "chefmod:Gelato": {
     "NAME": "意式冰激凌",
@@ -193,7 +193,7 @@
     "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:冷冻 下1张打出的牌。"
   },
   "chefmod:KnifeFlurry": {
-    "NAME": "刀风",
+    "NAME": "刀刃风暴",
     "DESCRIPTION": "造成 !D! 伤害 !M! 次。"
   },
   "chefmod:Leftovers": {
@@ -206,8 +206,8 @@
   },
   "chefmod:LocoMoco": {
     "NAME": "米饭汉堡",
-    "DESCRIPTION": "chefmod:配方 : 2 chefmod:食材 NL 对所有敌人施加 chefmod:饱足 。抽取 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": "chefmod:配方 : 2 chefmod:食材 NL 对所有敌人施加 chefmod:饱足 。抽取 !M! 张牌。以此方式抽到的攻击牌于此战中耗费变0。"
+    "DESCRIPTION": "chefmod:配方 ： 2 chefmod:食材 NL 对所有敌人施加 chefmod:饱足 。抽取 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": "chefmod:配方 ： 2 chefmod:食材 NL 对所有敌人施加 chefmod:饱足 。抽取 !M! 张牌。以此方式抽到的攻击牌于此战中耗费变0。"
   },
   "chefmod:Mince": {
     "NAME": "切碎",
@@ -254,8 +254,8 @@
     "UPGRADE_DESCRIPTION": "每当保留1张牌，在此战中，增加其 !M! 点格挡或伤害效果。"
   },
   "chefmod:Puree": {
-    "NAME": "泥酱浓汤",
-    "DESCRIPTION": "获得 !B! 格挡。 NL 造成 !D! 伤害。 NL chefmod:预备 : chefmod:冷冻 此牌。"
+    "NAME": "捣泥",
+    "DESCRIPTION": "获得 !B! 格挡。 NL 造成 !D! 伤害。 NL chefmod:预备 ： chefmod:冷冻 此牌。"
   },
   "chefmod:QuickChop": {
     "NAME": "快速切砍",
@@ -273,7 +273,7 @@
   },
   "chefmod:Ratatouille": {
     "NAME": "蔬菜杂烩",
-    "DESCRIPTION": "获得 !B! 格挡。 NL chefmod:预备 : 此战中此牌的格挡效果增加 !M! 点。"
+    "DESCRIPTION": "获得 !B! 格挡。 NL chefmod:预备 ：此战中此牌的格挡效果增加 !M! 点。"
   },
   "chefmod:RisingDough": {
     "NAME": "发酵生面团",
@@ -294,7 +294,7 @@
   },
   "chefmod:SliceAndDice": {
     "NAME": "切丁",
-    "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:预备 : 再次造成 !D! 伤害。"
+    "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:预备 :再次造成 !D! 伤害。"
   },
   "chefmod:Sorbet": {
     "NAME": "果汁冰糕",
@@ -303,8 +303,8 @@
   },
   "chefmod:SpaghettiCarbonara": {
     "NAME": "干酪沙司意面",
-    "DESCRIPTION": "chefmod:禁冻 NL 打出 X 张 chefmod:冷藏 最久的牌。",
-    "UPGRADE_DESCRIPTION": "chefmod:禁冻 NL 抽取 X 张 chefmod:冷藏 最久的牌，使其可免费打出1次。"
+    "DESCRIPTION": "chefmod:禁冻 NL 打出X张 chefmod:冷藏 最久的牌。",
+    "UPGRADE_DESCRIPTION": "chefmod:禁冻 NL 抽取X张 chefmod:冷藏 最久的牌，使其可免费打出1次。"
   },
   "chefmod:Strike": {
     "NAME": "打击",
@@ -312,8 +312,8 @@
   },
   "chefmod:SushiPlatter": {
     "NAME": "寿司拼盘",
-    "DESCRIPTION": "chefmod:配方: !M! chefmod:食材 NL 此回合，攻击牌造成双倍伤害。",
-    "UPGRADE_DESCRIPTION": "chefmod:配方: !M! chefmod:食材 NL 此回合和下回合，攻击牌造成双倍伤害。"
+    "DESCRIPTION": "chefmod:配方 ： !M! chefmod:食材 NL 此回合，攻击牌造成双倍伤害。",
+    "UPGRADE_DESCRIPTION": "chefmod:配方 ： !M! chefmod:食材 NL 此回合和下回合，攻击牌造成双倍伤害。"
   },
   "chefmod:TastyDistraction": {
     "NAME": "辟味过口",
@@ -321,7 +321,7 @@
   },
   "chefmod:Tenderizer": {
     "NAME": "嫩肉粉",
-    "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:预备 : 施加 !M! 易伤 。"
+    "DESCRIPTION": "造成 !D! 伤害。 NL chefmod:预备 ：施加 !M! 易伤 。"
   },
   "chefmod:TodaysSpecial": {
     "NAME": "今日特餐",
