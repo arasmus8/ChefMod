@@ -5,16 +5,16 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static chefmod.ChefMod.makeID;
 
 public class Strike extends AbstractChefCard {
     public static String ID = makeID(Strike.class.getSimpleName());
-    private static final List<CardTags> tagsList = Collections.singletonList(CardTags.STARTER_STRIKE);
+    private static final ArrayList<CardTags> tagsList = new ArrayList<>(Arrays.asList(CardTags.STARTER_STRIKE, CardTags.STRIKE));
 
-    public Strike () {
+    public Strike() {
         super(ID,
                 1,
                 CardType.ATTACK,

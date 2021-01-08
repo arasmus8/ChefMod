@@ -265,8 +265,8 @@
   },
   "chefmod:QuickThaw": {
     "NAME": "Quick Thaw",
-    "DESCRIPTION": "chefmod:No-Freeze NL Play the oldest chefmod:Frozen card. chefmod:Freeze 1.",
-    "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Play the !M! oldest chefmod:Frozen cards. chefmod:Freeze !M!."
+    "DESCRIPTION": "chefmod:No-Freeze NL Deal !D! damage. Play the oldest chefmod:Frozen card. chefmod:Freeze 1.",
+    "UPGRADE_DESCRIPTION": "chefmod:No-Freeze NL Deal !D! damage. Play the !M! oldest chefmod:Frozen cards. chefmod:Freeze !M!."
   },
   "chefmod:RaidPantry": {
     "NAME": "Raid Pantry",

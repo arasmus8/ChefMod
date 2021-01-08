@@ -3,7 +3,7 @@ package chefmod;
 import basemod.abstracts.CustomPlayer;
 import chefmod.cards.attacks.Strike;
 import chefmod.cards.skills.Defend;
-import chefmod.cards.skills.QuickThaw;
+import chefmod.cards.attacks.QuickThaw;
 import chefmod.cards.skills.TodaysSpecial;
 import chefmod.energyorb.ChefEnergyOrb;
 import chefmod.relics.TrustyPot;
@@ -65,11 +65,11 @@ public class TheChef extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        IntStream.rangeClosed(1, 5)
+        IntStream.rangeClosed(1, 4)
                 .forEach(i -> retVal.add(Strike.ID));
-        IntStream.rangeClosed(1, 3)
-                .forEach(i -> retVal.add(Defend.ID));
         retVal.add(QuickThaw.ID);
+        IntStream.rangeClosed(1, 4)
+                .forEach(i -> retVal.add(Defend.ID));
         retVal.add(TodaysSpecial.ID);
         return retVal;
     }

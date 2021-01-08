@@ -1,8 +1,9 @@
-package chefmod.cards.skills;
+package chefmod.cards.attacks;
 
 import chefmod.actions.FreezeAction;
 import chefmod.actions.PlayOldestFrozenCardAction;
 import chefmod.cards.AbstractChefCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -16,10 +17,11 @@ public class QuickThaw extends AbstractChefCard {
     public QuickThaw() {
         super(ID,
                 0,
-                CardType.SKILL,
+                CardType.ATTACK,
                 CardRarity.BASIC,
-                CardTarget.SELF
+                CardTarget.ENEMY
         );
+        baseDamage = 3;
         magicNumber = baseMagicNumber = 1;
         upgradeMagicNumberBy = 1;
         nofreeze = true;
@@ -27,6 +29,7 @@ public class QuickThaw extends AbstractChefCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        dealDamage(m, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL);
         IntStream.rangeClosed(1, magicNumber)
                 .forEach(i -> addToBot(new PlayOldestFrozenCardAction()));
         addToBot(new FreezeAction(magicNumber));
