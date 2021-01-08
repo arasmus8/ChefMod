@@ -2,6 +2,7 @@ package chefmod.recipe;
 
 import basemod.BaseMod;
 import basemod.ClickableUIElement;
+import basemod.helpers.CardPowerTip;
 import chefmod.util.TextureHelper;
 import chefmod.util.VfxMaster;
 import com.badlogic.gdx.graphics.Color;
@@ -11,12 +12,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.BobEffect;
 
-import static chefmod.ChefMod.makeID;
+import java.util.ArrayList;
 
 public class RecipeRenderer extends ClickableUIElement {
     private static final float COUNT_X = 48.0F * Settings.scale;
@@ -53,17 +55,30 @@ public class RecipeRenderer extends ClickableUIElement {
 
         hitbox.render(sb);
         if (hitbox.hovered && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.isScreenUp) {
-            String tipMsg = recipe.tipBody + " NL NL " + BaseMod.getKeywordDescription(makeID("recipe"));
-            TipHelper.renderGenericTip(hitbox.cX + TIP_X, hitbox.cY + SPECIFIC_TIP_Y, recipe.tipHeader, tipMsg);
+            ArrayList<PowerTip> tips = new ArrayList<>();
+            recipe.card.drawScale = 0.75f;
+            String key;
+            if (Settings.language == Settings.GameLanguage.ZHS) {
+                key = "chefmod:配方";
+            } else {
+                key = "chefmod:recipe";
+            }
+            String title = BaseMod.getKeywordTitle(key);
+            String body = BaseMod.getKeywordDescription(key);
+            tips.add(new CardPowerTip(recipe.card, title, body));
+            TipHelper.queuePowerTips(hitbox.cX + TIP_X, hitbox.cY + SPECIFIC_TIP_Y, tips);
         }
     }
 
     @Override
-    protected void onHover() { }
+    protected void onHover() {
+    }
 
     @Override
-    protected void onUnhover() { }
+    protected void onUnhover() {
+    }
 
     @Override
-    protected void onClick() { }
+    protected void onClick() {
+    }
 }

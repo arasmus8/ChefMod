@@ -3,6 +3,7 @@ package chefmod.recipe;
 import basemod.helpers.CardModifierManager;
 import chefmod.ChefMod;
 import chefmod.cardmods.IngredientCardmod;
+import chefmod.cards.options.*;
 import chefmod.util.TextureHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
@@ -29,6 +30,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 public class RecipeManager {
+    private static final HashMap<String, Class<? extends AbstractCard>> recipeMap;
     public static final ArrayList<String> unlockedRecipes = new ArrayList<>();
     public ArrayList<AbstractRecipe> recipes;
     public float activeXPos;
@@ -199,6 +201,18 @@ public class RecipeManager {
         unlockedRecipes.add(recipeIdToUnlock);
     }
 
+    public static AbstractCard cardFromId(String id) {
+        if (recipeMap.containsKey(id)) {
+            Class<? extends AbstractCard> cls = recipeMap.get(id);
+            try {
+                return cls.newInstance();
+            } catch (InstantiationException | IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return new NeowNuggets();
+    }
+
     public void update() {
         renderers.forEach(RecipeRenderer::update);
     }
@@ -218,5 +232,20 @@ public class RecipeManager {
                 FontHelper.renderFontCentered(sb, FontHelper.turnNumFont, msg, additionalPos.x, additionalPos.y);
             }
         }
+    }
+
+    static {
+        recipeMap = new HashMap<>();
+        recipeMap.put(NeowNuggetsRecipe.ID, NeowNuggets.class);
+        recipeMap.put(SpireCrepesRecipe.ID, SpireCrepes.class);
+        recipeMap.put(NobStewRecipe.ID, NobStew.class);
+        recipeMap.put(FriedLagavulinRecipe.ID, FriedLagavulin.class);
+        recipeMap.put(SentryBrittleRecipe.ID, SentryBrittle.class);
+        recipeMap.put(StabKabobRecipe.ID, StabKabob.class);
+        recipeMap.put(SlaverSaladRecipe.ID, SlaverSalad.class);
+        recipeMap.put(GremlinGoulashRecipe.ID, GremlinGoulash.class);
+        recipeMap.put(NemesisSouffleRecipe.ID, NemesisSouffle.class);
+        recipeMap.put(GiantMarbleCakeRecipe.ID, GiantMarbleCake.class);
+        recipeMap.put(ReptoRavioliRecipe.ID, ReptoRavioli.class);
     }
 }
