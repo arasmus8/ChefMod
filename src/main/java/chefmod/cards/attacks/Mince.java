@@ -41,7 +41,6 @@ public class Mince extends AbstractChefCard {
 
     @Override
     public void triggerWhenDrawn() {
-        //addToBot(new DrawPileToHandAction(1, CardType.SKILL));
         addToBot(new FunctionalAction(firstUpdate -> {
             AbstractPlayer p = AbstractDungeon.player;
             Predicate<AbstractCard> isSkill = c -> c.type == CardType.SKILL;
