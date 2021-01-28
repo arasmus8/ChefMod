@@ -1,10 +1,10 @@
 package chefmod.cards.attacks;
 
+import basemod.helpers.VfxBuilder;
 import chefmod.cards.AbstractChefCard;
 import chefmod.powers.HungerPower;
 import chefmod.powers.SatiatedPower;
 import chefmod.util.VfxMaster;
-import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -56,7 +56,7 @@ public class DeathByChocolate extends AbstractChefCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m.hasPower(SatiatedPower.POWER_ID) && m.hasPower(HungerPower.POWER_ID)) {
             AbstractGameEffect vfx = new VfxBuilder(VfxMaster.CHOCOLATE, m.hb.cX, Settings.HEIGHT + 256f, 1.5f)
-                    .moveY(Settings.HEIGHT, m.hb.y + m.hb.height / 6, VfxBuilder.Interpolations.BOUNCE)
+                    .moveY(Settings.HEIGHT, m.hb.y + m.hb.height / 6, VfxBuilder.Interpolations.BOUNCEOUT)
                     .fadeIn(0.25f)
                     .setScale(1.25f * m.hb.width / VfxMaster.CHOCOLATE.packedWidth / 2f)
                     .fadeOut(0.25f)

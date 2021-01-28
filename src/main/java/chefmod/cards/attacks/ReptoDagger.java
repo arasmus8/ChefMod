@@ -1,7 +1,7 @@
 package chefmod.cards.attacks;
 
+import basemod.helpers.VfxBuilder;
 import chefmod.cards.AbstractChefCard;
-import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;

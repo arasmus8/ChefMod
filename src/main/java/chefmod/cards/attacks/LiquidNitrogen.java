@@ -1,9 +1,9 @@
 package chefmod.cards.attacks;
 
+import basemod.helpers.VfxBuilder;
 import chefmod.cards.AbstractChefCard;
 import chefmod.powers.SupercooledPower;
 import chefmod.util.TextureHelper;
-import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;

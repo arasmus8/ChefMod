@@ -1,18 +1,18 @@
 package chefmod.recipe;
 
+import basemod.helpers.VfxBuilder;
 import chefmod.ChefMod;
 import chefmod.util.ActionUnit;
 import chefmod.util.VfxMaster;
-import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.ShowCardAndPoofAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -51,7 +51,7 @@ public abstract class AbstractRecipe implements ActionUnit {
         }
 
         BiFunction<Float, Float, AbstractGameEffect> foodEffect = (x, y) -> new VfxBuilder(image, x, y, 1.25f)
-                .scale(.8f, 1f, VfxBuilder.Interpolations.SWING)
+                .scale(.8f, 1f, VfxBuilder.Interpolations.SWINGOUT)
                 .fadeIn(0.25f)
                 .fadeOut(0.1f)
                 .build();
@@ -61,25 +61,25 @@ public abstract class AbstractRecipe implements ActionUnit {
                 .setY(MathUtils.random(-90f, 120f) * Settings.scale + y)
                 .setColor(new Color(0xFAFAD0FF))
                 .useAdditiveBlending()
-                .scale(0.8f, 0.9f, VfxBuilder.Interpolations.ELASTIC)
+                .scale(0.8f, 0.9f, VfxBuilder.Interpolations.ELASTICOUT)
                 .setAlpha(0.5f)
                 .build();
 
         BiFunction<Float, Float, AbstractGameEffect> tasty = (x, y) -> new VfxBuilder(VfxMaster.TASTY, 1f)
                 .setX(x - 75f * Settings.scale)
                 .setY(y + 75f * Settings.scale)
-                .scale(0f, 0.8f, VfxBuilder.Interpolations.SWING)
+                .scale(0f, 0.8f, VfxBuilder.Interpolations.SWINGOUT)
                 .fadeIn(0.1f)
                 .fadeOut(0.1f)
                 .build();
 
-        qAction(new VFXAction(
+        AbstractDungeon.effectsQueue.add(
                 new VfxBuilder((TextureAtlas.AtlasRegion) null, foodX, foodY, 1.0f)
                         .triggerVfxAt(0f, 1, foodEffect)
                         .triggerVfxAt(0.25f, 1, tasty)
                         .emitEvery(sparkle, 0.08f)
                         .build()
-        ));
+        );
     }
 
     @Override

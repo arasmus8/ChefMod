@@ -1,9 +1,9 @@
 package chefmod.cards.attacks;
 
+import basemod.helpers.VfxBuilder;
 import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
 import chefmod.util.VfxMaster;
-import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.cards.interfaces.StartupCard;

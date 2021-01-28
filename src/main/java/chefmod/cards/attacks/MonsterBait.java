@@ -1,8 +1,8 @@
 package chefmod.cards.attacks;
 
+import basemod.helpers.VfxBuilder;
 import chefmod.cards.AbstractChefCard;
 import chefmod.powers.HungerPower;
-import chefmod.vfx.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
