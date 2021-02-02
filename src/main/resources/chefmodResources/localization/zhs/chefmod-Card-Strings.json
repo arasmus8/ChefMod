@@ -98,7 +98,7 @@
   },
   "chefmod:DoubleChop": {
     "NAME": "双刀并用",
-    "DESCRIPTION": "造成 !D! 伤害两次。 NL 若回合末仍在手中， chefmod:冷冻 此牌。"
+    "DESCRIPTION": "造成 !D! 伤害两次。 NL 将弃牌堆中的一张牌放到抽牌堆的顶部。"
   },
   "chefmod:Escargot": {
     "NAME": "法式蜗牛",

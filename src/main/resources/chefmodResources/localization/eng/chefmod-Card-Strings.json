@@ -99,7 +99,7 @@
   },
   "chefmod:DoubleChop": {
     "NAME": "Double Chop",
-    "DESCRIPTION": "Deal !D! damage twice. NL chefmod:Freeze this card if it's in your hand at the end of turn."
+    "DESCRIPTION": "Deal !D! damage twice. NL Put a card from your discard pile on top of your draw pile."
   },
   "chefmod:Escargot": {
     "NAME": "Escargots",
