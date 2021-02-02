@@ -6,6 +6,7 @@ import chefmod.TheChef;
 import chefmod.patches.frozen.ExhaustPileViewScreenPatches;
 import chefmod.util.TextureHelper;
 import chefmod.vfx.SnowParticleManager;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -90,6 +91,9 @@ public class FrozenPileButton extends ClickableUIElement {
         super.update();
         snowParticleManager.update(hitbox.cX, hitbox.cY);
         bob.update();
+        if (Gdx.input.isKeyJustPressed(ChefMod.frozenPileKey)) {
+            onClick();
+        }
     }
 
     @Override

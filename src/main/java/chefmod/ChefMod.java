@@ -21,6 +21,9 @@ import chefmod.util.AssetLoader;
 import chefmod.util.TextureHelper;
 import chefmod.util.VfxMaster;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -71,6 +74,7 @@ public class ChefMod implements
     //Settings
     public static SpireConfig config;
     public static boolean cheesyRecipeAnimations = false;
+    public static int frozenPileKey = Input.Keys.F;
 
     public static Color chefColor = new Color(0xCCC39AFF);
 
@@ -141,6 +145,7 @@ public class ChefMod implements
             config = new SpireConfig("ChefMod", "chefModConfig");
             config.load();
             config.setBool("cheesyRecipeAnimations", cheesyRecipeAnimations);
+            config.setInt("frozenPileKey", frozenPileKey);
             config.save();
         } catch (Exception e) {
             e.printStackTrace();
@@ -156,14 +161,15 @@ public class ChefMod implements
             config = new SpireConfig("ChefMod", "chefModConfig");
             config.load();
             cheesyRecipeAnimations = config.getBool("cheesyRecipeAnimations");
+            frozenPileKey = config.getInt("frozenPileKey");
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         ModPanel panel = new ModPanel();
         // Create the on/off button:
-        ModLabeledToggleButton toggleCrueltyModeButton = new ModLabeledToggleButton(uiStrings.TEXT[0],
-                350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+        ModLabeledToggleButton toggleCheesyAnimationButton = new ModLabeledToggleButton(uiStrings.TEXT[0],
+                375.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
                 cheesyRecipeAnimations,
                 panel,
                 (label) -> {
@@ -172,7 +178,31 @@ public class ChefMod implements
                     cheesyRecipeAnimations = button.enabled;
                     saveSettings();
                 });
-        panel.addUIElement(toggleCrueltyModeButton);
+        panel.addUIElement(toggleCheesyAnimationButton);
+
+        ModLabel frozenPileKeyButtonLabel = new ModLabel("", 450.0F, 650.0F, panel, (me) -> {
+            if (me.parent.waitingOnEvent) {
+                me.text = "Press key";
+            } else {
+                me.text = "Change frozen pile hotkey (" + Input.Keys.toString(frozenPileKey) + ")";
+            }
+
+        });
+        panel.addUIElement(frozenPileKeyButtonLabel);
+        ModButton consoleKeyButton = new ModButton(325.0F, 600.0F, panel, (me) -> {
+            me.parent.waitingOnEvent = true;
+            InputProcessor oldInputProcessor = Gdx.input.getInputProcessor();
+            Gdx.input.setInputProcessor(new InputAdapter() {
+                public boolean keyUp(int keycode) {
+                    frozenPileKey = keycode;
+                    saveSettings();
+                    me.parent.waitingOnEvent = false;
+                    Gdx.input.setInputProcessor(oldInputProcessor);
+                    return true;
+                }
+            });
+        });
+        panel.addUIElement(consoleKeyButton);
 
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", panel);
         BaseMod.addSaveField("chefmod", this);
