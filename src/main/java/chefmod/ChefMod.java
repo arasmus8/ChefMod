@@ -59,7 +59,6 @@ public class ChefMod implements
         EditStringsSubscriber,
         PostBattleSubscriber,
         PostDungeonUpdateSubscriber,
-        PostDeathSubscriber,
         PostInitializeSubscriber,
         StartGameSubscriber {
     public static String IMAGE_PATH = "chefmodResources/images";
@@ -321,6 +320,10 @@ public class ChefMod implements
         cardsToFreeze = new ArrayList<>();
         frozenThisCombat = new ArrayList<>();
         recipeManager = new RecipeManager();
+        if (AbstractDungeon.floorNum == 0) {
+            // New run, clear unlocked Recipes
+            RecipeManager.unlockedRecipes.clear();
+        }
     }
 
     @Override
@@ -352,13 +355,10 @@ public class ChefMod implements
     public void receivePostDungeonUpdate() {
         if (frozenPileButton != null) {
             frozenPileButton.update();
+        }
+        if (recipeManager != null) {
             recipeManager.update();
         }
-    }
-
-    @Override
-    public void receivePostDeath() {
-        RecipeManager.unlockedRecipes.clear();
     }
 
     @Override
