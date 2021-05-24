@@ -95,7 +95,7 @@ public abstract class AbstractChefCard extends CustomCard implements ActionUnit 
 
     @Override
     public void loadCardImage(String img) {
-        TextureAtlas cardAtlas = (TextureAtlas) ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
+        TextureAtlas cardAtlas = ReflectionHacks.getPrivateStatic(AbstractCard.class, "cardAtlas");
         portrait = cardAtlas.findRegion(img);
     }
 

@@ -2,7 +2,7 @@ package chefmod.relics;
 
 import basemod.helpers.CardModifierManager;
 import chefmod.TheChef;
-import chefmod.cardmods.PermanentDamageBonusCardmod;
+import chefmod.cardmods.BonusDamageCardmod;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -13,7 +13,7 @@ import static chefmod.ChefMod.makeID;
 public class OldKettle extends AbstractChefRelic {
     public static String ID = makeID(OldKettle.class.getSimpleName());
     private boolean activated = false;
-    private static final int DAMAGE_AMOUNT = 5;
+    private static final int DAMAGE_AMOUNT = 7;
 
     public OldKettle() {
         super(ID, RelicTier.BOSS, LandingSound.CLINK, TheChef.Enums.CHEF_COLOR);
@@ -29,7 +29,8 @@ public class OldKettle extends AbstractChefRelic {
         if (!activated && drawnCard.type == AbstractCard.CardType.ATTACK) {
             flash();
             activated = true;
-            CardModifierManager.addModifier(drawnCard, new PermanentDamageBonusCardmod(DAMAGE_AMOUNT));
+            CardModifierManager.addModifier(drawnCard, new BonusDamageCardmod(DAMAGE_AMOUNT));
+            drawnCard.superFlash();
         }
     }
 

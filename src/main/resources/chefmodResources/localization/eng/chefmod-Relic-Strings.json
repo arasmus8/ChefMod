@@ -10,7 +10,7 @@
     "NAME": "Old Kettle",
     "FLAVOR": "Actually, it gets along quite well with all other cookware.",
     "DESCRIPTIONS": [
-      "Replaces Trusty Pot. The first attack card you draw each combat deals #b5 additional damage."
+      "Replaces Trusty Pot. The first attack card you draw each combat deals #b7 additional damage."
     ]
   },
   "chefmod:PepperMill": {
