@@ -3,7 +3,6 @@ package chefmod.relics;
 import chefmod.TheChef;
 import chefmod.powers.HungerDamageUpPower;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import static chefmod.ChefMod.makeID;
 
@@ -15,13 +14,8 @@ public class CookieJar extends AbstractChefRelic {
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
-        setCounter(counter + 1);
-    }
-
-    @Override
     public void atBattleStartPreDraw() {
         flash();
-        applyToSelf(new HungerDamageUpPower(AbstractDungeon.player, counter));
+        applyToSelf(new HungerDamageUpPower(AbstractDungeon.player, 10));
     }
 }

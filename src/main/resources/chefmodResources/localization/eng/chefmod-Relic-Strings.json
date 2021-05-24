@@ -3,7 +3,7 @@
     "NAME": "Cookie Jar",
     "FLAVOR": "Sadly, it's empty.",
     "DESCRIPTIONS": [
-      "Gain #b1 charge each time you climb a floor. #ychefmod:Hunger deals #b1 more damage for each charge."
+      "#ychefmod:Hunger deals #b10 more damage."
     ]
   },
   "chefmod:OldKettle": {
