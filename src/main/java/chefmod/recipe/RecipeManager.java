@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.monsters.beyond.Reptomancer;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.city.GremlinLeader;
 import com.megacrit.cardcrawl.monsters.exordium.*;
+import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 
 import java.util.*;
 import java.util.stream.IntStream;
@@ -35,7 +36,7 @@ public class RecipeManager {
     public ArrayList<AbstractRecipe> recipes;
     public float activeXPos;
     public float activeYPos;
-    private static final ArrayList<RecipeRenderer> renderers = new ArrayList<>();
+    private static ArrayList<RecipeRenderer> renderers = new ArrayList<>();
     private static final int RENDER_COUNT = 5;
     private final Vector2 additionalPos;
 
@@ -47,9 +48,10 @@ public class RecipeManager {
         float offsetH = 128f * 1.618f * Settings.scale;
         float x = 256f * Settings.scale;
         // float y = AbstractDungeon.player.relics.get(0);
-        float y = (float) Settings.HEIGHT - 256f * Settings.scale;
+        float y = (float) Settings.HEIGHT - 236f * Settings.scale;
         activeXPos = x;
         activeYPos = y;
+        renderers = new ArrayList<>();
         IntStream.range(0, RENDER_COUNT)
                 .forEachOrdered(i -> {
                     Vector2 vec = new Vector2(x + offsetH * i, y);
@@ -219,6 +221,9 @@ public class RecipeManager {
 
     public void render(SpriteBatch sb) {
         if (!AbstractDungeon.overlayMenu.combatDeckPanel.isHidden) {
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT && !PeekButton.isPeeking) {
+                return;
+            }
             IntStream.range(0, recipes.size())
                     .limit(renderers.size())
                     .forEachOrdered(i -> renderers.get(i).render(sb, recipes.get(i)));
