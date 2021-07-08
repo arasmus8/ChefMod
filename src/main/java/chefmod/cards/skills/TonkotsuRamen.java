@@ -20,6 +20,7 @@ public class TonkotsuRamen extends AbstractChefCard {
                 CardRarity.UNCOMMON,
                 CardTarget.SELF
         );
+        nofreeze = true;
         upgradeCostTo = 0;
     }
 
