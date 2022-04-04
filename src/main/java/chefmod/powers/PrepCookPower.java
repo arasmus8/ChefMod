@@ -70,7 +70,6 @@ public class PrepCookPower extends AbstractChefTwoAmountPower implements Cloneab
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        flash();
         final int oneTimeAmount = amount;
         final int permanentAmount = amount2;
 
@@ -78,6 +77,7 @@ public class PrepCookPower extends AbstractChefTwoAmountPower implements Cloneab
             AbstractDungeon.player.hand.group.stream()
                     .filter(c -> c.selfRetain || c.retain)
                     .forEach(c -> {
+                        flash();
                         if (oneTimeAmount > 0) {
                             OneTimeDamageBonusCardmod.add(c, oneTimeAmount);
                             OneTimeBlockBonusCardmod.add(c, oneTimeAmount);
