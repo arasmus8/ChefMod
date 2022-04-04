@@ -82,8 +82,8 @@
   },
   "chefmod:Defrost": {
     "NAME": "Defrost",
-    "DESCRIPTION": "Choose !M! chefmod:Frozen card to move to your hand.",
-    "UPGRADE_DESCRIPTION": "Choose !M! chefmod:Frozen cards to move to your hand.",
+    "DESCRIPTION": "Choose !M! chefmod:Frozen card and draw it.",
+    "UPGRADE_DESCRIPTION": "Choose !M! chefmod:Frozen card and play it.",
     "EXTENDED_DESCRIPTION": [
       "to move from your Frozen pile to your hand."
     ]
@@ -343,7 +343,7 @@
   },
   "chefmod:ZaruSoba": {
     "NAME": "Zaru Soba",
-    "DESCRIPTION": "Draw !M! chefmod:Frozen cards. chefmod:Freeze !M!."
+    "DESCRIPTION": "Move the !M! oldest chefmod:Frozen cards to your hand. chefmod:Freeze !M!."
   },
   "chefmod:NeowNuggets": {
     "NAME": "Neow Nuggets",
