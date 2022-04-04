@@ -17,7 +17,7 @@ public class TwoForOne extends AbstractChefCard {
 
     public TwoForOne() {
         super(ID,
-                3,
+                1,
                 CardType.SKILL,
                 CardRarity.RARE,
                 CardTarget.SELF
