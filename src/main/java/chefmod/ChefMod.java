@@ -188,7 +188,7 @@ public class ChefMod implements
 
         });
         panel.addUIElement(frozenPileKeyButtonLabel);
-        ModButton consoleKeyButton = new ModButton(325.0F, 600.0F, panel, (me) -> {
+        ModButton frozenPileKeyButton = new ModButton(325.0F, 600.0F, panel, (me) -> {
             me.parent.waitingOnEvent = true;
             InputProcessor oldInputProcessor = Gdx.input.getInputProcessor();
             Gdx.input.setInputProcessor(new InputAdapter() {
@@ -201,7 +201,7 @@ public class ChefMod implements
                 }
             });
         });
-        panel.addUIElement(consoleKeyButton);
+        panel.addUIElement(frozenPileKeyButton);
 
         BaseMod.registerModBadge(badgeImage, "ChefMod", "NotInTheFace", "A character who's a chef.", panel);
         BaseMod.addSaveField("chefmod", this);
