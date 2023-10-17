@@ -58,7 +58,7 @@ public class DeathByChocolate extends AbstractChefCard {
             AbstractGameEffect vfx = new VfxBuilder(VfxMaster.CHOCOLATE, m.hb.cX, Settings.HEIGHT + 256f, 1.5f)
                     .moveY(Settings.HEIGHT, m.hb.y + m.hb.height / 6, VfxBuilder.Interpolations.BOUNCEOUT)
                     .fadeIn(0.25f)
-                    .setScale(1.25f * m.hb.width / VfxMaster.CHOCOLATE.packedWidth / 2f)
+                    .setScale(1.25f * m.hb.width / VfxMaster.CHOCOLATE.packedWidth)
                     .fadeOut(0.25f)
                     .playSoundAt(0.35f, "BLUNT_HEAVY")
                     .triggerVfxAt(0.4f, 20, (x, y) -> new StarBounceEffect(
