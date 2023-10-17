@@ -216,7 +216,10 @@
   },
   "chefmod:MonsterBait": {
     "NAME": "Monster Bait",
-    "DESCRIPTION": "Deal !D! damage. If the target has chefmod:Hunger, increase the damage by !M!."
+    "DESCRIPTION": "Can only be used if the target has chefmod:Hunger. Deal !D! damage and apply Poison equal to the unblocked damage dealt.",
+    "EXTENDED_DESCRIPTION": [
+      "The target isn't hungry."
+    ]
   },
   "chefmod:NewMenu": {
     "NAME": "New Menu",
