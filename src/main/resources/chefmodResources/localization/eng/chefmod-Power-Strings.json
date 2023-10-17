@@ -101,6 +101,13 @@
       "Draw an extra attack each turn."
     ]
   },
+  "chefmod:StrengthNextTurnPower": {
+    "NAME": "Future Strength",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " Strength next turn."
+    ]
+  },
   "chefmod:SupercooledPower": {
     "NAME": "Supercooled",
     "DESCRIPTIONS": [

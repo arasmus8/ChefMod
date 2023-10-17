@@ -174,7 +174,7 @@
   "chefmod:GroceryDelivery": {
     "NAME": "Grocery Delivery",
     "DESCRIPTION": "Gain 2X [E] next turn. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Gain 2X [E] next turn."
+    "UPGRADE_DESCRIPTION": "Gain 2X [E] and X Strength next turn. NL Exhaust"
   },
   "chefmod:HotSoup": {
     "NAME": "Hot Soup",
