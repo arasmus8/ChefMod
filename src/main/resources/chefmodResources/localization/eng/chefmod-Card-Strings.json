@@ -84,7 +84,8 @@
     "DESCRIPTION": "Choose !M! chefmod:Frozen card and draw it.",
     "UPGRADE_DESCRIPTION": "Choose !M! chefmod:Frozen card and play it.",
     "EXTENDED_DESCRIPTION": [
-      "to move from your Frozen pile to your hand."
+      "to move from your Frozen pile to your hand.",
+      "to play."
     ]
   },
   "chefmod:DimSum": {

@@ -27,7 +27,7 @@ public class Defrost extends AbstractChefCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (upgraded) {
             addToBot(new GridSelectAndPerformAction(magicNumber,
-                    cardStrings.EXTENDED_DESCRIPTION[0],
+                    cardStrings.EXTENDED_DESCRIPTION[1],
                     new FunctionalAction(firstUpdate -> {
                         GridSelectAndPerformAction.selectedCards.forEach(c -> addToBot(new PlayOldestFrozenCardAction(filterCard -> filterCard == c)));
                         return true;
