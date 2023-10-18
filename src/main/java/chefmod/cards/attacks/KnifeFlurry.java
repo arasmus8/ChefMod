@@ -20,9 +20,16 @@ public class KnifeFlurry extends AbstractChefCard {
                 CardTarget.ENEMY
         );
         baseDamage = damage = 4;
-        upgradeDamageBy = 2;
         baseMagicNumber = magicNumber = 4;
         damages = true;
+    }
+
+    @Override
+    public void upgrade() {
+        if (!upgraded) {
+            selfRetain = true;
+        }
+        super.upgrade();
     }
 
     @Override

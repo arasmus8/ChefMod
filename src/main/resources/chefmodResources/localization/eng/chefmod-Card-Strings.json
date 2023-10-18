@@ -195,7 +195,8 @@
   },
   "chefmod:KnifeFlurry": {
     "NAME": "Knife Flurry",
-    "DESCRIPTION": "Deal !D! damage !M! times."
+    "DESCRIPTION": "Deal !D! damage !M! times.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage !M! times. NL Retain"
   },
   "chefmod:Leftovers": {
     "NAME": "Leftovers",
