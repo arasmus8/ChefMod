@@ -21,9 +21,9 @@ public class QuickChop extends AbstractChefCard {
                 CardTarget.ENEMY
         );
         baseDamage = damage = 7;
-        upgradeDamageBy = 2;
+        upgradeDamageBy = 3;
         baseMagicNumber = magicNumber = 1;
-        upgradeMagicNumberBy = 2;
+        upgradeMagicNumberBy = 1;
         damages = true;
     }
 
