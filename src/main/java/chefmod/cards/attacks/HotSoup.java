@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.relics.RunicPyramid;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class HotSoup extends AbstractChefCard {
     public static String ID = makeID(HotSoup.class.getSimpleName());
 

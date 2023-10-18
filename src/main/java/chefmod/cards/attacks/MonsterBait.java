@@ -21,6 +21,7 @@ import java.util.function.BiFunction;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class MonsterBait extends AbstractChefCard {
     public static String ID = makeID(MonsterBait.class.getSimpleName());
     private final Texture img;

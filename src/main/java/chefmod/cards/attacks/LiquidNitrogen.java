@@ -21,6 +21,7 @@ import java.util.function.BiFunction;
 import static chefmod.ChefMod.makeID;
 import static chefmod.ChefMod.makeImagePath;
 
+@SuppressWarnings("unused")
 public class LiquidNitrogen extends AbstractChefCard {
     public static String ID = makeID(LiquidNitrogen.class.getSimpleName());
     private final Texture img = TextureHelper.getTexture(makeImagePath("snowParticle.png"));

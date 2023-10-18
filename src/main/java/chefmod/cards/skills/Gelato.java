@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Gelato extends AbstractChefCard {
     public static String ID = makeID(Gelato.class.getSimpleName());
 

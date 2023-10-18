@@ -5,10 +5,10 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class RisingDough extends AbstractChefCard {
     public static String ID = makeID(RisingDough.class.getSimpleName());
 

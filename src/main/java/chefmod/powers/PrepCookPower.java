@@ -64,7 +64,7 @@ public class PrepCookPower extends AbstractChefTwoAmountPower implements Cloneab
         if (stackAmount > 0) {
             amount += stackAmount;
         } else if (stackAmount < 0) {
-            amount2 += -1 * stackAmount;
+            amount2 -= stackAmount;
         }
     }
 

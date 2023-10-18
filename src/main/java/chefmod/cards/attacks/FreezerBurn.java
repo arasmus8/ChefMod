@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.vfx.combat.BlizzardEffect;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class FreezerBurn extends AbstractChefCard {
     public static String ID = makeID(FreezerBurn.class.getSimpleName());
 

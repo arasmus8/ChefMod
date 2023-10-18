@@ -7,6 +7,7 @@ import chefmod.recipe.ReptoRavioliRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class ReptoRavioli extends AbstractOptionCard {
     public static String ID = makeID(ReptoRavioli.class.getSimpleName());
 

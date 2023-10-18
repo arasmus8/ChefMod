@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Canape extends AbstractChefCard {
     public static String ID = makeID(Canape.class.getSimpleName());
 

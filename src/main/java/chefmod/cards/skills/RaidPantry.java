@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class RaidPantry extends AbstractChefCard {
     public static String ID = makeID(RaidPantry.class.getSimpleName());
 

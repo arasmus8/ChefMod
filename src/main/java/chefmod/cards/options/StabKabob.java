@@ -6,6 +6,7 @@ import chefmod.recipe.StabKabobRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class StabKabob extends AbstractOptionCard {
     public static String ID = makeID(StabKabob.class.getSimpleName());
 

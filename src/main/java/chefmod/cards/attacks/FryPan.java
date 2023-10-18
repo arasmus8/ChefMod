@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class FryPan extends AbstractChefCard {
     public static String ID = makeID(FryPan.class.getSimpleName());
 

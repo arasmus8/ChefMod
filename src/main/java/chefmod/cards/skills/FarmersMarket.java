@@ -13,6 +13,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class FarmersMarket extends AbstractChefCard {
     public static String ID = makeID(FarmersMarket.class.getSimpleName());
 

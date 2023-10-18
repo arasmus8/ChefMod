@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class FrozenTuna extends AbstractChefCard implements StartupCard {
     public static String ID = makeID(FrozenTuna.class.getSimpleName());
 

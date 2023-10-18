@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.StarBounceEffect;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class DeathByChocolate extends AbstractChefCard {
     public static String ID = makeID(DeathByChocolate.class.getSimpleName());
 

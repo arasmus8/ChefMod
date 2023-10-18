@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class TonkotsuRamen extends AbstractChefCard {
     public static String ID = makeID(TonkotsuRamen.class.getSimpleName());
 

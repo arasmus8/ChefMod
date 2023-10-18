@@ -15,6 +15,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class ReptoDagger extends AbstractChefCard {
     public static String ID = makeID(ReptoDagger.class.getSimpleName());
     private final TextureAtlas daggerAtlas = new TextureAtlas(Gdx.files.internal("images/monsters/theForest/mage_dagger/skeleton.atlas"));

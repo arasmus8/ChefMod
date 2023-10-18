@@ -16,6 +16,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Mince extends AbstractChefCard {
     public static String ID = makeID(Mince.class.getSimpleName());
 

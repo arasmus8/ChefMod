@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class DimSum extends AbstractChefCard implements StartupCard {
     public static String ID = makeID(DimSum.class.getSimpleName());
 

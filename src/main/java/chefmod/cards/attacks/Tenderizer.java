@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Tenderizer extends AbstractChefCard {
     public static String ID = makeID(Tenderizer.class.getSimpleName());
 

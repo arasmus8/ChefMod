@@ -11,6 +11,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class QuickThaw extends AbstractChefCard {
     public static String ID = makeID(QuickThaw.class.getSimpleName());
 

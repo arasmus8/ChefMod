@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class TodaysSpecial extends AbstractChefCard {
     public static String ID = makeID(TodaysSpecial.class.getSimpleName());
     private boolean effectTriggered = false;

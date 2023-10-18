@@ -9,6 +9,7 @@ import java.util.List;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Defend extends AbstractChefCard {
     public static String ID = makeID(Defend.class.getSimpleName());
     private static final List<CardTags> tagsList = Collections.singletonList(CardTags.STARTER_DEFEND);

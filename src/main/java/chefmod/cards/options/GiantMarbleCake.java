@@ -6,6 +6,7 @@ import chefmod.recipe.GiantMarbleCakeRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class GiantMarbleCake extends AbstractOptionCard {
     public static String ID = makeID(GiantMarbleCake.class.getSimpleName());
 

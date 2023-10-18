@@ -10,6 +10,7 @@ import java.util.Arrays;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Strike extends AbstractChefCard {
     public static String ID = makeID(Strike.class.getSimpleName());
     private static final ArrayList<CardTags> tagsList = new ArrayList<>(Arrays.asList(CardTags.STARTER_STRIKE, CardTags.STRIKE));

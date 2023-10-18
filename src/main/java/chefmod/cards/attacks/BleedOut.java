@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class BleedOut extends AbstractChefCard {
     public static String ID = makeID(BleedOut.class.getSimpleName());
 

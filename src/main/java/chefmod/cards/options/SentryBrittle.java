@@ -6,6 +6,7 @@ import chefmod.recipe.SentryBrittleRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class SentryBrittle extends AbstractOptionCard {
     public static String ID = makeID(SentryBrittle.class.getSimpleName());
 

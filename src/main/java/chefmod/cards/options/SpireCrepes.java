@@ -2,13 +2,12 @@ package chefmod.cards.options;
 
 import chefmod.ChefMod;
 import chefmod.cards.AbstractOptionCard;
-import chefmod.cards.attacks.NuggetStrike;
 import chefmod.cards.skills.TodaysSpecial;
-import chefmod.recipe.NeowNuggetsRecipe;
 import chefmod.recipe.SpireCrepesRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class SpireCrepes extends AbstractOptionCard {
     public static String ID = makeID(SpireCrepes.class.getSimpleName());
 

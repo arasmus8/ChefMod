@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Granita extends AbstractChefCard {
     public static String ID = makeID(Granita.class.getSimpleName());
 

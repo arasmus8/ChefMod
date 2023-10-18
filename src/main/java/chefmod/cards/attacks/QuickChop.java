@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class QuickChop extends AbstractChefCard {
     public static String ID = makeID(QuickChop.class.getSimpleName());
 

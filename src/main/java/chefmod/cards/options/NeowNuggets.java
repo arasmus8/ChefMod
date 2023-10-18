@@ -7,6 +7,7 @@ import chefmod.recipe.NeowNuggetsRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class NeowNuggets extends AbstractOptionCard {
     public static String ID = makeID(NeowNuggets.class.getSimpleName());
 

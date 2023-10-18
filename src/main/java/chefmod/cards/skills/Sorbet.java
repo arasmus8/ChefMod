@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class Sorbet extends AbstractChefCard {
     public static String ID = makeID(Sorbet.class.getSimpleName());
 

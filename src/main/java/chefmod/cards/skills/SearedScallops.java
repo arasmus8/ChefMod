@@ -5,12 +5,11 @@ import chefmod.powers.HungerPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.EquilibriumPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class SearedScallops extends AbstractChefCard {
     public static String ID = makeID(SearedScallops.class.getSimpleName());
 

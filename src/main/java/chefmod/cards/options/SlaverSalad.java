@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.colorless.Trip;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class SlaverSalad extends AbstractOptionCard {
     public static String ID = makeID(SlaverSalad.class.getSimpleName());
 

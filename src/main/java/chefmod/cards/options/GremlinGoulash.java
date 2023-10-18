@@ -6,6 +6,7 @@ import chefmod.recipe.GremlinGoulashRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class GremlinGoulash extends AbstractOptionCard {
     public static String ID = makeID(GremlinGoulash.class.getSimpleName());
 

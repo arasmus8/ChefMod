@@ -11,6 +11,7 @@ import java.util.stream.IntStream;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class NewMenu extends AbstractChefCard {
     public static String ID = makeID(NewMenu.class.getSimpleName());
 

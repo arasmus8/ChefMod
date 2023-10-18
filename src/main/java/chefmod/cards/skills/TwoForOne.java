@@ -12,6 +12,7 @@ import java.util.function.Consumer;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class TwoForOne extends AbstractChefCard {
     public static String ID = makeID(TwoForOne.class.getSimpleName());
 

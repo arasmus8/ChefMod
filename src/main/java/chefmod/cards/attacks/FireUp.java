@@ -1,6 +1,5 @@
 package chefmod.cards.attacks;
 
-import chefmod.actions.FreezeAction;
 import chefmod.cards.AbstractChefCard;
 import chefmod.powers.HungerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -9,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class FireUp extends AbstractChefCard {
     public static String ID = makeID(FireUp.class.getSimpleName());
 

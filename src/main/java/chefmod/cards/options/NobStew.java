@@ -6,6 +6,7 @@ import chefmod.recipe.NobStewRecipe;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class NobStew extends AbstractOptionCard {
     public static String ID = makeID(NobStew.class.getSimpleName());
 

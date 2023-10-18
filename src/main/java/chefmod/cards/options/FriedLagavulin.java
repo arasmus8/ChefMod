@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 
 import static chefmod.ChefMod.makeID;
 
+@SuppressWarnings("unused")
 public class FriedLagavulin extends AbstractOptionCard {
     public static String ID = makeID(FriedLagavulin.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
