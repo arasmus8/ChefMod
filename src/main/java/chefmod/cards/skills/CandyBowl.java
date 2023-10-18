@@ -18,19 +18,12 @@ public class CandyBowl extends AbstractChefCard {
                 CardTarget.SELF
         );
         magicNumber = baseMagicNumber = 8;
+        upgradeMagicNumberBy = 4;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         applyToSelf(new HungerDamageUpPower(p, magicNumber));
-    }
-
-    @Override
-    public void upgrade() {
-        if (!upgraded) {
-            exhaust = false;
-        }
-        super.upgrade();
     }
 }

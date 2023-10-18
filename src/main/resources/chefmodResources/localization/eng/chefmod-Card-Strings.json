@@ -33,8 +33,7 @@
   },
   "chefmod:CandyBowl": {
     "NAME": "Candy Bowl",
-    "DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat."
+    "DESCRIPTION": "chefmod:Hunger deals !M! more damage this combat. NL Exhaust"
   },
   "chefmod:CapreseSalad": {
     "NAME": "Caprese Salad",
