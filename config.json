@@ -1,7 +1,8 @@
 {
+  "steamPublishedID": "2270591084",
   "title": "The Chef",
-  "visibility": "private",
-  "changeNote": "Initial Release",
+  "visibility": "public",
+  "changeNote": "",
   "tags": [
     "Character",
     "English"
